@@ -2,20 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Light theme color variables */
+
+    /* Base background color (white) */
+    --background: 0 0% 100%;
+    /* Base text color (dark blue/gray) */
+    --foreground: 222.2 84% 4.9%;
+
+    /* Card background color (white) */
+    --card: 0 0% 100%;
+    /* Card text color (dark blue/gray) */
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover background color (white) */
+    --popover: 0 0% 100%;
+    /* Popover text color (dark blue/gray) */
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary color for interactive elements (blue-ish tone) */
+    --primary: 221.2 83.2% 53.3%;
+    /* Foreground color on primary elements (nearly white) */
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary color for accents (light tone) */
+    --secondary: 210 40% 96.1%;
+    /* Foreground color on secondary elements (dark blue/gray) */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted color for less emphasized elements (light tone) */
+    --muted: 210 40% 96.1%;
+    /* Foreground color on muted elements (medium gray) */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent color for highlights (light tone) */
+    --accent: 210 40% 96.1%;
+    /* Foreground color on accent elements (dark blue/gray) */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive color for error states (red-ish tone) */
+    --destructive: 0 84.2% 60.2%;
+    /* Foreground color on destructive elements (nearly white) */
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border color (light gray) */
+    --border: 214.3 31.8% 91.4%;
+    /* Input background color (light gray) */
+    --input: 214.3 31.8% 91.4%;
+    /* Ring color for focus states (blue-ish tone) */
+    --ring: 221.2 83.2% 53.3%;
+
+    /* Border radius for elements */
+    --radius: 0.5rem;
+
+    /* Text color - a very light, almost white blue */
+    --buttonText: 210 40% 98%;
+  }
+
+  .dark {
+    /* Dark theme color variables */
+
+    /* Base background color for dark theme (dark blue/gray) */
+    --background: 222.2 84% 4.9%;
+    /* Base text color for dark theme (nearly white) */
+    --foreground: 210 40% 98%;
+
+    /* Card background color for dark theme:
+       A slightly lighter variant of the base background, which helps cards stand out
+       without introducing a strong blue tint. */
+    --card: 210 45% 10%;
+
+    /* Card text color for dark theme:
+       A subtly muted off-white that maintains clear readability on card surfaces. */
+    --card-foreground: 0 0% 92%;
+
+    /* Popover background color for dark theme (dark blue/gray) */
+    --popover: 222.2 84% 4.9%;
+    /* Popover text color for dark theme (nearly white) */
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary color for interactive elements in dark theme (purple/blue-ish tone) */
+    --primary: 263.4 70% 50.4%;
+    /* Foreground color on primary elements (nearly white) */
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary color for accents in dark theme (dark gray tone) */
+    --secondary: 217.2 32.6% 17.5%;
+    /* Foreground color on secondary elements (nearly white) */
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted color for less emphasized elements in dark theme (dark gray tone) */
+    --muted: 217.2 32.6% 17.5%;
+    /* Foreground color on muted elements (medium gray) */
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent color for highlights in dark theme (dark gray tone) */
+    --accent: 217.2 32.6% 17.5%;
+    /* Foreground color on accent elements (nearly white) */
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive color for error states in dark theme (darker red tone) */
+    --destructive: 0 84.2% 60.2%;
+    /* Foreground color on destructive elements (nearly white) */
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border color for dark theme (dark gray tone) */
+    --border: 217.2 32.6% 17.5%;
+    /* Input background color for dark theme (dark gray tone) */
+    --input: 217.2 32.6% 17.5%;
+    /* Ring color for focus states in dark theme (purple/blue-ish tone) */
+    --ring: 263.4 70% 50.4%;
+
+    /* Text color */
+    --buttonText: 210 40% 98%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
