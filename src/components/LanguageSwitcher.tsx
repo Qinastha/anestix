@@ -12,31 +12,37 @@ import { Button } from '@/components/ui/button';
 
 interface LanguageSwitcherProps {
   language: string;
-  changeLanguage: (lang: string) => void;
+  action: (lang: string) => void;
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   language,
-  changeLanguage,
+  action,
 }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
-          <Button variant="outline" className="w-12">
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <Button variant="outline" className="w-12 bg-inherit">
             {language.toUpperCase() || 'RU'}
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-32">
         <DropdownMenuItem
-          onSelect={() => changeLanguage('ru')}
+          onSelect={() => action('ru')}
           className="cursor-pointer hover:bg-muted"
         >
           RU
         </DropdownMenuItem>
         <DropdownMenuItem
-          onSelect={() => changeLanguage('en')}
+          onSelect={() => action('en')}
           className="cursor-pointer hover:bg-muted"
         >
           EN

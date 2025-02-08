@@ -58,6 +58,25 @@
 
     /* Text color - a very light, almost white blue */
     --buttonText: 210 40% 98%;
+
+    /* ===== Sidebar Variables (Light Theme) ===== */
+
+    /* Sidebar background color: a very light off-white with a subtle blue tint */
+    --sidebar-background: 210 16% 98%;
+    /* Sidebar text color: dark blue/gray for clear readability */
+    --sidebar-foreground: 210 15% 20%;
+    /* Sidebar primary color: used for active or selected sidebar items; aligns with the main primary color */
+    --sidebar-primary: 221.2 83.2% 53.3%;
+    /* Sidebar primary foreground: white text on active sidebar items for optimal contrast */
+    --sidebar-primary-foreground: 0 0% 100%;
+    /* Sidebar accent color: used for hover states or secondary highlights in the sidebar */
+    --sidebar-accent: 210 15% 85%;
+    /* Sidebar accent foreground: dark text to maintain readability on accent backgrounds */
+    --sidebar-accent-foreground: 210 15% 20%;
+    /* Sidebar border color: a soft light gray to subtly delineate sections within the sidebar */
+    --sidebar-border: 210 10% 85%;
+    /* Sidebar ring color: used for focus outlines within the sidebar; matches the primary interactive tone */
+    --sidebar-ring: 221.2 83.2% 53.3%;
   }
 
   .dark {
@@ -116,6 +135,25 @@
 
     /* Text color */
     --buttonText: 210 40% 98%;
+
+    /* ===== Sidebar Variables (Dark Theme) ===== */
+
+    /* Sidebar background color: a dark blue/gray to distinctly separate the sidebar area */
+    --sidebar-background: 210 15% 12%;
+    /* Sidebar text color: white for high contrast on the dark background */
+    --sidebar-foreground: 0 0% 100%;
+    /* Sidebar primary color: used for active or selected items; a vibrant blue for prominence */
+    --sidebar-primary: 263.4 70% 50.4%;
+    /* Sidebar primary foreground: white text on active sidebar items */
+    --sidebar-primary-foreground: 0 0% 100%;
+    /* Sidebar accent color: used for hover or secondary highlights; a muted warm tone for subtle emphasis */
+    --sidebar-accent: 263.4 70% 50.4%;
+    /* Sidebar accent foreground: white text ensures clarity on the accent background */
+    --sidebar-accent-foreground: 0 0% 100%;
+    /* Sidebar border color: a slightly lighter dark tone to neatly delineate sidebar sections */
+    --sidebar-border: 210 10% 15%;
+    /* Sidebar ring color: used for focus outlines within the sidebar; mirrors the vibrant primary tone */
+    --sidebar-ring: 263.4 70% 50.4%;
   }
 }
 

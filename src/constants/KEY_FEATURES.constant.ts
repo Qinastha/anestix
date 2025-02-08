@@ -1,4 +1,6 @@
-export const KEY_FEATURES = [
+import { KeyFeature } from '@/types/KeyFeatures.type';
+
+export const KEY_FEATURES: KeyFeature[] = [
   {
     title: 'key_features.comprehensive_resources.title',
     description: 'key_features.comprehensive_resources.description',

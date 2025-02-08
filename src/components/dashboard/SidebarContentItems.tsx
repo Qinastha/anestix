@@ -1,0 +1,117 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import {
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from '@/components/ui/sidebar';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import { SIDEBAR_ITEMS } from '@/constants/SIDEBAR_ITEMS.constant';
+import React, { useContext } from 'react';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { useTheme } from 'next-themes';
+import { LanguageContext } from '@/context/LanguageContext';
+import { useTranslation } from 'react-i18next';
+
+export interface SidebarContentItemsProps {
+  openGroups: string[];
+  toggleGroup: (label: string) => void;
+}
+
+export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
+  openGroups,
+  toggleGroup,
+}) => {
+  const { t } = useTranslation();
+  const { theme, setTheme } = useTheme();
+  const { language, changeLanguage } = useContext(LanguageContext);
+  return (
+    <SidebarContent className="p-2 flex flex-col justify-between">
+      <SidebarGroup>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            {SIDEBAR_ITEMS.map((item, index: number) => {
+              const isHome = index === 0;
+              const iconSizeClass = isHome ? 'mr-0' : 'h-4 w-4';
+              const textClass = isHome ? 'text-xl font-bold' : 'text-md';
+              const buttonClass = isHome
+                ? 'w-full text-xl font-bold'
+                : 'w-full justify-between';
+
+              return (
+                <SidebarMenuItem key={item.label} className="w-full py-2">
+                  {item.subItems ? (
+                    <Collapsible
+                      open={openGroups.includes(item.label)}
+                      onOpenChange={() => toggleGroup(item.label)}
+                    >
+                      <CollapsibleTrigger asChild>
+                        <SidebarMenuButton className={buttonClass}>
+                          <span className="flex items-center">
+                            <item.icon className={`mr-2 ${iconSizeClass}`} />
+                            <span className={`${textClass}`}>
+                              {t(item.label)}
+                            </span>
+                          </span>
+                          <ChevronDown
+                            className={`transition-transform duration-200 ${
+                              openGroups.includes(item.label)
+                                ? 'rotate-180'
+                                : ''
+                            } ${iconSizeClass}`}
+                          />
+                        </SidebarMenuButton>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent>
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {item.subItems.map((subItem) => (
+                            <SidebarMenuButton
+                              key={subItem.label}
+                              asChild
+                              className="pl-8 py-6 text-sm w-full"
+                            >
+                              <a href={subItem.href}>{t(subItem.label)}</a>
+                            </SidebarMenuButton>
+                          ))}
+                        </motion.div>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  ) : (
+                    <SidebarMenuButton asChild>
+                      <a
+                        href={item.href}
+                        className={`flex items-center w-full ${textClass}`}
+                      >
+                        <item.icon className={`mr-2 ${iconSizeClass}`} />
+                        {t(item.label)}
+                      </a>
+                    </SidebarMenuButton>
+                  )}
+                </SidebarMenuItem>
+              );
+            })}
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+      <div className="flex flex-row items-center justify-center gap-4 border-t border-sidebar-border p-4">
+        <LanguageSwitcher language={language} action={changeLanguage} />
+        <ThemeSwitcher theme={theme} setTheme={setTheme} />
+      </div>
+    </SidebarContent>
+  );
+};

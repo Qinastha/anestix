@@ -26,6 +26,19 @@ interface LanguageProviderProps {
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguage] = useState<string>('ru');
 
+  const changeLanguage = useCallback((lang: string) => {
+    i18n.changeLanguage(lang);
+    setLanguage(lang);
+
+    fetch('/api/set-language', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lang }),
+    }).catch((error) => {
+      console.error('Failed to update language cookie:', error);
+    });
+  }, []);
+
   useEffect(() => {
     const controller = new AbortController();
 
@@ -36,9 +49,8 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
         });
         if (response.ok) {
           const data = await response.json();
-          if (data.lang) {
-            setLanguage(data.lang);
-            i18n.changeLanguage(data.lang);
+          if (data.lang !== language) {
+            changeLanguage(data.lang);
           }
         }
       } catch (error) {
@@ -52,20 +64,7 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     return () => {
       controller.abort();
     };
-  }, []);
-
-  const changeLanguage = useCallback((lang: string) => {
-    i18n.changeLanguage(lang);
-    setLanguage(lang);
-
-    fetch('/api/set-language', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ lang }),
-    }).catch((error) => {
-      console.error('Failed to update language cookie:', error);
-    });
-  }, []);
+  }, [setLanguage]);
 
   const contextValue = useMemo(
     () => ({ language, changeLanguage }),
