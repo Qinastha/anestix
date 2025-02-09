@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      select_an_option: 'Select an option',
       home: {
         Title: 'Anestix',
         Welcome: "Welcome to the Anesthesiologist's guide",
@@ -193,6 +194,7 @@ const resources = {
 
   ru: {
     translation: {
+      select_an_option: 'Выберите',
       home: {
         Title: 'Anestix',
         Welcome: 'Добро пожаловать в руководство анестезиолога',
