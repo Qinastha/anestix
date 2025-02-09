@@ -156,22 +156,22 @@ const resources = {
           criteria: {
             alertness: {
               label: 'Alertness',
-              option_5: 'No response to voice or physical stimulation',
-              option_4:
-                'No response to voice, but movement in response to physical stimulation',
-              option_3:
-                'Any movement (but not eye contact) in response to the voice',
-              option_2:
-                'Briefly awakens and makes eye contact in response to voice (<10 seconds)',
-              option_1:
-                'Awakens for long periods with eye contact when stimulated by voice',
-              option0: 'Conscious and calm',
-              option1: 'Restless or anxious',
-              option2: 'Pulls or removes tubes/catheters or acts aggressively',
-              option3:
-                'Frequent non-purposeful movements or dyssynchrony with the ventilator',
-              option4:
-                'Excessively aggressive or violent; immediate danger to personnel',
+              negative5: 'No response to voice or physical stimulation',
+              negative4:
+                'No response to voice, but movement to physical stimulation',
+              negative3:
+                'Any movement (without eye contact) in response to voice',
+              negative2: 'Brief awakening with eye contact (<10 seconds)',
+              negative1:
+                'Sustained awakening with eye contact upon voice stimulation',
+              zero: 'Alert and calm',
+              positive1: 'Restless or anxious',
+              positive2:
+                'Pulls or removes tubes/catheters or acts aggressively',
+              positive3:
+                'Frequent non-purposeful movements or ventilator dyssynchrony',
+              positive4:
+                'Excessively aggressive; immediate danger to personnel',
             },
           },
           result: {
@@ -243,7 +243,7 @@ const resources = {
         home: 'Главная',
         rass: 'Шкала RASS',
         four: 'Шкала FOUR',
-        gcs: 'Шкала Ком Глазго',
+        gcs: 'Шкала комы Глазго',
         fentanyl: 'Фентанил',
         ultrasound_visualization: 'УЗД',
         intubation: 'Интубация',
@@ -259,22 +259,22 @@ const resources = {
             eye: {
               label: 'Открытие глаз',
               option1: 'Нет открытия глаз',
-              option2: 'Открытие глаз при боли',
-              option3: 'Открытие глаз при голосе',
+              option2: 'Открытие глаз в ответ на боль',
+              option3: 'Открытие глаз на голос',
               option4: 'Спонтанное открытие глаз',
             },
             verbal: {
               label: 'Вербальный ответ',
               option1: 'Отсутствие вербального ответа',
               option2: 'Неразборчивые звуки',
-              option3: 'Неподходящие слова',
+              option3: 'Непонятные слова',
               option4: 'Сбит с толку',
               option5: 'Ориентирован',
             },
             motor: {
               label: 'Моторный ответ',
               option1: 'Отсутствие моторного ответа',
-              option2: 'Выпрямление при боли',
+              option2: 'Разгибание при боли',
               option3: 'Аномальное сгибание при боли',
               option4: 'Отведение от боли',
               option5: 'Локализует боль',
@@ -283,9 +283,9 @@ const resources = {
           },
           result: {
             clear: 'Ясное сознание',
-            moderateStunning: 'Умеренное нарушение сознания',
-            deepStunning: 'Сильное нарушение сознания',
-            stupor: 'Оцепенение',
+            moderateStunning: 'Умеренное оглушение',
+            deepStunning: 'Сильное оглушение',
+            stupor: 'Ступор',
             moderateComa: 'Умеренная кома',
             deepComa: 'Глубокая кома',
             terminalComa: 'Терминальная кома',
@@ -330,9 +330,9 @@ const resources = {
           },
           result: {
             clear: 'Ясное сознание',
-            moderateStupor: 'Умеренное оцепенение',
-            deepStupor: 'Глубокое оцепенение',
-            stupor: 'Оцепенение',
+            moderateStupor: 'Умеренное оглушение',
+            deepStupor: 'Глубокое оглушение',
+            stupor: 'Ступор',
             comaI: 'Кома I (умеренная)',
             comaII: 'Кома II (глубокая)',
             comaIII: 'Кома III (крайняя), гибель коры мозга',
@@ -344,21 +344,23 @@ const resources = {
           criteria: {
             alertness: {
               label: 'Критерий',
-              option_5: 'Нет реакции на голос или физическое воздействие',
-              option_4:
-                'Нет реакции на голос, но есть движение при физическом воздействии',
-              option_3:
+              negative5: 'Нет реакции на голос или физическое воздействие',
+              negative4:
+                'Нет реакции на голос, но есть движение в ответ на физическое воздействие',
+              negative3:
                 'Любое движение (без зрительного контакта) в ответ на голос',
-              option_2:
+              negative2:
                 'Кратковременное пробуждение с установлением зрительного контакта (<10 сек)',
-              option_1:
+              negative1:
                 'Пробуждение на длительный период при голосовой стимуляции',
-              option0: 'Сознателен и спокоен',
-              option1: 'Беспокойный или тревожный',
-              option2: 'Выдергивает трубки/катетеры или ведёт себя агрессивно',
-              option3:
+              zero: 'Сознателен и спокоен',
+              positive1: 'Беспокойный или тревожный',
+              positive2:
+                'Выдергивает трубки/катетеры или ведёт себя агрессивно',
+              positive3:
                 'Частые непроизвольные движения или диссинхрон с аппаратом ИВЛ',
-              option4: 'Чрезмерная агрессия; непосредственная угроза персоналу',
+              positive4:
+                'Чрезмерная агрессия; непосредственная угроза персоналу',
             },
           },
           result: {
