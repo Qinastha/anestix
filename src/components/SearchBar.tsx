@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
 import Link from 'next/link';
+import { useDebounce } from '@/hooks/useDebounce';
 
 interface SearchResult {
   label: string;
@@ -18,15 +19,8 @@ export const SearchBar = () => {
   const { t } = useTranslation();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
-  const [debouncedQuery, setDebouncedQuery] = useState(query);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedQuery(query);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [query]);
+  const debouncedQuery = useDebounce(query, 300);
 
   const lowerQuery = debouncedQuery.toLowerCase();
 

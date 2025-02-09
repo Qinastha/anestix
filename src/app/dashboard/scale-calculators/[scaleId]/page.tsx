@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { SCALE_CONFIG } from '@/constants/SCALES_CONFIGS.constant';
 import { ScaleConfig, ScaleResult } from '@/types/Scale.type';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { DesktopScaleCalc } from '@/components/scale_calculator/DesktopScaleCalc';
 import { MobileScaleCalc } from '@/components/scale_calculator/MobileScaleCalc';
 import { SkeletonTable } from '@/components/scale_calculator/SkeletonTable';
+import { useDelayLoad } from '@/hooks/useDelayLoad';
 
 export default function ScalePage({
   params,
@@ -18,7 +19,7 @@ export default function ScalePage({
   const isMobile = useIsMobile();
   const { scaleId } = React.use(params);
   const scale = SCALE_CONFIG[scaleId] as ScaleConfig | undefined;
-  const [ready, setReady] = useState(false);
+  const ready = useDelayLoad(500);
 
   const [selectedValues, setSelectedValues] = useState<
     Record<string, number | null>
@@ -59,11 +60,6 @@ export default function ScalePage({
 
   const result = getScaleResult(totalScore);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setReady(true), 500);
-    return () => clearTimeout(timer);
-  }, [isMobile]);
-
   if (!ready) {
     return <SkeletonTable />;
   }
@@ -93,10 +89,10 @@ export default function ScalePage({
           handleSelect={handleSelect}
         />
       )}
-      <div className="mt-4 text-lg font-semibold">
+      <div className="mt-4 text-lg md:text-xl font-bold tracking-widest">
         {t('scale.totalScore')} {totalScore}
       </div>
-      <div className="mt-2 text-md">
+      <div className="mt-2 text-md md:text-lg font-semibold tracking-widest">
         {t('scale.result')} {t(result.summaryText)}
       </div>
     </>
