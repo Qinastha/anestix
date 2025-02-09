@@ -9,8 +9,8 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { DASHBOARD_ITEMS } from '@/constants/DASHBOARD_ITEMS.constant';
 import { useTranslation } from 'react-i18next';
+import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
 
 export default function DashboardPage() {
   const { t } = useTranslation();
@@ -34,30 +34,32 @@ export default function DashboardPage() {
           visible: { transition: { staggerChildren: 0.2 } },
         }}
       >
-        {DASHBOARD_ITEMS.map((item, index: number) => (
-          <motion.div
-            key={item.title}
-            className="w-full"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl">{t(item.title)}</CardTitle>
-                <CardDescription>{t(item.description)}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button asChild className="w-full" variant="default">
-                  <a href={item.href}>
-                    {t('dashboard.explore')} {t(item.title)}
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        {NAVIGATION_ITEMS.filter((item, index: number) => index !== 0).map(
+          (item, index: number) => (
+            <motion.div
+              key={item.title}
+              className="w-full"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-xl">{t(item.title)}</CardTitle>
+                  <CardDescription>{t(item.description)}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild className="w-full" variant="default">
+                    <a href={item.href}>
+                      {t('dashboard.explore')} {t(item.title)}
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          )
+        )}
       </motion.div>
     </div>
   );

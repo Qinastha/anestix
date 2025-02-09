@@ -28,18 +28,6 @@ const resources = {
             'Stay updated with the latest in anesthesiology practices, certifications, and continuing medical education opportunities.',
         },
       },
-      sidebar: {
-        home: 'Home',
-        scale_calculators: 'Scale Calculators',
-        rass: 'RASS',
-        four: 'FOUR',
-        drug_calculators: 'Drug Calculators',
-        fentanyl: 'Fentanyl',
-        peripheral_nerve_block: 'Peripheral Nerve Block',
-        ultrasound_visualization: 'Ultrasound Visualization',
-        practical_skills: 'Practical Skills',
-        intubation: 'Intubation',
-      },
       dashboard: {
         dashboard_title: 'Dashboard',
         scale_calculators: {
@@ -63,9 +51,146 @@ const resources = {
             'Dive into in‑depth information on medical procedures and practical skills across many sub‑sections.',
         },
         explore: 'Explore',
+        home: 'Home',
+        rass: 'RASS',
+        four: 'FOUR',
+        gcs: 'GCS',
+        fentanyl: 'Fentanyl',
+        ultrasound_visualization: 'Ultrasound Visualization',
+        intubation: 'Intubation',
+      },
+      scale: {
+        totalScore: 'Total Score: ',
+        result: 'Result: ',
+        glasgow: {
+          name: 'Glasgow Coma Scale',
+          description:
+            'Assessment of consciousness based on eye, verbal, and motor responses.',
+          criteria: {
+            eye: {
+              label: 'Eye Opening',
+              option1: 'No eye opening',
+              option2: 'Eye opening to pain',
+              option3: 'Eye opening to voice',
+              option4: 'Spontaneous eye opening',
+            },
+            verbal: {
+              label: 'Verbal Response',
+              option1: 'No verbal response',
+              option2: 'Incomprehensible sounds',
+              option3: 'Inappropriate words',
+              option4: 'Confused',
+              option5: 'Oriented',
+            },
+            motor: {
+              label: 'Motor Response',
+              option1: 'No motor response',
+              option2: 'Extension to pain',
+              option3: 'Abnormal flexion to pain',
+              option4: 'Withdrawal from pain',
+              option5: 'Localizes pain',
+              option6: 'Obeys commands',
+            },
+          },
+          result: {
+            clear: 'Clear consciousness',
+            moderateStunning: 'Moderate stunning',
+            deepStunning: 'Deep stunning',
+            stupor: 'Stupor',
+            moderateComa: 'Moderate coma',
+            deepComa: 'Deep coma',
+            terminalComa: 'Terminal coma',
+          },
+        },
+        four: {
+          name: 'FOUR Score',
+          description:
+            'A coma scale used to assess patients with impaired consciousness.',
+          criteria: {
+            eye: {
+              label: 'Eye Response',
+              option0: 'No response',
+              option1: 'Eye opening to pain',
+              option2: 'Eye opening to verbal command',
+              option3: 'Eyes tracking',
+              option4: 'Eyes open, spontaneous',
+            },
+            motor: {
+              label: 'Motor Response',
+              option0: 'No response',
+              option1: 'Abnormal extension',
+              option2: 'Flexion to pain',
+              option3: 'Localizes pain',
+              option4: 'Obeys commands',
+            },
+            brainstem: {
+              label: 'Brainstem Reflexes',
+              option0: 'No response',
+              option1: 'One reflex present',
+              option2: 'Both reflexes abnormal',
+              option3: 'One reflex abnormal',
+              option4: 'Normal',
+            },
+            respiration: {
+              label: 'Respiration',
+              option0: 'Apnea',
+              option1: 'No spontaneous breathing',
+              option2: 'Breathing with effort',
+              option3: 'Irregular breathing',
+              option4: 'Regular breathing',
+            },
+          },
+          result: {
+            clear: 'Clear consciousness',
+            moderateStupor: 'Moderate stupor',
+            deepStupor: 'Deep stupor',
+            stupor: 'Stupor',
+            comaI: 'Coma I (moderate)',
+            comaII: 'Coma II (deep)',
+            comaIII: 'Coma III (extreme), death of the cerebral cortex',
+          },
+        },
+        rass: {
+          name: 'RASS Scale',
+          description: 'Richmond Agitation Sedation Scale.',
+          criteria: {
+            alertness: {
+              label: 'Alertness',
+              option_5: 'No response to voice or physical stimulation',
+              option_4:
+                'No response to voice, but movement in response to physical stimulation',
+              option_3:
+                'Any movement (but not eye contact) in response to the voice',
+              option_2:
+                'Briefly awakens and makes eye contact in response to voice (<10 seconds)',
+              option_1:
+                'Awakens for long periods with eye contact when stimulated by voice',
+              option0: 'Conscious and calm',
+              option1: 'Restless or anxious',
+              option2: 'Pulls or removes tubes/catheters or acts aggressively',
+              option3:
+                'Frequent non-purposeful movements or dyssynchrony with the ventilator',
+              option4:
+                'Excessively aggressive or violent; immediate danger to personnel',
+            },
+          },
+          result: {
+            unarousable: 'Unarousable',
+            deepSedation: 'Deep sedation',
+            moderateSedation: 'Moderate sedation',
+            lightSedation: 'Light sedation',
+            drowsy: 'Drowsy',
+            alertAndCalm: 'Alert and calm',
+            restless: 'Restless',
+            agitated: 'Agitated',
+            veryAgitated: 'Very agitated',
+            combative: 'Combative',
+          },
+        },
       },
     },
   },
+
   ru: {
     translation: {
       home: {
@@ -92,18 +217,6 @@ const resources = {
             'Будьте в курсе последних практик в анестезиологии, сертификатов и возможностей повышения квалификации.',
         },
       },
-      sidebar: {
-        home: 'Главная',
-        scale_calculators: 'Калькулятор шкал',
-        rass: 'RASS',
-        four: 'FOUR',
-        drug_calculators: 'Рассчет препаратов',
-        fentanyl: 'Фентанил',
-        peripheral_nerve_block: 'Блокады',
-        ultrasound_visualization: 'УЗД',
-        practical_skills: 'Практические навыки',
-        intubation: 'Интубация',
-      },
       dashboard: {
         dashboard_title: 'Разделы',
         scale_calculators: {
@@ -117,7 +230,7 @@ const resources = {
             'Рассчитайте дозировки лекарств (например, мг атракурия на кг веса) и многое другое с подробными руководствами.',
         },
         peripheral_nerve_block: {
-          title: 'Периферический нервный блок',
+          title: 'Блокады',
           description:
             'Получите доступ к ультразвуковой визуализации и полным руководствам по нервным блокам.',
         },
@@ -127,6 +240,140 @@ const resources = {
             'Погрузитесь в подробную информацию о медицинских процедурах и практических навыках в различных подразделах.',
         },
         explore: 'Исследовать',
+        home: 'Главная',
+        rass: 'Шкала RASS',
+        four: 'Шкала FOUR',
+        gcs: 'Шкала Ком Глазго',
+        fentanyl: 'Фентанил',
+        ultrasound_visualization: 'УЗД',
+        intubation: 'Интубация',
+      },
+      scale: {
+        totalScore: 'Общий балл: ',
+        result: 'Результат: ',
+        glasgow: {
+          name: 'Шкала комы Глазго',
+          description:
+            'Оценка сознания на основе реакций глаз, речи и моторики.',
+          criteria: {
+            eye: {
+              label: 'Открытие глаз',
+              option1: 'Нет открытия глаз',
+              option2: 'Открытие глаз при боли',
+              option3: 'Открытие глаз при голосе',
+              option4: 'Спонтанное открытие глаз',
+            },
+            verbal: {
+              label: 'Вербальный ответ',
+              option1: 'Отсутствие вербального ответа',
+              option2: 'Неразборчивые звуки',
+              option3: 'Неподходящие слова',
+              option4: 'Сбит с толку',
+              option5: 'Ориентирован',
+            },
+            motor: {
+              label: 'Моторный ответ',
+              option1: 'Отсутствие моторного ответа',
+              option2: 'Выпрямление при боли',
+              option3: 'Аномальное сгибание при боли',
+              option4: 'Отведение от боли',
+              option5: 'Локализует боль',
+              option6: 'Выполняет команды',
+            },
+          },
+          result: {
+            clear: 'Ясное сознание',
+            moderateStunning: 'Умеренное нарушение сознания',
+            deepStunning: 'Сильное нарушение сознания',
+            stupor: 'Оцепенение',
+            moderateComa: 'Умеренная кома',
+            deepComa: 'Глубокая кома',
+            terminalComa: 'Терминальная кома',
+          },
+        },
+        four: {
+          name: 'Шкала FOUR',
+          description: 'Шкала комы для оценки пациентов с нарушением сознания.',
+          criteria: {
+            eye: {
+              label: 'Реакция глаз',
+              option0: 'Нет реакции',
+              option1: 'Открытие глаз при боли',
+              option2: 'Открытие глаз при голосовой команде',
+              option3: 'Отслеживание взглядом',
+              option4: 'Спонтанное открытие глаз',
+            },
+            motor: {
+              label: 'Моторный ответ',
+              option0: 'Нет реакции',
+              option1: 'Аномальное выпрямление',
+              option2: 'Сгибание при боли',
+              option3: 'Локализует боль',
+              option4: 'Выполняет команды',
+            },
+            brainstem: {
+              label: 'Рефлексы ствола мозга',
+              option0: 'Нет реакции',
+              option1: 'Один рефлекс присутствует',
+              option2: 'Оба рефлекса аномальны',
+              option3: 'Один рефлекс аномален',
+              option4: 'Нормально',
+            },
+            respiration: {
+              label: 'Дыхание',
+              option0: 'Апное',
+              option1: 'Нет спонтанного дыхания',
+              option2: 'Дыхание с усилием',
+              option3: 'Нерегулярное дыхание',
+              option4: 'Регулярное дыхание',
+            },
+          },
+          result: {
+            clear: 'Ясное сознание',
+            moderateStupor: 'Умеренное оцепенение',
+            deepStupor: 'Глубокое оцепенение',
+            stupor: 'Оцепенение',
+            comaI: 'Кома I (умеренная)',
+            comaII: 'Кома II (глубокая)',
+            comaIII: 'Кома III (крайняя), гибель коры мозга',
+          },
+        },
+        rass: {
+          name: 'Шкала RASS',
+          description: 'Шкала возбуждения-седации Ричмонда.',
+          criteria: {
+            alertness: {
+              label: 'Критерий',
+              option_5: 'Нет реакции на голос или физическое воздействие',
+              option_4:
+                'Нет реакции на голос, но есть движение при физическом воздействии',
+              option_3:
+                'Любое движение (без зрительного контакта) в ответ на голос',
+              option_2:
+                'Кратковременное пробуждение с установлением зрительного контакта (<10 сек)',
+              option_1:
+                'Пробуждение на длительный период при голосовой стимуляции',
+              option0: 'Сознателен и спокоен',
+              option1: 'Беспокойный или тревожный',
+              option2: 'Выдергивает трубки/катетеры или ведёт себя агрессивно',
+              option3:
+                'Частые непроизвольные движения или диссинхрон с аппаратом ИВЛ',
+              option4: 'Чрезмерная агрессия; непосредственная угроза персоналу',
+            },
+          },
+          result: {
+            unarousable: 'Не пробуждается',
+            deepSedation: 'Глубокая седация',
+            moderateSedation: 'Умеренная седация',
+            lightSedation: 'Лёгкая седация',
+            drowsy: 'Вялость',
+            alertAndCalm: 'Сознателен и спокоен',
+            restless: 'Беспокойный',
+            agitated: 'Возбужден',
+            veryAgitated: 'Сильно возбужден',
+            combative: 'Крайне агрессивен',
+          },
+        },
       },
     },
   },

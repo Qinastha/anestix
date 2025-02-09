@@ -24,6 +24,8 @@ export const AppSidebar = () => {
         <SidebarContentItems
           openGroups={openGroups}
           toggleGroup={toggleGroup}
+          open={open}
+          setOpen={setOpen}
         />
       </MobileSidebar>
     );

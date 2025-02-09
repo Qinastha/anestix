@@ -15,32 +15,38 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import { SIDEBAR_ITEMS } from '@/constants/SIDEBAR_ITEMS.constant';
 import React, { useContext } from 'react';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { useTheme } from 'next-themes';
 import { LanguageContext } from '@/context/LanguageContext';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
+import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
 
 export interface SidebarContentItemsProps {
   openGroups: string[];
   toggleGroup: (label: string) => void;
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
 }
 
 export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
   openGroups,
   toggleGroup,
+  open = false,
+  setOpen = () => {},
 }) => {
   const { t } = useTranslation();
   const { theme, setTheme } = useTheme();
   const { language, changeLanguage } = useContext(LanguageContext);
+
   return (
     <SidebarContent className="p-2 flex flex-col justify-between">
       <SidebarGroup>
         <SidebarGroupContent>
           <SidebarMenu>
-            {SIDEBAR_ITEMS.map((item, index: number) => {
+            {NAVIGATION_ITEMS.map((item, index: number) => {
               const isHome = index === 0;
               const iconSizeClass = isHome ? 'mr-0' : 'h-4 w-4';
               const textClass = isHome ? 'text-xl font-bold' : 'text-md';
@@ -49,23 +55,27 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                 : 'w-full justify-between';
 
               return (
-                <SidebarMenuItem key={item.label} className="w-full py-2">
+                <SidebarMenuItem key={item.title} className="w-full py-2">
                   {item.subItems ? (
                     <Collapsible
-                      open={openGroups.includes(item.label)}
-                      onOpenChange={() => toggleGroup(item.label)}
+                      open={openGroups.includes(item.title)}
+                      onOpenChange={() => toggleGroup(item.title)}
                     >
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton className={buttonClass}>
                           <span className="flex items-center">
                             <item.icon className={`mr-2 ${iconSizeClass}`} />
-                            <span className={`${textClass}`}>
-                              {t(item.label)}
-                            </span>
+                            <Link
+                              href={item.href}
+                              className={`${textClass}`}
+                              onClick={() => setOpen(!open)}
+                            >
+                              {t(item.title)}
+                            </Link>
                           </span>
                           <ChevronDown
                             className={`transition-transform duration-200 ${
-                              openGroups.includes(item.label)
+                              openGroups.includes(item.title)
                                 ? 'rotate-180'
                                 : ''
                             } ${iconSizeClass}`}
@@ -93,13 +103,13 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                     </Collapsible>
                   ) : (
                     <SidebarMenuButton asChild>
-                      <a
+                      <Link
                         href={item.href}
                         className={`flex items-center w-full ${textClass}`}
                       >
                         <item.icon className={`mr-2 ${iconSizeClass}`} />
-                        {t(item.label)}
-                      </a>
+                        {t(item.title)}
+                      </Link>
                     </SidebarMenuButton>
                   )}
                 </SidebarMenuItem>
