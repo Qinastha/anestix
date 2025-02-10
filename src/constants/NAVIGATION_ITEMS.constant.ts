@@ -1,33 +1,40 @@
-import { Activity, Book, Calculator, Home, Pill } from 'lucide-react';
+import {
+  Activity,
+  Book,
+  Calculator,
+  Home,
+  TableOfContents,
+} from 'lucide-react';
 import { NavigationItem } from '@/types/NavigationItem.type';
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
-  { icon: Home, description: '', title: 'dashboard.home', href: '/' },
+  { icon: Home, description: '', title: 'dashboard.home', href: '/dashboard' },
   {
-    icon: Calculator,
-    title: 'dashboard.scale_calculators.title',
-    description: 'dashboard.scale_calculators.description',
-    href: '/dashboard/scale-calculators',
+    icon: TableOfContents,
+    title: 'dashboard.scale-list.title',
+    description: 'dashboard.scale-list.description',
+    href: '/dashboard/scale-list',
     subItems: [
-      { label: 'dashboard.rass', href: '/dashboard/scale-calculators/rass' },
-      { label: 'dashboard.four', href: '/dashboard/scale-calculators/four' },
-      { label: 'dashboard.gcs', href: '/dashboard/scale-calculators/glasgow' },
+      { label: 'dashboard.rass', href: '/dashboard/scale-list/rass' },
+      { label: 'dashboard.four', href: '/dashboard/scale-list/four' },
+      { label: 'dashboard.gcs', href: '/dashboard/scale-list/glasgow' },
       {
         label: 'dashboard.alderte',
-        href: '/dashboard/scale-calculators/alderte',
+        href: '/dashboard/scale-list/alderte',
       },
-      { label: 'dashboard.sofa', href: '/dashboard/scale-calculators/sofa' },
+      { label: 'dashboard.sofa', href: '/dashboard/scale-list/sofa' },
+      { label: 'dashboard.nihss', href: '/dashboard/scale-list/nihss' },
     ],
   },
   {
-    icon: Pill,
-    title: 'dashboard.drug_calculators.title',
-    description: 'dashboard.drug_calculators.description',
-    href: '/dashboard/drug-calculators',
+    icon: Calculator,
+    title: 'dashboard.calculators.title',
+    description: 'dashboard.calculators.description',
+    href: '/dashboard/calculators',
     subItems: [
       {
         label: 'dashboard.fentanyl',
-        href: '/dashboard/drug-calculators/fentanyl',
+        href: '/dashboard/calculators/fentanyl',
       },
     ],
   },

@@ -52,7 +52,7 @@ export default function DashboardPage() {
                 <CardContent>
                   <Button asChild className="w-full" variant="default">
                     <a href={item.href}>
-                      {t('dashboard.explore')} {t(item.title)}
+                      {t('dashboard.explore')} {t(item.title).toLowerCase()}
                     </a>
                   </Button>
                 </CardContent>

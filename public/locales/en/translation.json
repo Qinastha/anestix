@@ -22,12 +22,12 @@
   },
   "dashboard": {
     "dashboard_title": "Dashboard",
-    "scale_calculators": {
-      "title": "Scale Calculators",
+    "scale-list": {
+      "title": "Scales",
       "description": "Calculate various scales such as RASS, FOUR, etc. Explore detailed sub‑sections for each scale."
     },
-    "drug_calculators": {
-      "title": "Drug Calculators",
+    "calculators": {
+      "title": "Calculators",
       "description": "Calculate drug dosages (e.g. mg of atracurium per weight) and more with detailed guides."
     },
     "peripheral_nerve_block": {
@@ -45,6 +45,7 @@
     "gcs": "GCS",
     "alderte": "Alderte",
     "sofa": "SOFA",
+    "nihss": "NIHSS",
     "fentanyl": "Fentanyl",
     "ultrasound_visualization": "Ultrasound Visualization",
     "intubation": "Intubation"
@@ -268,6 +269,122 @@
         "low": "Low risk of organ dysfunction",
         "moderate": "Moderate risk",
         "high": "High risk of organ failure"
+      }
+    },
+    "nihss": {
+      "name": "NIH Stroke Scale",
+      "description": "A standardized tool for assessing stroke severity and neurological deficits.",
+      "extraDescription": "The NIH Stroke Scale is administered by sequentially evaluating 11 items. For Level of Consciousness, observe the patient’s alertness, ask two questions (e.g., 'What month is it?' and 'How old are you?'), and test simple commands (open/close eyes, grip/release hand). For Best Gaze, have the patient follow a moving object horizontally (or use oculocephalic maneuver if needed). For Visual Fields, perform a confrontation test in all quadrants and note any partial or complete field loss. For Facial Palsy, ask the patient to smile, raise eyebrows, and close eyes to check for asymmetry. For Motor responses, test each arm by having it extended (90° if sitting or 45° if supine) for 10 seconds and each leg by raising it to 30° for 5 seconds, noting any drift, decreased effort, or absence of movement. For Limb Ataxia, have the patient perform finger-to-nose and heel-to-shin tests, scoring only when incoordination exceeds weakness. For Sensory, compare responses to pinprick stimulation on both sides. For Best Language, assess the ability to describe a picture, name objects, or read sentences, scoring based on fluency and comprehension. For Dysarthria, ask the patient to repeat words to evaluate speech clarity. Finally, for Extinction and Inattention, use simultaneous stimulation to check for neglect. Record the first valid response for each item.",
+      "criteria": {
+        "loc": {
+          "label": "Level of Consciousness",
+          "option0": "Alert; keenly responsive",
+          "option1": "Not alert; arousable with minor stimulation",
+          "option2": "Requires repeated or strong stimulation",
+          "option3": "Unresponsive; only reflex movements"
+        },
+        "locQuestions": {
+          "label": "LOC - Questions",
+          "option0": "Answers both questions correctly",
+          "option1": "Answers one question correctly",
+          "option2": "Answers neither correctly"
+        },
+        "locCommands": {
+          "label": "LOC - Commands",
+          "option0": "Follows both commands",
+          "option1": "Follows one command",
+          "option2": "Follows neither command"
+        },
+        "bestGaze": {
+          "label": "Best Gaze",
+          "option0": "Normal",
+          "option1": "Partial gaze palsy",
+          "option2": "Forced deviation/total gaze paresis"
+        },
+        "visualFields": {
+          "label": "Visual Fields",
+          "option0": "No visual loss",
+          "option1": "Partial hemianopia",
+          "option2": "Complete hemianopia",
+          "option3": "Bilateral hemianopia/blindness"
+        },
+        "facialPalsy": {
+          "label": "Facial Palsy",
+          "option0": "Normal symmetry",
+          "option1": "Minor asymmetry",
+          "option2": "Partial paralysis",
+          "option3": "Complete paralysis"
+        },
+        "motorArmLeft": {
+          "label": "Motor - Left Arm",
+          "option0": "No drift; holds for 10 sec",
+          "option1": "Drifts, does not hit bed",
+          "option2": "Some effort; cannot sustain",
+          "option3": "No effort; falls",
+          "option4": "No movement"
+        },
+        "motorArmRight": {
+          "label": "Motor - Right Arm",
+          "option0": "No drift; holds for 10 sec",
+          "option1": "Drifts, does not hit bed",
+          "option2": "Some effort; cannot sustain",
+          "option3": "No effort; falls",
+          "option4": "No movement"
+        },
+        "motorLegLeft": {
+          "label": "Motor - Left Leg",
+          "option0": "No drift; holds for 5 sec",
+          "option1": "Drifts, does not hit bed",
+          "option2": "Some effort; cannot sustain",
+          "option3": "No effort; falls",
+          "option4": "No movement"
+        },
+        "motorLegRight": {
+          "label": "Motor - Right Leg",
+          "option0": "No drift; holds for 5 sec",
+          "option1": "Drifts, does not hit bed",
+          "option2": "Some effort; cannot sustain",
+          "option3": "No effort; falls",
+          "option4": "No movement"
+        },
+        "limbAtaxia": {
+          "label": "Limb Ataxia",
+          "option0": "Absent",
+          "option1": "Ataxia in one limb",
+          "option2": "Ataxia in two or more limbs"
+        },
+        "sensory": {
+          "label": "Sensory",
+          "option0": "Normal sensation",
+          "option1": "Mild-to-moderate loss",
+          "option2": "Severe or total loss"
+        },
+        "bestLanguage": {
+          "label": "Best Language",
+          "option0": "Normal",
+          "option1": "Mild-to-moderate aphasia",
+          "option2": "Severe aphasia",
+          "option3": "Mute or global aphasia"
+        },
+        "dysarthria": {
+          "label": "Dysarthria",
+          "option0": "Normal speech",
+          "option1": "Mild-to-moderate slurring",
+          "option2": "Severe slurring or mute"
+        },
+        "extinctionInattention": {
+          "label": "Extinction & Inattention",
+          "option0": "No abnormality",
+          "option1": "Neglect in one modality",
+          "option2": "Profound neglect in multiple modalities"
+        }
+      },
+      "result": {
+        "noStroke": "No stroke",
+        "minorStroke": "Minor stroke",
+        "moderateStroke": "Moderate stroke",
+        "moderateSevereStroke": "Moderate-severe stroke",
+        "severeStroke": "Severe stroke"
       }
     }
   }

@@ -29,4 +29,5 @@ export interface ScaleConfig {
   criteria: ScaleCriteria[];
   result?: ScaleResult;
   resultThresholds: ScaleResultThreshold[];
+  extraDescription?: string;
 }

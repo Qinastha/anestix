@@ -60,6 +60,10 @@ export default function ScalePage({
 
   const result = getScaleResult(totalScore);
 
+  const formatParagraphs = (text: string) => {
+    return text.split(/(?<=\.)\s+/);
+  };
+
   if (!ready) {
     return <SkeletonTable />;
   }
@@ -95,6 +99,18 @@ export default function ScalePage({
       <div className="mt-2 text-md md:text-lg font-semibold tracking-widest">
         {t('scale.result')} {t(result.summaryText)}
       </div>
+
+      {scale.extraDescription && (
+        <div className="mt-6 text-sm md:text-base bg-card p-6 border border-primary rounded-lg shadow-lg space-y-4">
+          {formatParagraphs(t(scale.extraDescription)).map((para, index) => (
+            <p key={index} className="leading-relaxed">
+              {index !== 0 && <b>*</b>}
+              {''}
+              {para}
+            </p>
+          ))}
+        </div>
+      )}
     </>
   );
 }
