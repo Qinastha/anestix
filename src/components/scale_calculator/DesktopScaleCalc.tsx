@@ -55,8 +55,8 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Criteria</TableHead>
-            <TableHead>Response Options</TableHead>
+            <TableHead className="w-1/5">{t('scale.criteria')}</TableHead>
+            <TableHead className="w-4/5">{t('scale.respOptions')}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -66,13 +66,21 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                 ? criteria.options
                 : scale.options;
             return (
-              <TableRow key={criteria.id}>
-                <TableCell className="font-medium">
-                  {t(criteria.label)}
+              <TableRow
+                key={criteria.id}
+                style={{
+                  maxHeight: 'fit-content',
+                }}
+                className="hover:bg-inherit"
+              >
+                <TableCell className="font-bold w-1/5">
+                  <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+                    {t(criteria.label)}
+                  </span>
                 </TableCell>
-                <TableCell>
+                <TableCell className="w-4/5">
                   <div
-                    className="grid gap-2"
+                    className="grid gap-4"
                     style={{
                       gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
                     }}
@@ -83,22 +91,26 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                       return (
                         <div
                           key={option.value}
-                          className="cursor-pointer"
+                          className="cursor-pointer self-center"
                           onClick={() =>
                             handleSelect(criteria.id, option.value)
                           }
                         >
                           <motion.div
                             initial={{ scale: 1 }}
-                            animate={{ scale: isSelected ? 1.1 : 1 }}
+                            animate={{ scale: isSelected ? 1.05 : 1 }}
                             transition={{ type: 'spring', stiffness: 300 }}
-                            className={`flex items-center justify-center text-center w-full aspect-square rounded border ${
+                            className={`flex items-center p-2 justify-center text-center rounded border h-44 ${
                               isSelected
                                 ? 'bg-primary border-secondary text-buttonText'
                                 : 'border-primary'
                             }`}
                           >
-                            {t(option.description!)}
+                            <span
+                              className={`font-semibold ${gridCols > 4 ? 'text-xs' : 'text-md'}`}
+                            >
+                              {t(option.description!)}
+                            </span>
                           </motion.div>
                         </div>
                       );

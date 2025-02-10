@@ -332,4 +332,328 @@ export const SCALE_CONFIG: Record<string, ScaleConfig> = {
     ],
     options: [],
   },
+  alderte: {
+    id: 'alderte',
+    name: 'scale.alderte.name',
+    description: 'scale.alderte.description',
+    options: [],
+    criteria: [
+      {
+        id: 'activity',
+        label: 'scale.alderte.criteria.activity.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.alderte.criteria.activity.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.alderte.criteria.activity.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.alderte.criteria.activity.option2',
+          },
+        ],
+      },
+      {
+        id: 'breathing',
+        label: 'scale.alderte.criteria.breathing.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.alderte.criteria.breathing.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.alderte.criteria.breathing.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.alderte.criteria.breathing.option2',
+          },
+        ],
+      },
+      {
+        id: 'bloodPressure',
+        label: 'scale.alderte.criteria.bloodPressure.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.alderte.criteria.bloodPressure.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.alderte.criteria.bloodPressure.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.alderte.criteria.bloodPressure.option2',
+          },
+        ],
+      },
+      {
+        id: 'consciousness',
+        label: 'scale.alderte.criteria.consciousness.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.alderte.criteria.consciousness.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.alderte.criteria.consciousness.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.alderte.criteria.consciousness.option2',
+          },
+        ],
+      },
+      {
+        id: 'spo2',
+        label: 'scale.alderte.criteria.spo2.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.alderte.criteria.spo2.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.alderte.criteria.spo2.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.alderte.criteria.spo2.option2',
+          },
+        ],
+      },
+    ],
+    resultThresholds: [
+      {
+        min: 9,
+        max: 10,
+        summaryText: 'scale.alderte.result.readyForTransfer',
+      },
+      {
+        min: 0,
+        max: 8,
+        summaryText: 'scale.alderte.result.notReadyForTransfer',
+      },
+    ],
+  },
+  sofa: {
+    id: 'sofa',
+    name: 'scale.sofa.name',
+    description: 'scale.sofa.description',
+    options: [],
+    criteria: [
+      {
+        id: 'respiratory',
+        label: 'scale.sofa.criteria.respiratory.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.sofa.criteria.respiratory.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.sofa.criteria.respiratory.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.sofa.criteria.respiratory.option2',
+          },
+          {
+            value: 3,
+            label: '3',
+            description: 'scale.sofa.criteria.respiratory.option3',
+          },
+          {
+            value: 4,
+            label: '4',
+            description: 'scale.sofa.criteria.respiratory.option4',
+          },
+        ],
+      },
+      {
+        id: 'platelets',
+        label: 'scale.sofa.criteria.platelets.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.sofa.criteria.platelets.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.sofa.criteria.platelets.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.sofa.criteria.platelets.option2',
+          },
+          {
+            value: 3,
+            label: '3',
+            description: 'scale.sofa.criteria.platelets.option3',
+          },
+          {
+            value: 4,
+            label: '4',
+            description: 'scale.sofa.criteria.platelets.option4',
+          },
+        ],
+      },
+      {
+        id: 'bilirubin',
+        label: 'scale.sofa.criteria.bilirubin.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.sofa.criteria.bilirubin.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.sofa.criteria.bilirubin.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.sofa.criteria.bilirubin.option2',
+          },
+          {
+            value: 3,
+            label: '3',
+            description: 'scale.sofa.criteria.bilirubin.option3',
+          },
+          {
+            value: 4,
+            label: '4',
+            description: 'scale.sofa.criteria.bilirubin.option4',
+          },
+        ],
+      },
+      {
+        id: 'cardiovascular',
+        label: 'scale.sofa.criteria.cardiovascular.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.sofa.criteria.cardiovascular.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.sofa.criteria.cardiovascular.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.sofa.criteria.cardiovascular.option2',
+          },
+          {
+            value: 3,
+            label: '3',
+            description: 'scale.sofa.criteria.cardiovascular.option3',
+          },
+          {
+            value: 4,
+            label: '4',
+            description: 'scale.sofa.criteria.cardiovascular.option4',
+          },
+        ],
+      },
+      {
+        id: 'gcs',
+        label: 'scale.sofa.criteria.gcs.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.sofa.criteria.gcs.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.sofa.criteria.gcs.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.sofa.criteria.gcs.option2',
+          },
+          {
+            value: 3,
+            label: '3',
+            description: 'scale.sofa.criteria.gcs.option3',
+          },
+          {
+            value: 4,
+            label: '4',
+            description: 'scale.sofa.criteria.gcs.option4',
+          },
+        ],
+      },
+      {
+        id: 'creatinine',
+        label: 'scale.sofa.criteria.creatinine.label',
+        options: [
+          {
+            value: 0,
+            label: '0',
+            description: 'scale.sofa.criteria.creatinine.option0',
+          },
+          {
+            value: 1,
+            label: '1',
+            description: 'scale.sofa.criteria.creatinine.option1',
+          },
+          {
+            value: 2,
+            label: '2',
+            description: 'scale.sofa.criteria.creatinine.option2',
+          },
+          {
+            value: 3,
+            label: '3',
+            description: 'scale.sofa.criteria.creatinine.option3',
+          },
+          {
+            value: 4,
+            label: '4',
+            description: 'scale.sofa.criteria.creatinine.option4',
+          },
+        ],
+      },
+    ],
+    resultThresholds: [
+      { min: 0, max: 6, summaryText: 'scale.sofa.result.low' },
+      { min: 7, max: 9, summaryText: 'scale.sofa.result.moderate' },
+      { min: 10, max: 24, summaryText: 'scale.sofa.result.high' },
+    ],
+  },
 };

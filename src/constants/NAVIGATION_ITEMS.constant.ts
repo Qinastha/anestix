@@ -12,6 +12,11 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
       { label: 'dashboard.rass', href: '/dashboard/scale-calculators/rass' },
       { label: 'dashboard.four', href: '/dashboard/scale-calculators/four' },
       { label: 'dashboard.gcs', href: '/dashboard/scale-calculators/glasgow' },
+      {
+        label: 'dashboard.alderte',
+        href: '/dashboard/scale-calculators/alderte',
+      },
+      { label: 'dashboard.sofa', href: '/dashboard/scale-calculators/sofa' },
     ],
   },
   {

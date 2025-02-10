@@ -6,6 +6,7 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { cookies } from 'next/headers';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ClientI18nProvider } from '@/components/ClientI18nProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -42,17 +43,19 @@ export default async function RootLayout({
   return (
     <html lang={langCookie} suppressHydrationWarning>
       <body className={inter.className}>
-        <LanguageProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <SpeedInsights />
-          </ThemeProvider>
-        </LanguageProvider>
+        <ClientI18nProvider>
+          <LanguageProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+              <SpeedInsights />
+            </ThemeProvider>
+          </LanguageProvider>
+        </ClientI18nProvider>
       </body>
     </html>
   );

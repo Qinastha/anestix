@@ -39,8 +39,8 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
       <Table className="w-full table-fixed">
         <TableHeader>
           <TableRow>
-            <TableHead className="w-1/2">{t('Criteria')}</TableHead>
-            <TableHead className="w-1/2">{t('Response Options')}</TableHead>
+            <TableHead className="w-1/2">{t('scale.criteria')}</TableHead>
+            <TableHead className="w-1/2">{t('scale.respOptions')}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -50,9 +50,11 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                 ? criteria.options
                 : scale.options;
             return (
-              <TableRow key={criteria.id}>
-                <TableCell className="font-medium w-1/2">
-                  {t(criteria.label)}
+              <TableRow key={criteria.id} className="hover:bg-inherit">
+                <TableCell className="font-bold w-1/2">
+                  <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+                    {t(criteria.label)}
+                  </span>
                 </TableCell>
                 <TableCell className="w-1/2">
                   <div>
@@ -72,7 +74,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                           className="whitespace-normal break-words"
                         />
                       </SelectTrigger>
-                      <SelectContent className="max-w-sm">
+                      <SelectContent className="max-w-sm bg-card">
                         {optionsForCriteria.map((option) => (
                           <SelectItem
                             key={option.value}

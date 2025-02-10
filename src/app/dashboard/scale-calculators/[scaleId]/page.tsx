@@ -17,9 +17,9 @@ export default function ScalePage({
 }) {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
+  const ready = useDelayLoad(500);
   const { scaleId } = React.use(params);
   const scale = SCALE_CONFIG[scaleId] as ScaleConfig | undefined;
-  const ready = useDelayLoad(500);
 
   const [selectedValues, setSelectedValues] = useState<
     Record<string, number | null>
@@ -38,7 +38,7 @@ export default function ScalePage({
     }));
   }, []);
 
-  const totalScore = useMemo(() => {
+  const totalScore: number = useMemo(() => {
     return Object.values(selectedValues).reduce<number>(
       (acc, val) => (val !== null ? acc + val : acc),
       0

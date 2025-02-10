@@ -165,3 +165,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.scale_select_placeholder[data-placeholder] {
+  @apply text-xs text-blue-500;
+}
