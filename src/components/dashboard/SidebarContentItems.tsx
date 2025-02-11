@@ -22,7 +22,7 @@ import { useTheme } from 'next-themes';
 import { LanguageContext } from '@/context/LanguageContext';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
+import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 
 export interface SidebarContentItemsProps {
   openGroups: string[];

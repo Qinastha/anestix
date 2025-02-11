@@ -1,25 +1,27 @@
 'use client';
 
 import Link from 'next/link';
-import { TableOfContents } from 'lucide-react';
+import { LucideArrowBigRightDash } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
+import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { motion } from 'motion/react';
+import { useParams } from 'next/navigation';
 
 export default function ScaleCalculatorHome() {
   const { t } = useTranslation();
+  const { navId } = useParams();
 
-  const scaleNav = NAVIGATION_ITEMS.find(
-    (item) => item.href === '/dashboard/scale-list'
+  const navItem = NAVIGATION_ITEMS.find(
+    (item) => item.href === `/dashboard/${navId}`
   );
 
-  const sortedSubItems = scaleNav?.subItems
-    ? [...scaleNav.subItems].sort((a, b) => a.label.localeCompare(b.label))
+  const sortedSubItems = navItem?.subItems
+    ? [...navItem.subItems].sort((a, b) => a.label.localeCompare(b.label))
     : [];
 
   return (
     <div className="grid grid-cols-1 gap-4 p-4 w-full">
-      {sortedSubItems && sortedSubItems.length > 0 && (
+      {sortedSubItems && sortedSubItems.length > 0 ? (
         <>
           {sortedSubItems.map((subItem, index: number) => (
             <motion.div
@@ -33,7 +35,7 @@ export default function ScaleCalculatorHome() {
               <Link key={subItem.href} href={subItem.href}>
                 <div className="rounded-lg border p-6 hover:shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <TableOfContents size={24} />
+                    <LucideArrowBigRightDash size={24} />
                     <h2 className="text-lg font-bold">{t(subItem.label)}</h2>
                   </div>
                 </div>
@@ -41,6 +43,8 @@ export default function ScaleCalculatorHome() {
             </motion.div>
           ))}
         </>
+      ) : (
+        <p className="text-center text-lg">{t('dashboard.no_items')}</p>
       )}
     </div>
   );

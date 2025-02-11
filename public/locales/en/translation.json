@@ -22,34 +22,71 @@
   },
   "dashboard": {
     "dashboard_title": "Dashboard",
+    "no_items": "There is no items available right now",
+    "explore": "Explore",
+    "home": "Home",
     "scale-list": {
       "title": "Scales",
-      "description": "Calculate various scales such as RASS, FOUR, etc. Explore detailed sub‑sections for each scale."
+      "description": "Empower your clinical decisions with our comprehensive range of medical scales, including RASS, FOUR, Glasgow, and more. Each section provides detailed scoring guides."
     },
     "calculators": {
       "title": "Calculators",
-      "description": "Calculate drug dosages (e.g. mg of atracurium per weight) and more with detailed guides."
+      "description": "Utilize our precision tools to compute drug dosages and other vital parameters. Each calculator comes with in-depth guides and safety tips to ensure accurate, patient-specific outcomes.."
     },
-    "peripheral_nerve_block": {
-      "title": "Peripheral Nerve Block",
-      "description": "Access ultrasound visualizations and comprehensive guides for nerve blocks."
+    "ultrasound": {
+      "title": "Ultrasound",
+      "description": "Here you'll find detailed protocols and guidelines for ultrasound-assisted procedures, including nerve block visualization."
     },
     "practical_skills": {
       "title": "Practical Skills",
       "description": "Dive into in‑depth information on medical procedures and practical skills across many sub‑sections."
     },
-    "explore": "Explore",
-    "home": "Home",
-    "rass": "RASS",
-    "four": "FOUR",
-    "gcs": "GCS",
-    "alderte": "Alderte",
-    "sofa": "SOFA",
-    "nihss": "NIHSS",
-    "apacheii": "Apache II",
-    "fentanyl": "Fentanyl",
-    "ultrasound_visualization": "Ultrasound Visualization",
-    "intubation": "Intubation"
+    "subItems": {
+      "rass": {
+        "title": "RASS",
+        "description": "Assesses sedation and agitation levels in critically ill patients to guide sedation management."
+      },
+      "four": {
+        "title": "FOUR",
+        "description": "Evaluates consciousness with a focus on brainstem reflexes and respiratory patterns for a detailed neurological assessment."
+      },
+      "gcs": {
+        "title": "GCS",
+        "description": "Measures the level of consciousness following head injuries or neurological impairments."
+      },
+      "alderte": {
+        "title": "Aldrete",
+        "description": "Determines a patient's readiness for discharge from post-anesthesia recovery by assessing activity, respiration, and consciousness."
+      },
+      "sofa": {
+        "title": "SOFA",
+        "description": "Quantifies organ dysfunction in sepsis cases to aid in critical care decision-making."
+      },
+      "nihss": {
+        "title": "NIHSS",
+        "description": "Quantifies neurological deficits to evaluate stroke severity and guide treatment."
+      },
+      "apacheii": {
+        "title": "Apache II",
+        "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data."
+      },
+      "drug-calculators": {
+        "title": "Drug dosage calculators",
+        "description": "Use our drug dosage calculators for accurate medication dosing, tailored to patient-specific parameters."
+      },
+      "formula-calculators": {
+        "title": "Formula calculator",
+        "description": "Employ our formula calculator to compute essential medical formulas with precision."
+      },
+      "nerve-block": {
+        "title": "Peripheral nerve block",
+        "description": "Access guidelines and protocols for performing peripheral nerve blocks with ultrasound guidance."
+      },
+      "intubation": {
+        "title": "Intubation",
+        "description": "Explore detailed instructions and techniques for safe and effective intubation procedures."
+      }
+    }
   },
   "scale": {
     "criteria": "Criteria",

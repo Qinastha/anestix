@@ -6,7 +6,7 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
-import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
+import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import Link from 'next/link';
 import { useDebounce } from '@/hooks/useDebounce';
 

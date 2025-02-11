@@ -1,5 +1,6 @@
 export interface NavigationSubItem {
   label: string;
+  description: string;
   href: string;
 }
 

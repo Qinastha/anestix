@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
-import { NAVIGATION_ITEMS } from '@/constants/NAVIGATION_ITEMS.constant';
+import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 
 export default function DashboardPage() {
   const { t } = useTranslation();
@@ -26,7 +26,7 @@ export default function DashboardPage() {
         {t('dashboard.dashboard_title')}
       </motion.h1>
       <motion.div
-        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"
+        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 auto-rows-fr"
         initial="hidden"
         animate="visible"
         variants={{
@@ -38,13 +38,13 @@ export default function DashboardPage() {
           (item, index: number) => (
             <motion.div
               key={item.title}
-              className="w-full"
+              className="w-full h-full"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
             >
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="flex flex-col h-full justify-between hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-xl">{t(item.title)}</CardTitle>
                   <CardDescription>{t(item.description)}</CardDescription>
