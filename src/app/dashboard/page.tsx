@@ -34,7 +34,7 @@ export default function DashboardPage() {
           visible: { transition: { staggerChildren: 0.2 } },
         }}
       >
-        {NAVIGATION_ITEMS.filter((item, index: number) => index !== 0).map(
+        {NAVIGATION_ITEMS.filter((_, index: number) => index !== 0).map(
           (item, index: number) => (
             <motion.div
               key={item.title}

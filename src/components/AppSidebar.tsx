@@ -11,12 +11,18 @@ export const AppSidebar = () => {
   const [open, setOpen] = useState(false);
 
   const toggleGroup = useCallback((label: string) => {
-    setOpenGroups((prev) =>
+    setOpenGroups((prev: string[]) =>
       prev.includes(label)
-        ? prev.filter((item) => item !== label)
+        ? prev.filter((item: string) => item !== label)
         : [...prev, label]
     );
   }, []);
+
+  const handleClose = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
+    setOpen(false);
+    setOpenGroups([]);
+  };
 
   if (isMobile) {
     return (
@@ -25,7 +31,7 @@ export const AppSidebar = () => {
           openGroups={openGroups}
           toggleGroup={toggleGroup}
           open={open}
-          setOpen={setOpen}
+          handleClose={handleClose}
         />
       </MobileSidebar>
     );

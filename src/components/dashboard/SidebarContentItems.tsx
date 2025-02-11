@@ -28,14 +28,13 @@ export interface SidebarContentItemsProps {
   openGroups: string[];
   toggleGroup: (label: string) => void;
   open?: boolean;
-  setOpen?: (open: boolean) => void;
+  handleClose?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
   openGroups,
   toggleGroup,
-  open = false,
-  setOpen = () => {},
+  handleClose = () => {},
 }) => {
   const { t } = useTranslation();
   const { theme, setTheme } = useTheme();
@@ -64,13 +63,15 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton className={buttonClass}>
                           <span className="flex items-center">
-                            <item.icon className={`mr-2 ${iconSizeClass}`} />
                             <Link
                               href={item.href}
-                              className={`${textClass}`}
-                              onClick={() => setOpen(!open)}
+                              className="flex flex-row"
+                              onClick={(e) => handleClose(e)}
                             >
-                              {t(item.title)}
+                              <item.icon className={`mr-2 ${iconSizeClass}`} />
+                              <span className={`${textClass}`}>
+                                {t(item.title)}
+                              </span>
                             </Link>
                           </span>
                           <ChevronDown
@@ -106,6 +107,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                       <Link
                         href={item.href}
                         className={`flex items-center w-full ${textClass}`}
+                        onClick={(e) => handleClose(e)}
                       >
                         <item.icon className={`mr-2 ${iconSizeClass}`} />
                         {t(item.title)}

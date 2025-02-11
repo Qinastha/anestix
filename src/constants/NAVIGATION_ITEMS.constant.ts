@@ -24,6 +24,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
       },
       { label: 'dashboard.sofa', href: '/dashboard/scale-list/sofa' },
       { label: 'dashboard.nihss', href: '/dashboard/scale-list/nihss' },
+      { label: 'dashboard.apacheii', href: '/dashboard/scale-list/apacheii' },
     ],
   },
   {

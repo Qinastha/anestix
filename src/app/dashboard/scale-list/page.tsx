@@ -19,7 +19,7 @@ export default function ScaleCalculatorHome() {
 
   return (
     <div className="grid grid-cols-1 gap-4 p-4 w-full">
-      {sortedSubItems && (
+      {sortedSubItems && sortedSubItems.length > 0 && (
         <>
           {sortedSubItems.map((subItem, index: number) => (
             <motion.div

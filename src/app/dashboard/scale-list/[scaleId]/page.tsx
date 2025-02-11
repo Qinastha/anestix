@@ -25,7 +25,7 @@ export default function ScalePage({
     Record<string, number | null>
   >(() => {
     const initial: Record<string, number | null> = {};
-    scale!.criteria.forEach((c) => {
+    scale?.criteria.forEach((c) => {
       initial[c.id] = null;
     });
     return initial;
@@ -68,48 +68,50 @@ export default function ScalePage({
     return <SkeletonTable />;
   }
 
-  if (!scale) {
-    return (
-      <div className="p-6">
-        <p>Scale not found.</p>
-      </div>
-    );
-  }
-
   return (
     <>
-      {isMobile ? (
-        <MobileScaleCalc
-          scale={scale}
-          t={t}
-          selectedValues={selectedValues}
-          handleSelect={handleSelect}
-        />
-      ) : (
-        <DesktopScaleCalc
-          scale={scale}
-          t={t}
-          selectedValues={selectedValues}
-          handleSelect={handleSelect}
-        />
-      )}
-      <div className="mt-4 text-lg md:text-xl font-bold tracking-widest">
-        {t('scale.totalScore')} {totalScore}
-      </div>
-      <div className="mt-2 text-md md:text-lg font-semibold tracking-widest">
-        {t('scale.result')} {t(result.summaryText)}
-      </div>
-
-      {scale.extraDescription && (
-        <div className="mt-6 text-sm md:text-base bg-card p-6 border border-primary rounded-lg shadow-lg space-y-4">
-          {formatParagraphs(t(scale.extraDescription)).map((para, index) => (
-            <p key={index} className="leading-relaxed">
-              {index !== 0 && <b>*</b>}
-              {''}
-              {para}
-            </p>
-          ))}
+      {!scale ? (
+        <div className="p-4 text-center text-destructive">
+          <p>Scale configuration not found.</p>
         </div>
+      ) : (
+        <>
+          {isMobile ? (
+            <MobileScaleCalc
+              scale={scale}
+              t={t}
+              selectedValues={selectedValues}
+              handleSelect={handleSelect}
+            />
+          ) : (
+            <DesktopScaleCalc
+              scale={scale}
+              t={t}
+              selectedValues={selectedValues}
+              handleSelect={handleSelect}
+            />
+          )}
+          <div className="mt-4 text-lg md:text-xl font-bold tracking-widest">
+            {t('scale.totalScore')} {totalScore}
+          </div>
+          <div className="mt-2 text-md md:text-lg font-semibold tracking-widest">
+            {t('scale.result')} {t(result.summaryText)}
+          </div>
+
+          {scale?.extraDescription && (
+            <div className="mt-6 text-sm md:text-base bg-card p-6 border border-primary rounded-lg shadow-lg space-y-4">
+              {formatParagraphs(t(scale.extraDescription)).map(
+                (para: string, index: number) => (
+                  <p key={index} className="leading-relaxed">
+                    {index !== 0 && <b>*</b>}
+                    {''}
+                    {para}
+                  </p>
+                )
+              )}
+            </div>
+          )}
+        </>
       )}
     </>
   );

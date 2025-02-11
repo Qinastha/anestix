@@ -46,6 +46,7 @@
     "alderte": "Alderte",
     "sofa": "SOFA",
     "nihss": "NIHSS",
+    "apacheii": "Apache II",
     "fentanyl": "Fentanyl",
     "ultrasound_visualization": "Ultrasound Visualization",
     "intubation": "Intubation"
@@ -386,6 +387,138 @@
         "moderateSevereStroke": "Moderate-severe stroke",
         "severeStroke": "Severe stroke"
       }
+    },
+    "apacheii": {
+      "name": "APACHE II Score",
+      "description": "A severity-of-disease classification system used to predict ICU mortality based on the worst values recorded during the first 24 hours of ICU admission.",
+      "criteria": {
+        "age": {
+          "label": "Age, years",
+          "option0": "≤44",
+          "option1": "45-54",
+          "option2": "55-64",
+          "option3": "65-74",
+          "option4": ">74"
+        },
+        "chronicHealth": {
+          "label": "Chronic organ dysfunction or immunocompromise",
+          "option0": "No",
+          "option1": "Yes, elective postoperative",
+          "option2": "Yes, nonoperative or emergency postoperative"
+        },
+        "temperature": {
+          "label": "Rectal temperature (°C)",
+          "option0": "36 to <38.5°C",
+          "option1": "34 to <36°C or 38.5 to <39°C",
+          "option2": "32 to <34°C",
+          "option3": "30 to <32°C or 39 to <41°C",
+          "option4": "≥41°C or <30°C"
+        },
+        "map": {
+          "label": "Mean Arterial Pressure (mmHg)",
+          "option0": "70-109 mmHg",
+          "option1": "110-129 mmHg or 50-69 mmHg",
+          "option2": "130-159 mmHg",
+          "option3": ">159 mmHg or ≤49 mmHg"
+        },
+        "heartRate": {
+          "label": "Heart Rate (bpm)",
+          "option0": "70 to <110 bpm",
+          "option1": "110 to <140 bpm or 55 to <70 bpm",
+          "option2": "140 to <180 bpm or 40 to <55 bpm",
+          "option3": "≥180 bpm or <40 bpm"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory Rate (breaths/min)",
+          "option0": "12 to <25 breaths/min",
+          "option1": "10 to <12 or 25 to <35 breaths/min",
+          "option2": "6 to <10 breaths/min",
+          "option3": "35 to <50 breaths/min",
+          "option4": "≥50 breaths/min or <6 breaths/min"
+        },
+        "oxygenation": {
+          "label": "Oxygen saturation or A–a gradient",
+          "option0": "If FiO2 <50%: pO2 >70 mmHg; If FiO2 ≥50%: A–a gradient <200 mmHg",
+          "option1": "If FiO2 <50%: pO2 61-70 mmHg",
+          "option2": "If FiO2 ≥50%: A–a gradient 200-349 mmHg",
+          "option3": "If FiO2 <50%: pO2 55-60 mmHg or If FiO2 ≥50%: A–a gradient 350-499 mmHg",
+          "option4": "If FiO2 <50%: pO2 <55 mmHg or If FiO2 ≥50%: A–a gradient >499 mmHg"
+        },
+        "ph": {
+          "label": "Arterial pH",
+          "option0": "7.33 to <7.50",
+          "option1": "7.50 to <7.60",
+          "option2": "7.25 to <7.33",
+          "option3": "7.60 to <7.70 or 7.15 to <7.25",
+          "option4": "≥7.70 or <7.15"
+        },
+        "sodium": {
+          "label": "Serum Sodium (mmol/L)",
+          "option0": "130 to <150",
+          "option1": "150 to <155",
+          "option2": "155 to <160 or 120 to <130",
+          "option3": "160 to <180 or 111 to <120",
+          "option4": "≥180 or <111"
+        },
+        "potassium": {
+          "label": "Serum Potassium (mmol/L)",
+          "option0": "3.5 to <5.5",
+          "option1": "5.5 to <6.0 or 3.0 to <3.5",
+          "option2": "2.5 to <3.0",
+          "option3": "6.0 to <7.0",
+          "option4": "≥7.0 or <2.5"
+        },
+        "creatinine": {
+          "label": "Serum Creatinine (mg/100 mL)",
+          "option0": "0.6 to <1.5",
+          "option1": "Less than 0.6 or 1.5 to <2.0 (CHRONIC)",
+          "option2": "2.0 to <3.5 (CHRONIC)",
+          "option3": "1.5 to <2.0 (ACUTE) or ≥3.5 (CHRONIC)",
+          "option4": "2.0 to <3.5 (ACUTE)",
+          "option5": "≥3.5 (ACUTE)"
+        },
+        "hematocrit": {
+          "label": "Hematocrit (%)",
+          "option0": "30 to <46%",
+          "option1": "46 to <50%",
+          "option2": "50 to <60% or 20 to <30%",
+          "option3": "≥60% or <20%"
+        },
+        "wbc": {
+          "label": "Total WBC (×10³/mm³)",
+          "option0": "3 to <15",
+          "option1": "15 to <20",
+          "option2": "20 to <40 or 1 to <3",
+          "option3": "≥40 or <1"
+        },
+        "gcs": {
+          "label": "Glasgow Coma Scale",
+          "option0": "15 (0 points)",
+          "option1": "14 (1 point)",
+          "option2": "13 (2 points)",
+          "option3": "12 (3 points)",
+          "option4": "11 (4 points)",
+          "option5": "10 (5 points)",
+          "option6": "9 (6 points)",
+          "option7": "8 (7 points)",
+          "option8": "7 (8 points)",
+          "option9": "6 (9 points)",
+          "option10": "5 (10 points)",
+          "option11": "4 (11 points)",
+          "option12": "3 (12 points)"
+        }
+      },
+      "result": {
+        "mortality0to4": "Estimated in-hospital mortality: 4% nonoperative / 1% postoperative",
+        "mortality5to9": "Estimated in-hospital mortality: 8% nonoperative / 3% postoperative",
+        "mortality10to14": "Estimated in-hospital mortality: 15% nonoperative / 7% postoperative",
+        "mortality15to19": "Estimated in-hospital mortality: 25% nonoperative / 12% postoperative",
+        "mortality20to24": "Estimated in-hospital mortality: 40% nonoperative / 30% postoperative",
+        "mortality25to29": "Estimated in-hospital mortality: 55% nonoperative / 35% postoperative",
+        "mortality30to34": "Estimated in-hospital mortality: 73% nonoperative / 73% postoperative",
+        "mortality35plus": "Estimated in-hospital mortality: 85% nonoperative / 88% postoperative"
+      },
+      "extraDescription": "Note: The APACHE II Score is calculated from the worst values recorded during the first 24 hours of ICU admission. Definitions for chronic organ dysfunction and immunocompromise should follow current clinical guidelines."
     }
   }
 }
