@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
+import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 
 export default function DashboardPage() {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ export default function DashboardPage() {
         {t('dashboard.dashboard_title')}
       </motion.h1>
       <motion.div
-        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 auto-rows-fr"
+        className="grid gap-6 grid-cols-1 md:grid-cols-2 md:auto-rows-fr"
         initial="hidden"
         animate="visible"
         variants={{
@@ -39,20 +40,27 @@ export default function DashboardPage() {
             <motion.div
               key={item.title}
               className="w-full h-full"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
+              custom={index}
+              variants={CARDVARIANTS_BASE}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
             >
-              <Card className="flex flex-col h-full justify-between hover:shadow-lg transition-shadow">
+              <Card className="flex flex-col md:h-full md:justify-between hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <CardTitle className="text-xl">{t(item.title)}</CardTitle>
-                  <CardDescription>{t(item.description)}</CardDescription>
+                  <CardTitle className="text-lg md:text-xl leading-relaxed">
+                    {t(item.title)}
+                  </CardTitle>
+                  <CardDescription className="text-sm md:text-md">
+                    {t(item.description)}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button asChild className="w-full" variant="default">
                     <a href={item.href}>
-                      {t('dashboard.explore')} {t(item.title).toLowerCase()}
+                      <span className="whitespace-normal break-words text-center">
+                        {t('dashboard.explore')} {t(item.title).toLowerCase()}{' '}
+                      </span>
                     </a>
                   </Button>
                 </CardContent>

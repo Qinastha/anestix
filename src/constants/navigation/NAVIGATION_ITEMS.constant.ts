@@ -36,8 +36,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   },
   {
     icon: Book,
-    title: 'dashboard.practical_skills.title',
-    description: 'dashboard.practical_skills.description',
+    title: 'dashboard.skills.title',
+    description: 'dashboard.skills.description',
     href: '/dashboard/skills',
     subItems: SKILLS_SUBITEMS,
   },
