@@ -2,23 +2,22 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
 import { SCALE_CONFIG } from '@/constants/SCALES_CONFIGS.constant';
-import { ScaleConfig, ScaleResult } from '@/types/Scale.type';
+import { ScaleConfig, ScaleResult } from '@/interfaces/Scale.type';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { DesktopScaleCalc } from '@/components/scale_calculator/DesktopScaleCalc';
 import { MobileScaleCalc } from '@/components/scale_calculator/MobileScaleCalc';
-import { SkeletonTable } from '@/components/scale_calculator/SkeletonTable';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
+import { useParams } from 'next/navigation';
+import { SkeletonCalc } from '@/components/SkeletonCalc';
+import { motion } from 'motion/react';
 
-export default function ScalePage({
-  params,
-}: {
-  params: Promise<{ scaleId: string }>;
-}) {
+export default function ScalePage() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
   const ready = useDelayLoad(500);
-  const { scaleId } = React.use(params);
+  const params = useParams();
+  const scaleId = params.scaleId as string;
   const scale = SCALE_CONFIG[scaleId] as ScaleConfig | undefined;
 
   const [selectedValues, setSelectedValues] = useState<
@@ -65,17 +64,23 @@ export default function ScalePage({
   };
 
   if (!ready) {
-    return <SkeletonTable />;
+    return (
+      <SkeletonCalc numInputs={scale?.criteria.length ?? 4} variant="table" />
+    );
   }
 
   return (
     <>
       {!scale ? (
         <div className="p-4 text-center text-destructive">
-          <p>Scale configuration not found.</p>
+          <p>{t('scale.not_found')}</p>
         </div>
       ) : (
-        <>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           {isMobile ? (
             <MobileScaleCalc
               scale={scale}
@@ -111,7 +116,7 @@ export default function ScalePage({
               )}
             </div>
           )}
-        </>
+        </motion.div>
       )}
     </>
   );

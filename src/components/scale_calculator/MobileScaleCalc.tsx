@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ScaleConfig } from '@/types/Scale.type';
+import { ScaleConfig } from '@/interfaces/Scale.type';
 
 interface MobileScaleCalcProps {
   scale: ScaleConfig;

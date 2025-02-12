@@ -1,4 +1,4 @@
-import { NavigationSubItem } from '@/types/NavigationItem.type';
+import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
 
 export const SKILLS_SUBITEMS: NavigationSubItem[] = [
   {

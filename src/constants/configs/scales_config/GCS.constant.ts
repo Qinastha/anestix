@@ -1,4 +1,4 @@
-import { ScaleConfig } from '@/types/Scale.type';
+import { ScaleConfig } from '@/interfaces/Scale.type';
 
 export const GCS_CONFIG: ScaleConfig = {
   id: 'glasgow',

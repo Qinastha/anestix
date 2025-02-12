@@ -1,5 +1,6 @@
 {
   "select_an_option": "Select an option",
+  "search": "Search",
   "home": {
     "Title": "Anestix",
     "Welcome": "Welcome to the Anesthesiologist's guide",
@@ -86,6 +87,9 @@
         "title": "Intubation",
         "description": "Explore detailed instructions and techniques for safe and effective intubation procedures."
       }
+    },
+    "links": {
+      "actilyse": "Actilyse"
     }
   },
   "scale": {
@@ -93,6 +97,7 @@
     "respOptions": "Response Options",
     "totalScore": "Total Score: ",
     "result": "Result: ",
+    "not_found": "Scale configuration not found",
     "glasgow": {
       "name": "Glasgow Coma Scale",
       "description": "Assessment of consciousness based on eye, verbal, and motor responses.",
@@ -556,6 +561,19 @@
         "mortality35plus": "Estimated in-hospital mortality: 85% nonoperative / 88% postoperative"
       },
       "extraDescription": "Note: The APACHE II Score is calculated from the worst values recorded during the first 24 hours of ICU admission. Definitions for chronic organ dysfunction and immunocompromise should follow current clinical guidelines."
+    }
+  },
+  "calculators": {
+    "calculate": "Calculate",
+    "result": "Calculated Results:",
+    "alert": "This calculator is for double-checking dosing and should NOT be used as the primary.",
+    "not_found": "Drug not found",
+    "weight": "Weight (kg)",
+    "actilyse" : {
+      "label": "Actilyse (Alteplase) Calculator",
+      "bolus": "Bolus Dose (IV over 1 min)",
+      "infusion": "Infusion Dose (IV over 60 mins)",
+      "total": "Total"
     }
   }
 }

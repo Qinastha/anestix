@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -24,30 +24,33 @@ export const SearchBar = () => {
 
   const lowerQuery = debouncedQuery.toLowerCase();
 
-  const filteredResults = NAVIGATION_ITEMS.reduce(
-    (acc: SearchResult[], item) => {
-      const parentTitle = t(item.title);
-      const parentDescription = item.description ? t(item.description) : '';
+  const filteredResults: SearchResult[] = useMemo(() => {
+    if (!lowerQuery) return [];
 
-      if (
-        parentTitle.toLowerCase().includes(lowerQuery) ||
-        parentDescription.toLowerCase().includes(lowerQuery)
-      ) {
+    return NAVIGATION_ITEMS.reduce((acc: SearchResult[], item) => {
+      const parentTitle = t(item.title);
+      if (parentTitle.toLowerCase().includes(lowerQuery)) {
         acc.push({ label: parentTitle, href: item.href });
       }
-
       if (item.subItems?.length) {
         item.subItems.forEach((subItem) => {
           const subLabel = t(subItem.label);
           if (subLabel.toLowerCase().includes(lowerQuery)) {
             acc.push({ label: subLabel, href: subItem.href });
           }
+          if (subItem.links?.length) {
+            subItem.links.forEach((link) => {
+              const linkLabel = t(link.label);
+              if (linkLabel.toLowerCase().includes(lowerQuery)) {
+                acc.push({ label: linkLabel, href: link.href });
+              }
+            });
+          }
         });
       }
       return acc;
-    },
-    [] as SearchResult[]
-  );
+    }, [] as SearchResult[]);
+  }, [lowerQuery]);
 
   const stopSearch = (): void => {
     setIsSearchOpen(false);
@@ -106,7 +109,7 @@ export const SearchBar = () => {
             <div className="relative w-full">
               <Input
                 type="search"
-                placeholder="Search..."
+                placeholder={t('search')}
                 className="w-full"
                 autoFocus
                 onChange={(e) => setQuery(e.target.value)}
@@ -173,7 +176,7 @@ export const SearchBar = () => {
               onClick={() => setIsSearchOpen(true)}
             >
               <Search className="mr-2 h-4 w-4" />
-              <span>Search...</span>
+              <span>{t('search')}...</span>
             </Button>
           </motion.div>
         )}

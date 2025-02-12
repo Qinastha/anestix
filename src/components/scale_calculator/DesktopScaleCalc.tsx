@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { ScaleConfig } from '@/types/Scale.type';
+import { ScaleConfig } from '@/interfaces/Scale.type';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
 
 interface DesktopScaleCalcProps {
@@ -50,7 +50,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
 
   return (
     <div className="p-6">
-      <h1 className="mb-2 text-2xl font-bold">{t(scale.name)}</h1>
+      <h1 className="mb-4 text-2xl text-center font-bold">{t(scale.name)}</h1>
       {scale.description && <p className="mb-4">{t(scale.description)}</p>}
       <Table>
         <TableHeader>

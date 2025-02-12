@@ -1,4 +1,4 @@
-export interface KeyFeature {
+export type KeyFeature = {
   title: string;
   description: string;
-}
+};

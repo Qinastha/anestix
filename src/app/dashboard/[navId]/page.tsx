@@ -41,7 +41,7 @@ export default function ScaleCalculatorHome() {
             >
               <Link href={subItem.href}>
                 <Card className="group flex flex-col md:h-full hover:shadow-xl transition-shadow">
-                  <CardHeader className="flex items-center ">
+                  <CardHeader className="flex flex-col items-center ">
                     <CardTitle className="flex flex-row items-center space-x-6 text-lg lg:text-2xl font-semibold ">
                       <Sparkle className="mr-2 transition-[stroke] duration-300 group-hover:stroke-primary" />
                       {t(subItem.label)}
