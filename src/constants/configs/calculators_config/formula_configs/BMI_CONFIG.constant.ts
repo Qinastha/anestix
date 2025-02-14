@@ -1,0 +1,34 @@
+import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
+
+export const BMI_CONFIG: FormulaConfig = {
+  id: 'bmi',
+  label: 'calculators.bmi.label',
+  parameters: [
+    {
+      key: 'weight',
+      label: 'calculators.bmi.parameters.weight',
+      type: 'number',
+    },
+    {
+      key: 'height',
+      label: 'calculators.bmi.parameters.height',
+      type: 'number',
+    },
+  ],
+  calculate: (params, setResult) => {
+    const weight = Number(params.weight);
+    const height = Number(params.height);
+
+    if (isNaN(weight) || isNaN(height) || height === 0) return;
+
+    const bmi = weight / (height * height);
+    setResult({
+      bmi: {
+        label: 'calculators.bmi.result.bmi',
+        value: parseFloat(bmi.toFixed(1)),
+        unit: 'calculators.units.kg_m2',
+      },
+    });
+  },
+  annotation: 'calculators.bmi.annotation',
+};

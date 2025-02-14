@@ -1,12 +1,13 @@
 import { useCallback, useMemo, useState } from 'react';
 
-type ExtractFormValues<T extends { key: string; type?: 'number' | 'select' }> =
-  T extends { type: 'number' }
-    ? Record<string, number>
-    : Record<string, number | string>;
+type ExtractFormValues<
+  T extends { key: string; type?: 'number' | 'select' | 'boolean' },
+> = T extends { type: 'number' }
+  ? Record<string, number>
+  : Record<string, number | string | boolean>;
 
 interface UseCalculatorFormArgs<
-  TParam extends { key: string; type?: 'number' | 'select' },
+  TParam extends { key: string; type?: 'number' | 'select' | 'boolean' },
   TResult,
 > {
   parameters: TParam[];
@@ -17,18 +18,18 @@ interface UseCalculatorFormArgs<
 }
 
 export function useCalculatorForm<
-  TParam extends { key: string; type: 'number' | 'select' },
+  TParam extends { key: string; type: 'number' | 'select' | 'boolean' },
   TResult,
 >({ parameters, calculate }: UseCalculatorFormArgs<TParam, TResult>) {
-  const [formValues, setFormValues] = useState<Record<string, number | string>>(
-    {}
-  );
+  const [formValues, setFormValues] = useState<
+    Record<string, number | string | boolean>
+  >({});
   const [result, setResult] = useState<TResult | null>(null);
 
   const handleChange = useCallback(
-    (key: string, value: string) => {
+    (key: string, value: string | number | boolean) => {
       setFormValues((prev) => {
-        if (value.trim() === '') {
+        if (typeof value === 'string' && value.trim() === '') {
           const updated = { ...prev };
           delete updated[key];
           return updated;
@@ -51,10 +52,13 @@ export function useCalculatorForm<
   }, [calculate, formValues]);
 
   const allInputsFilled: boolean = useMemo(() => {
-    return parameters.every(
-      (param) =>
-        formValues[param.key] !== undefined && formValues[param.key] !== ''
-    );
+    return parameters.every((param) => {
+      if (param.type === 'boolean') {
+        return true;
+      }
+      const value = formValues[param.key];
+      return value !== undefined && value !== '';
+    });
   }, [parameters, formValues]);
 
   return {

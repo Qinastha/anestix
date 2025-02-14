@@ -9,7 +9,7 @@ export type FormulaResult = Record<string, FormulaResultItem>;
 export interface FormulaParameter {
   key: string;
   label: string;
-  type: 'number' | 'select';
+  type: 'number' | 'select' | 'boolean';
   options?: { label: string; value: string | number }[];
 }
 
@@ -18,7 +18,8 @@ export interface FormulaConfig {
   label: string;
   parameters: FormulaParameter[];
   calculate: (
-    params: Record<string, number | string>,
+    params: Record<string, number | string | boolean>,
     setResult: (result: FormulaResult) => void
   ) => void;
+  annotation?: string;
 }

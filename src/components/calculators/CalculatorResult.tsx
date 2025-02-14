@@ -8,6 +8,7 @@ interface CalculatorResultProps<
 > {
   result: Record<string, TResult>;
   isDrugForm?: boolean;
+  annotation?: string;
 }
 
 export const CalculatorResult = <
@@ -15,6 +16,7 @@ export const CalculatorResult = <
 >({
   result,
   isDrugForm,
+  annotation,
 }: CalculatorResultProps<TResult>) => {
   const { t } = useTranslation();
 
@@ -28,7 +30,7 @@ export const CalculatorResult = <
       className="mt-6"
     >
       <CardContent className="p-6 border rounded-lg shadow-lg bg-card">
-        <h2 className="text-xl font-semibold mb-2">
+        <h2 className="text-lg md:text-xl font-semibold mb-2">
           {t('calculators.result')}
         </h2>
         <ul className="list-disc list-inside mb-4">
@@ -39,6 +41,17 @@ export const CalculatorResult = <
             </li>
           ))}
         </ul>
+        {annotation && (
+          <>
+            <hr className="my-4 border-primary" />
+            <p
+              className="text-sm md:text-md text-card-foreground"
+              style={{ whiteSpace: 'pre-wrap' }}
+            >
+              {t(annotation)}
+            </p>
+          </>
+        )}
         {isDrugForm && (
           <>
             <hr className="my-4 border-primary" />

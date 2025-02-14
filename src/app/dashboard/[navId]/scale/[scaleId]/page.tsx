@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
-import { SCALE_CONFIG } from '@/constants/SCALES_CONFIGS.constant';
+import { SCALE_CONFIG } from '@/constants/configs/SCALES_CONFIGS.constant';
 import { ScaleConfig, ScaleResult } from '@/interfaces/Scale.type';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -11,6 +11,7 @@ import { useDelayLoad } from '@/hooks/useDelayLoad';
 import { useParams } from 'next/navigation';
 import { SkeletonCalc } from '@/components/SkeletonCalc';
 import { motion } from 'motion/react';
+import { formatParagraphs } from '@/utils/formatParagraphs';
 
 export default function ScalePage() {
   const { t } = useTranslation();
@@ -58,10 +59,6 @@ export default function ScalePage() {
   );
 
   const result = getScaleResult(totalScore);
-
-  const formatParagraphs = (text: string) => {
-    return text.split(/(?<=\.)\s+/);
-  };
 
   if (!ready) {
     return (

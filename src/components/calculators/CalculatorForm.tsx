@@ -10,25 +10,26 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { Switch } from '@/components/ui/switch';
 
 interface CalculatorFormProps<
   TParam extends {
     key: string;
-    type: 'number' | 'select';
+    type: 'number' | 'select' | 'boolean';
     label: string;
     options?: { label: string; value: string | number }[];
   },
 > {
   parameters: TParam[];
   handleCalculate: () => void;
-  handleChange: (key: string, value: string) => void;
+  handleChange: (key: string, value: string | number | boolean) => void;
   allInputsFilled: boolean;
 }
 
 export const CalculatorForm = <
   TParam extends {
     key: string;
-    type: 'number' | 'select';
+    type: 'number' | 'select' | 'boolean';
     label: string;
     options?: { label: string; value: string | number }[];
   },
@@ -70,6 +71,10 @@ export const CalculatorForm = <
                   ))}
                 </SelectContent>
               </Select>
+            ) : param.type === 'boolean' ? (
+              <Switch
+                onCheckedChange={(checked) => handleChange(param.key, checked)}
+              />
             ) : (
               <Input
                 type="number"

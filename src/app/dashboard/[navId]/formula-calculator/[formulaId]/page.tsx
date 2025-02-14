@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
-import { FORMULA_CALCULATOR_CONFIG } from '@/constants/configs/calculators_config/FORMULA_CALCULATOR_CONFIG.constant';
+import { FORMULA_CALCULATOR_CONFIG } from '@/constants/configs/FORMULA_CALCULATOR_CONFIG.constant';
 import {
   FormulaParameter,
   FormulaResult,
@@ -58,7 +58,9 @@ export default function FormulaCalculatorPage() {
       />
 
       <AnimatePresence>
-        {result && <CalculatorResult result={result} />}
+        {result && (
+          <CalculatorResult result={result} annotation={config.annotation} />
+        )}
       </AnimatePresence>
     </Card>
   );

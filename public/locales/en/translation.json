@@ -23,7 +23,7 @@
   },
   "dashboard": {
     "dashboard_title": "Dashboard",
-    "no_items": "There is no items available right now",
+    "no_items": "There are no items available right now",
     "explore": "Explore",
     "home": "Home",
     "scale-list": {
@@ -94,7 +94,7 @@
       "calories": "Daily calorie requirements",
       "creatinine": "Creatinine clearance",
       "waterBalance": "Daily water balance",
-      "dailyDiuresis": "Daily diuresis rate",
+      "dailyDiuresis": "Hourly diuresis rate",
       "algover": "Algover index"
     }
   },
@@ -135,8 +135,8 @@
       },
       "result": {
         "clear": "Clear consciousness",
-        "moderateStunning": "Moderate stunning",
-        "deepStunning": "Deep stunning",
+        "moderateStunning": "Moderate obtundation",
+        "deepStunning": "Deep obtundation",
         "stupor": "Stupor",
         "moderateComa": "Moderate coma",
         "deepComa": "Deep coma",
@@ -572,19 +572,26 @@
   "calculators": {
     "calculate": "Calculate",
     "result": "Calculated Results:",
-    "alert": "This calculator is for double-checking dosing and should NOT be used as the primary.",
+    "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",
     "not_found": "Drug not found",
     "weight": "Weight (kg)",
+
     "units": {
       "kg_m2": "kg/m²",
-      "kcal_day": "kcal/day"
+      "kcal_day": "kcal/day",
+      "ml_min": "mL/min",
+      "ml": "mL",
+      "ml_hr": "mL/hr",
+      "ml_kg_hr": "mL/kg/hr"
     },
-    "actilyse" : {
+
+    "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
       "bolus": "Bolus Dose (IV over 1 min)",
       "infusion": "Infusion Dose (IV over 60 mins)",
       "total": "Total"
     },
+
     "bmi": {
       "label": "Body Mass Index",
       "parameters": {
@@ -593,8 +600,10 @@
       },
       "result": {
         "bmi": "BMI"
-      }
+      },
+      "annotation": "BMI reference ranges are based on WHO guidelines: \n- under 18.5 (underweight) \n- 18.5–24.9 (normal) \n- 25–29.9 (overweight) \n- ≥30 (obese)."
     },
+
     "dailyCalories": {
       "label": "Daily Calorie Requirements",
       "parameters": {
@@ -620,7 +629,71 @@
       "result": {
         "bmr": "Basal Metabolic Rate",
         "tdee": "Total Daily Energy Expenditure"
-      }
+      },
+      "annotation": "This calculation uses the Mifflin-St Jeor formula. Actual calorie needs may vary by individual."
+    },
+
+    "creatinineClearance": {
+      "label": "Creatinine Clearance",
+      "parameters": {
+        "age": "Age (years)",
+        "weight": "Weight (kg)",
+        "creatinine": "Serum Creatinine (mg/dL)",
+        "sex": "Sex"
+      },
+      "options": {
+        "sex": {
+          "male": "Male",
+          "female": "Female"
+        }
+      },
+      "result": {
+        "clearance": "Creatinine Clearance"
+      },
+      "annotation": "Uses the Cockcroft-Gault formula to estimate creatinine clearance, adjusting by 0.85 for female patients."
+    },
+
+    "dailyWaterBalance": {
+      "label": "Daily Water Balance",
+      "parameters": {
+        "waterIntake": "Water Intake (mL)",
+        "foodIntake": "Food Intake (mL)",
+        "infusionIntake": "Infusion Intake (mL)",
+        "urineOutput": "Urine Output (mL)",
+        "fecesOutput": "Feces Output (mL)",
+        "extraOutput": "Other Losses (mL)",
+        "weight": "Weight (kg)",
+        "hyperthermia": "Hyperthermia"
+      },
+      "result": {
+        "balance": "Daily water balance taking into account perspiration"
+      },
+      "annotation": "This provides a rough estimate of water balance based on intake and output. Clinical context may require adjustments."
+    },
+
+    "algoverIndex": {
+      "label": "Algover Index",
+      "parameters": {
+        "heartRate": "Heart Rate (bpm)",
+        "systolicBP": "Systolic Blood Pressure (mmHg)"
+      },
+      "result": {
+        "index": "Algover Index"
+      },
+      "annotation": "Algover index helps estimate hypovolemia risk; values above 1.0 may indicate significant volume depletion."
+    },
+    "dailyDiuresis": {
+      "label": "Hourly Diuresis Rate",
+      "parameters": {
+        "amount" : "Urine amount (ml)",
+        "period": "Period (h)",
+        "weight": "Weight (kg)"
+      },
+      "result": {
+        "absoluteDiuresis": "Absolute hourly Diuresis Rate",
+        "hourlyDiuresis": "Hourly Diuresis Rate"
+      },
+      "annotation": "The following values \u200B\u200Bare usually used as a guide (in ml/kg/h):\nAdults: the norm is considered to be ≈0.5–1 ml/kg/h (some sources give up to 2 ml/kg/h, everything depends on specific clinical conditions).\nChildren: the indicator is higher and strongly depends on age (in newborns it can reach 2–3 ml/kg/h, in older children it is closer to the indicators of adults)."
     }
   }
 }
