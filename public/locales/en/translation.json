@@ -1,6 +1,33 @@
 {
   "select_an_option": "Select an option",
   "search": "Search",
+  "units": {
+    "kg_m2": "kg/m²",
+    "kcal_day": "kcal/day",
+    "ml_min": "mL/min",
+    "ml_min_m2": "mL/min/1.73m²",
+    "ml_hr": "mL/hr",
+    "ml_kg_hr": "mL/kg/hr",
+    "ml": "mL",
+    "kg": "kg",
+    "g": "g",
+    "mg": "mg",
+    "mcg": "mcg",
+    "l": "L",
+    "mg_dl": "mg/dL",
+    "umol_l": "µmol/L",
+    "mmol_l": "mmol/L",
+    "meq_l": "mEq/L",
+    "mm_hg": "mmHg",
+    "cm_h2o": "cmH2O",
+    "m": "m",
+    "cm": "cm",
+    "mm": "mm",
+    "pct": "%",
+    "bpm": "bpm",
+    "years": "years",
+    "h": "hours"
+  },
   "home": {
     "Title": "Anestix",
     "Welcome": "Welcome to the Anesthesiologist's guide",
@@ -576,15 +603,6 @@
     "not_found": "Drug not found",
     "weight": "Weight (kg)",
 
-    "units": {
-      "kg_m2": "kg/m²",
-      "kcal_day": "kcal/day",
-      "ml_min": "mL/min",
-      "ml": "mL",
-      "ml_hr": "mL/hr",
-      "ml_kg_hr": "mL/kg/hr"
-    },
-
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
       "bolus": "Bolus Dose (IV over 1 min)",
@@ -595,8 +613,8 @@
     "bmi": {
       "label": "Body Mass Index",
       "parameters": {
-        "weight": "Weight (kg)",
-        "height": "Height (m)"
+        "weight": "Weight",
+        "height": "Height"
       },
       "result": {
         "bmi": "BMI"
@@ -607,9 +625,9 @@
     "dailyCalories": {
       "label": "Daily Calorie Requirements",
       "parameters": {
-        "weight": "Weight (kg)",
-        "height": "Height (cm)",
-        "age": "Age (years)",
+        "weight": "Weight",
+        "height": "Height",
+        "age": "Age",
         "sex": "Sex",
         "activity": "Activity Level"
       },
@@ -636,9 +654,9 @@
     "creatinineClearance": {
       "label": "Creatinine Clearance",
       "parameters": {
-        "age": "Age (years)",
-        "weight": "Weight (kg)",
-        "creatinine": "Serum Creatinine (mg/dL)",
+        "age": "Age",
+        "weight": "Weight",
+        "creatinine": "Serum Creatinine",
         "sex": "Sex"
       },
       "options": {
@@ -650,19 +668,18 @@
       "result": {
         "clearance": "Creatinine Clearance"
       },
-      "annotation": "Uses the Cockcroft-Gault formula to estimate creatinine clearance, adjusting by 0.85 for female patients."
-    },
+      "annotation": "Uses the Cockcroft-Gault formula to estimate creatinine clearance\nStage I: Kidney damage with normal or increased GFR ≥90 mL/min/1.73 m²\nStage II: Kidney damage with mild decrease in GFR (60–89 mL/min/1.73 m²)\nStage III: Moderate decrease in GFR (30–59 mL/min/1.73 m²)\nStage IV: Severe decrease in GFR (15–29 mL/min/1.73 m²)\nStage V: Kidney failure (GFR <15 mL/min/1.73 m²)"    },
 
     "dailyWaterBalance": {
       "label": "Daily Water Balance",
       "parameters": {
-        "waterIntake": "Water Intake (mL)",
-        "foodIntake": "Food Intake (mL)",
-        "infusionIntake": "Infusion Intake (mL)",
-        "urineOutput": "Urine Output (mL)",
-        "fecesOutput": "Feces Output (mL)",
-        "extraOutput": "Other Losses (mL)",
-        "weight": "Weight (kg)",
+        "waterIntake": "Water Intake",
+        "foodIntake": "Food Intake",
+        "infusionIntake": "Infusion Intake",
+        "urineOutput": "Urine Output",
+        "fecesOutput": "Feces Output",
+        "extraOutput": "Other Losses",
+        "weight": "Weight",
         "hyperthermia": "Hyperthermia"
       },
       "result": {
@@ -674,8 +691,8 @@
     "algoverIndex": {
       "label": "Algover Index",
       "parameters": {
-        "heartRate": "Heart Rate (bpm)",
-        "systolicBP": "Systolic Blood Pressure (mmHg)"
+        "heartRate": "Heart Rate",
+        "systolicBP": "Systolic Blood Pressure"
       },
       "result": {
         "index": "Algover Index"
@@ -685,9 +702,9 @@
     "dailyDiuresis": {
       "label": "Hourly Diuresis Rate",
       "parameters": {
-        "amount" : "Urine amount (ml)",
-        "period": "Period (h)",
-        "weight": "Weight (kg)"
+        "amount" : "Urine amount",
+        "period": "Period",
+        "weight": "Weight"
       },
       "result": {
         "absoluteDiuresis": "Absolute hourly Diuresis Rate",

@@ -7,22 +7,26 @@ export const DAILY_CALORIES_CONFIG: FormulaConfig = {
     {
       key: 'weight',
       label: 'calculators.dailyCalories.parameters.weight',
+      unit: 'units.kg',
       type: 'number',
     },
     {
       key: 'height',
       label: 'calculators.dailyCalories.parameters.height',
+      unit: 'units.cm',
       type: 'number',
     },
     {
       key: 'age',
       label: 'calculators.dailyCalories.parameters.age',
+      unit: 'units.years',
       type: 'number',
     },
     {
       key: 'sex',
       label: 'calculators.dailyCalories.parameters.sex',
       type: 'select',
+      unit: '',
       options: [
         {
           label: 'calculators.dailyCalories.options.sex.male',
@@ -38,6 +42,7 @@ export const DAILY_CALORIES_CONFIG: FormulaConfig = {
       key: 'activity',
       label: 'calculators.dailyCalories.parameters.activity',
       type: 'select',
+      unit: '',
       options: [
         {
           label: 'calculators.dailyCalories.options.activity.sedentary',
@@ -89,12 +94,12 @@ export const DAILY_CALORIES_CONFIG: FormulaConfig = {
       bmr: {
         label: 'calculators.dailyCalories.result.bmr',
         value: parseFloat(bmr.toFixed(1)),
-        unit: 'calculators.units.kcal_day',
+        unit: 'units.kcal_day',
       },
       tdee: {
         label: 'calculators.dailyCalories.result.tdee',
         value: parseFloat(tdee.toFixed(1)),
-        unit: 'calculators.units.kcal_day',
+        unit: 'units.kcal_day',
       },
     });
   },

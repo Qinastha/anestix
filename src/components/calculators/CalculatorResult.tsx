@@ -2,9 +2,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
+import { MedicalUnits } from '@/types/MedicalUnits.type';
 
 interface CalculatorResultProps<
-  TResult extends { label: string; value: number; unit: string },
+  TResult extends { label: string; value: number; unit: MedicalUnits },
 > {
   result: Record<string, TResult>;
   isDrugForm?: boolean;
@@ -12,7 +13,7 @@ interface CalculatorResultProps<
 }
 
 export const CalculatorResult = <
-  TResult extends { label: string; value: number; unit: string },
+  TResult extends { label: string; value: number; unit: MedicalUnits },
 >({
   result,
   isDrugForm,

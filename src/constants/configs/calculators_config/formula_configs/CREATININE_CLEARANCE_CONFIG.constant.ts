@@ -7,21 +7,25 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
     {
       key: 'age',
       label: 'calculators.creatinineClearance.parameters.age',
+      unit: 'units.years',
       type: 'number',
     },
     {
       key: 'weight',
       label: 'calculators.creatinineClearance.parameters.weight',
+      unit: 'units.kg',
       type: 'number',
     },
     {
       key: 'creatinine',
       label: 'calculators.creatinineClearance.parameters.creatinine',
+      unit: 'units.mg_dl',
       type: 'number',
     },
     {
       key: 'sex',
       label: 'calculators.creatinineClearance.parameters.sex',
+      unit: '',
       type: 'select',
       options: [
         {
@@ -51,7 +55,7 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
       clearance: {
         label: 'calculators.creatinineClearance.result.clearance',
         value: parseFloat(clearance.toFixed(1)),
-        unit: 'calculators.units.ml_min',
+        unit: 'units.ml_min_m2',
       },
     });
   },

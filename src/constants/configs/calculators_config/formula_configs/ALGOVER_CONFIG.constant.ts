@@ -7,11 +7,13 @@ export const ALGOVER_CONFIG: FormulaConfig = {
     {
       key: 'heartRate',
       label: 'calculators.algoverIndex.parameters.heartRate',
+      unit: 'units.bpm',
       type: 'number',
     },
     {
       key: 'systolicBP',
       label: 'calculators.algoverIndex.parameters.systolicBP',
+      unit: 'units.mm_hg',
       type: 'number',
     },
   ],

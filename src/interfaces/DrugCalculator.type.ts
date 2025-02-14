@@ -1,7 +1,9 @@
+import { MedicalUnits } from '@/types/MedicalUnits.type';
+
 export type DrugResultItem = {
   label: string;
   value: number;
-  unit: string;
+  unit: MedicalUnits;
 };
 
 export type DrugResult = Record<string, DrugResultItem>;
@@ -9,6 +11,7 @@ export type DrugResult = Record<string, DrugResultItem>;
 export interface DrugParameter {
   key: string;
   label: string;
+  unit: MedicalUnits;
   type: 'number';
 }
 

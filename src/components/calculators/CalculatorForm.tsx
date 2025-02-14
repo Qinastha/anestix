@@ -11,12 +11,14 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { Switch } from '@/components/ui/switch';
+import { MedicalUnits } from '@/types/MedicalUnits.type';
 
 interface CalculatorFormProps<
   TParam extends {
     key: string;
     type: 'number' | 'select' | 'boolean';
     label: string;
+    unit: MedicalUnits;
     options?: { label: string; value: string | number }[];
   },
 > {
@@ -31,6 +33,7 @@ export const CalculatorForm = <
     key: string;
     type: 'number' | 'select' | 'boolean';
     label: string;
+    unit: MedicalUnits;
     options?: { label: string; value: string | number }[];
   },
 >({
@@ -55,8 +58,8 @@ export const CalculatorForm = <
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <label className="block text-sm font-medium mb-1">
-              {t(param.label)}
+            <label className="flex flex-row justify-between text-sm font-medium mb-1">
+              {t(param.label)} <span className="pr-4">{t(param.unit)}</span>
             </label>
             {param.type === 'select' ? (
               <Select onValueChange={(value) => handleChange(param.key, value)}>
@@ -78,9 +81,9 @@ export const CalculatorForm = <
             ) : (
               <Input
                 type="number"
-                placeholder={t(param.label)}
+                placeholder={t(param.unit)}
                 onChange={(e) => handleChange(param.key, e.target.value)}
-                className="w-full"
+                className="w-full placeholder:text-muted-foreground "
               />
             )}
           </motion.div>

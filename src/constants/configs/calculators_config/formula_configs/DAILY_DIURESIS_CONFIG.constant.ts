@@ -7,16 +7,19 @@ export const DAILY_DIURESIS_CONFIG: FormulaConfig = {
     {
       key: 'amount',
       label: 'calculators.dailyDiuresis.parameters.amount',
+      unit: 'units.ml',
       type: 'number',
     },
     {
       key: 'period',
       label: 'calculators.dailyDiuresis.parameters.period',
+      unit: 'units.h',
       type: 'number',
     },
     {
       key: 'weight',
       label: 'calculators.dailyDiuresis.parameters.weight',
+      unit: 'units.kg',
       type: 'number',
     },
   ],
@@ -33,12 +36,12 @@ export const DAILY_DIURESIS_CONFIG: FormulaConfig = {
       absoluteDiuresis: {
         label: 'calculators.dailyDiuresis.result.absoluteDiuresis',
         value: parseFloat(absoluteHourlyDiuresis.toFixed(2)),
-        unit: 'calculators.units.ml_hr',
+        unit: 'units.ml_hr',
       },
       hourlyDiuresis: {
         label: 'calculators.dailyDiuresis.result.hourlyDiuresis',
         value: parseFloat(hourlyDiuresis.toFixed(2)),
-        unit: 'calculators.units.ml_kg_hr',
+        unit: 'units.ml_kg_hr',
       },
     });
   },

@@ -7,11 +7,13 @@ export const BMI_CONFIG: FormulaConfig = {
     {
       key: 'weight',
       label: 'calculators.bmi.parameters.weight',
+      unit: 'units.kg',
       type: 'number',
     },
     {
       key: 'height',
       label: 'calculators.bmi.parameters.height',
+      unit: 'units.m',
       type: 'number',
     },
   ],
@@ -26,7 +28,7 @@ export const BMI_CONFIG: FormulaConfig = {
       bmi: {
         label: 'calculators.bmi.result.bmi',
         value: parseFloat(bmi.toFixed(1)),
-        unit: 'calculators.units.kg_m2',
+        unit: 'units.kg_m2',
       },
     });
   },
