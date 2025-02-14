@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppSidebar } from '@/components/AppSidebar';
-import { SearchBar } from '@/components/SearchBar';
+import { AppSidebar } from '@/components/dashboard/AppSidebar';
+import { SearchBar } from '@/components/dashboard/SearchBar';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 export default async function Layout({

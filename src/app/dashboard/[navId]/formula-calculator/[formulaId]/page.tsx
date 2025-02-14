@@ -1,27 +1,29 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { DRUG_CALCULATOR_CONFIG } from '@/constants/configs/calculators_config/DRUG_CALCULATOR_CONFIG.constant';
-import { motion } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
-import { useDelayLoad } from '@/hooks/useDelayLoad';
-import { SkeletonCalc } from '@/components/SkeletonCalc';
-import { DrugParameter, DrugResult } from '@/interfaces/DrugCalculator.type';
+import { FORMULA_CALCULATOR_CONFIG } from '@/constants/configs/calculators_config/FORMULA_CALCULATOR_CONFIG.constant';
+import {
+  FormulaParameter,
+  FormulaResult,
+} from '@/interfaces/FormulaCalculator.type';
 import { Card } from '@/components/ui/card';
+import { useDelayLoad } from '@/hooks/useDelayLoad';
+import SkeletonCalc from '@/components/SkeletonCalc';
+import { useTranslation } from 'react-i18next';
 import { CalculatorForm } from '@/components/calculators/CalculatorForm';
-import { AnimatePresence } from 'framer-motion';
 import { CalculatorResult } from '@/components/calculators/CalculatorResult';
 
-export default function DrugCalculatorPage() {
+export default function FormulaCalculatorPage() {
   const params = useParams();
-  const drugId = params.drugId as string;
-  const config = DRUG_CALCULATOR_CONFIG[drugId];
-  const { t } = useTranslation();
+  const formulaId = params.formulaId as string;
+  const config = FORMULA_CALCULATOR_CONFIG[formulaId];
   const ready: boolean = useDelayLoad(500);
+  const { t } = useTranslation();
 
   const { handleChange, handleCalculate, allInputsFilled, result } =
-    useCalculatorForm<DrugParameter, DrugResult>({
+    useCalculatorForm<FormulaParameter, FormulaResult>({
       parameters: config.parameters,
       calculate: config.calculate,
     });
@@ -56,7 +58,7 @@ export default function DrugCalculatorPage() {
       />
 
       <AnimatePresence>
-        {result && <CalculatorResult result={result} isDrugForm={true} />}
+        {result && <CalculatorResult result={result} />}
       </AnimatePresence>
     </Card>
   );

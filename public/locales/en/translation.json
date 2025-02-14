@@ -89,7 +89,13 @@
       }
     },
     "links": {
-      "actilyse": "Actilyse"
+      "actilyse": "Actilyse",
+      "bmi": "Body mass index",
+      "calories": "Daily calorie requirements",
+      "creatinine": "Creatinine clearance",
+      "waterBalance": "Daily water balance",
+      "dailyDiuresis": "Daily diuresis rate",
+      "algover": "Algover index"
     }
   },
   "scale": {
@@ -569,11 +575,52 @@
     "alert": "This calculator is for double-checking dosing and should NOT be used as the primary.",
     "not_found": "Drug not found",
     "weight": "Weight (kg)",
+    "units": {
+      "kg_m2": "kg/m²",
+      "kcal_day": "kcal/day"
+    },
     "actilyse" : {
       "label": "Actilyse (Alteplase) Calculator",
       "bolus": "Bolus Dose (IV over 1 min)",
       "infusion": "Infusion Dose (IV over 60 mins)",
       "total": "Total"
+    },
+    "bmi": {
+      "label": "Body Mass Index",
+      "parameters": {
+        "weight": "Weight (kg)",
+        "height": "Height (m)"
+      },
+      "result": {
+        "bmi": "BMI"
+      }
+    },
+    "dailyCalories": {
+      "label": "Daily Calorie Requirements",
+      "parameters": {
+        "weight": "Weight (kg)",
+        "height": "Height (cm)",
+        "age": "Age (years)",
+        "sex": "Sex",
+        "activity": "Activity Level"
+      },
+      "options": {
+        "sex": {
+          "male": "Male",
+          "female": "Female"
+        },
+        "activity": {
+          "sedentary": "Sedentary",
+          "lightActivity": "Light Activity",
+          "moderateActivity": "Moderate Activity",
+          "veryActive": "Very Active",
+          "superActive": "Super Active"
+        }
+      },
+      "result": {
+        "bmr": "Basal Metabolic Rate",
+        "tdee": "Total Daily Energy Expenditure"
+      }
     }
   }
 }

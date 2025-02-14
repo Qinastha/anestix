@@ -6,15 +6,15 @@ export type DrugResultItem = {
 
 export type DrugResult = Record<string, DrugResultItem>;
 
-export interface CalculatorParameter {
+export interface DrugParameter {
   key: string;
   label: string;
-  type: 'number' | 'text';
+  type: 'number';
 }
 
 export interface DrugCalculatorConfig {
   label: string;
-  parameters: CalculatorParameter[];
+  parameters: DrugParameter[];
   calculate: (
     params: Record<string, number>,
     setResult: (result: DrugResult) => void
