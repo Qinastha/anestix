@@ -19,7 +19,7 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
     {
       key: 'creatinine',
       label: 'calculators.creatinineClearance.parameters.creatinine',
-      unit: 'units.mg_dl',
+      unit: 'units.umol_l',
       type: 'number',
     },
     {
@@ -42,7 +42,7 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
   calculate: (params, setResult) => {
     const age = Number(params.age);
     const weight = Number(params.weight);
-    const creatinine = Number(params.creatinine);
+    const creatinine = Number(params.creatinine) / 88.4;
     const sex = params.sex as 'male' | 'female';
 
     if (isNaN(age) || isNaN(weight) || isNaN(creatinine) || creatinine === 0)

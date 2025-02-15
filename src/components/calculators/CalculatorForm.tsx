@@ -13,30 +13,22 @@ import { useTranslation } from 'react-i18next';
 import { Switch } from '@/components/ui/switch';
 import { MedicalUnits } from '@/types/MedicalUnits.type';
 
-interface CalculatorFormProps<
-  TParam extends {
-    key: string;
-    type: 'number' | 'select' | 'boolean';
-    label: string;
-    unit: MedicalUnits;
-    options?: { label: string; value: string | number }[];
-  },
-> {
+interface CalculatorFormParameter {
+  key: string;
+  type: 'number' | 'select' | 'boolean';
+  label: string;
+  unit: MedicalUnits;
+  options?: { label: string; value: string | number }[];
+}
+
+interface CalculatorFormProps<TParam extends CalculatorFormParameter> {
   parameters: TParam[];
   handleCalculate: () => void;
   handleChange: (key: string, value: string | number | boolean) => void;
   allInputsFilled: boolean;
 }
 
-export const CalculatorForm = <
-  TParam extends {
-    key: string;
-    type: 'number' | 'select' | 'boolean';
-    label: string;
-    unit: MedicalUnits;
-    options?: { label: string; value: string | number }[];
-  },
->({
+export const CalculatorForm = <TParam extends CalculatorFormParameter>({
   parameters,
   handleCalculate,
   handleChange,
