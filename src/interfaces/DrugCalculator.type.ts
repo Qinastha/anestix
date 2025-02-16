@@ -13,6 +13,8 @@ export interface DrugParameter {
   label: string;
   unit: MedicalUnits;
   type: 'number';
+  optional?: boolean;
+  defaultValue?: number;
 }
 
 export interface DrugCalculatorConfig {

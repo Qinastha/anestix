@@ -10,11 +10,20 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       unit: 'units.kg',
       type: 'number',
     },
+    {
+      key: 'dosePerKg',
+      label: 'calculators.dosePerKg',
+      unit: 'units.mg_kg_min',
+      type: 'number',
+      optional: true,
+      defaultValue: 0.005,
+    },
   ],
-  calculate: ({ weight }, setResult) => {
+  calculate: ({ weight, dosePerKg }, setResult) => {
+    const dose =
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.005;
     // Infusion ~0.5–10 mcg/kg/min => pick ~5 => 0.005 mg/kg/min
-    const AVERAGE_INFUSION_MG_PER_KG_MIN = 0.005;
-    const infusionRate = weight * AVERAGE_INFUSION_MG_PER_KG_MIN;
+    const infusionRate = weight * dose;
 
     setResult({
       infusion: {

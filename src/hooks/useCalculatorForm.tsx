@@ -6,10 +6,13 @@ type ExtractFormValues<
   ? Record<string, number>
   : Record<string, number | string | boolean>;
 
-interface UseCalculatorFormArgs<
-  TParam extends { key: string; type?: 'number' | 'select' | 'boolean' },
-  TResult,
-> {
+interface Param {
+  key: string;
+  type: 'number' | 'select' | 'boolean';
+  optional?: boolean;
+}
+
+interface UseCalculatorFormArgs<TParam extends Param, TResult> {
   parameters: TParam[];
   calculate: (
     formValues: ExtractFormValues<TParam>,
@@ -17,10 +20,10 @@ interface UseCalculatorFormArgs<
   ) => void;
 }
 
-export function useCalculatorForm<
-  TParam extends { key: string; type: 'number' | 'select' | 'boolean' },
-  TResult,
->({ parameters, calculate }: UseCalculatorFormArgs<TParam, TResult>) {
+export function useCalculatorForm<TParam extends Param, TResult>({
+  parameters,
+  calculate,
+}: UseCalculatorFormArgs<TParam, TResult>) {
   const [formValues, setFormValues] = useState<
     Record<string, number | string | boolean>
   >({});
@@ -53,7 +56,7 @@ export function useCalculatorForm<
 
   const allInputsFilled: boolean = useMemo(() => {
     return parameters.every((param) => {
-      if (param.type === 'boolean') {
+      if (param.type === 'boolean' || param.optional) {
         return true;
       }
       const value = formValues[param.key];

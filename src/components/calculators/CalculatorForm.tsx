@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Select,
@@ -19,6 +19,8 @@ interface CalculatorFormParameter {
   label: string;
   unit: MedicalUnits;
   options?: { label: string; value: string | number }[];
+  optional?: boolean;
+  defaultValue?: number;
 }
 
 interface CalculatorFormProps<TParam extends CalculatorFormParameter> {
@@ -35,6 +37,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
   allInputsFilled,
 }: CalculatorFormProps<TParam>) => {
   const { t } = useTranslation();
+
   return (
     <>
       <motion.div
@@ -69,6 +72,16 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
             ) : param.type === 'boolean' ? (
               <Switch
                 onCheckedChange={(checked) => handleChange(param.key, checked)}
+              />
+            ) : param.optional ? (
+              <Input
+                type="number"
+                placeholder={String(param.defaultValue)}
+                onChange={(e) =>
+                  handleChange(param.key, Number(e.target.value))
+                }
+                defaultValue={param.defaultValue}
+                className="w-full placeholder:text-muted-foreground"
               />
             ) : (
               <Input

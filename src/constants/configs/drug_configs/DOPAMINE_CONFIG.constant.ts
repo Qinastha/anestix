@@ -10,11 +10,21 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       unit: 'units.kg',
       type: 'number',
     },
+    {
+      key: 'dosePerKg',
+      label: 'calculators.dosePerKg',
+      unit: 'units.mcg_kg_min',
+      type: 'number',
+      optional: true,
+      defaultValue: 10,
+    },
   ],
-  calculate: ({ weight }, setResult) => {
+  calculate: ({ weight, dosePerKg }, setResult) => {
+    const dose =
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 10;
+    const mgDose = dose / 1000;
     // Infusion 1–20 mcg/kg/min => pick ~10 => 0.01 mg/kg/min
-    const AVERAGE_INFUSION_MG_PER_KG_MIN = 0.01;
-    const infusionRate = weight * AVERAGE_INFUSION_MG_PER_KG_MIN;
+    const infusionRate = weight * mgDose;
 
     setResult({
       infusion: {

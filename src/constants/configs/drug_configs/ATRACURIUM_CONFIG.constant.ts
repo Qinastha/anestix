@@ -10,11 +10,20 @@ export const ATRACURIUM_CONFIG: DrugCalculatorConfig = {
       unit: 'units.kg',
       type: 'number',
     },
+    {
+      key: 'dosePerKg',
+      label: 'calculators.dosePerKg',
+      unit: 'units.mg_kg',
+      type: 'number',
+      optional: true,
+      defaultValue: 0.45,
+    },
   ],
-  calculate: ({ weight }, setResult) => {
+  calculate: ({ weight, dosePerKg }, setResult) => {
     // Range 0.3–0.6 mg/kg => pick ~0.45 mg/kg
-    const AVERAGE_DOSE_MG_PER_KG = 0.45;
-    const total = weight * AVERAGE_DOSE_MG_PER_KG;
+    const dose =
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.45;
+    const total = weight * dose;
 
     setResult({
       bolus: {

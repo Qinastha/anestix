@@ -31,7 +31,10 @@
     "mcg_kg_min": "mcg/kg/min",
     "mcg_kg_hr": "mcg/kg/hr",
     "mg_per_min": "mg per min",
-    "mg_hr": "mg/hr"
+    "mg_hr": "mg/hr",
+    "mg_kg": "mg/kg",
+    "mg_kg_min": "mg/kg/min",
+    "mg_kg_hr": "mg/kg/hr"
   },
   "home": {
     "Title": "Anestix",
@@ -625,6 +628,8 @@
     "infusion": "Infusion",
     "maintenanceDose": "Maintenance Dose",
     "total": "Total",
+    "dosePerKg": "Dose Per Kg",
+    "infusionDosePerKg": "Infusion Dose Per Kg",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -759,51 +764,51 @@
     },
     "thiopental": {
       "label": "Thiopental",
-      "annotation": "20 mL = 1 g or 10 mL = 500 mg freeze-dried. Usually reconstituted to a 1% solution. Typical IV dose 3–6 mg/kg. Onset ≈1–2 min; duration ≈20–25 min. This config uses ~4.5 mg/kg."
+      "annotation": "20 mL = 1 g or 10 mL = 500 mg freeze-dried. Usually reconstituted to a 1% solution. Typical IV dose 3–6 mg/kg. Onset ≈1–2 min; duration ≈20–25 min. \n\nThis config uses ~4.5 mg/kg by default with the ability to customize."
     },
     "propofol": {
       "label": "Propofol",
-      "annotation": "20 mL = 200 mg emulsion. Typical dosages: for induction 1.5–2.5 mg/kg || infusion rate 4-12.5 mg/kg/hr. Onset ≈20–40 s; duration ≈6–8 min. \n\nThis config uses ~2 mg/kg for induction and ~5 mg/kg/h for infusion."
+      "annotation": "20 mL = 200 mg emulsion. Typical dosages: for induction 1.5–2.5 mg/kg || infusion rate 4-12.5 mg/kg/hr. Onset ≈20–40 s; duration ≈6–8 min. \n\nThis config uses ~2 mg/kg for induction and ~5 mg/kg/h for infusion by default with the ability to customize."
     },
     "ketamine": {
       "label": "Ketamine",
-      "annotation": "2 mL = 100 mg. Typical IV dose 1.5–2 mg/kg. Onset ≈1–2 min IV; duration ≈15–20 min IV. This config uses ~2 mg/kg."
+      "annotation": "2 mL = 100 mg. Typical IV dose 1.5–2 mg/kg. Onset ≈1–2 min IV; duration ≈15–20 min IV. \n\nThis config uses ~2 mg/kg by default with the ability to customize."
     },
     "gomh": {
       "label": "Sodium Oxybutyrate",
-      "annotation": "1 mL = 200 mg. Typical dose 50–150 mg/kg IV. Onset ≈5–10 min; duration 20–60+ min. This config uses ~100 mg/kg."
+      "annotation": "1 mL = 200 mg. Typical dose 50–150 mg/kg IV. Onset ≈5–10 min; duration 20–60+ min. \n\nThis config uses ~100 mg/kg by default with the ability to customize."
     },
     "fentanyl": {
       "label": "Fentanyl",
-      "annotation": "2 mL amp = 0.05 mg (50 mcg). Typical bolus 0.5–2.5 mcg/kg. Onset rapid; duration ≈10–15 min. This config uses ~1.5 mcg/kg."
+      "annotation": "2 mL amp = 0.05 mg (50 mcg). Typical bolus 0.5–2.5 mcg/kg. Onset rapid; duration ≈10–15 min. \n\nThis config uses ~1.5 mcg/kg by default with the ability to customize."
     },
     "ditilin": {
       "label": "Ditilin (Suxamethonium)",
-      "annotation": "5 mL = 100 mg. Typical dose 1–1.5 mg/kg IV for rapid muscle relaxation. Onset ≈30–60 s; duration ≈5–7 min. This config uses ~1.25 mg/kg."
+      "annotation": "5 mL = 100 mg. Typical dose 1–1.5 mg/kg IV for rapid muscle relaxation. Onset ≈30–60 s; duration ≈5–7 min. \n\nThis config uses ~1.25 mg/kg by default with the ability to customize."
     },
     "atracurium": {
       "label": "Atracurium",
-      "annotation": "2.5 mL = 25 mg or 5 mL = 50 mg. Typical bolus 0.3–0.6 mg/kg. Onset ~2–3 min; duration ≈15–35 min. This config uses ~0.45 mg/kg."
+      "annotation": "2.5 mL = 25 mg or 5 mL = 50 mg. Typical bolus 0.3–0.6 mg/kg. Onset ~2–3 min; duration ≈15–35 min. \n\nThis config uses ~0.45 mg/kg by default with the ability to customize."
     },
     "dexon": {
       "label": "Dexamethasone",
-      "annotation": "1 mL = 4 mg. Typical single dose ~4–8 mg (1–2 amps). This config uses ~0.08 mg/kg."
+      "annotation": "1 mL = 4 mg. Typical single dose ~4–8 mg (1–2 amps) or ~0.06–0.11 mg/kg. \n\nThis config uses ~0.08 mg/kg by default with the ability to customize."
     },
     "naloxone": {
       "label": "Naloxone",
-      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 mcg/kg IV. This config uses ~2 mcg/kg (~0.002 mg/kg)."
+      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 mcg/kg IV. \n\nThis config uses ~2 mcg/kg (~0.002 mg/kg) by default with the ability to customize."
     },
     "noradrenaline": {
       "label": "Noradrenaline (Norepinephrine)",
-      "annotation": "4 mL amp = 8 mg. Common infusion 0.1–1 mcg/kg/min. This config uses ~0.5 mcg/kg/min (0.0005 mg/kg/min)."
+      "annotation": "4 mL amp = 8 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.5 mcg/kg/min (0.0005 mg/kg/min) by default with the ability to customize."
     },
     "dopamine": {
       "label": "Dopamine",
-      "annotation": "5 mL = 200 mg or 25 mg. Typical infusion 1–20 mcg/kg/min. This config uses ~10 mcg/kg/min (0.01 mg/kg/min)."
+      "annotation": "5 mL = 200 mg or 25 mg. Typical infusion 1–20 mcg/kg/min. \n\nThis config uses ~10 mcg/kg/min (0.01 mg/kg/min) by default with the ability to customize."
     },
     "nitroglycerin": {
       "label": "Nitroglycerin",
-      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. Typical infusion 0.5–10 mcg/kg/min. This config uses ~5 mcg/kg/min (0.005 mg/kg/min)."
+      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~5 mcg/kg/min (0.005 mg/kg/min) by default with the ability to customize."
     }
   }
 }

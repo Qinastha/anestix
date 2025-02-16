@@ -10,16 +10,35 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.kg',
       type: 'number',
     },
+    {
+      key: 'dosePerKg',
+      label: 'calculators.dosePerKg',
+      unit: 'units.mg_kg',
+      type: 'number',
+      optional: true,
+      defaultValue: 2,
+    },
+    {
+      key: 'infusionDosePerKg',
+      label: 'calculators.infusionDosePerKg',
+      unit: 'units.mg_kg_hr',
+      type: 'number',
+      optional: true,
+      defaultValue: 5,
+    },
   ],
-  calculate: ({ weight }, setResult) => {
+  calculate: ({ weight, dosePerKg, infusionDosePerKg }, setResult) => {
+    const dose = typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 2;
+    const infusionDose =
+      typeof infusionDosePerKg === 'number' && infusionDosePerKg > 0
+        ? infusionDosePerKg
+        : 5;
+
     // For induction bolus range ~1.5–2.5 mg/kg => pick ~2 mg/kg
-    // (Though also used as infusion, here we treat the main usage as induction.)
-    const AVERAGE_DOSE_MG_PER_KG = 2;
-    const totalBolus = weight * AVERAGE_DOSE_MG_PER_KG;
+    const totalBolus = weight * dose;
 
     //4 - 12,5 мг/кг/час – поддержание анестезии
-    const AVERAGE_MAINTENANCE_DOSE_MG_PER_KG_H = 5;
-    const infusionMgPerHour = weight * AVERAGE_MAINTENANCE_DOSE_MG_PER_KG_H;
+    const infusionMgPerHour = weight * infusionDose;
 
     // Convert mg/h to ml/h based on propofol's 10 mg/ml concentration
     const infusionMlPerHour = infusionMgPerHour / 10;

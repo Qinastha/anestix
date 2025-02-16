@@ -10,11 +10,20 @@ export const THIOPENTAIL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.kg',
       type: 'number',
     },
+    {
+      key: 'dosePerKg',
+      label: 'calculators.dosePerKg',
+      unit: 'units.mg_kg',
+      type: 'number',
+      optional: true,
+      defaultValue: 4.5,
+    },
   ],
-  calculate: ({ weight }, setResult) => {
+  calculate: ({ weight, dosePerKg }, setResult) => {
+    const dose =
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 4.5;
     // Typical induction bolus range: 3–6 mg/kg => pick ~4.5 mg/kg
-    const AVERAGE_DOSE_MG_PER_KG = 4.5;
-    const total = weight * AVERAGE_DOSE_MG_PER_KG;
+    const total = weight * dose;
 
     setResult({
       bolus: {

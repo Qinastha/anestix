@@ -29,4 +29,7 @@ export type MedicalUnits =
   | 'units.mcg_kg_min'
   | 'units.mg_per_min'
   | 'units.mg_hr'
+  | 'units.mg_kg'
+  | 'units.mg_kg_min'
+  | 'units.mg_kg_hr'
   | '';
