@@ -33,4 +33,5 @@ export const ACTILYSE_CONFIG: DrugCalculatorConfig = {
       },
     });
   },
+  annotation: 'calculators.actilyse.annotation',
 };

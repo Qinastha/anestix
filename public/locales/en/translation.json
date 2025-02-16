@@ -30,7 +30,8 @@
     "mcg_kg": "mcg/kg",
     "mcg_kg_min": "mcg/kg/min",
     "mcg_kg_hr": "mcg/kg/hr",
-    "mg_per_min": "mg per min"
+    "mg_per_min": "mg per min",
+    "mg_hr": "mg/hr"
   },
   "home": {
     "Title": "Anestix",
@@ -620,14 +621,17 @@
     "not_found": "Drug not found",
     "weight": "Weight",
     "bolus": "Bolus",
+    "induction": "Induction",
     "infusion": "Infusion",
+    "maintenanceDose": "Maintenance Dose",
     "total": "Total",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
       "bolus": "Bolus Dose (IV over 1 min)",
       "infusion": "Infusion Dose (IV over 60 mins)",
-      "total": "Total"
+      "total": "Total",
+      "annotation": "Typical total dose 0.9 mg/kg. Administer 10% as a bolus over 1 minute, then infuse the remaining 90% over 60 minutes. \n\nThis config uses 0.9 mg/kg (bolus: 10%, infusion: 90%)."
     },
 
     "bmi": {
@@ -759,7 +763,7 @@
     },
     "propofol": {
       "label": "Propofol",
-      "annotation": "20 mL = 200 mg emulsion. Typical induction dose 1.5–2.5 mg/kg. Onset ≈20–40 s; duration ≈6–8 min. This config uses ~2 mg/kg."
+      "annotation": "20 mL = 200 mg emulsion. Typical dosages: for induction 1.5–2.5 mg/kg || infusion rate 4-12.5 mg/kg/hr. Onset ≈20–40 s; duration ≈6–8 min. \n\nThis config uses ~2 mg/kg for induction and ~5 mg/kg/h for infusion."
     },
     "ketamine": {
       "label": "Ketamine",

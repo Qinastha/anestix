@@ -18,7 +18,7 @@ export const FENTANYL_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       bolus: {
-        label: 'calculators.bolus',
+        label: 'calculators.induction',
         value: Number(total.toFixed(4)), // small amounts
         unit: 'units.mg',
       },

@@ -18,7 +18,7 @@ export const GOMH_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       bolus: {
-        label: 'calculators.bolus',
+        label: 'calculators.induction',
         value: Number(total.toFixed(2)),
         unit: 'units.mg',
       },
