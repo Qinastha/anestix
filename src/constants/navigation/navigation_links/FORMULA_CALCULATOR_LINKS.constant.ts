@@ -25,4 +25,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
     label: 'dashboard.links.algover',
     href: '/dashboard/calculators/formula-calculator/algover',
   },
+  {
+    label: 'dashboard.links.plasmaExchange',
+    href: '/dashboard/calculators/formula-calculator/plasmaExchange',
+  },
 ];

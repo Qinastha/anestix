@@ -1,17 +1,17 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { DRUG_CALCULATOR_CONFIG } from '@/constants/configs/calculators_config/DRUG_CALCULATOR_CONFIG.constant';
+import { DRUG_CALCULATOR_CONFIG } from '@/constants/configs/DRUG_CALCULATOR_CONFIG.constant';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
 import { SkeletonCalc } from '@/components/SkeletonCalc';
 import { DrugParameter, DrugResult } from '@/interfaces/DrugCalculator.type';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { CalculatorForm } from '@/components/calculators/CalculatorForm';
-import { AnimatePresence } from 'framer-motion';
-import { CalculatorResult } from '@/components/calculators/CalculatorResult';
+import React from 'react';
+import { CalculatorSumContent } from '@/components/calculators/CalculatorSumContent';
 
 export default function DrugCalculatorPage() {
   const params = useParams();
@@ -55,9 +55,13 @@ export default function DrugCalculatorPage() {
         allInputsFilled={allInputsFilled}
       />
 
-      <AnimatePresence>
-        {result && <CalculatorResult result={result} isDrugForm={true} />}
-      </AnimatePresence>
+      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg bg-card">
+        <CalculatorSumContent
+          result={result}
+          isDrugForm={true}
+          annotation={config.annotation}
+        />
+      </CardContent>
     </Card>
   );
 }

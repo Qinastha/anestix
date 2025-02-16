@@ -24,4 +24,8 @@ export type MedicalUnits =
   | 'units.bpm'
   | 'units.years'
   | 'units.h'
+  | 'units.mcg_kg'
+  | 'units.mcg_kg_hr'
+  | 'units.mcg_kg_min'
+  | 'units.mg_per_min'
   | '';

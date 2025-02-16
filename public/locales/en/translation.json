@@ -26,7 +26,11 @@
     "pct": "%",
     "bpm": "bpm",
     "years": "years",
-    "h": "hours"
+    "h": "hours",
+    "mcg_kg": "mcg/kg",
+    "mcg_kg_min": "mcg/kg/min",
+    "mcg_kg_hr": "mcg/kg/hr",
+    "mg_per_min": "mg per min"
   },
   "home": {
     "Title": "Anestix",
@@ -122,7 +126,20 @@
       "creatinine": "Creatinine clearance",
       "waterBalance": "Daily water balance",
       "dailyDiuresis": "Hourly diuresis rate",
-      "algover": "Algover index"
+      "algover": "Algover index",
+      "plasmaExchange": "Plasma exchange calculator",
+      "thiopental": "Thiopental",
+      "propofol": "Propofol",
+      "ketamine": "Ketamine",
+      "gomh": "Sodium Oxybutyrate",
+      "fentanyl": "Fentanyl",
+      "ditilin": "Ditilin (Suxamethonium)",
+      "atracurium": "Atracurium",
+      "dexon": "Dexamethasone",
+      "naloxone": "Naloxone",
+      "noradrenaline": "Noradrenaline (Norepinephrine)",
+      "dopamine": "Dopamine",
+      "nitroglycerin": "Nitroglycerin"
     }
   },
   "scale": {
@@ -601,7 +618,10 @@
     "result": "Calculated Results:",
     "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",
     "not_found": "Drug not found",
-    "weight": "Weight (kg)",
+    "weight": "Weight",
+    "bolus": "Bolus",
+    "infusion": "Infusion",
+    "total": "Total",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -711,6 +731,75 @@
         "hourlyDiuresis": "Hourly Diuresis Rate"
       },
       "annotation": "The following values \u200B\u200Bare usually used as a guide (in ml/kg/h):\nAdults: the norm is considered to be ≈0.5–1 ml/kg/h (some sources give up to 2 ml/kg/h, everything depends on specific clinical conditions).\nChildren: the indicator is higher and strongly depends on age (in newborns it can reach 2–3 ml/kg/h, in older children it is closer to the indicators of adults)."
+    },
+    "plasmaExchange": {
+      "label": "Plasma Exchange Calculator",
+      "parameters": {
+        "weight": "Weight",
+        "hematocrit": "Hematocrit",
+        "sex": "Sex",
+        "removedPercentage": "Removal Percentage for RPV"
+      },
+      "options": {
+        "sex": {
+          "male": "Male",
+          "female": "Female"
+        }
+      },
+      "result": {
+        "totalBloodVolume": "Total Blood Volume",
+        "plasmaVolume": "Circulating Plasma Volume",
+        "removedPlasmaVolume": "Removed Plasma Volume"
+      },
+      "annotation": "Formulas used in this calculator:\n1. Total Blood Volume (TBV) = Weight (kg) × Coefficient, where the coefficient is 70 mL/kg for males and 65 mL/kg for females.\n2. Circulating Plasma Volume (PV) = TBV × ((100 - Hematocrit) / 100).\n3. Removed Plasma Volume (RPV) = PV × (Removal Percentage / 100) × Correction Factor.\n\nThe Correction Factor is fixed at 1.05 by default and adjusts the removal volume based on clinical requirements."
+    },
+    "thiopental": {
+      "label": "Thiopental",
+      "annotation": "20 mL = 1 g or 10 mL = 500 mg freeze-dried. Usually reconstituted to a 1% solution. Typical IV dose 3–6 mg/kg. Onset ≈1–2 min; duration ≈20–25 min. This config uses ~4.5 mg/kg."
+    },
+    "propofol": {
+      "label": "Propofol",
+      "annotation": "20 mL = 200 mg emulsion. Typical induction dose 1.5–2.5 mg/kg. Onset ≈20–40 s; duration ≈6–8 min. This config uses ~2 mg/kg."
+    },
+    "ketamine": {
+      "label": "Ketamine",
+      "annotation": "2 mL = 100 mg. Typical IV dose 1.5–2 mg/kg. Onset ≈1–2 min IV; duration ≈15–20 min IV. This config uses ~2 mg/kg."
+    },
+    "gomh": {
+      "label": "Sodium Oxybutyrate",
+      "annotation": "1 mL = 200 mg. Typical dose 50–150 mg/kg IV. Onset ≈5–10 min; duration 20–60+ min. This config uses ~100 mg/kg."
+    },
+    "fentanyl": {
+      "label": "Fentanyl",
+      "annotation": "2 mL amp = 0.05 mg (50 mcg). Typical bolus 0.5–2.5 mcg/kg. Onset rapid; duration ≈10–15 min. This config uses ~1.5 mcg/kg."
+    },
+    "ditilin": {
+      "label": "Ditilin (Suxamethonium)",
+      "annotation": "5 mL = 100 mg. Typical dose 1–1.5 mg/kg IV for rapid muscle relaxation. Onset ≈30–60 s; duration ≈5–7 min. This config uses ~1.25 mg/kg."
+    },
+    "atracurium": {
+      "label": "Atracurium",
+      "annotation": "2.5 mL = 25 mg or 5 mL = 50 mg. Typical bolus 0.3–0.6 mg/kg. Onset ~2–3 min; duration ≈15–35 min. This config uses ~0.45 mg/kg."
+    },
+    "dexon": {
+      "label": "Dexamethasone",
+      "annotation": "1 mL = 4 mg. Typical single dose ~4–8 mg (1–2 amps). This config uses ~0.08 mg/kg."
+    },
+    "naloxone": {
+      "label": "Naloxone",
+      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 mcg/kg IV. This config uses ~2 mcg/kg (~0.002 mg/kg)."
+    },
+    "noradrenaline": {
+      "label": "Noradrenaline (Norepinephrine)",
+      "annotation": "4 mL amp = 8 mg. Common infusion 0.1–1 mcg/kg/min. This config uses ~0.5 mcg/kg/min (0.0005 mg/kg/min)."
+    },
+    "dopamine": {
+      "label": "Dopamine",
+      "annotation": "5 mL = 200 mg or 25 mg. Typical infusion 1–20 mcg/kg/min. This config uses ~10 mcg/kg/min (0.01 mg/kg/min)."
+    },
+    "nitroglycerin": {
+      "label": "Nitroglycerin",
+      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. Typical infusion 0.5–10 mcg/kg/min. This config uses ~5 mcg/kg/min (0.005 mg/kg/min)."
     }
   }
 }

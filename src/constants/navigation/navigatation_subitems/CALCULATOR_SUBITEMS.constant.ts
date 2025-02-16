@@ -1,6 +1,6 @@
 import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
-import { DRUG_CALCULATOR_LINKS } from '@/constants/navigation/DRUG_CALCULATOR_LINKS.constant';
-import { FORMULA_CALCULATOR_LINKS } from '@/constants/navigation/FORMULA_CALCULATOR_LINKS.constant';
+import { DRUG_CALCULATOR_LINKS } from '@/constants/navigation/navigation_links/DRUG_CALCULATOR_LINKS.constant';
+import { FORMULA_CALCULATOR_LINKS } from '@/constants/navigation/navigation_links/FORMULA_CALCULATOR_LINKS.constant';
 
 export const CALCULATOR_SUBITEMS: NavigationSubItem[] = [
   {

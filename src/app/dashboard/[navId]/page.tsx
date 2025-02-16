@@ -13,6 +13,8 @@ import {
 } from '@/components/ui/card';
 import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { Sparkle } from 'lucide-react';
+import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
+import { sortByLabel } from '@/utils/sortByLabel';
 
 export default function ScaleCalculatorHome() {
   const { t } = useTranslation();
@@ -22,9 +24,7 @@ export default function ScaleCalculatorHome() {
     (item) => item.href === `/dashboard/${navId}`
   );
 
-  const sortedSubItems = navItem?.subItems
-    ? [...navItem.subItems].sort((a, b) => a.label.localeCompare(b.label))
-    : [];
+  const sortedSubItems: NavigationSubItem[] = sortByLabel(navItem?.subItems);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">

@@ -16,10 +16,12 @@ export interface DrugParameter {
 }
 
 export interface DrugCalculatorConfig {
+  id: string;
   label: string;
   parameters: DrugParameter[];
   calculate: (
     params: Record<string, number>,
     setResult: (result: DrugResult) => void
   ) => void;
+  annotation?: string;
 }

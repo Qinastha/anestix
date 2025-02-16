@@ -1,19 +1,20 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
 import { FORMULA_CALCULATOR_CONFIG } from '@/constants/configs/FORMULA_CALCULATOR_CONFIG.constant';
 import {
   FormulaParameter,
   FormulaResult,
 } from '@/interfaces/FormulaCalculator.type';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
 import SkeletonCalc from '@/components/SkeletonCalc';
 import { useTranslation } from 'react-i18next';
 import { CalculatorForm } from '@/components/calculators/CalculatorForm';
-import { CalculatorResult } from '@/components/calculators/CalculatorResult';
+import React from 'react';
+import { CalculatorSumContent } from '@/components/calculators/CalculatorSumContent';
 
 export default function FormulaCalculatorPage() {
   const params = useParams();
@@ -57,11 +58,9 @@ export default function FormulaCalculatorPage() {
         allInputsFilled={allInputsFilled}
       />
 
-      <AnimatePresence>
-        {result && (
-          <CalculatorResult result={result} annotation={config.annotation} />
-        )}
-      </AnimatePresence>
+      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg bg-card">
+        <CalculatorSumContent result={result} annotation={config.annotation} />
+      </CardContent>
     </Card>
   );
 }

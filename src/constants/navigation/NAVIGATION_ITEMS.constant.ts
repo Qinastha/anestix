@@ -6,10 +6,10 @@ import {
   TableOfContents,
 } from 'lucide-react';
 import { NavigationItem } from '@/interfaces/NavigationItem.type';
-import { SCALE_SUBITEMS } from '@/constants/navigation/SCALE_SUBITEMS.constant';
-import { CALCULATOR_SUBITEMS } from '@/constants/navigation/CALCULATOR_SUBITEMS.constant';
-import { ULTRASOUND_SUBITEMS } from '@/constants/navigation/ULTRASOUND_SUBITEMS.constant';
-import { SKILLS_SUBITEMS } from '@/constants/navigation/SKILLS_SUBITEMS.constant';
+import { SCALE_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SCALE_SUBITEMS.constant';
+import { CALCULATOR_SUBITEMS } from '@/constants/navigation/navigatation_subitems/CALCULATOR_SUBITEMS.constant';
+import { ULTRASOUND_SUBITEMS } from '@/constants/navigation/navigatation_subitems/ULTRASOUND_SUBITEMS.constant';
+import { SKILLS_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SKILLS_SUBITEMS.constant';
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { icon: Home, description: '', title: 'dashboard.home', href: '/dashboard' },

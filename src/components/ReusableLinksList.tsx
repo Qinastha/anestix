@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { NavigationSubItemLinks } from '@/interfaces/NavigationItem.type';
+import { sortByLabel } from '@/utils/sortByLabel';
 
 type ReusableListProps = {
   items: NavigationSubItemLinks[];
@@ -16,9 +17,11 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
   Icon,
 }) => {
   const { t } = useTranslation();
+  const sortedLinks: NavigationSubItemLinks[] = sortByLabel(items);
+
   return (
     <div className="p-4 space-y-2">
-      {items.map((item, index: number) => (
+      {sortedLinks.map((item, index: number) => (
         <motion.div
           key={item.label}
           className="w-full h-full hover:shadow-lg transition-shadow pb-4"
