@@ -35,10 +35,10 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
         : 5;
 
     // For induction bolus range ~1.5–2.5 mg/kg => pick ~2 mg/kg
-    const totalBolus = weight * dose;
+    const totalBolus = +weight * dose;
 
     //4 - 12,5 мг/кг/час – поддержание анестезии
-    const infusionMgPerHour = weight * infusionDose;
+    const infusionMgPerHour = +weight * infusionDose;
 
     // Convert mg/h to ml/h based on propofol's 10 mg/ml concentration
     const infusionMlPerHour = infusionMgPerHour / 10;

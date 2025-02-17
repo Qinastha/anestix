@@ -630,6 +630,13 @@
     "total": "Total",
     "dosePerKg": "Dose Per Kg",
     "infusionDosePerKg": "Infusion Dose Per Kg",
+    "iv": "IV",
+    "im": "IM",
+    "drugVolume": "Drug Volume",
+    "diluentVolume": "Diluent Volume",
+    "ivPerMin": "IV Per Min",
+    "ivPerHr": "IV Per Hr",
+    "totalVolume": "Total Volume after dilute",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -800,7 +807,7 @@
     },
     "noradrenaline": {
       "label": "Noradrenaline (Norepinephrine)",
-      "annotation": "4 mL amp = 8 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.5 mcg/kg/min (0.0005 mg/kg/min) by default with the ability to customize."
+      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.4 mcg/kg/min (0.0004 mg/kg/min) by default with the ability to customize."
     },
     "dopamine": {
       "label": "Dopamine",

@@ -12,7 +12,7 @@ export const ACTILYSE_CONFIG: DrugCalculatorConfig = {
     },
   ],
   calculate: ({ weight }, setResult) => {
-    const totalDose = weight * 0.9;
+    const totalDose = +weight * 0.9;
     const bolus = Number((totalDose * 0.1).toFixed(1));
     const infusion = Number((totalDose * 0.9).toFixed(1));
     setResult({

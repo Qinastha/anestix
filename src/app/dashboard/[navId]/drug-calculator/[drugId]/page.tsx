@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { DRUG_CALCULATOR_CONFIG } from '@/constants/configs/DRUG_CALCULATOR_CONFIG.constant';
+import { DRUG_CALCULATOR_LIST } from '@/constants/configs/DRUG_CALCULATOR_LIST.constant';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
@@ -16,11 +16,11 @@ import { CalculatorSumContent } from '@/components/calculators/CalculatorSumCont
 export default function DrugCalculatorPage() {
   const params = useParams();
   const drugId = params.drugId as string;
-  const config = DRUG_CALCULATOR_CONFIG[drugId];
+  const config = DRUG_CALCULATOR_LIST[drugId];
   const { t } = useTranslation();
   const ready: boolean = useDelayLoad(500);
 
-  const { handleChange, handleCalculate, allInputsFilled, result } =
+  const { handleChange, handleCalculate, allInputsFilled, result, formValues } =
     useCalculatorForm<DrugParameter, DrugResult>({
       parameters: config.parameters,
       calculate: config.calculate,
@@ -49,6 +49,7 @@ export default function DrugCalculatorPage() {
       </motion.h1>
 
       <CalculatorForm
+        formValues={formValues}
         parameters={config.parameters}
         handleCalculate={handleCalculate}
         handleChange={handleChange}

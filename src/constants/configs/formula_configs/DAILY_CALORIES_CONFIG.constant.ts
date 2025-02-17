@@ -67,28 +67,12 @@ export const DAILY_CALORIES_CONFIG: FormulaConfig = {
       ],
     },
   ],
-  calculate: (params, setResult) => {
-    const weight = Number(params.weight);
-    const height = Number(params.height);
-    const age = Number(params.age);
-    const activity = Number(params.activity);
-    const sex = params.sex as 'male' | 'female';
-
-    if (
-      isNaN(weight) ||
-      isNaN(height) ||
-      isNaN(age) ||
-      isNaN(activity) ||
-      height === 0
-    ) {
-      return;
-    }
-
+  calculate: ({ weight, height, age, activity, sex }, setResult) => {
     const bmr =
       sex === 'male'
-        ? 10 * weight + 6.25 * height - 5 * age + 5
-        : 10 * weight + 6.25 * height - 5 * age - 161;
-    const tdee = bmr * activity;
+        ? 10 * +weight + 6.25 * +height - 5 * +age + 5
+        : 10 * +weight + 6.25 * +height - 5 * +age - 161;
+    const tdee = bmr * +activity;
 
     setResult({
       bmr: {

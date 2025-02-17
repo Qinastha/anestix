@@ -39,16 +39,8 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
       ],
     },
   ],
-  calculate: (params, setResult) => {
-    const age = Number(params.age);
-    const weight = Number(params.weight);
-    const creatinine = Number(params.creatinine) / 88.4;
-    const sex = params.sex as 'male' | 'female';
-
-    if (isNaN(age) || isNaN(weight) || isNaN(creatinine) || creatinine === 0)
-      return;
-
-    let clearance = ((140 - age) * weight) / (72 * creatinine);
+  calculate: ({ age, weight, creatinine, sex }, setResult) => {
+    let clearance = ((140 - +age) * +weight) / (72 * (+creatinine / 88.4));
     if (sex === 'female') clearance *= 0.85;
 
     setResult({

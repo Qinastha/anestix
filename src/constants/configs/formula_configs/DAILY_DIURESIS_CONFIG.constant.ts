@@ -23,15 +23,9 @@ export const DAILY_DIURESIS_CONFIG: FormulaConfig = {
       type: 'number',
     },
   ],
-  calculate: (params, setResult) => {
-    const amount = Number(params.amount);
-    const period = Number(params.period);
-    const weight = Number(params.weight);
-
-    if (isNaN(amount) || isNaN(period) || isNaN(weight) || period === 0) return;
-
-    const absoluteHourlyDiuresis = amount / period;
-    const hourlyDiuresis = amount / (period * weight);
+  calculate: ({ amount, period, weight }, setResult) => {
+    const absoluteHourlyDiuresis = +amount / +period;
+    const hourlyDiuresis = +amount / (+period * +weight);
     setResult({
       absoluteDiuresis: {
         label: 'calculators.dailyDiuresis.result.absoluteDiuresis',

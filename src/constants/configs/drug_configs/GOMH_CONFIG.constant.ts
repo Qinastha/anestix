@@ -23,7 +23,7 @@ export const GOMH_CONFIG: DrugCalculatorConfig = {
     const dose =
       typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 100;
     // Range 50–150 mg/kg => pick ~100 mg/kg
-    const total = weight * dose;
+    const total = +weight * dose;
 
     setResult({
       bolus: {

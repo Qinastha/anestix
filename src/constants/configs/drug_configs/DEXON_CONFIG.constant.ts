@@ -23,11 +23,11 @@ export const DEXON_CONFIG: DrugCalculatorConfig = {
     // Dexamethasone ~4–8 mg typical => ~0.06–0.11 mg/kg for 70 kg => pick 0.08 mg/kg
     const dose =
       typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.08;
-    const total = weight * dose;
+    const total = +weight * dose;
 
     setResult({
       bolus: {
-        label: 'calculators.bolus',
+        label: 'calculators.iv',
         value: Number(total.toFixed(2)),
         unit: 'units.mg',
       },

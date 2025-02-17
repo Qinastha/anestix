@@ -23,7 +23,7 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
     const dose =
       typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 1.25;
     // Suxamethonium 1–1.5 mg/kg => pick ~1.25 mg/kg
-    const total = weight * dose;
+    const total = +weight * dose;
 
     setResult({
       bolus: {

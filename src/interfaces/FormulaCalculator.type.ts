@@ -11,8 +11,8 @@ export type FormulaResult = Record<string, FormulaResultItem>;
 export interface FormulaParameter {
   key: string;
   label: string;
-  type: 'number' | 'select' | 'boolean';
   unit: MedicalUnits;
+  type: 'number' | 'select' | 'boolean';
   options?: { label: string; value: string | number }[];
 }
 

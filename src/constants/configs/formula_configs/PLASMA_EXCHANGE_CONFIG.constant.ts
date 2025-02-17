@@ -39,21 +39,15 @@ export const PLASMA_EXCHANGE_CONFIG: FormulaConfig = {
       type: 'number',
     },
   ],
-  calculate: (params, setResult) => {
-    const weight = Number(params.weight);
-    const hematocrit = Number(params.hematocrit);
-    const sex = params.sex as 'male' | 'female';
-    const removalFraction = Number(params.removedPercentage) / 100;
-
-    if (isNaN(weight) || isNaN(hematocrit) || isNaN(removalFraction)) return;
-
+  calculate: ({ weight, hematocrit, removedPercentage, sex }, setResult) => {
     const bloodVolumeCoefficient = sex === 'male' ? 70 : 65;
 
-    const totalBloodVolume = weight * bloodVolumeCoefficient;
+    const totalBloodVolume = +weight * bloodVolumeCoefficient;
 
-    const plasmaVolume = totalBloodVolume * ((100 - hematocrit) / 100);
+    const plasmaVolume = totalBloodVolume * ((100 - +hematocrit) / 100);
 
-    const removedPlasmaVolume = plasmaVolume * removalFraction * 1.05;
+    const removedPlasmaVolume =
+      plasmaVolume * (+removedPercentage / 100) * 1.05;
 
     setResult({
       totalBloodVolume: {

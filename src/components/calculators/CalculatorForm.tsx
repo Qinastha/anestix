@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Select,
@@ -20,10 +20,11 @@ interface CalculatorFormParameter {
   unit: MedicalUnits;
   options?: { label: string; value: string | number }[];
   optional?: boolean;
-  defaultValue?: number;
+  defaultValue?: number | string | boolean;
 }
 
 interface CalculatorFormProps<TParam extends CalculatorFormParameter> {
+  formValues: Record<string, number | string | boolean>;
   parameters: TParam[];
   handleCalculate: () => void;
   handleChange: (key: string, value: string | number | boolean) => void;
@@ -31,6 +32,7 @@ interface CalculatorFormProps<TParam extends CalculatorFormParameter> {
 }
 
 export const CalculatorForm = <TParam extends CalculatorFormParameter>({
+  formValues,
   parameters,
   handleCalculate,
   handleChange,
@@ -57,7 +59,10 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
               {t(param.label)} <span className="pr-4">{t(param.unit)}</span>
             </label>
             {param.type === 'select' ? (
-              <Select onValueChange={(value) => handleChange(param.key, value)}>
+              <Select
+                value={String(formValues[param.key] ?? '')}
+                onValueChange={(value) => handleChange(param.key, value)}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder={t(param.label)} />
                 </SelectTrigger>
@@ -71,22 +76,30 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
               </Select>
             ) : param.type === 'boolean' ? (
               <Switch
+                checked={Boolean(formValues[param.key])}
                 onCheckedChange={(checked) => handleChange(param.key, checked)}
               />
             ) : param.optional ? (
               <Input
                 type="number"
                 placeholder={String(param.defaultValue)}
-                onChange={(e) =>
-                  handleChange(param.key, Number(e.target.value))
+                value={
+                  formValues[param.key] !== undefined
+                    ? Number(formValues[param.key])
+                    : ''
                 }
-                defaultValue={param.defaultValue}
+                onChange={(e) => handleChange(param.key, e.target.value)}
                 className="w-full placeholder:text-muted-foreground"
               />
             ) : (
               <Input
                 type="number"
                 placeholder={t(param.unit)}
+                value={
+                  formValues[param.key] !== undefined
+                    ? Number(formValues[param.key])
+                    : ''
+                }
                 onChange={(e) => handleChange(param.key, e.target.value)}
                 className="w-full placeholder:text-muted-foreground "
               />

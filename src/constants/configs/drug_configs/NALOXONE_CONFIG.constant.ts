@@ -23,11 +23,11 @@ export const NALOXONE_CONFIG: DrugCalculatorConfig = {
     const dose =
       typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.002;
     // ~1.5–3 mcg/kg => pick ~2 => 0.002 mg/kg
-    const total = weight * dose;
+    const total = +weight * dose;
 
     setResult({
       bolus: {
-        label: 'calculators.bolus',
+        label: 'calculators.iv',
         value: Number(total.toFixed(3)),
         unit: 'units.mg',
       },

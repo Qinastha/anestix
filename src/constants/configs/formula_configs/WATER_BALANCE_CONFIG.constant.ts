@@ -53,22 +53,23 @@ export const WATER_BALANCE_CONFIG: FormulaConfig = {
       type: 'boolean',
     },
   ],
-  calculate: (params, setResult) => {
-    const waterIntake = Number(params.waterIntake) || 0;
-    const foodIntake = Number(params.foodIntake) || 0;
-    const infusionIntake = Number(params.infusionIntake) || 0;
-    const urineOutput = Number(params.urineOutput) || 0;
-    const fecesOutput = Number(params.fecesOutput) || 0;
-    const extraOutput = Number(params.extraOutput) || 0;
-    const weight = Number(params.weight) || 0;
-    const hyperthermia = params.hyperthermia as boolean;
-
-    if (isNaN(weight) || weight === 0) return;
-
-    const perspirationLoss = hyperthermia ? 15 * weight : 14.5 * weight;
-    const totalIntake = waterIntake + foodIntake + infusionIntake;
+  calculate: (
+    {
+      waterIntake,
+      foodIntake,
+      infusionIntake,
+      urineOutput,
+      fecesOutput,
+      extraOutput,
+      weight,
+      hyperthermia,
+    },
+    setResult
+  ) => {
+    const perspirationLoss = hyperthermia ? 15 * +weight : 14.5 * +weight;
+    const totalIntake = +waterIntake + +foodIntake + +infusionIntake;
     const totalOutput =
-      urineOutput + fecesOutput + extraOutput + perspirationLoss;
+      +urineOutput + +fecesOutput + +extraOutput + perspirationLoss;
     const balance = totalIntake - totalOutput;
 
     setResult({

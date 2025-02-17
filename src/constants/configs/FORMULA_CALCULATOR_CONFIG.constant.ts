@@ -7,7 +7,7 @@ import { WATER_BALANCE_CONFIG } from '@/constants/configs/formula_configs/WATER_
 import { DAILY_DIURESIS_CONFIG } from '@/constants/configs/formula_configs/DAILY_DIURESIS_CONFIG.constant';
 import { PLASMA_EXCHANGE_CONFIG } from '@/constants/configs/formula_configs/PLASMA_EXCHANGE_CONFIG.constant';
 
-export const FORMULA_CALCULATOR_CONFIG: Record<string, FormulaConfig> = {
+export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [BMI_CONFIG.id]: BMI_CONFIG,
   [DAILY_CALORIES_CONFIG.id]: DAILY_CALORIES_CONFIG,
   [CREATININE_CLEARANCE_CONFIG.id]: CREATININE_CLEARANCE_CONFIG,

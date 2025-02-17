@@ -23,7 +23,7 @@ export const FENTANYL_CONFIG: DrugCalculatorConfig = {
     const dose =
       typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.0015;
     // Typical bolus ~1.5 mcg/kg => 0.0015 mg/kg
-    const total = weight * dose;
+    const total = +weight * dose;
 
     setResult({
       bolus: {

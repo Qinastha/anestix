@@ -17,13 +17,8 @@ export const ALGOVER_CONFIG: FormulaConfig = {
       type: 'number',
     },
   ],
-  calculate: (params, setResult) => {
-    const heartRate = Number(params.heartRate);
-    const systolicBP = Number(params.systolicBP);
-
-    if (isNaN(heartRate) || isNaN(systolicBP) || systolicBP === 0) return;
-
-    const index = heartRate / systolicBP;
+  calculate: ({ heartRate, systolicBP }, setResult) => {
+    const index = +heartRate / +systolicBP;
     setResult({
       index: {
         label: 'calculators.algoverIndex.result.index',

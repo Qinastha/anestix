@@ -17,13 +17,8 @@ export const BMI_CONFIG: FormulaConfig = {
       type: 'number',
     },
   ],
-  calculate: (params, setResult) => {
-    const weight = Number(params.weight);
-    const height = Number(params.height);
-
-    if (isNaN(weight) || isNaN(height) || height === 0) return;
-
-    const bmi = weight / (height * height);
+  calculate: ({ weight, height }, setResult) => {
+    const bmi = +weight / (+height * +height);
     setResult({
       bmi: {
         label: 'calculators.bmi.result.bmi',

@@ -7,7 +7,7 @@ import { SOFA_CONFIG } from '@/constants/configs/scales_config/SOFA.constant';
 import { NIHSS_CONFIG } from '@/constants/configs/scales_config/NIHSS.constant';
 import { APACHEII_CONFIG } from '@/constants/configs/scales_config/APACHEII.constant';
 
-export const SCALE_CONFIG: Record<string, ScaleConfig> = {
+export const SCALE_LIST: Record<string, ScaleConfig> = {
   [GCS_CONFIG.id]: GCS_CONFIG,
   [FOUR_CONFIG.id]: FOUR_CONFIG,
   [RASS_CONFIG.id]: RASS_CONFIG,

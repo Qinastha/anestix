@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
-import { FORMULA_CALCULATOR_CONFIG } from '@/constants/configs/FORMULA_CALCULATOR_CONFIG.constant';
+import { FORMULA_CALCULATOR_LIST } from '@/constants/configs/FORMULA_CALCULATOR_CONFIG.constant';
 import {
   FormulaParameter,
   FormulaResult,
@@ -19,11 +19,11 @@ import { CalculatorSumContent } from '@/components/calculators/CalculatorSumCont
 export default function FormulaCalculatorPage() {
   const params = useParams();
   const formulaId = params.formulaId as string;
-  const config = FORMULA_CALCULATOR_CONFIG[formulaId];
-  const ready: boolean = useDelayLoad(500);
+  const config = FORMULA_CALCULATOR_LIST[formulaId];
   const { t } = useTranslation();
+  const ready: boolean = useDelayLoad(500);
 
-  const { handleChange, handleCalculate, allInputsFilled, result } =
+  const { handleChange, handleCalculate, allInputsFilled, result, formValues } =
     useCalculatorForm<FormulaParameter, FormulaResult>({
       parameters: config.parameters,
       calculate: config.calculate,
@@ -52,6 +52,7 @@ export default function FormulaCalculatorPage() {
       </motion.h1>
 
       <CalculatorForm
+        formValues={formValues}
         parameters={config.parameters}
         handleCalculate={handleCalculate}
         handleChange={handleChange}

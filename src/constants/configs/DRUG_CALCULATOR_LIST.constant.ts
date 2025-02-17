@@ -13,7 +13,7 @@ import { NORADRENALINE_CONFIG } from '@/constants/configs/drug_configs/NORADRENA
 import { PROPOFOL_CONFIG } from '@/constants/configs/drug_configs/PROPOFOL_CONFIG.constant';
 import { THIOPENTAIL_CONFIG } from '@/constants/configs/drug_configs/THIOPENTAIL_CONFIG.constant';
 
-export const DRUG_CALCULATOR_CONFIG: Record<string, DrugCalculatorConfig> = {
+export const DRUG_CALCULATOR_LIST: Record<string, DrugCalculatorConfig> = {
   [ACTILYSE_CONFIG.id]: ACTILYSE_CONFIG,
   [ATRACURIUM_CONFIG.id]: ATRACURIUM_CONFIG,
   [DEXON_CONFIG.id]: DEXON_CONFIG,

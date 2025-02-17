@@ -12,9 +12,10 @@ export interface DrugParameter {
   key: string;
   label: string;
   unit: MedicalUnits;
-  type: 'number';
+  type: 'number' | 'select' | 'boolean';
   optional?: boolean;
   defaultValue?: number;
+  options?: { label: string; value: string | number }[];
 }
 
 export interface DrugCalculatorConfig {
@@ -22,7 +23,7 @@ export interface DrugCalculatorConfig {
   label: string;
   parameters: DrugParameter[];
   calculate: (
-    params: Record<string, number>,
+    params: Record<string, number | string>,
     setResult: (result: DrugResult) => void
   ) => void;
   annotation?: string;
