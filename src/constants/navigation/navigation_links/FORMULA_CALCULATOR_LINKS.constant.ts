@@ -29,4 +29,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
     label: 'dashboard.links.plasmaExchange',
     href: '/dashboard/calculators/formula-calculator/plasmaExchange',
   },
+  {
+    label: 'dashboard.links.pediatricInfusion',
+    href: '/dashboard/calculators/formula-calculator/pediatricInfusion',
+  },
 ];

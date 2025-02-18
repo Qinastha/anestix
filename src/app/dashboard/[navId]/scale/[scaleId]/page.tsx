@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
-import { SCALE_LIST } from '@/constants/configs/SCALES_CONFIGS.constant';
+import { SCALES_LIST } from '@/constants/configs/SCALES_LIST.constant';
 import { ScaleConfig, ScaleResult } from '@/interfaces/Scale.type';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -19,7 +19,7 @@ export default function ScalePage() {
   const ready = useDelayLoad(500);
   const params = useParams();
   const scaleId = params.scaleId as string;
-  const scale = SCALE_LIST[scaleId] as ScaleConfig | undefined;
+  const scale = SCALES_LIST[scaleId] as ScaleConfig | undefined;
 
   const [selectedValues, setSelectedValues] = useState<
     Record<string, number | null>

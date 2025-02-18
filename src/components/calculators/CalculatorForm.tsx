@@ -46,7 +46,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="space-y-4"
+        className="flex flex-wrap"
       >
         {parameters.map((param) => (
           <motion.div
@@ -54,6 +54,11 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
+            className={
+              param.type === 'boolean'
+                ? 'w-full sm:w-1/2 px-2 flex flex-col mb-4'
+                : 'w-full px-2 mb-4'
+            }
           >
             <label className="flex flex-row justify-between text-sm font-medium mb-1">
               {t(param.label)} <span className="pr-4">{t(param.unit)}</span>
@@ -79,22 +84,12 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
                 checked={Boolean(formValues[param.key])}
                 onCheckedChange={(checked) => handleChange(param.key, checked)}
               />
-            ) : param.optional ? (
-              <Input
-                type="number"
-                placeholder={String(param.defaultValue)}
-                value={
-                  formValues[param.key] !== undefined
-                    ? Number(formValues[param.key])
-                    : ''
-                }
-                onChange={(e) => handleChange(param.key, e.target.value)}
-                className="w-full placeholder:text-muted-foreground"
-              />
             ) : (
               <Input
                 type="number"
-                placeholder={t(param.unit)}
+                placeholder={
+                  param.optional ? String(param.defaultValue) : t(param.unit)
+                }
                 value={
                   formValues[param.key] !== undefined
                     ? Number(formValues[param.key])

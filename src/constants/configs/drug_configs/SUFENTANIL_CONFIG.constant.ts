@@ -1,8 +1,8 @@
 import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
-export const DITILIN_CONFIG: DrugCalculatorConfig = {
-  id: 'ditilin',
-  label: 'calculators.ditilin.label',
+export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
+  id: 'sufentanil',
+  label: 'calculators.sufentanil.label',
   parameters: [
     {
       key: 'weight',
@@ -13,24 +13,24 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
     {
       key: 'dosePerKg',
       label: 'calculators.dosePerKg',
-      unit: 'units.mg_kg',
+      unit: 'units.mcg_kg',
       type: 'number',
       optional: true,
-      defaultValue: 0.75,
+      defaultValue: 0.05,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
     const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.75;
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.05;
     const total = +weight * dose;
 
     setResult({
       bolus: {
         label: 'calculators.induction',
         value: Number(total.toFixed(2)),
-        unit: 'units.mg',
+        unit: 'units.mcg',
       },
     });
   },
-  annotation: 'calculators.ditilin.annotation',
+  annotation: 'calculators.sufentanil.annotation',
 };

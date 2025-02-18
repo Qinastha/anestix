@@ -146,7 +146,10 @@
       "naloxone": "Naloxone",
       "noradrenaline": "Noradrenaline (Norepinephrine)",
       "dopamine": "Dopamine",
-      "nitroglycerin": "Nitroglycerin"
+      "nitroglycerin": "Nitroglycerin",
+      "sufentanil": "Sufentanil",
+      "rocuronium": "Rocuronium",
+      "pediatricInfusion": "Pediatric infusion rate"
     }
   },
   "scale": {
@@ -627,7 +630,7 @@
     "not_found": "Drug not found",
     "weight": "Weight",
     "bolus": "Bolus",
-    "induction": "Induction",
+    "induction": "Induction of general anesthesia",
     "infusion": "Infusion",
     "maintenanceDose": "Maintenance Dose",
     "total": "Total",
@@ -641,6 +644,7 @@
     "ivPerHr": "IV Per Hr",
     "totalVolume": "Total Volume after dilute",
     "drugAmountInMl": "Drug Concentration ih mL",
+    "drugConcentration": "Drug Concentration",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -784,23 +788,23 @@
     },
     "ketamine": {
       "label": "Ketamine",
-      "annotation": "2 mL = 100 mg. Typical IV dose 1.5–2 mg/kg. Onset ≈1–2 min IV; duration ≈15–20 min IV. \n\nThis config uses ~2 mg/kg by default with the ability to customize."
+      "annotation": "May be selected in hypotensive patients. \n\n2 mL = 100 mg. Typical IV dose 1.5–2 mg/kg. Onset ≈1–2 min IV; duration ≈15–20 min IV. \n\nThis config uses ~1 mg/kg by default with the ability to customize."
     },
     "gomh": {
       "label": "Sodium Oxybutyrate",
-      "annotation": "1 mL = 200 mg. Typical dose 50–150 mg/kg IV. Onset ≈5–10 min; duration 20–60+ min. \n\nThis config uses ~100 mg/kg by default with the ability to customize."
+      "annotation": "1 mL = 200 mg. Typical dose 50–150 mg/kg IV. Onset ≈5–10 min; duration 20–60+ min. \n\nThis config uses ~75 mg/kg by default with the ability to customize."
     },
     "fentanyl": {
       "label": "Fentanyl",
-      "annotation": "2 mL amp = 0.05 mg (50 mcg). Typical bolus 0.5–2.5 mcg/kg. Onset rapid; duration ≈10–15 min. \n\nThis config uses ~1.5 mcg/kg by default with the ability to customize."
+      "annotation": "2 mL amp = 0.05 mg (50 mcg). Typical bolus 0.5–2.5 mcg/kg. Onset rapid; duration ≈10–15 min. \n\nThis config uses ~0.5 mcg/kg by default with the ability to customize."
     },
     "ditilin": {
-      "label": "Ditilin (Suxamethonium)",
-      "annotation": "5 mL = 100 mg. Typical dose 1–1.5 mg/kg IV for rapid muscle relaxation. Onset ≈30–60 s; duration ≈5–7 min. \n\nThis config uses ~1.25 mg/kg by default with the ability to customize."
+      "label": "Ditilin (Succinylcholine)",
+      "annotation": "5 mL = 100 mg. Typical dose 0.6–1.5 mg/kg IV for rapid muscle relaxation. Onset ≈30–60 s; duration ≈5–10 min. \n\nThis config uses ~0.75 mg/kg by default with the ability to customize."
     },
     "atracurium": {
       "label": "Atracurium",
-      "annotation": "2.5 mL = 25 mg or 5 mL = 50 mg. Typical bolus 0.3–0.6 mg/kg. Onset ~2–3 min; duration ≈15–35 min. \n\nThis config uses ~0.45 mg/kg by default with the ability to customize."
+      "annotation": "2.5 mL = 25 mg or 5 mL = 50 mg. Typical bolus 0.5–0.6 mg/kg. Onset ~3–5 min; duration ≈15–35 min. \n\nThis config uses ~0.5 mg/kg by default with the ability to customize."
     },
     "dexon": {
       "label": "Dexamethasone",
@@ -821,6 +825,18 @@
     "nitroglycerin": {
       "label": "Nitroglycerin",
       "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+    },
+    "sufentanil": {
+      "label": "Sufentanil",
+      "annotation": "50 mcg/ml stand for 5 mL = 250 mcg. Typical range for induction is 0.05 - 0.1 mcg/kg. May be administered in divided dose. \n\nThis config uses ~0.05 mcg/kg by default with the ability to customize."
+    },
+    "rocuronium": {
+      "label": "Rocuronium",
+      "annotation": "5 mL = 50 mg. Typical bolus 0.6–1 mg/kg. Onset ~1–2 min; duration ~30–50 min. \n\nThis config uses ~0.6 mg/kg by default with the ability to customize."
+    },
+    "pediatricInfusion": {
+      "label": "Pediatric infusion rate",
+      "annotation": "Infusion rate (mL/h) = (weight (kg) × 60 × dose (mcg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)"
     }
   }
 }

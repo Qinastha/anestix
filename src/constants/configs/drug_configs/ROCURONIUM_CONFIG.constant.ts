@@ -1,8 +1,8 @@
 import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
-export const DITILIN_CONFIG: DrugCalculatorConfig = {
-  id: 'ditilin',
-  label: 'calculators.ditilin.label',
+export const ROCURONIUM_CONFIG: DrugCalculatorConfig = {
+  id: 'rocuronium',
+  label: 'calculators.rocuronium.label',
   parameters: [
     {
       key: 'weight',
@@ -16,21 +16,21 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
-      defaultValue: 0.75,
+      defaultValue: 0.6,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
     const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.75;
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.6;
     const total = +weight * dose;
 
     setResult({
       bolus: {
         label: 'calculators.induction',
-        value: Number(total.toFixed(2)),
+        value: Number(total.toFixed(0)),
         unit: 'units.mg',
       },
     });
   },
-  annotation: 'calculators.ditilin.annotation',
+  annotation: 'calculators.rocuronium.annotation',
 };

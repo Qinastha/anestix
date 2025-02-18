@@ -14,6 +14,8 @@ export interface FormulaParameter {
   unit: MedicalUnits;
   type: 'number' | 'select' | 'boolean';
   options?: { label: string; value: string | number }[];
+  optional?: boolean;
+  defaultValue?: number | string | boolean;
 }
 
 export interface FormulaConfig {

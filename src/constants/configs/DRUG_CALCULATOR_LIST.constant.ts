@@ -12,6 +12,8 @@ import { NITROGLYCERIN_CONFIG } from '@/constants/configs/drug_configs/NITROGLYC
 import { NORADRENALINE_CONFIG } from '@/constants/configs/drug_configs/NORADRENALINE_CONFIG.constant';
 import { PROPOFOL_CONFIG } from '@/constants/configs/drug_configs/PROPOFOL_CONFIG.constant';
 import { THIOPENTAIL_CONFIG } from '@/constants/configs/drug_configs/THIOPENTAIL_CONFIG.constant';
+import { SUFENTANIL_CONFIG } from '@/constants/configs/drug_configs/SUFENTANIL_CONFIG.constant';
+import { ROCURONIUM_CONFIG } from '@/constants/configs/drug_configs/ROCURONIUM_CONFIG.constant';
 
 export const DRUG_CALCULATOR_LIST: Record<string, DrugCalculatorConfig> = {
   [ACTILYSE_CONFIG.id]: ACTILYSE_CONFIG,
@@ -27,4 +29,6 @@ export const DRUG_CALCULATOR_LIST: Record<string, DrugCalculatorConfig> = {
   [NORADRENALINE_CONFIG.id]: NORADRENALINE_CONFIG,
   [PROPOFOL_CONFIG.id]: PROPOFOL_CONFIG,
   [THIOPENTAIL_CONFIG.id]: THIOPENTAIL_CONFIG,
+  [SUFENTANIL_CONFIG.id]: SUFENTANIL_CONFIG,
+  [ROCURONIUM_CONFIG.id]: ROCURONIUM_CONFIG,
 };

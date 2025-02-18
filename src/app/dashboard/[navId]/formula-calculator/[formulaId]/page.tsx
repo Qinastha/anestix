@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useCalculatorForm } from '@/hooks/useCalculatorForm';
-import { FORMULA_CALCULATOR_LIST } from '@/constants/configs/FORMULA_CALCULATOR_CONFIG.constant';
+import { FORMULA_CALCULATOR_LIST } from '@/constants/configs/FORMULA_CALCULATOR_LIST.constant';
 import {
   FormulaParameter,
   FormulaResult,

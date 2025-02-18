@@ -53,4 +53,12 @@ export const DRUG_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
     label: 'dashboard.links.nitroglycerin',
     href: '/dashboard/calculators/drug-calculator/nitroglycerin',
   },
+  {
+    label: 'dashboard.links.sufentanil',
+    href: '/dashboard/calculators/drug-calculator/sufentanil',
+  },
+  {
+    label: 'dashboard.links.rocuronium',
+    href: '/dashboard/calculators/drug-calculator/rocuronium',
+  },
 ];

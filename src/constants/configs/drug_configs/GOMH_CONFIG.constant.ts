@@ -16,12 +16,12 @@ export const GOMH_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
-      defaultValue: 100,
+      defaultValue: 75,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
     const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 100;
+      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 75;
     // Range 50–150 mg/kg => pick ~100 mg/kg
     const total = +weight * dose;
 
