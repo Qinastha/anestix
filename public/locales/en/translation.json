@@ -34,7 +34,10 @@
     "mg_hr": "mg/hr",
     "mg_kg": "mg/kg",
     "mg_kg_min": "mg/kg/min",
-    "mg_kg_hr": "mg/kg/hr"
+    "mg_kg_hr": "mg/kg/hr",
+    "mcg_min": "mcg/min",
+    "mg_ml": "mg/ml",
+    "mcg_ml": "mcg/ml"
   },
   "home": {
     "Title": "Anestix",
@@ -637,6 +640,7 @@
     "ivPerMin": "IV Per Min",
     "ivPerHr": "IV Per Hr",
     "totalVolume": "Total Volume after dilute",
+    "drugAmountInMl": "Drug Concentration ih mL",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -716,7 +720,8 @@
         "fecesOutput": "Feces Output",
         "extraOutput": "Other Losses",
         "weight": "Weight",
-        "hyperthermia": "Hyperthermia"
+        "hyperthermia": "Hyperthermia",
+        "mechanicalVentilation": "Mechanical Ventilation"
       },
       "result": {
         "balance": "Daily water balance taking into account perspiration"
@@ -811,11 +816,11 @@
     },
     "dopamine": {
       "label": "Dopamine",
-      "annotation": "5 mL = 200 mg or 25 mg. Typical infusion 1–20 mcg/kg/min. \n\nThis config uses ~10 mcg/kg/min (0.01 mg/kg/min) by default with the ability to customize."
+      "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 mcg/kg/min. Typical infusion 2–20 mcg/kg/min. \n\nThis config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "nitroglycerin": {
       "label": "Nitroglycerin",
-      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~5 mcg/kg/min (0.005 mg/kg/min) by default with the ability to customize."
+      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     }
   }
 }

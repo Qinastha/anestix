@@ -52,6 +52,12 @@ export const WATER_BALANCE_CONFIG: FormulaConfig = {
       unit: '',
       type: 'boolean',
     },
+    {
+      key: 'mechanicalVentilation',
+      label: 'calculators.dailyWaterBalance.parameters.mechanicalVentilation',
+      unit: '',
+      type: 'boolean',
+    },
   ],
   calculate: (
     {
@@ -63,13 +69,15 @@ export const WATER_BALANCE_CONFIG: FormulaConfig = {
       extraOutput,
       weight,
       hyperthermia,
+      mechanicalVentilation,
     },
     setResult
   ) => {
     const perspirationLoss = hyperthermia ? 15 * +weight : 14.5 * +weight;
+    const mechVent = mechanicalVentilation ? 1000 : 0;
     const totalIntake = +waterIntake + +foodIntake + +infusionIntake;
     const totalOutput =
-      +urineOutput + +fecesOutput + +extraOutput + perspirationLoss;
+      +urineOutput + +fecesOutput + +extraOutput + perspirationLoss + mechVent;
     const balance = totalIntake - totalOutput;
 
     setResult({
