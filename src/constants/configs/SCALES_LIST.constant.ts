@@ -6,6 +6,7 @@ import { ALDERTE_CONFIG } from '@/constants/configs/scales_config/ALDERTE.consta
 import { SOFA_CONFIG } from '@/constants/configs/scales_config/SOFA.constant';
 import { NIHSS_CONFIG } from '@/constants/configs/scales_config/NIHSS.constant';
 import { APACHEII_CONFIG } from '@/constants/configs/scales_config/APACHEII.constant';
+import { WELLS_CONFIG } from '@/constants/configs/scales_config/WELLS.constant';
 
 export const SCALES_LIST: Record<string, ScaleConfig> = {
   [GCS_CONFIG.id]: GCS_CONFIG,
@@ -15,4 +16,5 @@ export const SCALES_LIST: Record<string, ScaleConfig> = {
   [SOFA_CONFIG.id]: SOFA_CONFIG,
   [NIHSS_CONFIG.id]: NIHSS_CONFIG,
   [APACHEII_CONFIG.id]: APACHEII_CONFIG,
+  [WELLS_CONFIG.id]: WELLS_CONFIG,
 };

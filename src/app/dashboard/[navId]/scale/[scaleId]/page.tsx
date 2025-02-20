@@ -105,7 +105,7 @@ export default function ScalePage() {
               {formatParagraphs(t(scale.extraDescription)).map(
                 (para: string, index: number) => (
                   <p key={index} className="leading-relaxed">
-                    {index !== 0 && <b>*</b>}
+                    {index !== 0 && <b>{`${index}) `}</b>}
                     {''}
                     {para}
                   </p>

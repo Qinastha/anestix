@@ -33,4 +33,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
     label: 'dashboard.links.pediatricInfusion',
     href: '/dashboard/calculators/formula-calculator/pediatricInfusion',
   },
+  {
+    label: 'dashboard.links.solutionConcentration',
+    href: '/dashboard/calculators/formula-calculator/solutionConcentration',
+  },
 ];

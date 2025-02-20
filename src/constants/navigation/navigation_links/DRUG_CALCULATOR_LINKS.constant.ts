@@ -61,4 +61,8 @@ export const DRUG_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
     label: 'dashboard.links.rocuronium',
     href: '/dashboard/calculators/drug-calculator/rocuronium',
   },
+  {
+    label: 'dashboard.links.remifentanyl',
+    href: '/dashboard/calculators/drug-calculator/remifentanyl',
+  },
 ];

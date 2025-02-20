@@ -14,6 +14,7 @@ import { PROPOFOL_CONFIG } from '@/constants/configs/drug_configs/PROPOFOL_CONFI
 import { THIOPENTAIL_CONFIG } from '@/constants/configs/drug_configs/THIOPENTAIL_CONFIG.constant';
 import { SUFENTANIL_CONFIG } from '@/constants/configs/drug_configs/SUFENTANIL_CONFIG.constant';
 import { ROCURONIUM_CONFIG } from '@/constants/configs/drug_configs/ROCURONIUM_CONFIG.constant';
+import { REMIFENTANYL_CONFIG } from '@/constants/configs/drug_configs/REMIFENTANYL_CONFIG.constant';
 
 export const DRUG_CALCULATOR_LIST: Record<string, DrugCalculatorConfig> = {
   [ACTILYSE_CONFIG.id]: ACTILYSE_CONFIG,
@@ -31,4 +32,5 @@ export const DRUG_CALCULATOR_LIST: Record<string, DrugCalculatorConfig> = {
   [THIOPENTAIL_CONFIG.id]: THIOPENTAIL_CONFIG,
   [SUFENTANIL_CONFIG.id]: SUFENTANIL_CONFIG,
   [ROCURONIUM_CONFIG.id]: ROCURONIUM_CONFIG,
+  [REMIFENTANYL_CONFIG.id]: REMIFENTANYL_CONFIG,
 };

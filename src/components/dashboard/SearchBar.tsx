@@ -20,7 +20,7 @@ export const SearchBar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
-  const debouncedQuery = useDebounce(query, 300);
+  const debouncedQuery = useDebounce(query, 500);
 
   const lowerQuery = debouncedQuery.toLowerCase();
 
@@ -72,7 +72,7 @@ export const SearchBar = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.3, ease: 'easeOut' },
+      transition: { duration: 0.2, ease: 'easeOut' },
     },
     exit: {
       opacity: 0,

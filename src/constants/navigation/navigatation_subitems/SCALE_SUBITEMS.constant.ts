@@ -36,4 +36,9 @@ export const SCALE_SUBITEMS: NavigationSubItem[] = [
     description: 'dashboard.subItems.apacheii.description',
     href: '/dashboard/scale-list/scale/apacheii',
   },
+  {
+    label: 'dashboard.subItems.wells.title',
+    description: 'dashboard.subItems.wells.description',
+    href: '/dashboard/scale-list/scale/wells',
+  },
 ];

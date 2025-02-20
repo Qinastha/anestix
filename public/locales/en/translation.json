@@ -12,7 +12,7 @@
     "kg": "kg",
     "g": "g",
     "mg": "mg",
-    "mcg": "mcg",
+    "mcg": "µg",
     "l": "L",
     "mg_dl": "mg/dL",
     "umol_l": "µmol/L",
@@ -27,17 +27,18 @@
     "bpm": "bpm",
     "years": "years",
     "h": "hours",
-    "mcg_kg": "mcg/kg",
-    "mcg_kg_min": "mcg/kg/min",
-    "mcg_kg_hr": "mcg/kg/hr",
+    "mcg_kg": "µg/kg",
+    "mcg_kg_min": "µg/kg/min",
+    "mcg_kg_hr": "µg/kg/hr",
     "mg_per_min": "mg per min",
     "mg_hr": "mg/hr",
     "mg_kg": "mg/kg",
     "mg_kg_min": "mg/kg/min",
     "mg_kg_hr": "mg/kg/hr",
-    "mcg_min": "mcg/min",
+    "mcg_min": "µg/min",
     "mg_ml": "mg/ml",
-    "mcg_ml": "mcg/ml"
+    "mcg_ml": "µg/ml",
+    "mcg_hr": "µg/hr"
   },
   "home": {
     "Title": "Anestix",
@@ -109,6 +110,10 @@
         "title": "Apache II",
         "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data."
       },
+      "wells" : {
+        "title": "Wells Score",
+        "description": "Scales for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE."
+      },
       "drug-calculators": {
         "title": "Drug dosage calculators",
         "description": "Use our drug dosage calculators for accurate medication dosing, tailored to patient-specific parameters."
@@ -149,7 +154,10 @@
       "nitroglycerin": "Nitroglycerin",
       "sufentanil": "Sufentanil",
       "rocuronium": "Rocuronium",
-      "pediatricInfusion": "Pediatric infusion rate"
+      "pediatricInfusion": "Pediatric infusion rate",
+      "remifentanyl": "Remifentanyl",
+      "solutionConcentration": "Solution Concentration",
+      "solutionVolume": "Solution Volume"
     }
   },
   "scale": {
@@ -158,6 +166,8 @@
     "totalScore": "Total Score: ",
     "result": "Result: ",
     "not_found": "Scale configuration not found",
+    "yes": "Yes",
+    "no": "No",
     "glasgow": {
       "name": "Glasgow Coma Scale",
       "description": "Assessment of consciousness based on eye, verbal, and motor responses.",
@@ -347,9 +357,9 @@
           "label": "Cardiovascular (with medication doses given for ≥ 1 hour)",
           "option0": "MAP ≥ 70 mm Hg",
           "option1": "MAP < 70 mm Hg",
-          "option2": "Dopamine < 5 mcg/kg/min or any dose of dobutamine",
-          "option3": "Dopamine 5.1–15 mcg/kg/min or epinephrine ≤ 0.1 mcg/kg/min or norepinephrine ≤ 0.1 mcg/kg/min",
-          "option4": "Dopamine > 15 mcg/kg/min or epinephrine > 0.1 mcg/kg/min or norepinephrine > 0.1 mcg/kg/min"
+          "option2": "Dopamine < 5 µg/kg/min or any dose of dobutamine",
+          "option3": "Dopamine 5.1–15 µg/kg/min or epinephrine ≤ 0.1 µg/kg/min or norepinephrine ≤ 0.1 µg/kg/min",
+          "option4": "Dopamine > 15 µg/kg/min or epinephrine > 0.1 µg/kg/min or norepinephrine > 0.1 µg/kg/min"
         },
         "gcs": {
           "label": "Glasgow Coma Scale",
@@ -620,7 +630,54 @@
         "mortality30to34": "Estimated in-hospital mortality: 73% nonoperative / 73% postoperative",
         "mortality35plus": "Estimated in-hospital mortality: 85% nonoperative / 88% postoperative"
       },
-      "extraDescription": "Note: The APACHE II Score is calculated from the worst values recorded during the first 24 hours of ICU admission. Definitions for chronic organ dysfunction and immunocompromise should follow current clinical guidelines."
+      "extraDescription": "Note: The APACHE II Score is calculated from the worst values recorded during the first 24 hours of ICU admission."
+    },
+    "wells": {
+      "name": "Wells Score",
+      "description": "A clinical prediction rule used to estimate the probability of pulmonary embolism (PE).",
+      "criteria": {
+        "dvtSigns": {
+          "label": "Clinical signs of Deep Vein Thrombosis (DVT)",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "alternativeDiagnosis": {
+          "label": "Alternative diagnosis less likely than PE",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "heartRate": {
+          "label": "Heart rate ≥ 100 bpm",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "recentSurgeryImmobilization": {
+          "label": "Surgery or immobilization within the last 4 weeks",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "previousVTE": {
+          "label": "Previous PE or DVT",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "hemoptysis": {
+          "label": "Hemoptysis",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "malignancy": {
+          "label": "Active cancer (treated in the last 6 months or on palliative care)",
+          "option0": "No",
+          "option1": "Yes"
+        }
+      },
+      "result": {
+        "lowProbability": "Low probability of PE (0-1 points): D-dimer testing is recommended. If negative, consider stopping further workup; if positive, CT pulmonary angiography is indicated.",
+        "intermediateProbability": "Intermediate probability of PE (2-6 points): D-dimer testing is recommended. If negative, consider stopping further workup; if positive, CT pulmonary angiography is indicated.",
+        "highProbability": "High probability of PE (≥7 points): CT pulmonary angiography is indicated."
+      },
+      "extraDescription": "Alternatively, a two-tier interpretation can be used: 0-4 points indicate PE unlikely; ≥5 points indicate PE likely."
     }
   },
   "calculators": {
@@ -635,9 +692,12 @@
     "maintenanceDose": "Maintenance Dose",
     "total": "Total",
     "dosePerKg": "Dose Per Kg",
+    "inductionDose": "Induction Dose",
     "infusionDosePerKg": "Infusion Dose Per Kg",
     "iv": "IV",
     "im": "IM",
+    "inductionMCG": "Induction MCG",
+    "inductionML": "Induction ML",
     "drugVolume": "Drug Volume",
     "diluentVolume": "Diluent Volume",
     "ivPerMin": "IV Per Min",
@@ -647,6 +707,10 @@
     "drugConcentration": "Drug Concentration",
     "tivaAnestesiaDepth": "TIVA - anesthesia depth",
     "tivaDosePerHr": "TIVA - IV per hour",
+    "concentration": "Concentration",
+    "solutionVolume": "Solution Volume",
+    "substanceAmount": "Substance Amount",
+    "unit": "Unit of measurement",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -807,7 +871,7 @@
     },
     "fentanyl": {
       "label": "Fentanyl",
-      "annotation": "2 mL amp = 0.05 mg (50 mcg). Typical bolus 0.5–2.5 mcg/kg. Onset rapid; duration ≈10–15 min. \n\nThis config uses ~0.5 mcg/kg by default with the ability to customize."
+      "annotation": "2 mL amp = 0.05 mg (50 µg). Typical bolus 0.5–2.5 µg/kg. Onset rapid; duration ≈10–15 min. \n\nThis config uses ~0.5 µg/kg by default with the ability to customize."
     },
     "ditilin": {
       "label": "Ditilin (Succinylcholine)",
@@ -823,23 +887,23 @@
     },
     "naloxone": {
       "label": "Naloxone",
-      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 mcg/kg IV. \n\nThis config uses ~2 mcg/kg (~0.002 mg/kg) by default with the ability to customize."
+      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 µg/kg IV. \n\nThis config uses ~2 µg/kg (~0.002 mg/kg) by default with the ability to customize."
     },
     "noradrenaline": {
       "label": "Noradrenaline (Norepinephrine)",
-      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.1 mcg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
+      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 µg/kg/min. \n\nThis config uses ~0.1 µg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
     },
     "dopamine": {
       "label": "Dopamine",
-      "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 mcg/kg/min. Typical infusion 2–20 mcg/kg/min. \n\nThis config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+      "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 µg/kg/min. Typical infusion 2–20 µg/kg/min. \n\nThis config uses ~2 µg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "nitroglycerin": {
       "label": "Nitroglycerin",
-      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 µg/mL. \n\nTypical infusion 0.5–10 µg/kg/min. This config uses ~2 µg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "sufentanil": {
       "label": "Sufentanil",
-      "annotation": "50 mcg/ml stand for 5 mL = 250 mcg. Typical range for induction is 0.05 - 0.1 mcg/kg. May be administered in divided dose. \n\nThis config uses ~0.05 mcg/kg by default with the ability to customize."
+      "annotation": "50 µg/ml stand for 5 mL = 250 µg. Typical range for induction is 0.05 - 0.1 µg/kg. May be administered in divided dose. \n\nThis config uses ~0.05 µg/kg by default with the ability to customize."
     },
     "rocuronium": {
       "label": "Rocuronium",
@@ -847,7 +911,15 @@
     },
     "pediatricInfusion": {
       "label": "Pediatric infusion rate",
-      "annotation": "Infusion rate (mL/h) = (weight (kg) × 60 × dose (mcg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)"
+      "annotation": "Keep in mind that this formula is valid only if exactly 1 mL of the 1% drug solution is used for dilution; any change in this volume requires recalculating the final concentration! \n\nInfusion rate (mL/h) = (weight (kg) × 60 × dose (µg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)."
+    },
+    "remifentanyl": {
+      "label": "Remifentanyl",
+      "annotation": "2 mg in 5 ml. Typical induction dose is 1-3 µg/kg and infusion rate ~0,125-0,5 µg/kg/min. \n\nThis config uses ~1 µg/kg for induction and 0,1 µg/kg/min by default with the ability to customize."
+    },
+    "solutionConcentration": {
+      "label": "Solution Concentration",
+      "annotation": "Calculate percent concentration: (mass in g / volume in mL) * 100"
     }
   }
 }
