@@ -645,6 +645,8 @@
     "totalVolume": "Total Volume after dilute",
     "drugAmountInMl": "Drug Concentration ih mL",
     "drugConcentration": "Drug Concentration",
+    "tivaAnestesiaDepth": "TIVA - anesthesia depth",
+    "tivaDosePerHr": "TIVA - IV per hour",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -784,7 +786,16 @@
     },
     "propofol": {
       "label": "Propofol",
-      "annotation": "20 mL = 200 mg emulsion. Typical dosages: for induction 1.5–2.5 mg/kg || infusion rate 4-12.5 mg/kg/hr. Onset ≈20–40 s; duration ≈6–8 min. \n\nThis config uses ~2 mg/kg for induction and ~5 mg/kg/h for infusion by default with the ability to customize."
+      "annotation": "20 ml = 200 mg emulsion. Typical dosages: 1.5–2.5 mg/kg for induction and TIVA maintenance rates range from 4 mg/kg/hr (for light sedation) to 16 mg/kg/hr (for deep anesthesia). Onset ≈20–40 sec; duration ≈6–8 min. \n\nThis configuration uses ~2 mg/kg for induction and ~4 mg/kg/hr for TIVA maintenance by default with the ability to adjust.",
+      "tiva": {
+        "sedation": "Sedation",
+        "lightPain": "Light pain",
+        "laryngealMask": "Laryngeal mask",
+        "moderatePain": "Moderate pain",
+        "intubation": "Intubation",
+        "strongPain": "Strong pain",
+        "deep": "Deep anesthesia"
+      }
     },
     "ketamine": {
       "label": "Ketamine",
@@ -816,7 +827,7 @@
     },
     "noradrenaline": {
       "label": "Noradrenaline (Norepinephrine)",
-      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.4 mcg/kg/min (0.0004 mg/kg/min) by default with the ability to customize."
+      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.1 mcg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
     },
     "dopamine": {
       "label": "Dopamine",
