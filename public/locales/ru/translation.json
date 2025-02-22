@@ -1,6 +1,7 @@
 {
   "select_an_option": "Выберите опцию",
   "search": "Поиск",
+  "score": "балл(-а)",
   "units": {
     "kg_m2": "кг/м²",
     "kcal_day": "ккал/сут",

@@ -1,6 +1,7 @@
 {
   "select_an_option": "Select an option",
   "search": "Search",
+  "score": "score",
   "units": {
     "kg_m2": "kg/m²",
     "kcal_day": "kcal/day",

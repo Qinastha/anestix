@@ -12,6 +12,12 @@ import {
 } from '@/components/ui/table';
 import { ScaleConfig } from '@/interfaces/Scale.type';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface DesktopScaleCalcProps {
   scale: ScaleConfig;
@@ -32,9 +38,6 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
         criteria.options && criteria.options.length > 0
           ? criteria.options.length
           : scale.options.length;
-      if (count <= 2) {
-        return 4;
-      }
       return Math.max(max, count);
     }, 0);
   }, [scale]);
@@ -48,6 +51,8 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
   }
 
   const gridCols = Math.min(maxOptions, maxAllowedCols);
+  const labelWidthClass = maxOptions <= 3 ? 'w-1/2' : 'w-1/4';
+  const optionsWidthClass = maxOptions <= 3 ? 'w-1/2' : 'w-3/4';
 
   return (
     <div className="p-6">
@@ -56,8 +61,12 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-1/5">{t('scale.criteria')}</TableHead>
-            <TableHead className="w-4/5">{t('scale.respOptions')}</TableHead>
+            <TableHead className={labelWidthClass}>
+              {t('scale.criteria')}
+            </TableHead>
+            <TableHead className={optionsWidthClass}>
+              {t('scale.respOptions')}
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -74,12 +83,12 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                 }}
                 className="hover:bg-inherit"
               >
-                <TableCell className="font-bold w-1/5 pr-6">
+                <TableCell className={`font-bold ${labelWidthClass} pr-6`}>
                   <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
                     {t(criteria.label)}
                   </span>
                 </TableCell>
-                <TableCell className="w-4/5">
+                <TableCell className={optionsWidthClass}>
                   <div
                     className="grid gap-x-4 gap-y-2"
                     style={{
@@ -97,20 +106,40 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                             handleSelect(criteria.id, option.value)
                           }
                         >
-                          <motion.div
-                            initial={{ scale: 1 }}
-                            animate={{ scale: isSelected ? 1.05 : 1 }}
-                            transition={{ type: 'spring', stiffness: 300 }}
-                            className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty ${
-                              isSelected
-                                ? 'bg-primary border-secondary text-buttonText'
-                                : 'border-primary'
-                            }`}
-                          >
-                            <span className="font-semibold max-w-full text-xs">
-                              {t(option.description!)}
-                            </span>
-                          </motion.div>
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger className="w-full">
+                                <motion.div
+                                  initial={{ scale: 1 }}
+                                  animate={{ scale: isSelected ? 1.05 : 1 }}
+                                  transition={{
+                                    type: 'spring',
+                                    stiffness: 300,
+                                  }}
+                                  className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty ${
+                                    isSelected
+                                      ? 'bg-primary border-secondary text-buttonText'
+                                      : 'border-primary'
+                                  }`}
+                                >
+                                  <span className="font-semibold max-w-full text-xs">
+                                    {t(option.description!)}
+                                  </span>
+                                </motion.div>
+                              </TooltipTrigger>
+                              <TooltipContent
+                                className={
+                                  isSelected
+                                    ? 'bg-accent text-foreground'
+                                    : 'bg-primary'
+                                }
+                              >
+                                <span>
+                                  {option.label} {t('score')}
+                                </span>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
                         </div>
                       );
                     })}

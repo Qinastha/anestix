@@ -19,7 +19,7 @@ export const AppSidebar = () => {
     );
   }, []);
 
-  const handleClose = () => {
+  const handleCloseGroups = () => {
     setOpen(false);
     setOpenGroups([]);
   };
@@ -31,7 +31,7 @@ export const AppSidebar = () => {
           openGroups={openGroups}
           toggleGroup={toggleGroup}
           open={open}
-          handleClose={handleClose}
+          handleClose={handleCloseGroups}
         />
       </MobileSidebar>
     );
@@ -41,7 +41,11 @@ export const AppSidebar = () => {
     <Sidebar
       className={`border-r border-border md:h-screen bg-sidebar-background text-sidebar-foreground hidden md:block`}
     >
-      <SidebarContentItems openGroups={openGroups} toggleGroup={toggleGroup} />
+      <SidebarContentItems
+        openGroups={openGroups}
+        toggleGroup={toggleGroup}
+        handleClose={handleCloseGroups}
+      />
     </Sidebar>
   );
 };

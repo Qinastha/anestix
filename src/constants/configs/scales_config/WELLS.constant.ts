@@ -124,12 +124,12 @@ export const WELLS_CONFIG: ScaleConfig = {
   resultThresholds: [
     {
       min: 0,
-      max: 1,
+      max: 1.5,
       summaryText: 'scale.wells.result.lowProbability',
     },
     {
       min: 2,
-      max: 6,
+      max: 6.5,
       summaryText: 'scale.wells.result.intermediateProbability',
     },
     {

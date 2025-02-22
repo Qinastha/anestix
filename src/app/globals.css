@@ -169,3 +169,14 @@
 .scale_select_placeholder[data-placeholder] {
   @apply text-xs text-blue-500;
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -71,7 +71,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                       <SelectTrigger className="w-full text-left">
                         <SelectValue
                           placeholder={t('select_an_option')}
-                          className="whitespace-normal break-words"
+                          className="whitespace-normal text-pretty"
                         />
                       </SelectTrigger>
                       <SelectContent className="max-w-sm bg-card">
@@ -81,7 +81,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                             value={option.value.toString()}
                             className="p-4 border border-b-primary"
                           >
-                            <span className="block whitespace-normal break-words">
+                            <span className="block whitespace-normal text-pretty">
                               {t(option.description!)}
                             </span>
                           </SelectItem>

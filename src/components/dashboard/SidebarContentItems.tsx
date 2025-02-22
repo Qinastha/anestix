@@ -28,13 +28,13 @@ export interface SidebarContentItemsProps {
   openGroups: string[];
   toggleGroup: (label: string) => void;
   open?: boolean;
-  handleClose?: () => void;
+  handleClose: () => void;
 }
 
 export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
   openGroups,
   toggleGroup,
-  handleClose = () => {},
+  handleClose,
 }) => {
   const { t } = useTranslation();
   const { theme, setTheme } = useTheme();
@@ -45,14 +45,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
       <SidebarGroup>
         <SidebarGroupContent>
           <SidebarMenu>
-            {NAVIGATION_ITEMS.map((item, index: number) => {
-              const isHome = index === 0;
-              const iconSizeClass = isHome ? 'mr-0' : 'h-4 w-4';
-              const textClass = isHome ? 'text-xl font-bold' : 'text-md';
-              const buttonClass = isHome
-                ? 'w-full text-xl font-bold'
-                : 'w-full justify-between';
-
+            {NAVIGATION_ITEMS.map((item) => {
               return (
                 <SidebarMenuItem key={item.title} className="w-full py-2">
                   {item.subItems ? (
@@ -61,24 +54,19 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                       onOpenChange={() => toggleGroup(item.title)}
                     >
                       <CollapsibleTrigger asChild>
-                        <SidebarMenuButton className={buttonClass}>
-                          <span className="flex items-center">
-                            <div
-                              className="flex flex-row"
-                              onClick={() => handleClose()}
-                            >
-                              <item.icon className={`mr-2 ${iconSizeClass}`} />
-                              <span className={`${textClass}`}>
-                                {t(item.title)}
-                              </span>
-                            </div>
-                          </span>
+                        <SidebarMenuButton>
+                          <div className="flex flex-row w-full items-center">
+                            <item.icon className="mr-2 h-4 w-4" />
+                            <span className="text-md font-semibold">
+                              {t(item.title)}
+                            </span>
+                          </div>
                           <ChevronDown
                             className={`transition-transform duration-200 ${
                               openGroups.includes(item.title)
                                 ? 'rotate-180'
                                 : ''
-                            } ${iconSizeClass}`}
+                            } h-4 w-4`}
                           />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
@@ -95,23 +83,31 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                               asChild
                               className="pl-8 py-6 text-sm w-full"
                             >
-                              <a href={subItem.href}>{t(subItem.label)}</a>
+                              <Link
+                                href={subItem.href}
+                                onClick={() => handleClose()}
+                              >
+                                {t(subItem.label)}
+                              </Link>
                             </SidebarMenuButton>
                           ))}
                         </motion.div>
                       </CollapsibleContent>
                     </Collapsible>
                   ) : (
-                    <SidebarMenuButton asChild>
-                      <Link
-                        href={item.href}
-                        className={`flex items-center w-full ${textClass}`}
-                        onClick={() => handleClose()}
-                      >
-                        <item.icon className={`mr-2 ${iconSizeClass}`} />
-                        {t(item.title)}
-                      </Link>
-                    </SidebarMenuButton>
+                    <>
+                      <SidebarMenuButton asChild>
+                        <Link
+                          href={item.href}
+                          className="flex flex-row items-center w-full text-md font-bold"
+                          onClick={() => handleClose()}
+                        >
+                          <item.icon className="h-4 w-4" />
+                          {t(item.title)}
+                        </Link>
+                      </SidebarMenuButton>
+                      <hr />
+                    </>
                   )}
                 </SidebarMenuItem>
               );
