@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const { lang } = await request.json();
     if (!lang || typeof lang !== 'string') {
@@ -10,6 +10,7 @@ export async function POST(request: Request) {
     const response = NextResponse.json({ success: true });
     response.cookies.set('lang', lang, {
       path: '/',
+      sameSite: 'lax',
       maxAge: 30 * 24 * 60 * 60,
     });
     return response;

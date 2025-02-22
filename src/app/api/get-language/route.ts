@@ -1,9 +1,6 @@
-import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: Request) {
-  const cookieStore = await cookies();
-
-  const lang = cookieStore.get('lang')?.value || 'ru';
+export async function GET(request: NextRequest) {
+  const lang: string = (request.cookies.get('lang')?.value as string) || 'ru';
   return NextResponse.json({ lang });
 }

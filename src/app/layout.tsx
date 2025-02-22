@@ -39,12 +39,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookieStore = await cookies();
-  const langCookie = cookieStore.get('lang')?.value || 'ru';
+  const langCookie: string = cookieStore.get('lang')?.value || 'ru';
   return (
     <html lang={langCookie} suppressHydrationWarning>
       <body className={inter.className}>
         <ClientI18nProvider>
-          <LanguageProvider>
+          <LanguageProvider initialLanguage={langCookie}>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"

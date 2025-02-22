@@ -28,7 +28,7 @@ export interface SidebarContentItemsProps {
   openGroups: string[];
   toggleGroup: (label: string) => void;
   open?: boolean;
-  handleClose?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  handleClose?: () => void;
 }
 
 export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
@@ -63,16 +63,15 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton className={buttonClass}>
                           <span className="flex items-center">
-                            <Link
-                              href={item.href}
+                            <div
                               className="flex flex-row"
-                              onClick={(e) => handleClose(e)}
+                              onClick={() => handleClose()}
                             >
                               <item.icon className={`mr-2 ${iconSizeClass}`} />
                               <span className={`${textClass}`}>
                                 {t(item.title)}
                               </span>
-                            </Link>
+                            </div>
                           </span>
                           <ChevronDown
                             className={`transition-transform duration-200 ${
@@ -107,7 +106,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                       <Link
                         href={item.href}
                         className={`flex items-center w-full ${textClass}`}
-                        onClick={(e) => handleClose(e)}
+                        onClick={() => handleClose()}
                       >
                         <item.icon className={`mr-2 ${iconSizeClass}`} />
                         {t(item.title)}

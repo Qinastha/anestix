@@ -28,21 +28,22 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
 }) => {
   const maxOptions = useMemo(() => {
     return scale.criteria.reduce((max: number, criteria) => {
-      const count =
+      const count: number =
         criteria.options && criteria.options.length > 0
           ? criteria.options.length
           : scale.options.length;
+      if (count <= 2) {
+        return 4;
+      }
       return Math.max(max, count);
     }, 0);
   }, [scale]);
 
   const breakpoint = useBreakpoint();
-  let maxAllowedCols = 2;
+  let maxAllowedCols = 3;
   if (breakpoint === 'md') {
-    maxAllowedCols = 3;
-  } else if (breakpoint === 'lg') {
     maxAllowedCols = 4;
-  } else if (breakpoint === 'xl') {
+  } else if (breakpoint === 'lg') {
     maxAllowedCols = 6;
   }
 
@@ -73,14 +74,14 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                 }}
                 className="hover:bg-inherit"
               >
-                <TableCell className="font-bold w-1/5">
+                <TableCell className="font-bold w-1/5 pr-6">
                   <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
                     {t(criteria.label)}
                   </span>
                 </TableCell>
                 <TableCell className="w-4/5">
                   <div
-                    className="grid gap-4"
+                    className="grid gap-x-4 gap-y-2"
                     style={{
                       gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
                     }}
@@ -100,15 +101,13 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                             initial={{ scale: 1 }}
                             animate={{ scale: isSelected ? 1.05 : 1 }}
                             transition={{ type: 'spring', stiffness: 300 }}
-                            className={`flex items-center p-2 justify-center text-center rounded border h-44 ${
+                            className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty ${
                               isSelected
                                 ? 'bg-primary border-secondary text-buttonText'
                                 : 'border-primary'
                             }`}
                           >
-                            <span
-                              className={`font-semibold ${gridCols > 4 ? 'text-xs' : 'text-md'}`}
-                            >
+                            <span className="font-semibold max-w-full text-xs">
                               {t(option.description!)}
                             </span>
                           </motion.div>
@@ -118,7 +117,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                     {optionsForCriteria.length < gridCols &&
                       Array.from({
                         length: gridCols - optionsForCriteria.length,
-                      }).map((_, idx) => <div key={`empty-${idx}`} />)}
+                      }).map((_, idx: number) => <div key={`empty-${idx}`} />)}
                   </div>
                 </TableCell>
               </TableRow>

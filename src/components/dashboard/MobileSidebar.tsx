@@ -22,7 +22,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
         <Dialog.Trigger asChild>
           <button
             aria-label="Toggle sidebar navigation"
-            className="fixed bottom-3 right-3 z-50 rounded-full bg-primary p-2 text-buttonText shadow-lg md:hidden"
+            className="fixed bottom-3 right-3 z-50 rounded-full bg-primary p-2 text-buttonText shadow-lg [min-width:900px]:hidden"
           >
             <svg
               className="h-6 w-6"

@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { Sidebar, useSidebar } from '@/components/ui/sidebar';
+import { Sidebar } from '@/components/ui/sidebar';
 import { SidebarContentItems } from '@/components/dashboard/SidebarContentItems';
 import { MobileSidebar } from '@/components/dashboard/MobileSidebar';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export const AppSidebar = () => {
-  const { isMobile } = useSidebar();
+  const isMobile = useIsMobile();
   const [openGroups, setOpenGroups] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
 
@@ -18,8 +19,7 @@ export const AppSidebar = () => {
     );
   }, []);
 
-  const handleClose = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.stopPropagation();
+  const handleClose = () => {
     setOpen(false);
     setOpenGroups([]);
   };

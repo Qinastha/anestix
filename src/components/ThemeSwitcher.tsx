@@ -9,7 +9,7 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
-  theme = 'dark',
+  theme,
   setTheme,
 }) => {
   const [mounted, setMounted] = useState(false);

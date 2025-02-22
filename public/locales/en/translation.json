@@ -111,7 +111,7 @@
         "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data."
       },
       "wells" : {
-        "title": "Wells Score",
+        "title": "Wells Score (PE)",
         "description": "Scales for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE."
       },
       "drug-calculators": {

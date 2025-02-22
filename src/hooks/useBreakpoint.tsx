@@ -8,11 +8,9 @@ export const useBreakpoint = (): 'default' | 'md' | 'lg' | 'xl' => {
   useEffect(() => {
     const updateBreakpoint = () => {
       const width = window.innerWidth;
-      if (width >= 1280) {
-        setBreakpoint('xl');
-      } else if (width >= 1024) {
+      if (width >= 1300) {
         setBreakpoint('lg');
-      } else if (width >= 768) {
+      } else if (width >= 1050) {
         setBreakpoint('md');
       } else {
         setBreakpoint('default');

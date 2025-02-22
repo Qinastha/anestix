@@ -7,7 +7,7 @@ import React, {
   useCallback,
   useEffect,
 } from 'react';
-import i18n from '@/i18n';
+import i18n from 'i18next';
 
 interface LanguageContextProps {
   language: string;
@@ -15,56 +15,42 @@ interface LanguageContextProps {
 }
 
 export const LanguageContext = createContext<LanguageContextProps>({
-  language: 'ru',
+  language: '',
   changeLanguage: () => {},
 });
 
 interface LanguageProviderProps {
   children: ReactNode;
+  initialLanguage: string;
 }
 
-export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<string>('ru');
-
-  const changeLanguage = useCallback((lang: string) => {
-    i18n.changeLanguage(lang);
-    setLanguage(lang);
-
-    fetch('/api/set-language', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ lang }),
-    }).catch((error) => {
-      console.error('Failed to update language cookie:', error);
-    });
-  }, []);
+export const LanguageProvider = ({
+  children,
+  initialLanguage,
+}: LanguageProviderProps) => {
+  const [language, setLanguage] = useState<string>(initialLanguage);
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    async function updateLanguage() {
-      try {
-        const response = await fetch('/api/get-language', {
-          signal: controller.signal,
-        });
-        if (response.ok) {
-          const data = await response.json();
-          if (data.lang !== language) {
-            changeLanguage(data.lang);
-          }
-        }
-      } catch (error) {
-        if (!(error instanceof DOMException && error.name === 'AbortError')) {
-          console.error('Failed to fetch language from server:', error);
-        }
-      }
+    if (i18n.language !== language) {
+      i18n.changeLanguage(language);
     }
-    updateLanguage();
+  }, [language]);
 
-    return () => {
-      controller.abort();
-    };
-  }, [setLanguage]);
+  const changeLanguage = useCallback(
+    (lang: string) => {
+      i18n.changeLanguage(lang);
+      setLanguage(lang);
+
+      fetch('/api/set-language', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lang }),
+      }).catch((error) => {
+        console.error('Failed to update language cookie:', error);
+      });
+    },
+    [language]
+  );
 
   const contextValue = useMemo(
     () => ({ language, changeLanguage }),
