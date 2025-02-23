@@ -4,7 +4,6 @@ export const FOUR_CONFIG: ScaleConfig = {
   id: 'four',
   name: 'scale.four.name',
   description: 'scale.four.description',
-  options: [],
   criteria: [
     {
       id: 'eye',

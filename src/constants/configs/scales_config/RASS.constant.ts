@@ -74,5 +74,4 @@ export const RASS_CONFIG: ScaleConfig = {
     { min: 3, max: 3, summaryText: 'scale.rass.result.veryAgitated' },
     { min: 4, max: 4, summaryText: 'scale.rass.result.combative' },
   ],
-  options: [],
 };

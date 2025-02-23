@@ -115,6 +115,10 @@
         "title": "Wells Score (PE)",
         "description": "Scales for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE."
       },
+      "pesi": {
+        "title": "PESI Score",
+        "description": "The PESI (Pulmonary Embolism Severity Index) scale allows assessing the risk of 30-day mortality in patients with PE"
+      },
       "drug-calculators": {
         "title": "Drug dosage calculators",
         "description": "Use our drug dosage calculators for accurate medication dosing, tailored to patient-specific parameters."
@@ -679,6 +683,71 @@
         "highProbability": "High probability of PE (≥7 points): CT pulmonary angiography is indicated."
       },
       "extraDescription": "Alternatively, a two-tier interpretation can be used: 0-4 points indicate PE unlikely; ≥5 points indicate PE likely."
+    },
+    "pesi": {
+      "name": "PESI Score",
+      "description": "The PESI Score is used to stratify risk in patients diagnosed with pulmonary embolism, helping to determine the severity of their condition and guide treatment decisions.",
+      "criteria": {
+        "age": "Age (in years)",
+        "gender": {
+          "label": "Gender",
+          "option0": "Female",
+          "option1": "Male"
+        },
+        "cancer": {
+          "label": "Malignancy",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "chronicHF": {
+          "label": "Chronic Heart Failure",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "chronicLung": {
+          "label": "Chronic Lung Disease",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "heartRate": {
+          "label": "Heart Rate",
+          "option0": "< 110 beats/min",
+          "option1": "≥ 110 beats/min"
+        },
+        "bp": {
+          "label": "Systolic Blood Pressure",
+          "option0": "< 100 mmHg",
+          "option1": "≥ 100 mmHg"
+        },
+        "respRate": {
+          "label": "Respiratory Rate",
+          "option0": "≤ 30 breaths/min",
+          "option1": "> 30 breaths/min"
+        },
+        "temperature": {
+          "label": "Temperature",
+          "option0": "< 36 °C",
+          "option1": "≥ 36 °C"
+        },
+        "mentalStatus": {
+          "label": "Mental Status",
+          "option0": "Normal",
+          "option1": "Disorientation, lethargy, stupor, or coma"
+        },
+        "oxygen": {
+          "label": "Oxygen Saturation",
+          "option0": "< 90%",
+          "option1": "≥ 90%"
+        }
+      },
+      "result": {
+        "class1": "Class I: Very Low Risk (0.0-1.6% 30-day mortality)",
+        "class2": "Class II: Low Risk (1.7-3.5% 30-day mortality)",
+        "class3": "Class III: Intermediate Risk (3.2-7.1% 30-day mortality)",
+        "class4": "Class IV: High Risk (4.0-11.4% 30-day mortality)",
+        "class5": "Class V: Very High Risk (10-24.5% 30-day mortality)"
+      },
+      "extraDescription": "Patients are stratified into five risk classes based on their total score: Very Low Risk (≤ 65 points); Low Risk (66-85 points); Intermediate Risk (86-105 points); High Risk (106-125 points); Very High Risk (> 125 points)."
     }
   },
   "calculators": {

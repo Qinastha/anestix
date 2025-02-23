@@ -1,13 +1,14 @@
 export interface ScaleOption {
   value: number;
   label: string;
-  description?: string;
+  description: string;
 }
 
 export interface ScaleCriteria {
   id: string;
   label: string;
-  options?: ScaleOption[];
+  type?: 'select' | 'input';
+  options: ScaleOption[];
 }
 
 export interface ScaleResult {
@@ -25,7 +26,6 @@ export interface ScaleConfig {
   id: string;
   name: string;
   description: string;
-  options: ScaleOption[];
   criteria: ScaleCriteria[];
   result?: ScaleResult;
   resultThresholds: ScaleResultThreshold[];

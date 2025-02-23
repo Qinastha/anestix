@@ -4,7 +4,6 @@ export const GCS_CONFIG: ScaleConfig = {
   id: 'glasgow',
   name: 'scale.glasgow.name',
   description: 'scale.glasgow.description',
-  options: [],
   criteria: [
     {
       id: 'eye',

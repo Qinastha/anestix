@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     'platform',
     'resources',
     'clinical guidelines',
+    'anesthesia resources',
+    'anesthesia clinical guidelines',
+    'medicine',
+    'medicine calculator',
   ],
   icons: {
     icon: '/favicon.ico',

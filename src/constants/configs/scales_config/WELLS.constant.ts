@@ -4,7 +4,6 @@ export const WELLS_CONFIG: ScaleConfig = {
   id: 'wells',
   name: 'scale.wells.name',
   description: 'scale.wells.description',
-  options: [],
   criteria: [
     {
       id: 'dvtSigns',

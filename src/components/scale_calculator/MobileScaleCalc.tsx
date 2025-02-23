@@ -17,6 +17,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { ScaleConfig } from '@/interfaces/Scale.type';
+import { Input } from '@/components/ui/input';
 
 interface MobileScaleCalcProps {
   scale: ScaleConfig;
@@ -44,19 +45,26 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {scale.criteria.map((criteria) => {
-            const optionsForCriteria =
-              criteria.options && criteria.options.length > 0
-                ? criteria.options
-                : scale.options;
-            return (
-              <TableRow key={criteria.id} className="hover:bg-inherit">
-                <TableCell className="font-bold w-1/2">
-                  <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
-                    {t(criteria.label)}
-                  </span>
-                </TableCell>
-                <TableCell className="w-1/2">
+          {scale.criteria.map((criteria) => (
+            <TableRow key={criteria.id} className="hover:bg-inherit">
+              <TableCell className="font-bold w-1/2">
+                <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+                  {t(criteria.label)}
+                </span>
+              </TableCell>
+              <TableCell className="w-1/2">
+                {criteria.type === 'input' ? (
+                  <Input
+                    type="number"
+                    value={selectedValues[criteria.id]?.toString() ?? ''}
+                    onChange={(e) => {
+                      const value = Number(e.target.value);
+                      handleSelect(criteria.id, value);
+                    }}
+                    className="border p-2 rounded w-full"
+                    placeholder={t(criteria.label)}
+                  />
+                ) : (
                   <div>
                     <Select
                       value={
@@ -75,7 +83,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                         />
                       </SelectTrigger>
                       <SelectContent className="max-w-sm bg-card">
-                        {optionsForCriteria.map((option) => (
+                        {criteria.options.map((option) => (
                           <SelectItem
                             key={option.value}
                             value={option.value.toString()}
@@ -89,10 +97,10 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                       </SelectContent>
                     </Select>
                   </div>
-                </TableCell>
-              </TableRow>
-            );
-          })}
+                )}
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>

@@ -18,6 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { Input } from '@/components/ui/input';
 
 interface DesktopScaleCalcProps {
   scale: ScaleConfig;
@@ -34,11 +35,11 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
 }) => {
   const maxOptions = useMemo(() => {
     return scale.criteria.reduce((max: number, criteria) => {
-      const count: number =
-        criteria.options && criteria.options.length > 0
-          ? criteria.options.length
-          : scale.options.length;
-      return Math.max(max, count);
+      if (criteria.type !== 'input' && criteria.options) {
+        const count: number = criteria.options.length;
+        return Math.max(max, count);
+      }
+      return max;
     }, 0);
   }, [scale]);
 
@@ -70,32 +71,39 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {scale.criteria.map((criteria) => {
-            const optionsForCriteria =
-              criteria.options && criteria.options.length > 0
-                ? criteria.options
-                : scale.options;
-            return (
-              <TableRow
-                key={criteria.id}
-                style={{
-                  maxHeight: 'fit-content',
-                }}
-                className="hover:bg-inherit"
-              >
-                <TableCell className={`font-bold ${labelWidthClass} pr-6`}>
-                  <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
-                    {t(criteria.label)}
-                  </span>
-                </TableCell>
-                <TableCell className={optionsWidthClass}>
+          {scale.criteria.map((criteria) => (
+            <TableRow
+              key={criteria.id}
+              style={{
+                maxHeight: 'fit-content',
+              }}
+              className="hover:bg-inherit"
+            >
+              <TableCell className={`font-bold ${labelWidthClass} pr-6`}>
+                <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+                  {t(criteria.label)}
+                </span>
+              </TableCell>
+              <TableCell className={optionsWidthClass}>
+                {criteria.type === 'input' ? (
+                  <Input
+                    type="number"
+                    value={selectedValues[criteria.id]?.toString() ?? ''}
+                    onChange={(e) => {
+                      const value = Number(e.target.value);
+                      handleSelect(criteria.id, value);
+                    }}
+                    className="border border-primary p-2 rounded w-full placeholder:text-center"
+                    placeholder={t(criteria.label)}
+                  />
+                ) : (
                   <div
                     className="grid gap-x-4 gap-y-2"
                     style={{
                       gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
                     }}
                   >
-                    {optionsForCriteria.map((option) => {
+                    {criteria.options.map((option) => {
                       const isSelected =
                         selectedValues[criteria.id] === option.value;
                       return (
@@ -143,15 +151,15 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                         </div>
                       );
                     })}
-                    {optionsForCriteria.length < gridCols &&
+                    {criteria.options.length < gridCols &&
                       Array.from({
-                        length: gridCols - optionsForCriteria.length,
+                        length: gridCols - criteria.options.length,
                       }).map((_, idx: number) => <div key={`empty-${idx}`} />)}
                   </div>
-                </TableCell>
-              </TableRow>
-            );
-          })}
+                )}
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>

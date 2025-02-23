@@ -4,7 +4,6 @@ export const SOFA_CONFIG: ScaleConfig = {
   id: 'sofa',
   name: 'scale.sofa.name',
   description: 'scale.sofa.description',
-  options: [],
   criteria: [
     {
       id: 'respiratory',

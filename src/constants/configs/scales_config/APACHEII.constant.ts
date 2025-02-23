@@ -4,7 +4,6 @@ export const APACHEII_CONFIG: ScaleConfig = {
   id: 'apacheii',
   name: 'scale.apacheii.name',
   description: 'scale.apacheii.description',
-  options: [],
   criteria: [
     {
       id: 'age',

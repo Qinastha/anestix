@@ -4,7 +4,6 @@ export const NIHSS_CONFIG: ScaleConfig = {
   id: 'nihss',
   name: 'scale.nihss.name',
   description: 'scale.nihss.description',
-  options: [],
   criteria: [
     {
       id: 'loc',

@@ -56,7 +56,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
             transition={{ duration: 0.4 }}
             className={
               param.type === 'boolean'
-                ? 'w-full sm:w-1/2 px-2 flex flex-col mb-4'
+                ? 'w-full sm:w-1/2 px-2 flex flex-row mb-4'
                 : 'w-full px-2 mb-4'
             }
           >

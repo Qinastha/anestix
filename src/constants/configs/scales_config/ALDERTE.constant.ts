@@ -4,7 +4,6 @@ export const ALDERTE_CONFIG: ScaleConfig = {
   id: 'alderte',
   name: 'scale.alderte.name',
   description: 'scale.alderte.description',
-  options: [],
   criteria: [
     {
       id: 'activity',
