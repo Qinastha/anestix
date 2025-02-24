@@ -8,6 +8,8 @@ import { DAILY_DIURESIS_CONFIG } from '@/constants/configs/formula_configs/DAILY
 import { PLASMA_EXCHANGE_CONFIG } from '@/constants/configs/formula_configs/PLASMA_EXCHANGE_CONFIG.constant';
 import { PEDIATRIC_INFUSION_RATE_CONFIG } from '@/constants/configs/formula_configs/PEDIATRIC_INFUSION_RATE_CONFIG.constant';
 import { SOLUTION_CONCENTRATION_CONFIG } from '@/constants/configs/formula_configs/SOLUTION_CONCENTRATION_CONFIG.constant';
+import { IDEAL_BODY_WEIGHT_CONFIG } from '@/constants/configs/formula_configs/IDEAL_BODY_WEIGHT_CONFIG.constant';
+import { MAP_CONFIG } from '@/constants/configs/formula_configs/MAP_CONFIG.constant';
 
 export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [BMI_CONFIG.id]: BMI_CONFIG,
@@ -19,4 +21,6 @@ export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [PLASMA_EXCHANGE_CONFIG.id]: PLASMA_EXCHANGE_CONFIG,
   [PEDIATRIC_INFUSION_RATE_CONFIG.id]: PEDIATRIC_INFUSION_RATE_CONFIG,
   [SOLUTION_CONCENTRATION_CONFIG.id]: SOLUTION_CONCENTRATION_CONFIG,
+  [IDEAL_BODY_WEIGHT_CONFIG.id]: IDEAL_BODY_WEIGHT_CONFIG,
+  [MAP_CONFIG.id]: MAP_CONFIG,
 };

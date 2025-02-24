@@ -465,5 +465,4 @@ export const APACHEII_CONFIG: ScaleConfig = {
     { min: 30, max: 34, summaryText: 'scale.apacheii.result.mortality30to34' },
     { min: 35, max: 100, summaryText: 'scale.apacheii.result.mortality35plus' },
   ],
-  extraDescription: 'scale.apacheii.extraDescription',
 };

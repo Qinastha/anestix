@@ -150,7 +150,7 @@
       "ketamine": "Ketamine",
       "gomh": "Sodium Oxybutyrate",
       "fentanyl": "Fentanyl",
-      "ditilin": "Ditilin (Suxamethonium)",
+      "ditilin": "Ditilin",
       "atracurium": "Atracurium",
       "dexon": "Dexamethasone",
       "naloxone": "Naloxone",
@@ -162,7 +162,9 @@
       "pediatricInfusion": "Pediatric infusion rate",
       "remifentanyl": "Remifentanyl",
       "solutionConcentration": "Solution Concentration",
-      "solutionVolume": "Solution Volume"
+      "solutionVolume": "Solution Volume",
+      "devine": "Ideal Body Weight",
+      "map": "Mean Arterial Pressure (MAP)"
     }
   },
   "scale": {
@@ -634,8 +636,7 @@
         "mortality25to29": "Estimated in-hospital mortality: 55% nonoperative / 35% postoperative",
         "mortality30to34": "Estimated in-hospital mortality: 73% nonoperative / 73% postoperative",
         "mortality35plus": "Estimated in-hospital mortality: 85% nonoperative / 88% postoperative"
-      },
-      "extraDescription": "Note: The APACHE II Score is calculated from the worst values recorded during the first 24 hours of ICU admission."
+      }
     },
     "wells": {
       "name": "Wells Score",
@@ -781,6 +782,8 @@
     "solutionVolume": "Solution Volume",
     "substanceAmount": "Substance Amount",
     "unit": "Unit of measurement",
+    "sysBP": "Systolic Blood Pressure",
+    "diaBP": "Diastolic Blood Pressure",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -990,6 +993,28 @@
     "solutionConcentration": {
       "label": "Solution Concentration",
       "annotation": "Calculate percent concentration: (mass in g / volume in mL) * 100"
+    },
+    "devine": {
+      "label": "Ideal Body Weight",
+      "options": {
+        "sex": {
+          "label": "Sex",
+          "male": "Male",
+          "female": "Female"
+        },
+        "height": {
+          "label": "Height"
+        }
+      },
+      "result": {
+        "idealWeight": "Ideal Weight"
+      },
+      "annotation": "Formula for calculating ideal body weight using the Devine method:\n\n- For men: IBW = 50 + 2.3 x (K * height (in centimeters) - 60);\n\n- For women: IBW = 45.5 + 2.3 x (K * height (in centimeters) - 60)\n\nK = 0.393701, the conversion factor from centimeters to inches."
+    },
+    "map": {
+      "label": "Mean Arterial Pressure (MAP)",
+      "result": "MAP",
+      "annotation": "The mean arterial pressure (MAP) is calculated using the formula: 1/3*(SBP) + 2/3*(DBP) \n\nThe norm for MAP is considered to be between 70 and 110 mm Hg."
     }
   }
 }

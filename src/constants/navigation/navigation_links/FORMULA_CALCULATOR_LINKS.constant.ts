@@ -1,6 +1,6 @@
-import { NavigationSubItemLinks } from '@/interfaces/NavigationItem.type';
+import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 
-export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
+export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
   {
     label: 'dashboard.links.bmi',
     href: '/dashboard/calculators/formula-calculator/bmi',
@@ -36,5 +36,13 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
   {
     label: 'dashboard.links.solutionConcentration',
     href: '/dashboard/calculators/formula-calculator/solutionConcentration',
+  },
+  {
+    label: 'dashboard.links.devine',
+    href: '/dashboard/calculators/formula-calculator/devine',
+  },
+  {
+    label: 'dashboard.links.map',
+    href: '/dashboard/calculators/formula-calculator/map',
   },
 ];

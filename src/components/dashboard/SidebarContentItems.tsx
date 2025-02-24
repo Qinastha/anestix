@@ -23,6 +23,7 @@ import { LanguageContext } from '@/context/LanguageContext';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
+import { sortByLabel } from '@/utils/sortByLabel';
 
 export interface SidebarContentItemsProps {
   openGroups: string[];
@@ -44,10 +45,11 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
     <SidebarContent className="p-2 flex flex-col justify-between">
       <SidebarGroup>
         <SidebarGroupContent>
-          <SidebarMenu>
+          <SidebarMenu className="flex flex-col gap-3">
             {NAVIGATION_ITEMS.map((item) => {
+              const sortedLinks = sortByLabel(item.subItems, t);
               return (
-                <SidebarMenuItem key={item.title} className="w-full py-2">
+                <SidebarMenuItem key={item.title} className="w-full">
                   {item.subItems ? (
                     <Collapsible
                       open={openGroups.includes(item.title)}
@@ -55,19 +57,21 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                     >
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton>
-                          <div className="flex flex-row w-full items-center">
-                            <item.icon className="mr-2 h-4 w-4" />
-                            <span className="text-md font-semibold">
-                              {t(item.title)}
-                            </span>
-                          </div>
-                          <ChevronDown
-                            className={`transition-transform duration-200 ${
-                              openGroups.includes(item.title)
-                                ? 'rotate-180'
-                                : ''
-                            } h-4 w-4`}
-                          />
+                          <span className="flex flex-row justify-between items-center w-full">
+                            <div className="flex flex-row w-full items-center">
+                              <item.icon className="mr-2 h-4 w-4" />
+                              <span className="text-md font-sans">
+                                {t(item.title)}
+                              </span>
+                            </div>
+                            <ChevronDown
+                              className={`transition-transform duration-200 ${
+                                openGroups.includes(item.title)
+                                  ? 'rotate-180'
+                                  : ''
+                              } h-4 w-4`}
+                            />
+                          </span>
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
@@ -76,18 +80,21 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.2 }}
+                          className="flex flex-col gap-2"
                         >
-                          {item.subItems.map((subItem) => (
+                          {sortedLinks.map((subItem) => (
                             <SidebarMenuButton
                               key={subItem.label}
                               asChild
-                              className="pl-8 py-6 text-sm w-full"
+                              className="pl-3 w-full"
                             >
                               <Link
                                 href={subItem.href}
                                 onClick={() => handleClose()}
                               >
-                                {t(subItem.label)}
+                                <span className="text-xs font-light">
+                                  {t(subItem.label)}
+                                </span>
                               </Link>
                             </SidebarMenuButton>
                           ))}
@@ -99,11 +106,11 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                       <SidebarMenuButton asChild>
                         <Link
                           href={item.href}
-                          className="flex flex-row items-center w-full text-md font-bold"
+                          className="flex flex-row items-center w-full font-serif"
                           onClick={() => handleClose()}
                         >
                           <item.icon className="h-4 w-4" />
-                          {t(item.title)}
+                          <span className="text-lg">{t(item.title)}</span>
                         </Link>
                       </SidebarMenuButton>
                       <hr />

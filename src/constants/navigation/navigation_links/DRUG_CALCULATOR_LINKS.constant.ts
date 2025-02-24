@@ -1,6 +1,6 @@
-import { NavigationSubItemLinks } from '@/interfaces/NavigationItem.type';
+import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 
-export const DRUG_CALCULATOR_LINKS: NavigationSubItemLinks[] = [
+export const DRUG_CALCULATOR_LINKS: NavigationSubItemLink[] = [
   {
     label: 'dashboard.links.actilyse',
     href: '/dashboard/calculators/drug-calculator/actilyse',

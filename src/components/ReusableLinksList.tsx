@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
-import { NavigationSubItemLinks } from '@/interfaces/NavigationItem.type';
+import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 import { sortByLabel } from '@/utils/sortByLabel';
 
 type ReusableListProps = {
-  items: NavigationSubItemLinks[];
+  items: NavigationSubItemLink[];
   Icon: React.ElementType;
 };
 
@@ -17,7 +17,7 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
   Icon,
 }) => {
   const { t } = useTranslation();
-  const sortedLinks: NavigationSubItemLinks[] = sortByLabel(items);
+  const sortedLinks: NavigationSubItemLink[] = sortByLabel(items, t);
 
   return (
     <div className="p-4 space-y-2">

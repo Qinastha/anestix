@@ -2,10 +2,10 @@ export interface NavigationSubItem {
   label: string;
   description: string;
   href: string;
-  links?: NavigationSubItemLinks[];
+  links?: NavigationSubItemLink[];
 }
 
-export interface NavigationSubItemLinks {
+export interface NavigationSubItemLink {
   label: string;
   href: string;
 }

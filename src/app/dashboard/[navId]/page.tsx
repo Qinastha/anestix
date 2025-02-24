@@ -24,7 +24,7 @@ export default function ScaleCalculatorHome() {
     (item) => item.href === `/dashboard/${navId}`
   );
 
-  const sortedSubItems: NavigationSubItem[] = sortByLabel(navItem?.subItems);
+  const sortedSubItems: NavigationSubItem[] = sortByLabel(navItem?.subItems, t);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">
