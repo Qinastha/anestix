@@ -24,6 +24,7 @@ import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { sortByLabel } from '@/utils/sortByLabel';
+import { Separator } from '@/components/ui/separator';
 
 export interface SidebarContentItemsProps {
   openGroups: string[];
@@ -113,7 +114,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                           <span className="text-lg">{t(item.title)}</span>
                         </Link>
                       </SidebarMenuButton>
-                      <hr />
+                      <Separator />
                     </>
                   )}
                 </SidebarMenuItem>

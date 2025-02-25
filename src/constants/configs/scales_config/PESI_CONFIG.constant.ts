@@ -14,6 +14,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'gender',
       label: 'scale.pesi.criteria.gender.label', // "Мужской пол"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -30,6 +31,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'cancer',
       label: 'scale.pesi.criteria.cancer.label', // "Онкозаболевания"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -46,6 +48,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'chronicHF',
       label: 'scale.pesi.criteria.chronicHF.label', // "Хроническая сердечная недостаточность"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -62,6 +65,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'chronicLung',
       label: 'scale.pesi.criteria.chronicLung.label', // "Хроническое заболевание легких"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -78,6 +82,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'heartRate',
       label: 'scale.pesi.criteria.heartRate.label', // "ЧСС ≥110 уд/мин"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -94,6 +99,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'bp',
       label: 'scale.pesi.criteria.bp.label', // "САД <100 мм рт ст"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -110,6 +116,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'respRate',
       label: 'scale.pesi.criteria.respRate.label', // "ЧДД >30/мин"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -126,6 +133,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'temperature',
       label: 'scale.pesi.criteria.temperature.label', // "Температура <36°C"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -142,6 +150,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'mentalStatus',
       label: 'scale.pesi.criteria.mentalStatus.label', // "Нарушение сознания"
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -158,6 +167,7 @@ export const PESI_CONFIG: ScaleConfig = {
     {
       id: 'oxygen',
       label: 'scale.pesi.criteria.oxygen.label', // "Сатурация О2 <90%"
+      type: 'radio',
       options: [
         {
           value: 0,

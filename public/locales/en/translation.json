@@ -394,7 +394,7 @@
     "nihss": {
       "name": "NIH Stroke Scale",
       "description": "A standardized tool for assessing stroke severity and neurological deficits.",
-      "extraDescription": "The NIH Stroke Scale is administered by sequentially evaluating 11 items. For Level of Consciousness, observe the patient’s alertness, ask two questions (e.g., 'What month is it?' and 'How old are you?'), and test simple commands (open/close eyes, grip/release hand). For Best Gaze, have the patient follow a moving object horizontally (or use oculocephalic maneuver if needed). For Visual Fields, perform a confrontation test in all quadrants and note any partial or complete field loss. For Facial Palsy, ask the patient to smile, raise eyebrows, and close eyes to check for asymmetry. For Motor responses, test each arm by having it extended (90° if sitting or 45° if supine) for 10 seconds and each leg by raising it to 30° for 5 seconds, noting any drift, decreased effort, or absence of movement. For Limb Ataxia, have the patient perform finger-to-nose and heel-to-shin tests, scoring only when incoordination exceeds weakness. For Sensory, compare responses to pinprick stimulation on both sides. For Best Language, assess the ability to describe a picture, name objects, or read sentences, scoring based on fluency and comprehension. For Dysarthria, ask the patient to repeat words to evaluate speech clarity. Finally, for Extinction and Inattention, use simultaneous stimulation to check for neglect. Record the first valid response for each item.",
+      "extraDescription": "Note:; For Level of Consciousness, observe the patient’s alertness, ask two questions (e.g., 'What month is it?' and 'How old are you?'), and test simple commands (open/close eyes, grip/release hand); For Best Gaze, have the patient follow a moving object horizontally; For Visual Fields, perform a confrontation test in all quadrants and note any partial or complete field loss; For Facial Palsy, ask the patient to smile, raise eyebrows, and close eyes to check for asymmetry; For Motor responses, test each arm by having it extended (90° if sitting or 45° if supine) for 10 seconds and each leg by raising it to 30° for 5 seconds, noting any drift, decreased effort, or absence of movement; For Limb Ataxia, have the patient perform finger-to-nose and heel-to-shin tests, scoring only when incoordination exceeds weakness; For Best Language, assess the ability to describe a picture, name objects, or read sentences, scoring based on fluency and comprehension; For Dysarthria, ask the patient to repeat words to evaluate speech clarity; Finally, for Extinction and Inattention, use simultaneous stimulation to check for neglect;",
       "criteria": {
         "loc": {
           "label": "Level of Consciousness",
@@ -727,8 +727,8 @@
         },
         "temperature": {
           "label": "Temperature",
-          "option0": "< 36 °C",
-          "option1": "≥ 36 °C"
+          "option0": "≥ 36 °C",
+          "option1": "< 36 °C"
         },
         "mentalStatus": {
           "label": "Mental Status",
@@ -737,8 +737,8 @@
         },
         "oxygen": {
           "label": "Oxygen Saturation",
-          "option0": "< 90%",
-          "option1": "≥ 90%"
+          "option0": "≥ 90%",
+          "option1": "< 90%"
         }
       },
       "result": {

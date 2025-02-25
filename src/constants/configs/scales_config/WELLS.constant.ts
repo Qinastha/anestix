@@ -8,6 +8,7 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'dvtSigns',
       label: 'scale.wells.criteria.dvtSigns.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -24,6 +25,7 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'alternativeDiagnosis',
       label: 'scale.wells.criteria.alternativeDiagnosis.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -40,6 +42,7 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'heartRate',
       label: 'scale.wells.criteria.heartRate.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -56,10 +59,11 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'recentSurgeryImmobilization',
       label: 'scale.wells.criteria.recentSurgeryImmobilization.label',
+      type: 'radio',
       options: [
         {
           value: 0,
-          label: 'No',
+          label: '0',
           description:
             'scale.wells.criteria.recentSurgeryImmobilization.option0',
         },
@@ -74,6 +78,7 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'previousVTE',
       label: 'scale.wells.criteria.previousVTE.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -90,6 +95,7 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'hemoptysis',
       label: 'scale.wells.criteria.hemoptysis.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -106,6 +112,7 @@ export const WELLS_CONFIG: ScaleConfig = {
     {
       id: 'malignancy',
       label: 'scale.wells.criteria.malignancy.label',
+      type: 'radio',
       options: [
         {
           value: 0,

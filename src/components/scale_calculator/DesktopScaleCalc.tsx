@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import { motion } from 'framer-motion';
 import {
   Table,
   TableBody,
@@ -12,13 +11,9 @@ import {
 } from '@/components/ui/table';
 import { ScaleConfig } from '@/interfaces/Scale.type';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { Input } from '@/components/ui/input';
+import { DesktopScaleCell } from '@/components/scale_calculator/DesktopScaleCell';
+import { ScaleInput } from '@/components/scale_calculator/ScaleInput';
+import { ScaleRadio } from '@/components/scale_calculator/ScaleRadio';
 
 interface DesktopScaleCalcProps {
   scale: ScaleConfig;
@@ -35,7 +30,11 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
 }) => {
   const maxOptions = useMemo(() => {
     return scale.criteria.reduce((max: number, criteria) => {
-      if (criteria.type !== 'input' && criteria.options) {
+      if (
+        criteria.type !== 'input' &&
+        criteria.type !== 'radio' &&
+        criteria.options
+      ) {
         const count: number = criteria.options.length;
         return Math.max(max, count);
       }
@@ -86,15 +85,18 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
               </TableCell>
               <TableCell className={optionsWidthClass}>
                 {criteria.type === 'input' ? (
-                  <Input
-                    type="number"
-                    value={selectedValues[criteria.id]?.toString() ?? ''}
-                    onChange={(e) => {
-                      const value = Number(e.target.value);
-                      handleSelect(criteria.id, value);
-                    }}
-                    className="border border-primary p-2 rounded w-full placeholder:text-center"
-                    placeholder={t(criteria.label)}
+                  <ScaleInput
+                    selectedValues={selectedValues}
+                    handleSelect={handleSelect}
+                    criteria={criteria}
+                    t={t}
+                  />
+                ) : criteria.type === 'radio' ? (
+                  <ScaleRadio
+                    criteria={criteria}
+                    selectedValue={selectedValues[criteria.id]}
+                    handleSelect={handleSelect}
+                    t={t}
                   />
                 ) : (
                   <div
@@ -114,40 +116,11 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                             handleSelect(criteria.id, option.value)
                           }
                         >
-                          <TooltipProvider>
-                            <Tooltip>
-                              <TooltipTrigger className="w-full">
-                                <motion.div
-                                  initial={{ scale: 1 }}
-                                  animate={{ scale: isSelected ? 1.05 : 1 }}
-                                  transition={{
-                                    type: 'spring',
-                                    stiffness: 300,
-                                  }}
-                                  className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty ${
-                                    isSelected
-                                      ? 'bg-primary border-secondary text-buttonText'
-                                      : 'border-primary'
-                                  }`}
-                                >
-                                  <span className="font-semibold max-w-full text-xs">
-                                    {t(option.description!)}
-                                  </span>
-                                </motion.div>
-                              </TooltipTrigger>
-                              <TooltipContent
-                                className={
-                                  isSelected
-                                    ? 'bg-accent text-foreground'
-                                    : 'bg-primary'
-                                }
-                              >
-                                <span>
-                                  {option.label} {t('score')}
-                                </span>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
+                          <DesktopScaleCell
+                            option={option}
+                            isSelected={isSelected}
+                            t={t}
+                          />
                         </div>
                       );
                     })}

@@ -7,7 +7,7 @@ export interface ScaleOption {
 export interface ScaleCriteria {
   id: string;
   label: string;
-  type?: 'select' | 'input';
+  type?: 'select' | 'input' | 'radio';
   options: ScaleOption[];
 }
 

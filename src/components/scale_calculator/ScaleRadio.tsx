@@ -1,0 +1,43 @@
+'use client';
+import React from 'react';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { ScaleCriteria } from '@/interfaces/Scale.type';
+
+interface DesktopScaleRadioProps {
+  criteria: ScaleCriteria;
+  selectedValue: number | null;
+  handleSelect: (criteriaId: string, value: number) => void;
+  t: (key: string) => string;
+}
+
+export const ScaleRadio: React.FC<DesktopScaleRadioProps> = ({
+  criteria,
+  selectedValue,
+  handleSelect,
+  t,
+}) => {
+  return (
+    <RadioGroup
+      value={selectedValue !== null ? selectedValue.toString() : ''}
+      onValueChange={(value) => handleSelect(criteria.id, Number(value))}
+      className="flex flex-col space-y-2"
+    >
+      {criteria.options.map((option) => (
+        <div key={option.value} className="flex items-center space-x-2">
+          <RadioGroupItem
+            value={option.value.toString()}
+            id={`${criteria.id}-${option.value}`}
+          />
+          <label
+            htmlFor={`${criteria.id}-${option.value}`}
+            className="cursor-pointer text-sm"
+          >
+            <span>
+              {t(option.description)} - {t(option.label)} {t('score')}
+            </span>
+          </label>
+        </div>
+      ))}
+    </RadioGroup>
+  );
+};

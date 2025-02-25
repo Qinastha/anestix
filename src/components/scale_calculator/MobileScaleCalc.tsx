@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/select';
 import { ScaleConfig } from '@/interfaces/Scale.type';
 import { Input } from '@/components/ui/input';
+import { ScaleInput } from '@/components/scale_calculator/ScaleInput';
 
 interface MobileScaleCalcProps {
   scale: ScaleConfig;
@@ -54,15 +55,11 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
               </TableCell>
               <TableCell className="w-1/2">
                 {criteria.type === 'input' ? (
-                  <Input
-                    type="number"
-                    value={selectedValues[criteria.id]?.toString() ?? ''}
-                    onChange={(e) => {
-                      const value = Number(e.target.value);
-                      handleSelect(criteria.id, value);
-                    }}
-                    className="border p-2 rounded w-full"
-                    placeholder={t(criteria.label)}
+                  <ScaleInput
+                    selectedValues={selectedValues}
+                    handleSelect={handleSelect}
+                    criteria={criteria}
+                    t={t}
                   />
                 ) : (
                   <div>
@@ -90,7 +87,8 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                             className="p-4 border border-b-primary"
                           >
                             <span className="block whitespace-normal text-pretty">
-                              {t(option.description!)}
+                              {t(option.description!)} - {t(option.label)}{' '}
+                              {t('score')}
                             </span>
                           </SelectItem>
                         ))}
