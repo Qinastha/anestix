@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
+import Link from 'next/link';
 
 export default function DashboardPage() {
   const { t } = useTranslation();
@@ -57,11 +58,11 @@ export default function DashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <Button asChild className="w-full" variant="default">
-                    <a href={item.href}>
+                    <Link href={item.href}>
                       <span className="whitespace-normal break-words text-center">
                         {t('dashboard.explore')} {t(item.title).toLowerCase()}{' '}
                       </span>
-                    </a>
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

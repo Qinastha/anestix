@@ -1,7 +1,7 @@
 {
   "select_an_option": "Select an option",
   "search": "Search",
-  "score": "score",
+  "score": "point",
   "units": {
     "kg_m2": "kg/m²",
     "kcal_day": "kcal/day",
@@ -118,6 +118,10 @@
       "pesi": {
         "title": "PESI Score",
         "description": "The PESI (Pulmonary Embolism Severity Index) scale allows assessing the risk of 30-day mortality in patients with PE"
+      },
+      "lee": {
+        "title": "RCRI Score (Index Lee)",
+        "description": "Provides individualized risk stratification prior to undergoing surgery, which can be helpful in discussions of informed consent."
       },
       "drug-calculators": {
         "title": "Drug dosage calculators",
@@ -612,19 +616,19 @@
         },
         "gcs": {
           "label": "Glasgow Coma Scale",
-          "option0": "15 (0 points)",
-          "option1": "14 (1 point)",
-          "option2": "13 (2 points)",
-          "option3": "12 (3 points)",
-          "option4": "11 (4 points)",
-          "option5": "10 (5 points)",
-          "option6": "9 (6 points)",
-          "option7": "8 (7 points)",
-          "option8": "7 (8 points)",
-          "option9": "6 (9 points)",
-          "option10": "5 (10 points)",
-          "option11": "4 (11 points)",
-          "option12": "3 (12 points)"
+          "option0": "15 points",
+          "option1": "14 points",
+          "option2": "13 points",
+          "option3": "12 points",
+          "option4": "11 points",
+          "option5": "10 points",
+          "option6": "9 points",
+          "option7": "8 points",
+          "option8": "7 points",
+          "option9": "6 points",
+          "option10": "5 points",
+          "option11": "4 points",
+          "option12": "3 points"
         }
       },
       "result": {
@@ -749,6 +753,49 @@
         "class5": "Class V: Very High Risk (10-24.5% 30-day mortality)"
       },
       "extraDescription": "Patients are stratified into five risk classes based on their total score: Very Low Risk (≤ 65 points); Low Risk (66-85 points); Intermediate Risk (86-105 points); High Risk (106-125 points); Very High Risk (> 125 points)."
+    },
+    "lee": {
+      "name": "Revised Cardiac Risk Index (RCRI)",
+      "description": "A clinical prediction rule used to estimate the risk of major cardiac complications after non-cardiac surgery.",
+      "criteria": {
+        "highRiskSurgery": {
+          "label": "High-risk surgery (intraperitoneal, intrathoracic, suprainguinal vascular)",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "historyIschemicHeartDisease": {
+          "label": "History of ischemic heart disease",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "historyCHF": {
+          "label": "History of congestive heart failure",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "historyCerebrovascularDisease": {
+          "label": "History of cerebrovascular disease",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "insulinTreatment": {
+          "label": "Pre-operative treatment with insulin",
+          "option0": "No",
+          "option1": "Yes"
+        },
+        "creatinineOver2": {
+          "label": "Pre-operative creatinine >2 mg/dL / 176.8 µmol/L",
+          "option0": "No",
+          "option1": "Yes"
+        }
+      },
+      "result": {
+        "class1": "0 points – Very Low Risk (~0.4% risk of major cardiac complications)",
+        "class2": "1 point – Low Risk (~0.9% risk of major cardiac complications)",
+        "class3": "2 points – Moderate Risk (~6.6% risk of major cardiac complications)",
+        "class4": "3+ points – High Risk (>11% risk of major cardiac complications)"
+      },
+      "extraDescription": "Extra information:: For History of ischemic heart disease - history of myocardial infarction (MI), history of positive exercise test, current chest pain considered due to myocardial ischemia, use of nitrate therapy or ECG with pathological Q waves; For History of congestive heart failure - Pulmonary edema, bilateral rales, or S3 gallop, paroxysmal nocturnal dyspnea, chest x-ray (CXR) showing pulmonary vascular redistribution"
     }
   },
   "calculators": {

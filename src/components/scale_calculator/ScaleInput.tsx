@@ -24,7 +24,7 @@ export const ScaleInput: React.FC<DesktopScaleInputProps> = ({
         const value = Number(e.target.value);
         handleSelect(criteria.id, value);
       }}
-      className="border border-primary p-2 rounded w-full placeholder:text-center"
+      className="border border-primary p-2 rounded w-full placeholder:text-center placeholder:text-sm"
       placeholder={t(criteria.label)}
     />
   );

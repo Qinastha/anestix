@@ -8,6 +8,7 @@ import { NIHSS_CONFIG } from '@/constants/configs/scales_config/NIHSS.constant';
 import { APACHEII_CONFIG } from '@/constants/configs/scales_config/APACHEII.constant';
 import { WELLS_CONFIG } from '@/constants/configs/scales_config/WELLS.constant';
 import { PESI_CONFIG } from '@/constants/configs/scales_config/PESI_CONFIG.constant';
+import { LEE_CONFIG } from '@/constants/configs/scales_config/LEE_CONFIG.constant';
 
 export const SCALES_LIST: Record<string, ScaleConfig> = {
   [GCS_CONFIG.id]: GCS_CONFIG,
@@ -19,4 +20,5 @@ export const SCALES_LIST: Record<string, ScaleConfig> = {
   [APACHEII_CONFIG.id]: APACHEII_CONFIG,
   [WELLS_CONFIG.id]: WELLS_CONFIG,
   [PESI_CONFIG.id]: PESI_CONFIG,
+  [LEE_CONFIG.id]: LEE_CONFIG,
 };

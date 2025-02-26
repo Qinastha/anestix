@@ -79,7 +79,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
               className="hover:bg-inherit"
             >
               <TableCell className={`font-bold ${labelWidthClass} pr-6`}>
-                <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+                <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b">
                   {t(criteria.label)}
                 </span>
               </TableCell>

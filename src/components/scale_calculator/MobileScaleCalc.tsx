@@ -84,7 +84,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                           <SelectItem
                             key={option.value}
                             value={option.value.toString()}
-                            className="p-4 border border-b-primary"
+                            className="border border-b-primary p-4"
                           >
                             <span className="block whitespace-normal text-pretty">
                               {t(option.description!)} - {t(option.label)}{' '}
