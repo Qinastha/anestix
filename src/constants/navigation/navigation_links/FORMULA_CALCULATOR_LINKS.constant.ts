@@ -45,4 +45,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
     label: 'dashboard.links.map',
     href: '/dashboard/calculators/formula-calculator/map',
   },
+  {
+    label: 'dashboard.links.potassiumDeficit',
+    href: '/dashboard/calculators/formula-calculator/potassiumDeficit',
+  },
 ];

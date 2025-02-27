@@ -37,6 +37,7 @@ export const PLASMA_EXCHANGE_CONFIG: FormulaConfig = {
       label: 'calculators.plasmaExchange.parameters.removedPercentage',
       unit: 'units.pct',
       type: 'number',
+      defaultValue: 30,
     },
   ],
   calculate: ({ weight, hematocrit, removedPercentage, sex }, setResult) => {

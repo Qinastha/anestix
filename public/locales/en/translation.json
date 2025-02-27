@@ -168,7 +168,8 @@
       "solutionConcentration": "Solution Concentration",
       "solutionVolume": "Solution Volume",
       "devine": "Ideal Body Weight",
-      "map": "Mean Arterial Pressure (MAP)"
+      "map": "Mean Arterial Pressure (MAP)",
+      "potassiumDeficit": "Potassium Deficit"
     }
   },
   "scale": {
@@ -831,6 +832,8 @@
     "unit": "Unit of measurement",
     "sysBP": "Systolic Blood Pressure",
     "diaBP": "Diastolic Blood Pressure",
+    "currentPotassiumLvl": "Current Potassium Level",
+    "potassiumChlorideSol": "Potassium Chloride Solution Concentration",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -1062,6 +1065,15 @@
       "label": "Mean Arterial Pressure (MAP)",
       "result": "MAP",
       "annotation": "The mean arterial pressure (MAP) is calculated using the formula: 1/3*(SBP) + 2/3*(DBP) \n\nThe norm for MAP is considered to be between 70 and 110 mm Hg."
+    },
+    "potassiumDeficit": {
+      "label": "Potassium Deficit Calculator",
+      "result": {
+        "potassiumDeficit": "Potassium deficit",
+        "amountOfSolMl": "Potassium repletion via potassium chloride",
+        "maxAmountDay": "Maximum daily intake of potassium chloride"
+      },
+      "annotation": "1) Never give potassium I.M or rapid I.V push\n2) Never give more than 1.5 g KCl or 20 mmol of K+ over 1 hour"
     }
   }
 }
