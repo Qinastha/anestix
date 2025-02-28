@@ -11,6 +11,7 @@ import { SOLUTION_CONCENTRATION_CONFIG } from '@/constants/configs/formula_confi
 import { IDEAL_BODY_WEIGHT_CONFIG } from '@/constants/configs/formula_configs/IDEAL_BODY_WEIGHT_CONFIG.constant';
 import { MAP_CONFIG } from '@/constants/configs/formula_configs/MAP_CONFIG.constant';
 import { POTASSIUM_DEFICIT_CONFIG } from '@/constants/configs/formula_configs/POTASSIUM_DEFICIT_CONFIG.constant';
+import { BICARBONATE_DEFICIT_CONFIG } from '@/constants/configs/formula_configs/BICARBONATE_DEFICIT_CONFIG.constant';
 
 export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [BMI_CONFIG.id]: BMI_CONFIG,
@@ -25,4 +26,5 @@ export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [IDEAL_BODY_WEIGHT_CONFIG.id]: IDEAL_BODY_WEIGHT_CONFIG,
   [MAP_CONFIG.id]: MAP_CONFIG,
   [POTASSIUM_DEFICIT_CONFIG.id]: POTASSIUM_DEFICIT_CONFIG,
+  [BICARBONATE_DEFICIT_CONFIG.id]: BICARBONATE_DEFICIT_CONFIG,
 };

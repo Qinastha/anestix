@@ -49,4 +49,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
     label: 'dashboard.links.potassiumDeficit',
     href: '/dashboard/calculators/formula-calculator/potassiumDeficit',
   },
+  {
+    label: 'dashboard.links.bicarbonateDeficit',
+    href: '/dashboard/calculators/formula-calculator/bicarbonateDeficit',
+  },
 ];

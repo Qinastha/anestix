@@ -169,7 +169,8 @@
       "solutionVolume": "Solution Volume",
       "devine": "Ideal Body Weight",
       "map": "Mean Arterial Pressure (MAP)",
-      "potassiumDeficit": "Potassium Deficit"
+      "potassiumDeficit": "Potassium Deficit",
+      "bicarbonateDeficit": "Bicarbonate Deficit"
     }
   },
   "scale": {
@@ -834,6 +835,7 @@
     "diaBP": "Diastolic Blood Pressure",
     "currentPotassiumLvl": "Current Potassium Level",
     "potassiumChlorideSol": "Potassium Chloride Solution Concentration",
+    "bicarbonateLevel": "Current Bicarbonate Level",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -1074,6 +1076,14 @@
         "maxAmountDay": "Maximum daily intake of potassium chloride"
       },
       "annotation": "1) Never give potassium I.M or rapid I.V push\n2) Never give more than 1.5 g KCl or 20 mmol of K+ over 1 hour"
+    },
+    "bicarbonateDeficit": {
+      "label": "Calculate bicarbonate deficit",
+      "result": {
+        "bicarbonateDeficit": "Bicarbonate deficit",
+        "solutionVolume": "Bicarbonate repletion via 4% NaHCO3 solution"
+      },
+      "annotation": "NOTE: Sodium bicarbonate solution allows for rapid correction of acidosis, but the sodium cations contained in the solution further increase the osmolarity of the extracellular fluid, thereby aggravating cellular dehydration.\n\nCalculator use 24 mmol/L as normal level of bicarbonate so for correct answer current level should be lower"
     }
   }
 }
