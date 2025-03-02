@@ -10,16 +10,8 @@ export const WELLS_CONFIG: ScaleConfig = {
       label: 'scale.wells.criteria.dvtSigns.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          label: '0',
-          description: 'scale.wells.criteria.dvtSigns.option0',
-        },
-        {
-          value: 3,
-          label: '3',
-          description: 'scale.wells.criteria.dvtSigns.option1',
-        },
+        { value: 0, description: 'scale.wells.criteria.dvtSigns.option0' },
+        { value: 3, description: 'scale.wells.criteria.dvtSigns.option1' },
       ],
     },
     {
@@ -29,12 +21,10 @@ export const WELLS_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.wells.criteria.alternativeDiagnosis.option0',
         },
         {
           value: 3,
-          label: '3',
           description: 'scale.wells.criteria.alternativeDiagnosis.option1',
         },
       ],
@@ -44,16 +34,8 @@ export const WELLS_CONFIG: ScaleConfig = {
       label: 'scale.wells.criteria.heartRate.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          label: '0',
-          description: 'scale.wells.criteria.heartRate.option0',
-        },
-        {
-          value: 1.5,
-          label: '1.5',
-          description: 'scale.wells.criteria.heartRate.option1',
-        },
+        { value: 0, description: 'scale.wells.criteria.heartRate.option0' },
+        { value: 1.5, description: 'scale.wells.criteria.heartRate.option1' },
       ],
     },
     {
@@ -63,13 +45,11 @@ export const WELLS_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description:
             'scale.wells.criteria.recentSurgeryImmobilization.option0',
         },
         {
           value: 1.5,
-          label: '1.5',
           description:
             'scale.wells.criteria.recentSurgeryImmobilization.option1',
         },
@@ -80,16 +60,8 @@ export const WELLS_CONFIG: ScaleConfig = {
       label: 'scale.wells.criteria.previousVTE.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          label: '0',
-          description: 'scale.wells.criteria.previousVTE.option0',
-        },
-        {
-          value: 1.5,
-          label: '1.5',
-          description: 'scale.wells.criteria.previousVTE.option1',
-        },
+        { value: 0, description: 'scale.wells.criteria.previousVTE.option0' },
+        { value: 1.5, description: 'scale.wells.criteria.previousVTE.option1' },
       ],
     },
     {
@@ -97,16 +69,8 @@ export const WELLS_CONFIG: ScaleConfig = {
       label: 'scale.wells.criteria.hemoptysis.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          label: '0',
-          description: 'scale.wells.criteria.hemoptysis.option0',
-        },
-        {
-          value: 1,
-          label: '1',
-          description: 'scale.wells.criteria.hemoptysis.option1',
-        },
+        { value: 0, description: 'scale.wells.criteria.hemoptysis.option0' },
+        { value: 1, description: 'scale.wells.criteria.hemoptysis.option1' },
       ],
     },
     {
@@ -114,35 +78,19 @@ export const WELLS_CONFIG: ScaleConfig = {
       label: 'scale.wells.criteria.malignancy.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          label: '0',
-          description: 'scale.wells.criteria.malignancy.option0',
-        },
-        {
-          value: 1,
-          label: '1',
-          description: 'scale.wells.criteria.malignancy.option1',
-        },
+        { value: 0, description: 'scale.wells.criteria.malignancy.option0' },
+        { value: 1, description: 'scale.wells.criteria.malignancy.option1' },
       ],
     },
   ],
   resultThresholds: [
-    {
-      min: 0,
-      max: 1.5,
-      summaryText: 'scale.wells.result.lowProbability',
-    },
+    { min: 0, max: 1.5, summaryText: 'scale.wells.result.lowProbability' },
     {
       min: 2,
       max: 6.5,
       summaryText: 'scale.wells.result.intermediateProbability',
     },
-    {
-      min: 7,
-      max: 100,
-      summaryText: 'scale.wells.result.highProbability',
-    },
+    { min: 7, max: 100, summaryText: 'scale.wells.result.highProbability' },
   ],
   extraDescription: 'scale.wells.extraDescription',
 };

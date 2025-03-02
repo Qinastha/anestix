@@ -11,17 +11,14 @@ export const ALDERTE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.alderte.criteria.activity.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.alderte.criteria.activity.option1',
         },
         {
           value: 2,
-          label: '2',
           description: 'scale.alderte.criteria.activity.option2',
         },
       ],
@@ -32,17 +29,14 @@ export const ALDERTE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.alderte.criteria.breathing.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.alderte.criteria.breathing.option1',
         },
         {
           value: 2,
-          label: '2',
           description: 'scale.alderte.criteria.breathing.option2',
         },
       ],
@@ -53,17 +47,14 @@ export const ALDERTE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.alderte.criteria.bloodPressure.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.alderte.criteria.bloodPressure.option1',
         },
         {
           value: 2,
-          label: '2',
           description: 'scale.alderte.criteria.bloodPressure.option2',
         },
       ],
@@ -74,17 +65,14 @@ export const ALDERTE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.alderte.criteria.consciousness.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.alderte.criteria.consciousness.option1',
         },
         {
           value: 2,
-          label: '2',
           description: 'scale.alderte.criteria.consciousness.option2',
         },
       ],
@@ -95,17 +83,14 @@ export const ALDERTE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.alderte.criteria.spo2.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.alderte.criteria.spo2.option1',
         },
         {
           value: 2,
-          label: '2',
           description: 'scale.alderte.criteria.spo2.option2',
         },
       ],

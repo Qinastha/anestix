@@ -9,6 +9,7 @@ import { APACHEII_CONFIG } from '@/constants/configs/scales_config/APACHEII.cons
 import { WELLS_CONFIG } from '@/constants/configs/scales_config/WELLS.constant';
 import { PESI_CONFIG } from '@/constants/configs/scales_config/PESI_CONFIG.constant';
 import { LEE_CONFIG } from '@/constants/configs/scales_config/LEE_CONFIG.constant';
+import { CAPRINI_CONFIG } from '@/constants/configs/scales_config/CAPRINI_CONFIG.constant';
 
 export const SCALES_LIST: Record<string, ScaleConfig> = {
   [GCS_CONFIG.id]: GCS_CONFIG,
@@ -21,4 +22,5 @@ export const SCALES_LIST: Record<string, ScaleConfig> = {
   [WELLS_CONFIG.id]: WELLS_CONFIG,
   [PESI_CONFIG.id]: PESI_CONFIG,
   [LEE_CONFIG.id]: LEE_CONFIG,
+  [CAPRINI_CONFIG.id]: CAPRINI_CONFIG,
 };

@@ -1,6 +1,5 @@
 export interface ScaleOption {
   value: number;
-  label: string;
   description: string;
 }
 

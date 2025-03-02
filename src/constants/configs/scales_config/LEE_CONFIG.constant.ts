@@ -12,12 +12,10 @@ export const LEE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.lee.criteria.highRiskSurgery.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.lee.criteria.highRiskSurgery.option1',
         },
       ],
@@ -29,12 +27,10 @@ export const LEE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.lee.criteria.historyIschemicHeartDisease.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.lee.criteria.historyIschemicHeartDisease.option1',
         },
       ],
@@ -46,12 +42,10 @@ export const LEE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.lee.criteria.historyCHF.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.lee.criteria.historyCHF.option1',
         },
       ],
@@ -63,13 +57,11 @@ export const LEE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '1',
           description:
             'scale.lee.criteria.historyCerebrovascularDisease.option0',
         },
         {
           value: 1,
-          label: '1',
           description:
             'scale.lee.criteria.historyCerebrovascularDisease.option1',
         },
@@ -82,12 +74,10 @@ export const LEE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.lee.criteria.insulinTreatment.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.lee.criteria.insulinTreatment.option1',
         },
       ],
@@ -99,12 +89,10 @@ export const LEE_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0',
           description: 'scale.lee.criteria.creatinineOver2.option0',
         },
         {
           value: 1,
-          label: '1',
           description: 'scale.lee.criteria.creatinineOver2.option1',
         },
       ],

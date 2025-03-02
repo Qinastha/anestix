@@ -33,7 +33,7 @@ export const ScaleRadio: React.FC<DesktopScaleRadioProps> = ({
             className="cursor-pointer text-sm"
           >
             <span>
-              {t(option.description)} - {t(option.label)} {t('score')}
+              {t(option.description)} - {option.value} {t('score')}
             </span>
           </label>
         </div>

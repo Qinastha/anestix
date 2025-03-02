@@ -17,7 +17,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { ScaleConfig } from '@/interfaces/Scale.type';
-import { Input } from '@/components/ui/input';
 import { ScaleInput } from '@/components/scale_calculator/ScaleInput';
 
 interface MobileScaleCalcProps {
@@ -87,7 +86,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                             className="border border-b-primary p-4"
                           >
                             <span className="block whitespace-normal text-pretty">
-                              {t(option.description!)} - {t(option.label)}{' '}
+                              {t(option.description!)} - {option.value}{' '}
                               {t('score')}
                             </span>
                           </SelectItem>

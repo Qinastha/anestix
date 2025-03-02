@@ -67,8 +67,8 @@
     "explore": "Explore",
     "home": "Home",
     "scale-list": {
-      "title": "Scales",
-      "description": "Empower your clinical decisions with our comprehensive range of medical scales, including RASS, FOUR, Glasgow, and more. Each section provides detailed scoring guides."
+      "title": "Scores",
+      "description": "Empower your clinical decisions with our comprehensive range of medical scores, including RASS, FOUR, Glasgow, and more. Each section provides detailed scoring guides."
     },
     "calculators": {
       "title": "Calculators",
@@ -85,35 +85,35 @@
     "subItems": {
       "rass": {
         "title": "RASS",
-        "description": "Assesses sedation and agitation levels in critically ill patients to guide sedation management."
+        "description": "Assesses sedation and agitation levels in critically ill patients to guide sedation management"
       },
       "four": {
         "title": "FOUR",
-        "description": "Evaluates consciousness with a focus on brainstem reflexes and respiratory patterns for a detailed neurological assessment."
+        "description": "Evaluates consciousness with a focus on brainstem reflexes and respiratory patterns for a detailed neurological assessment"
       },
       "gcs": {
         "title": "GCS",
-        "description": "Measures the level of consciousness following head injuries or neurological impairments."
+        "description": "Measures the level of consciousness following head injuries or neurological impairments"
       },
       "alderte": {
         "title": "Aldrete",
-        "description": "Determines a patient's readiness for discharge from post-anesthesia recovery by assessing activity, respiration, and consciousness."
+        "description": "Determines a patient's readiness for discharge from post-anesthesia recovery by assessing activity, respiration, and consciousness"
       },
       "sofa": {
         "title": "SOFA",
-        "description": "Quantifies organ dysfunction in sepsis cases to aid in critical care decision-making."
+        "description": "Quantifies organ dysfunction in sepsis cases to aid in critical care decision-making"
       },
       "nihss": {
         "title": "NIHSS",
-        "description": "Quantifies neurological deficits to evaluate stroke severity and guide treatment."
+        "description": "Quantifies neurological deficits to evaluate stroke severity and guide treatment"
       },
       "apacheii": {
         "title": "Apache II",
-        "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data."
+        "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data"
       },
       "wells" : {
         "title": "Wells Score (PE)",
-        "description": "Scales for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE."
+        "description": "Scales for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE"
       },
       "pesi": {
         "title": "PESI Score",
@@ -121,23 +121,27 @@
       },
       "lee": {
         "title": "RCRI Score (Index Lee)",
-        "description": "Provides individualized risk stratification prior to undergoing surgery, which can be helpful in discussions of informed consent."
+        "description": "Provides individualized risk stratification prior to undergoing surgery, which can be helpful in discussions of informed consent"
+      },
+      "caprini": {
+        "title": "Caprini Score",
+        "description": "The Caprini Score is a validated risk assessment tool to estimate the risk of venous thromboembolism (VTE) based on patient-specific risk factors"
       },
       "drug-calculators": {
         "title": "Drug dosage calculators",
-        "description": "Use our drug dosage calculators for accurate medication dosing, tailored to patient-specific parameters."
+        "description": "Use our drug dosage calculators for accurate medication dosing, tailored to patient-specific parameters"
       },
       "formula-calculators": {
         "title": "Formula calculator",
-        "description": "Employ our formula calculator to compute essential medical formulas with precision."
+        "description": "Employ our formula calculator to compute essential medical formulas with precision"
       },
       "nerve-block": {
         "title": "Peripheral nerve block",
-        "description": "Access guidelines and protocols for performing peripheral nerve blocks with ultrasound guidance."
+        "description": "Access guidelines and protocols for performing peripheral nerve blocks with ultrasound guidance"
       },
       "intubation": {
         "title": "Intubation",
-        "description": "Explore detailed instructions and techniques for safe and effective intubation procedures."
+        "description": "Explore detailed instructions and techniques for safe and effective intubation procedures"
       }
     },
     "links": {
@@ -269,7 +273,7 @@
     },
     "rass": {
       "name": "RASS Scale",
-      "description": "Richmond Agitation Sedation Scale.",
+      "description": "The RASS (Richmond Agitation-Sedation Scale) is used in anesthesiology and intensive care to describe the degree of patient aggression or the level of depth of sedation",
       "criteria": {
         "alertness": {
           "label": "Alertness",
@@ -296,7 +300,8 @@
         "agitated": "Agitated",
         "veryAgitated": "Very agitated",
         "combative": "Combative"
-      }
+      },
+      "extraDescription": "It is recommended to perform RASS assessment in all patients admitted to hospital, as well as in all patients on mechanical ventilation; In patients with RASS of -3 points or less, sedation should be reduced or changed until reaching -2 to 0 points on the RASS scale; Patients with RASS of 2 points or more are insufficiently sedated and require determination of the cause of agitation (anxiety disorder, delirium, pain) and deepening of sedation until reaching -2 to 0 points on the RASS scale; If possible, excessive deepening of sedation (less than -2 points on the RASS scale) should be avoided unless there are indications for it."
     },
     "alderte": {
       "name": "Modified Aldrete Score",
@@ -798,6 +803,180 @@
         "class4": "3+ points – High Risk (>11% risk of major cardiac complications)"
       },
       "extraDescription": "Extra information:: For History of ischemic heart disease - history of myocardial infarction (MI), history of positive exercise test, current chest pain considered due to myocardial ischemia, use of nitrate therapy or ECG with pathological Q waves; For History of congestive heart failure - Pulmonary edema, bilateral rales, or S3 gallop, paroxysmal nocturnal dyspnea, chest x-ray (CXR) showing pulmonary vascular redistribution"
+    },
+    "caprini": {
+      "name": "Caprini Score",
+      "description": "The Caprini Score is a validated risk assessment tool to estimate the risk of venous thromboembolism (VTE) based on patient-specific risk factors.",
+      "criteria": {
+        "age": {
+          "label": "Age, years",
+          "option0": "≤40",
+          "option1": "41–60",
+          "option2": "61–74",
+          "option3": "≥75"
+        },
+        "sex": {
+          "label": "Sex",
+          "male": "Male",
+          "female": "Female"
+        },
+        "surgery": {
+          "label": "Type of Surgery",
+          "none": "None",
+          "minor": "Minor (anesthesia <45 min)",
+          "major": "Major (>45 min, laparoscopic/arthroscopic)",
+          "arthroplasty": "Elective major lower extremity arthroplasty"
+        },
+        "recentMajorSurgery": {
+          "label": "Recent (<1 month) Major Surgery",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "chf": {
+          "label": "Congestive Heart Failure (CHF)",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "sepsis": {
+          "label": "Sepsis",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "pneumonia": {
+          "label": "Pneumonia",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "plasterCast": {
+          "label": "Immobilizing Plaster Cast",
+          "no": "Not applied",
+          "yes": "Applied"
+        },
+        "fracture": {
+          "label": "Hip, Pelvis, or Leg Fracture",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "stroke": {
+          "label": "Stroke",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "multipleTrauma": {
+          "label": "Multiple Trauma",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "spinalInjury": {
+          "label": "Acute Spinal Cord Injury Causing Paralysis",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "varicose": {
+          "label": "Varicose Veins",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "swollenLegs": {
+          "label": "Current Swollen Legs",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "centralAccess": {
+          "label": "Current Central Venous Access",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "dvtPe": {
+          "label": "History of DVT/PE",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "familyThrombosis": {
+          "label": "Family History of Thrombosis",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "factorVLeiden": {
+          "label": "Positive Factor V Leiden",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "prothrombin": {
+          "label": "Positive Prothrombin 20210A",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "homocysteine": {
+          "label": "Elevated Serum Homocysteine",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "lupusAnticoagulant": {
+          "label": "Positive Lupus Anticoagulant",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "anticardiolipin": {
+          "label": "Elevated Anticardiolipin Antibody",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "hit": {
+          "label": "Heparin-induced Thrombocytopenia (HIT)",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "otherThrombophilia": {
+          "label": "Other Congenital or Acquired Thrombophilia",
+          "no": "Absent",
+          "yes": "Present"
+        },
+        "mobility": {
+          "label": "Mobility",
+          "normal": "Normal, out of bed",
+          "bedRest": "Medical patient on bed rest",
+          "confined": "Patient confined to bed >72 hours"
+        },
+        "ibd": {
+          "label": "History of Inflammatory Bowel Disease",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "bmi": {
+          "label": "BMI >25",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "mi": {
+          "label": "Acute Myocardial Infarction (MI)",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "copd": {
+          "label": "COPD",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "malignancy": {
+          "label": "Present or Previous Malignancy",
+          "no": "No",
+          "yes": "Yes"
+        },
+        "otherRiskFactors": {
+          "label": "Other Risk Factors",
+          "no": "No",
+          "yes": "Yes"
+        }
+      },
+      "result": {
+        "lowest": "Lowest risk: Minimal risk. Prophylaxis: Early ambulation and mechanical prophylaxis during hospitalization.",
+        "low": "Low risk: Consider mechanical prophylaxis.",
+        "moderate": "Moderate risk: Mechanical prophylaxis ± pharmacologic prophylaxis.",
+        "high": "High risk: Combined mechanical and pharmacologic prophylaxis for 7–10 days.",
+        "high2": "Very high risk: Combined prophylaxis for 7–10 days.",
+        "highest": "Highest risk: Combined prophylaxis for 30 days."
+      }
     }
   },
   "calculators": {

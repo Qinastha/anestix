@@ -45,14 +45,14 @@ export const CalculatorSumContent = <TResult extends Result>({
             <h2 className="text-lg md:text-xl font-semibold mb-2">
               {t('calculators.result')}
             </h2>
-            <ul className="list-disc list-inside mb-4">
+            <ol className="list-decimal list-inside mb-4">
               {Object.entries(result).map(([key, item]) => (
                 <li key={key} className="mb-1">
                   <span className="font-medium">{t(item.label)}:</span>{' '}
                   {item.value} {t(item.unit)}
                 </li>
               ))}
-            </ul>
+            </ol>
 
             {annotation && (
               <motion.hr

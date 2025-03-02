@@ -46,7 +46,7 @@ export const DesktopScaleCell: React.FC<DesktopScaleCellProps> = ({
           className={isSelected ? 'bg-accent text-foreground' : 'bg-primary'}
         >
           <span>
-            {option.label} {t('score')}
+            {option.value} {t('score')}
           </span>
         </TooltipContent>
       </Tooltip>

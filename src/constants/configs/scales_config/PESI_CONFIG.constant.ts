@@ -2,7 +2,7 @@ import { ScaleConfig } from '@/interfaces/Scale.type';
 
 export const PESI_CONFIG: ScaleConfig = {
   id: 'pesi',
-  name: 'scale.pesi.name', // e.g. "Шкала PESI"
+  name: 'scale.pesi.name',
   description: 'scale.pesi.description',
   criteria: [
     {
@@ -13,17 +13,15 @@ export const PESI_CONFIG: ScaleConfig = {
     },
     {
       id: 'gender',
-      label: 'scale.pesi.criteria.gender.label', // "Мужской пол"
+      label: 'scale.pesi.criteria.gender.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.gender.option0',
         },
         {
           value: 10,
-          label: '10', // "Да (+10)"
           description: 'scale.pesi.criteria.gender.option1',
         },
       ],
@@ -35,12 +33,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.cancer.option0',
         },
         {
           value: 30,
-          label: '30', // "Да (+30)"
           description: 'scale.pesi.criteria.cancer.option1',
         },
       ],
@@ -52,12 +48,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.chronicHF.option0',
         },
         {
           value: 10,
-          label: '10', // "Да (+10)"
           description: 'scale.pesi.criteria.chronicHF.option1',
         },
       ],
@@ -69,12 +63,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.chronicLung.option0',
         },
         {
           value: 10,
-          label: '10', // "Да (+10)"
           description: 'scale.pesi.criteria.chronicLung.option1',
         },
       ],
@@ -86,12 +78,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.heartRate.option0',
         },
         {
           value: 20,
-          label: '20', // "Да (+20)"
           description: 'scale.pesi.criteria.heartRate.option1',
         },
       ],
@@ -103,12 +93,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.bp.option0',
         },
         {
           value: 30,
-          label: '30', // "Да (+30)"
           description: 'scale.pesi.criteria.bp.option1',
         },
       ],
@@ -120,12 +108,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.respRate.option0',
         },
         {
           value: 20,
-          label: '20', // "Да (+20)"
           description: 'scale.pesi.criteria.respRate.option1',
         },
       ],
@@ -137,12 +123,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.temperature.option0',
         },
         {
           value: 20,
-          label: '20', // "Да (+20)"
           description: 'scale.pesi.criteria.temperature.option1',
         },
       ],
@@ -154,12 +138,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.mentalStatus.option0',
         },
         {
           value: 60,
-          label: '60', // "Да (+60)"
           description: 'scale.pesi.criteria.mentalStatus.option1',
         },
       ],
@@ -171,12 +153,10 @@ export const PESI_CONFIG: ScaleConfig = {
       options: [
         {
           value: 0,
-          label: '0', // "Нет"
           description: 'scale.pesi.criteria.oxygen.option0',
         },
         {
           value: 20,
-          label: '20', // "Да (+20)"
           description: 'scale.pesi.criteria.oxygen.option1',
         },
       ],
@@ -205,7 +185,7 @@ export const PESI_CONFIG: ScaleConfig = {
     },
     {
       min: 126,
-      max: 1000, // arbitrary high value for Class V
+      max: 9999,
       summaryText: 'scale.pesi.result.class5', // Класс V: высокий риск (10-24.5%)
     },
   ],

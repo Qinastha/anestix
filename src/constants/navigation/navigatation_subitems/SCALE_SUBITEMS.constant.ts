@@ -51,4 +51,9 @@ export const SCALE_SUBITEMS: NavigationSubItem[] = [
     description: 'dashboard.subItems.lee.description',
     href: '/dashboard/scale-list/scale/lee',
   },
+  {
+    label: 'dashboard.subItems.caprini.title',
+    description: 'dashboard.subItems.caprini.description',
+    href: '/dashboard/scale-list/scale/caprini',
+  },
 ];

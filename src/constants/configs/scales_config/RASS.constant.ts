@@ -8,57 +8,18 @@ export const RASS_CONFIG: ScaleConfig = {
     {
       id: 'alertness',
       label: 'scale.rass.criteria.alertness.label',
+      type: 'radio',
       options: [
-        {
-          value: -5,
-          label: '-5',
-          description: 'scale.rass.criteria.alertness.negative5',
-        },
-        {
-          value: -4,
-          label: '-4',
-          description: 'scale.rass.criteria.alertness.negative4',
-        },
-        {
-          value: -3,
-          label: '-3',
-          description: 'scale.rass.criteria.alertness.negative3',
-        },
-        {
-          value: -2,
-          label: '-2',
-          description: 'scale.rass.criteria.alertness.negative2',
-        },
-        {
-          value: -1,
-          label: '-1',
-          description: 'scale.rass.criteria.alertness.negative1',
-        },
-        {
-          value: 0,
-          label: '0',
-          description: 'scale.rass.criteria.alertness.zero',
-        },
-        {
-          value: 1,
-          label: '1',
-          description: 'scale.rass.criteria.alertness.positive1',
-        },
-        {
-          value: 2,
-          label: '2',
-          description: 'scale.rass.criteria.alertness.positive2',
-        },
-        {
-          value: 3,
-          label: '3',
-          description: 'scale.rass.criteria.alertness.positive3',
-        },
-        {
-          value: 4,
-          label: '4',
-          description: 'scale.rass.criteria.alertness.positive4',
-        },
+        { value: -5, description: 'scale.rass.criteria.alertness.negative5' },
+        { value: -4, description: 'scale.rass.criteria.alertness.negative4' },
+        { value: -3, description: 'scale.rass.criteria.alertness.negative3' },
+        { value: -2, description: 'scale.rass.criteria.alertness.negative2' },
+        { value: -1, description: 'scale.rass.criteria.alertness.negative1' },
+        { value: 0, description: 'scale.rass.criteria.alertness.zero' },
+        { value: 1, description: 'scale.rass.criteria.alertness.positive1' },
+        { value: 2, description: 'scale.rass.criteria.alertness.positive2' },
+        { value: 3, description: 'scale.rass.criteria.alertness.positive3' },
+        { value: 4, description: 'scale.rass.criteria.alertness.positive4' },
       ],
     },
   ],
@@ -74,4 +35,5 @@ export const RASS_CONFIG: ScaleConfig = {
     { min: 3, max: 3, summaryText: 'scale.rass.result.veryAgitated' },
     { min: 4, max: 4, summaryText: 'scale.rass.result.combative' },
   ],
+  extraDescription: 'scale.rass.extraDescription',
 };
