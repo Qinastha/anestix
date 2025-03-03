@@ -42,14 +42,17 @@ export const CalculatorSumContent = <TResult extends Result>({
                 </p>
               </div>
             )}
-            <h2 className="text-md md:text-lg lg:text-xl font-semibold mb-2">
+            <h2 className="text-lg lg:text-xl mb-2">
               {t('calculators.result')}
             </h2>
             <ol className="list-disc list-inside mb-4">
               {Object.entries(result).map(([key, item]) => (
                 <li key={key} className="mb-1">
-                  <span className="font-medium text-sm lg:text-md">
-                    {t(item.label)}: {item.value} {t(item.unit)}
+                  <span className="text-base">
+                    {t(item.label)}:{' '}
+                    <span className="font-medium">
+                      {item.value} {t(item.unit)}
+                    </span>
                   </span>
                 </li>
               ))}
@@ -77,7 +80,7 @@ export const CalculatorSumContent = <TResult extends Result>({
           transition={{ duration: 0.6 }}
           style={{ whiteSpace: 'pre-wrap' }}
         >
-          <p className="text-sm lg:text-md">{t(annotation)}</p>
+          <p className="text-sm lg:text-base">{t(annotation)}</p>
         </motion.div>
       )}
     </>
