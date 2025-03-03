@@ -1,32 +1,32 @@
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
-import { SCALES_LIST } from '@/constants/configs/SCALES_LIST.constant';
-import { ScaleConfig, ScaleResult } from '@/interfaces/Scale.type';
+import { SCORES_LIST } from '@/constants/configs/SCORES_LIST.constant';
+import { ScoreConfig, ScoreResult } from '@/interfaces/Scores.type';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { DesktopScaleCalc } from '@/components/scale_calculator/DesktopScaleCalc';
-import { MobileScaleCalc } from '@/components/scale_calculator/MobileScaleCalc';
+import { DesktopScore } from '@/components/scale_calculator/DesktopScore';
+import { MobileScore } from '@/components/scale_calculator/MobileScore';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
 import { useParams } from 'next/navigation';
 import { SkeletonCalc } from '@/components/SkeletonCalc';
 import { motion } from 'motion/react';
-import { formatParagraphs } from '@/utils/formatParagraphs';
 import { Separator } from '@/components/ui/separator';
+import { ResultScore } from '@/components/scale_calculator/ResultScore';
 
 export default function ScalePage() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
   const ready = useDelayLoad(500);
   const params = useParams();
-  const scaleId = params.scaleId as string;
-  const scale = SCALES_LIST[scaleId] as ScaleConfig | undefined;
+  const scoreId = params.scoreId as string;
+  const score = SCORES_LIST[scoreId] as ScoreConfig | undefined;
 
   const [selectedValues, setSelectedValues] = useState<
     Record<string, number | null>
   >(() => {
     const initial: Record<string, number | null> = {};
-    scale?.criteria.forEach((c) => {
+    score?.criteria.forEach((c) => {
       initial[c.id] = null;
     });
     return initial;
@@ -47,29 +47,29 @@ export default function ScalePage() {
   }, [selectedValues]);
 
   const getScaleResult = useCallback(
-    (total: number): ScaleResult => {
-      if (!scale!.resultThresholds) return { total, summaryText: '' };
-      const threshold = scale!.resultThresholds.find(
+    (total: number): ScoreResult => {
+      if (!score!.resultThresholds) return { total, summaryText: '' };
+      const threshold = score!.resultThresholds.find(
         (th) => total >= th.min && total <= th.max
       );
       return threshold
         ? { total, summaryText: threshold.summaryText }
         : { total, summaryText: '' };
     },
-    [scale]
+    [score]
   );
 
   const result = getScaleResult(totalScore);
 
   if (!ready) {
     return (
-      <SkeletonCalc numInputs={scale?.criteria.length ?? 4} variant="table" />
+      <SkeletonCalc numInputs={score?.criteria.length ?? 4} variant="table" />
     );
   }
 
   return (
     <>
-      {!scale ? (
+      {!score ? (
         <div className="p-4 text-center text-destructive">
           <p>{t('scale.not_found')}</p>
         </div>
@@ -80,41 +80,27 @@ export default function ScalePage() {
           transition={{ duration: 0.8 }}
         >
           {isMobile ? (
-            <MobileScaleCalc
-              scale={scale}
+            <MobileScore
+              score={score}
               t={t}
               selectedValues={selectedValues}
               handleSelect={handleSelect}
             />
           ) : (
-            <DesktopScaleCalc
-              scale={scale}
+            <DesktopScore
+              score={score}
               t={t}
               selectedValues={selectedValues}
               handleSelect={handleSelect}
             />
           )}
           <Separator />
-          <div className="mt-4 text-lg md:text-xl font-bold tracking-widest">
-            {t('scale.totalScore')} {totalScore}
-          </div>
-          <div className="mt-2 text-md md:text-lg font-semibold tracking-widest">
-            {t('scale.result')} {t(result.summaryText)}
-          </div>
-
-          {scale?.extraDescription && (
-            <div className="mt-6 text-sm md:text-base bg-card p-6 border border-primary rounded-lg shadow-lg space-y-4">
-              {formatParagraphs(t(scale.extraDescription)).map(
-                (para: string, index: number) => (
-                  <p key={index} className="leading-relaxed">
-                    {index !== 0 && <b>{`${index}) `}</b>}
-                    {''}
-                    {para}
-                  </p>
-                )
-              )}
-            </div>
-          )}
+          <ResultScore
+            totalScore={totalScore}
+            result={result.summaryText}
+            t={t}
+            extraDescription={score?.extraDescription}
+          />
         </motion.div>
       )}
     </>

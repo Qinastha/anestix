@@ -1,16 +1,16 @@
 'use client';
 import React from 'react';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { ScaleCriteria } from '@/interfaces/Scale.type';
+import { ScoreCriteria } from '@/interfaces/Scores.type';
 
 interface DesktopScaleRadioProps {
-  criteria: ScaleCriteria;
+  criteria: ScoreCriteria;
   selectedValue: number | null;
   handleSelect: (criteriaId: string, value: number) => void;
   t: (key: string) => string;
 }
 
-export const ScaleRadio: React.FC<DesktopScaleRadioProps> = ({
+export const OptionRadio: React.FC<DesktopScaleRadioProps> = ({
   criteria,
   selectedValue,
   handleSelect,

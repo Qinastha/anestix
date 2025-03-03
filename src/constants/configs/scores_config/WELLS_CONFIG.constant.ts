@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const WELLS_CONFIG: ScaleConfig = {
+export const WELLS_CONFIG: ScoreConfig = {
   id: 'wells',
   name: 'scale.wells.name',
   description: 'scale.wells.description',

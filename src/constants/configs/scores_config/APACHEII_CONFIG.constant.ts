@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const APACHEII_CONFIG: ScaleConfig = {
+export const APACHEII_CONFIG: ScoreConfig = {
   id: 'apacheii',
   name: 'scale.apacheii.name',
   description: 'scale.apacheii.description',

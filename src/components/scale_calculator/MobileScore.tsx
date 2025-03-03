@@ -16,26 +16,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ScaleConfig } from '@/interfaces/Scale.type';
-import { ScaleInput } from '@/components/scale_calculator/ScaleInput';
+import { ScoreConfig } from '@/interfaces/Scores.type';
+import { OptionInput } from '@/components/scale_calculator/OptionInput';
 
 interface MobileScaleCalcProps {
-  scale: ScaleConfig;
+  score: ScoreConfig;
   t: (s: string) => string;
   selectedValues: Record<string, number | null>;
   handleSelect: (criteriaId: string, value: number) => void;
 }
 
-export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
-  scale,
+export const MobileScore: React.FC<MobileScaleCalcProps> = ({
+  score,
   t,
   selectedValues,
   handleSelect,
 }) => {
   return (
     <div>
-      <h1 className="mb-2 text-xl font-bold">{t(scale.name)}</h1>
-      {scale.description && <p className="mb-4">{t(scale.description)}</p>}
+      <h1 className="mb-2 text-lg md:text-xl text-center font-semibold underline underline-offset-4 decoration-primary">
+        {t(score.name)}
+      </h1>
+      <h6 className="mb-4 text-sm md:text-md">{t(score.description)}</h6>
 
       <Table className="w-full table-fixed">
         <TableHeader>
@@ -45,16 +47,16 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {scale.criteria.map((criteria) => (
+          {score.criteria.map((criteria) => (
             <TableRow key={criteria.id} className="hover:bg-inherit">
-              <TableCell className="font-bold w-1/2">
-                <span className="font-bold text-xs bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+              <TableCell className="w-1/2">
+                <span className="font-semibold text-sm bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent">
                   {t(criteria.label)}
                 </span>
               </TableCell>
               <TableCell className="w-1/2 p-3 items-center">
                 {criteria.type === 'input' ? (
-                  <ScaleInput
+                  <OptionInput
                     selectedValues={selectedValues}
                     handleSelect={handleSelect}
                     criteria={criteria}
@@ -83,7 +85,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                           <SelectItem
                             key={option.value}
                             value={option.value.toString()}
-                            className="border border-b-primary p-4"
+                            className="border border-b-primary last:border-b-0 p-4"
                           >
                             <span className="block whitespace-normal text-pretty text-xs">
                               {t(option.description!)} - {option.value}{' '}

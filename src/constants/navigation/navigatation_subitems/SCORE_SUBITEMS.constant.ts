@@ -1,6 +1,6 @@
 import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
 
-export const SCALE_SUBITEMS: NavigationSubItem[] = [
+export const SCORE_SUBITEMS: NavigationSubItem[] = [
   {
     label: 'dashboard.subItems.rass.title',
     description: 'dashboard.subItems.rass.description',
@@ -60,5 +60,10 @@ export const SCALE_SUBITEMS: NavigationSubItem[] = [
     label: 'dashboard.subItems.hasbled.title',
     description: 'dashboard.subItems.hasbled.description',
     href: '/dashboard/scale-list/scale/hasbled',
+  },
+  {
+    label: 'dashboard.subItems.news2.title',
+    description: 'dashboard.subItems.news2.description',
+    href: '/dashboard/scale-list/scale/news2',
   },
 ];

@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const ALDERTE_CONFIG: ScaleConfig = {
+export const ALDERTE_CONFIG: ScoreConfig = {
   id: 'alderte',
   name: 'scale.alderte.name',
   description: 'scale.alderte.description',

@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const PESI_CONFIG: ScaleConfig = {
+export const PESI_CONFIG: ScoreConfig = {
   id: 'pesi',
   name: 'scale.pesi.name',
   description: 'scale.pesi.description',

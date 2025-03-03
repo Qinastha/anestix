@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const LEE_CONFIG: ScaleConfig = {
+export const LEE_CONFIG: ScoreConfig = {
   id: 'lee',
   name: 'scale.lee.name',
   description: 'scale.lee.description',

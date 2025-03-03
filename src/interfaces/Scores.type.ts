@@ -1,32 +1,32 @@
-export interface ScaleOption {
+export interface ScoreOption {
   value: number;
   description: string;
 }
 
-export interface ScaleCriteria {
+export interface ScoreCriteria {
   id: string;
   label: string;
   type?: 'select' | 'input' | 'radio';
-  options: ScaleOption[];
+  options: ScoreOption[];
 }
 
-export interface ScaleResult {
+export interface ScoreResult {
   total: number;
   summaryText: string;
 }
 
-export interface ScaleResultThreshold {
+export interface ScoreResultThreshold {
   min: number;
   max: number;
   summaryText: string;
 }
 
-export interface ScaleConfig {
+export interface ScoreConfig {
   id: string;
   name: string;
   description: string;
-  criteria: ScaleCriteria[];
-  result?: ScaleResult;
-  resultThresholds: ScaleResultThreshold[];
+  criteria: ScoreCriteria[];
+  result?: ScoreResult;
+  resultThresholds: ScoreResultThreshold[];
   extraDescription?: string;
 }

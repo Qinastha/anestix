@@ -9,27 +9,27 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
-import { DesktopScaleCell } from '@/components/scale_calculator/DesktopScaleCell';
-import { ScaleInput } from '@/components/scale_calculator/ScaleInput';
-import { ScaleRadio } from '@/components/scale_calculator/ScaleRadio';
+import { OptionGridCell } from '@/components/scale_calculator/OptionGridCell';
+import { OptionInput } from '@/components/scale_calculator/OptionInput';
+import { OptionRadio } from '@/components/scale_calculator/OptionRadio';
 
 interface DesktopScaleCalcProps {
-  scale: ScaleConfig;
+  score: ScoreConfig;
   t: (key: string) => string;
   selectedValues: Record<string, number | null>;
   handleSelect: (criteriaId: string, value: number) => void;
 }
 
-export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
-  scale,
+export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
+  score,
   t,
   selectedValues,
   handleSelect,
 }) => {
   const maxOptions = useMemo(() => {
-    return scale.criteria.reduce((max: number, criteria) => {
+    return score.criteria.reduce((max: number, criteria) => {
       if (
         criteria.type !== 'input' &&
         criteria.type !== 'radio' &&
@@ -40,7 +40,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
       }
       return max;
     }, 0);
-  }, [scale]);
+  }, [score]);
 
   const breakpoint = useBreakpoint();
   let maxAllowedCols = 3;
@@ -56,8 +56,10 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
 
   return (
     <div>
-      <h1 className="mb-4 text-2xl text-center font-bold">{t(scale.name)}</h1>
-      {scale.description && <p className="mb-4">{t(scale.description)}</p>}
+      <h1 className="mb-4 text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
+        {t(score.name)}
+      </h1>
+      <h6 className="mb-4">{t(score.description)}</h6>
       <Table>
         <TableHeader>
           <TableRow>
@@ -70,7 +72,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {scale.criteria.map((criteria) => (
+          {score.criteria.map((criteria) => (
             <TableRow
               key={criteria.id}
               style={{
@@ -78,21 +80,21 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
               }}
               className="hover:bg-inherit"
             >
-              <TableCell className={`font-bold ${labelWidthClass}`}>
-                <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b">
+              <TableCell className={`${labelWidthClass}`}>
+                <span className="font-semibold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent">
                   {t(criteria.label)}
                 </span>
               </TableCell>
               <TableCell className={`${optionsWidthClass} p-4`}>
                 {criteria.type === 'input' ? (
-                  <ScaleInput
+                  <OptionInput
                     selectedValues={selectedValues}
                     handleSelect={handleSelect}
                     criteria={criteria}
                     t={t}
                   />
                 ) : criteria.type === 'radio' ? (
-                  <ScaleRadio
+                  <OptionRadio
                     criteria={criteria}
                     selectedValue={selectedValues[criteria.id]}
                     handleSelect={handleSelect}
@@ -116,7 +118,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
                             handleSelect(criteria.id, option.value)
                           }
                         >
-                          <DesktopScaleCell
+                          <OptionGridCell
                             option={option}
                             isSelected={isSelected}
                             t={t}

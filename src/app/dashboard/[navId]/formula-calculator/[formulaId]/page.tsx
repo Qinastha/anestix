@@ -46,7 +46,7 @@ export default function FormulaCalculatorPage() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-2xl font-bold mb-6 text-center"
+        className="text-xl lg:text-2xl mb-6 text-center font-semibold underline underline-offset-4 decoration-primary"
       >
         {t(config.label)}
       </motion.h1>

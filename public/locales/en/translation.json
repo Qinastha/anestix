@@ -55,8 +55,8 @@
       "description": "Access a wide range of anesthesiology resources, clinical guidelines, and research papers."
     },
     "calculators_for_scales": {
-      "title": "Calculators for Scales",
-      "description": "Utilize built-in calculators for common anesthesiology scales, risk assessments, dosage calculations, and more to support informed clinical decision-making."
+      "title": "Calculators for Score",
+      "description": "Utilize built-in calculators for common anesthesiology score, risk assessments, dosage calculations, and more to support informed clinical decision-making."
     },
     "continuous_learning": {
       "title": "Continuous Learning",
@@ -115,11 +115,11 @@
       },
       "wells" : {
         "title": "Wells Score (PE)",
-        "description": "Scales for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE"
+        "description": "Score for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE"
       },
       "pesi": {
         "title": "PESI Score",
-        "description": "The PESI (Pulmonary Embolism Severity Index) scale allows assessing the risk of 30-day mortality in patients with PE"
+        "description": "The PESI (Pulmonary Embolism Severity Index) score allows assessing the risk of 30-day mortality in patients with PE"
       },
       "lee": {
         "title": "RCRI Score (Index Lee)",
@@ -132,6 +132,10 @@
       "hasbled": {
         "title": "HAS-BLED Score",
         "description": "Scoring system developed to assess 1-year risk of major bleeding in people taking anticoagulants for atrial fibrillation (AF)"
+      },
+      "news2": {
+        "title": "NEWS 2 Score",
+        "description": "The score for assessing the severity of patients with acute respiratory syndromes is aimed to a greater extent at assessing the current condition of the patient and to a lesser extent at assessing the prognosis of the disease"
       },
       "drug-calculators": {
         "title": "Drug dosage calculators",
@@ -188,11 +192,11 @@
     "respOptions": "Response Options",
     "totalScore": "Total Score: ",
     "result": "Result: ",
-    "not_found": "Scale configuration not found",
+    "not_found": "Score configuration not found",
     "yes": "Yes",
     "no": "No",
     "glasgow": {
-      "name": "Glasgow Coma Scale",
+      "name": "Glasgow Coma Score",
       "description": "Assessment of consciousness based on eye, verbal, and motor responses.",
       "criteria": {
         "eye": {
@@ -232,7 +236,7 @@
     },
     "four": {
       "name": "FOUR Score",
-      "description": "A coma scale used to assess patients with impaired consciousness.",
+      "description": "A coma score used to assess patients with impaired consciousness.",
       "criteria": {
         "eye": {
           "label": "Eye Response",
@@ -278,8 +282,8 @@
       }
     },
     "rass": {
-      "name": "RASS Scale",
-      "description": "The RASS (Richmond Agitation-Sedation Scale) is used in anesthesiology and intensive care to describe the degree of patient aggression or the level of depth of sedation",
+      "name": "RASS Score",
+      "description": "The RASS (Richmond Agitation-Sedation Score) is used in anesthesiology and intensive care to describe the degree of patient aggression or the level of depth of sedation",
       "criteria": {
         "alertness": {
           "label": "Alertness",
@@ -311,7 +315,7 @@
     },
     "alderte": {
       "name": "Modified Aldrete Score",
-      "description": "This scale demonstrates the patient's readiness for transfer to the ward after anesthesia.",
+      "description": "This score demonstrates the patient's readiness for transfer to the ward after anesthesia.",
       "criteria": {
         "activity": {
           "label": "Activity",
@@ -386,7 +390,7 @@
           "option4": "Dopamine > 15 µg/kg/min or epinephrine > 0.1 µg/kg/min or norepinephrine > 0.1 µg/kg/min"
         },
         "gcs": {
-          "label": "Glasgow Coma Scale",
+          "label": "Glasgow Coma Score",
           "option0": "15 points",
           "option1": "13–14 points",
           "option2": "10–12 points",
@@ -409,7 +413,7 @@
       }
     },
     "nihss": {
-      "name": "NIH Stroke Scale",
+      "name": "NIH Stroke Score",
       "description": "A standardized tool for assessing stroke severity and neurological deficits.",
       "extraDescription": "Note:; For Level of Consciousness, observe the patient’s alertness, ask two questions (e.g., 'What month is it?' and 'How old are you?'), and test simple commands (open/close eyes, grip/release hand); For Best Gaze, have the patient follow a moving object horizontally; For Visual Fields, perform a confrontation test in all quadrants and note any partial or complete field loss; For Facial Palsy, ask the patient to smile, raise eyebrows, and close eyes to check for asymmetry; For Motor responses, test each arm by having it extended (90° if sitting or 45° if supine) for 10 seconds and each leg by raising it to 30° for 5 seconds, noting any drift, decreased effort, or absence of movement; For Limb Ataxia, have the patient perform finger-to-nose and heel-to-shin tests, scoring only when incoordination exceeds weakness; For Best Language, assess the ability to describe a picture, name objects, or read sentences, scoring based on fluency and comprehension; For Dysarthria, ask the patient to repeat words to evaluate speech clarity; Finally, for Extinction and Inattention, use simultaneous stimulation to check for neglect;",
       "criteria": {
@@ -628,7 +632,7 @@
           "option3": "≥40 or <1"
         },
         "gcs": {
-          "label": "Glasgow Coma Scale",
+          "label": "Glasgow Coma Score",
           "option0": "15 points",
           "option1": "14 points",
           "option2": "13 points",
@@ -1025,6 +1029,44 @@
         "high3": "High risk of major bleeding (9.1%, 12.5 bleeds per 100 patients per year)",
         "veryHigh": "Very high risk of major bleeding. Scores above 5 are too rare to determine risk, but are likely to exceed 10%"
       }
+    },
+    "news2": {
+      "name": "NEWS 2 Score",
+      "description": "A score for assessing the severity of patients with acute respiratory syndromes and is aimed to a greater extent at assessing the current condition of the patient and to a lesser extent at assessing the prognosis of the disease",
+      "criteria": {
+        "respiratoryRate": {
+          "label": "Respiratory Rate (breaths/min)"
+        },
+        "spo2": {
+          "label": "SpO2 (%)"
+        },
+        "oxygenSupplementation": {
+          "label": "Oxygen Supplementation",
+          "option1": "Room air",
+          "option2": "Supplemental oxygen"
+        },
+        "temperature": {
+          "label": "Temperature (°C)"
+        },
+        "systolicBP": {
+          "label": "Systolic Blood Pressure (mmHg)"
+        },
+        "pulse": {
+          "label": "Pulse (bpm)"
+        },
+        "consciousness": {
+          "label": "Consciousness",
+          "option1": "Alert",
+          "option2": "New-onset confusion, disorientation, agitation, or unresponsive"
+        }
+      },
+      "result": {
+        "lowest": "Low risk: monitoring minimum every 12 hours.",
+        "low": "Low risk: monitoring minimum every 4-6 hours.",
+        "medium": "Medium risk: monitoring minimum every hour",
+        "high": "High risk: continuous monitoring of vital signs"
+      },
+      "extraDescription": "Score of 3 in any individual parameter can be qualified as low-medium risk with recommended monitoring every hour"
     }
   },
   "calculators": {

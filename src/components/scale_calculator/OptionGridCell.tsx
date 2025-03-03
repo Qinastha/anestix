@@ -7,15 +7,15 @@ import {
 } from '@/components/ui/tooltip';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { ScaleOption } from '@/interfaces/Scale.type';
+import { ScoreOption } from '@/interfaces/Scores.type';
 
 interface DesktopScaleCellProps {
-  option: ScaleOption;
+  option: ScoreOption;
   isSelected: boolean;
   t: (key: string) => string;
 }
 
-export const DesktopScaleCell: React.FC<DesktopScaleCellProps> = ({
+export const OptionGridCell: React.FC<DesktopScaleCellProps> = ({
   option,
   isSelected,
   t,
@@ -37,9 +37,7 @@ export const DesktopScaleCell: React.FC<DesktopScaleCellProps> = ({
                 : 'border-primary'
             }`}
           >
-            <span className="font-semibold max-w-full text-xs">
-              {t(option.description!)}
-            </span>
+            <span className="max-w-full text-xs">{t(option.description!)}</span>
           </motion.div>
         </TooltipTrigger>
         <TooltipContent

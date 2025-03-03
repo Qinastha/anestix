@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const NIHSS_CONFIG: ScaleConfig = {
+export const NIHSS_CONFIG: ScoreConfig = {
   id: 'nihss',
   name: 'scale.nihss.name',
   description: 'scale.nihss.description',

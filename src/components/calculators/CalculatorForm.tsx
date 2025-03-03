@@ -60,7 +60,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
                 : 'w-full px-2 mb-4'
             }
           >
-            <label className="flex flex-row justify-between text-sm font-medium mb-1">
+            <label className="flex flex-row justify-between text-sm lg:text-md font-medium mb-1">
               {t(param.label)} <span className="pr-4">{t(param.unit)}</span>
             </label>
             {param.type === 'select' ? (
@@ -68,13 +68,19 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
                 value={String(formValues[param.key] ?? '')}
                 onValueChange={(value) => handleChange(param.key, value)}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full text-sm lg:text-md text-pretty whitespace-normal">
                   <SelectValue placeholder={t(param.label)} />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="max-w-sm">
                   {param.options?.map((opt) => (
-                    <SelectItem key={opt.value} value={String(opt.value)}>
-                      {t(opt.label)}
+                    <SelectItem
+                      key={opt.value}
+                      value={String(opt.value)}
+                      className="border border-b-primary last:border-b-0 p-4"
+                    >
+                      <span className="block whitespace-normal text-pretty text-sm lg:text-md">
+                        {t(opt.label)}
+                      </span>
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -96,7 +102,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
                     : ''
                 }
                 onChange={(e) => handleChange(param.key, e.target.value)}
-                className="w-full placeholder:text-muted-foreground "
+                className="w-full text-sm lg:text-md placeholder:text-muted-foreground "
               />
             )}
           </motion.div>

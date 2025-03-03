@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const CAPRINI_CONFIG: ScaleConfig = {
+export const CAPRINI_CONFIG: ScoreConfig = {
   id: 'caprini',
   name: 'scale.caprini.name',
   description: 'scale.caprini.description',

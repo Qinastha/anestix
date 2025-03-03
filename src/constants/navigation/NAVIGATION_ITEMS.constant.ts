@@ -6,7 +6,7 @@ import {
   TableOfContents,
 } from 'lucide-react';
 import { NavigationItem } from '@/interfaces/NavigationItem.type';
-import { SCALE_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SCALE_SUBITEMS.constant';
+import { SCORE_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SCORE_SUBITEMS.constant';
 import { CALCULATOR_SUBITEMS } from '@/constants/navigation/navigatation_subitems/CALCULATOR_SUBITEMS.constant';
 import { ULTRASOUND_SUBITEMS } from '@/constants/navigation/navigatation_subitems/ULTRASOUND_SUBITEMS.constant';
 import { SKILLS_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SKILLS_SUBITEMS.constant';
@@ -18,7 +18,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     title: 'dashboard.scale-list.title',
     description: 'dashboard.scale-list.description',
     href: '/dashboard/scale-list',
-    subItems: SCALE_SUBITEMS,
+    subItems: SCORE_SUBITEMS,
   },
   {
     icon: Calculator,

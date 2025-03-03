@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const HASBLED_CONFIG: ScaleConfig = {
+export const HASBLED_CONFIG: ScoreConfig = {
   id: 'hasbled',
   name: 'scale.hasbled.name',
   description: 'scale.hasbled.description',

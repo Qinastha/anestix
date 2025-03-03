@@ -5,7 +5,7 @@ export const CARDVARIANTS_BASE = {
     y: 0,
     transition: {
       delay: i * 0.15,
-      duration: 0.5,
+      duration: 0.3,
     },
   }),
   hover: {

@@ -1,6 +1,6 @@
-import { ScaleConfig } from '@/interfaces/Scale.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 
-export const FOUR_CONFIG: ScaleConfig = {
+export const FOUR_CONFIG: ScoreConfig = {
   id: 'four',
   name: 'scale.four.name',
   description: 'scale.four.description',
