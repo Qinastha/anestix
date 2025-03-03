@@ -2,6 +2,8 @@
   "select_an_option": "Select an option",
   "search": "Search",
   "score": "point",
+  "no": "No",
+  "yes": "Yes",
   "units": {
     "kg_m2": "kg/m²",
     "kcal_day": "kcal/day",
@@ -126,6 +128,10 @@
       "caprini": {
         "title": "Caprini Score",
         "description": "The Caprini Score is a validated risk assessment tool to estimate the risk of venous thromboembolism (VTE) based on patient-specific risk factors"
+      },
+      "hasbled": {
+        "title": "HAS-BLED Score",
+        "description": "Scoring system developed to assess 1-year risk of major bleeding in people taking anticoagulants for atrial fibrillation (AF)"
       },
       "drug-calculators": {
         "title": "Drug dosage calculators",
@@ -976,6 +982,48 @@
         "high": "High risk: Combined mechanical and pharmacologic prophylaxis for 7–10 days.",
         "high2": "Very high risk: Combined prophylaxis for 7–10 days.",
         "highest": "Highest risk: Combined prophylaxis for 30 days."
+      }
+    },
+    "hasbled": {
+      "name": "HAS-BLED Score",
+      "description": "This score estimates the risk of major bleeding in patients on anticoagulation to guide management in atrial fibrillation care.",
+      "criteria": {
+        "hypertension": {
+          "label": "Hypertension (systolic >160 mmHg)"
+        },
+        "renal": {
+          "label": "Renal Disease (dialysis, transplant, or Cr >2.26 mg/dL)"
+        },
+        "liver": {
+          "label": "Liver Disease (cirrhosis or bilirubin >2× normal with elevated enzymes)"
+        },
+        "stroke": {
+          "label": "Stroke History"
+        },
+        "bleeding": {
+          "label": "Prior Major Bleeding or Bleeding Predisposition"
+        },
+        "labileINR": {
+          "label": "Labile INR (unstable/high, TTR <60%)"
+        },
+        "age": {
+          "label": "Age >65 years"
+        },
+        "medication": {
+          "label": "Medication Use Predisposing to Bleeding (aspirin, clopidogrel, NSAIDs)"
+        },
+        "alcohol": {
+          "label": "Alcohol Use (≥8 drinks/week)"
+        }
+      },
+      "result": {
+        "lowest": "Relatively low risk of major bleeding (0.9%, 1.13 bleeds per 100 patients per year)",
+        "low": "Relatively low risk of major bleeding 3.4% (1.02 bleeds per 100 patients per year)",
+        "moderate": "Moderate risk of major bleeding (4.1%, 1.88 bleeds per 100 patients per year)",
+        "high1": "High risk of major bleeding (5.8%, 3.72 bleeds per 100 patients per year)",
+        "high2": "High risk of major bleeding (8.9%, 8.7 bleeds per 100 patients per year)",
+        "high3": "High risk of major bleeding (9.1%, 12.5 bleeds per 100 patients per year)",
+        "veryHigh": "Very high risk of major bleeding. Scores above 5 are too rare to determine risk, but are likely to exceed 10%"
       }
     }
   },

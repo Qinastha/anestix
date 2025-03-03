@@ -33,7 +33,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
   handleSelect,
 }) => {
   return (
-    <div className="p-4">
+    <div>
       <h1 className="mb-2 text-xl font-bold">{t(scale.name)}</h1>
       {scale.description && <p className="mb-4">{t(scale.description)}</p>}
 
@@ -48,11 +48,11 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
           {scale.criteria.map((criteria) => (
             <TableRow key={criteria.id} className="hover:bg-inherit">
               <TableCell className="font-bold w-1/2">
-                <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
+                <span className="font-bold text-xs bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b border-sidebar-border">
                   {t(criteria.label)}
                 </span>
               </TableCell>
-              <TableCell className="w-1/2">
+              <TableCell className="w-1/2 p-3 items-center">
                 {criteria.type === 'input' ? (
                   <ScaleInput
                     selectedValues={selectedValues}
@@ -72,10 +72,10 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                         handleSelect(criteria.id, Number(value))
                       }
                     >
-                      <SelectTrigger className="w-full text-left">
+                      <SelectTrigger className="w-full text-left text-xs whitespace-normal text-pretty">
                         <SelectValue
                           placeholder={t('select_an_option')}
-                          className="whitespace-normal text-pretty"
+                          className="whitespace-normal text-pretty text-xs"
                         />
                       </SelectTrigger>
                       <SelectContent className="max-w-sm bg-card">
@@ -85,7 +85,7 @@ export const MobileScaleCalc: React.FC<MobileScaleCalcProps> = ({
                             value={option.value.toString()}
                             className="border border-b-primary p-4"
                           >
-                            <span className="block whitespace-normal text-pretty">
+                            <span className="block whitespace-normal text-pretty text-xs">
                               {t(option.description!)} - {option.value}{' '}
                               {t('score')}
                             </span>

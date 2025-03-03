@@ -55,7 +55,7 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
   const optionsWidthClass = maxOptions <= 3 ? 'w-1/2' : 'w-3/4';
 
   return (
-    <div className="p-6">
+    <div>
       <h1 className="mb-4 text-2xl text-center font-bold">{t(scale.name)}</h1>
       {scale.description && <p className="mb-4">{t(scale.description)}</p>}
       <Table>
@@ -78,12 +78,12 @@ export const DesktopScaleCalc: React.FC<DesktopScaleCalcProps> = ({
               }}
               className="hover:bg-inherit"
             >
-              <TableCell className={`font-bold ${labelWidthClass} pr-6`}>
+              <TableCell className={`font-bold ${labelWidthClass}`}>
                 <span className="font-bold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent border-b">
                   {t(criteria.label)}
                 </span>
               </TableCell>
-              <TableCell className={optionsWidthClass}>
+              <TableCell className={`${optionsWidthClass} p-4`}>
                 {criteria.type === 'input' ? (
                   <ScaleInput
                     selectedValues={selectedValues}

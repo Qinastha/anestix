@@ -12,6 +12,7 @@ import { useParams } from 'next/navigation';
 import { SkeletonCalc } from '@/components/SkeletonCalc';
 import { motion } from 'motion/react';
 import { formatParagraphs } from '@/utils/formatParagraphs';
+import { Separator } from '@/components/ui/separator';
 
 export default function ScalePage() {
   const { t } = useTranslation();
@@ -93,6 +94,7 @@ export default function ScalePage() {
               handleSelect={handleSelect}
             />
           )}
+          <Separator />
           <div className="mt-4 text-lg md:text-xl font-bold tracking-widest">
             {t('scale.totalScore')} {totalScore}
           </div>

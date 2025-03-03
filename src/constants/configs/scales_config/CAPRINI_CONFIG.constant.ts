@@ -9,6 +9,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'age',
       label: 'scale.caprini.criteria.age.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.age.option0' }, // ≤40
         { value: 1, description: 'scale.caprini.criteria.age.option1' }, // 41–60
@@ -20,6 +21,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     // {
     //   id: 'sex',
     //   label: 'scale.caprini.criteria.sex.label',
+    //   type: 'radio',
     //   options: [
     //     { value: 0, description: 'scale.caprini.criteria.sex.male' },
     //     { value: 0, description: 'scale.caprini.criteria.sex.female' },
@@ -29,6 +31,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'surgery',
       label: 'scale.caprini.criteria.surgery.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.surgery.none' },
         { value: 1, description: 'scale.caprini.criteria.surgery.minor' },
@@ -43,6 +46,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'recentMajorSurgery',
       label: 'scale.caprini.criteria.recentMajorSurgery.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -58,6 +62,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'chf',
       label: 'scale.caprini.criteria.chf.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.chf.no' },
         { value: 1, description: 'scale.caprini.criteria.chf.yes' },
@@ -67,6 +72,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'sepsis',
       label: 'scale.caprini.criteria.sepsis.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.sepsis.no' },
         { value: 1, description: 'scale.caprini.criteria.sepsis.yes' },
@@ -76,6 +82,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'pneumonia',
       label: 'scale.caprini.criteria.pneumonia.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.pneumonia.no' },
         { value: 1, description: 'scale.caprini.criteria.pneumonia.yes' },
@@ -85,6 +92,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'plasterCast',
       label: 'scale.caprini.criteria.plasterCast.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.plasterCast.no' },
         { value: 2, description: 'scale.caprini.criteria.plasterCast.yes' },
@@ -94,6 +102,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'fracture',
       label: 'scale.caprini.criteria.fracture.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.fracture.no' },
         { value: 5, description: 'scale.caprini.criteria.fracture.yes' },
@@ -103,6 +112,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'stroke',
       label: 'scale.caprini.criteria.stroke.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.stroke.no' },
         { value: 5, description: 'scale.caprini.criteria.stroke.yes' },
@@ -112,6 +122,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'multipleTrauma',
       label: 'scale.caprini.criteria.multipleTrauma.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.multipleTrauma.no' },
         { value: 5, description: 'scale.caprini.criteria.multipleTrauma.yes' },
@@ -121,6 +132,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'spinalInjury',
       label: 'scale.caprini.criteria.spinalInjury.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.spinalInjury.no' },
         { value: 5, description: 'scale.caprini.criteria.spinalInjury.yes' },
@@ -130,6 +142,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'varicose',
       label: 'scale.caprini.criteria.varicose.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.varicose.no' },
         { value: 1, description: 'scale.caprini.criteria.varicose.yes' },
@@ -139,6 +152,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'swollenLegs',
       label: 'scale.caprini.criteria.swollenLegs.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.swollenLegs.no' },
         { value: 1, description: 'scale.caprini.criteria.swollenLegs.yes' },
@@ -148,6 +162,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'centralAccess',
       label: 'scale.caprini.criteria.centralAccess.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.centralAccess.no' },
         { value: 2, description: 'scale.caprini.criteria.centralAccess.yes' },
@@ -157,6 +172,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'dvtPe',
       label: 'scale.caprini.criteria.dvtPe.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.dvtPe.no' },
         { value: 3, description: 'scale.caprini.criteria.dvtPe.yes' },
@@ -166,6 +182,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'familyThrombosis',
       label: 'scale.caprini.criteria.familyThrombosis.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.familyThrombosis.no' },
         {
@@ -178,6 +195,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'factorVLeiden',
       label: 'scale.caprini.criteria.factorVLeiden.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.factorVLeiden.no' },
         { value: 3, description: 'scale.caprini.criteria.factorVLeiden.yes' },
@@ -187,6 +205,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'prothrombin',
       label: 'scale.caprini.criteria.prothrombin.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.prothrombin.no' },
         { value: 3, description: 'scale.caprini.criteria.prothrombin.yes' },
@@ -196,6 +215,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'homocysteine',
       label: 'scale.caprini.criteria.homocysteine.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.homocysteine.no' },
         { value: 3, description: 'scale.caprini.criteria.homocysteine.yes' },
@@ -205,6 +225,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'lupusAnticoagulant',
       label: 'scale.caprini.criteria.lupusAnticoagulant.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -220,6 +241,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'anticardiolipin',
       label: 'scale.caprini.criteria.anticardiolipin.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.anticardiolipin.no' },
         { value: 3, description: 'scale.caprini.criteria.anticardiolipin.yes' },
@@ -229,6 +251,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'hit',
       label: 'scale.caprini.criteria.hit.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.hit.no' },
         { value: 3, description: 'scale.caprini.criteria.hit.yes' },
@@ -238,6 +261,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'otherThrombophilia',
       label: 'scale.caprini.criteria.otherThrombophilia.label',
+      type: 'radio',
       options: [
         {
           value: 0,
@@ -253,6 +277,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'mobility',
       label: 'scale.caprini.criteria.mobility.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.mobility.normal' },
         { value: 1, description: 'scale.caprini.criteria.mobility.bedRest' },
@@ -263,6 +288,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'ibd',
       label: 'scale.caprini.criteria.ibd.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.ibd.no' },
         { value: 1, description: 'scale.caprini.criteria.ibd.yes' },
@@ -272,6 +298,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'bmi',
       label: 'scale.caprini.criteria.bmi.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.bmi.no' },
         { value: 1, description: 'scale.caprini.criteria.bmi.yes' },
@@ -281,6 +308,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'mi',
       label: 'scale.caprini.criteria.mi.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.mi.no' },
         { value: 1, description: 'scale.caprini.criteria.mi.yes' },
@@ -290,6 +318,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'copd',
       label: 'scale.caprini.criteria.copd.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.copd.no' },
         { value: 1, description: 'scale.caprini.criteria.copd.yes' },
@@ -299,6 +328,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'malignancy',
       label: 'scale.caprini.criteria.malignancy.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.malignancy.no' },
         { value: 2, description: 'scale.caprini.criteria.malignancy.yes' },
@@ -308,6 +338,7 @@ export const CAPRINI_CONFIG: ScaleConfig = {
     {
       id: 'otherRiskFactors',
       label: 'scale.caprini.criteria.otherRiskFactors.label',
+      type: 'radio',
       options: [
         { value: 0, description: 'scale.caprini.criteria.otherRiskFactors.no' },
         {
