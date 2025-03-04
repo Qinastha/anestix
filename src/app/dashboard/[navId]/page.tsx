@@ -16,7 +16,7 @@ import { Sparkle } from 'lucide-react';
 import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
 import { sortByLabel } from '@/utils/sortByLabel';
 
-export default function ScaleCalculatorHome() {
+export default function SubitemsPage() {
   const { t } = useTranslation();
   const { navId } = useParams();
 
@@ -39,14 +39,15 @@ export default function ScaleCalculatorHome() {
               animate="animate"
               whileHover="hover"
             >
-              <Link href={subItem.href}>
-                <Card className="group flex flex-col md:h-full hover:shadow-xl transition-shadow">
-                  <CardHeader className="flex flex-col items-center ">
-                    <CardTitle className="flex flex-row items-center space-x-6 text-lg lg:text-2xl font-semibold ">
-                      <Sparkle className="mr-2 transition-[stroke] duration-300 group-hover:stroke-primary" />
-                      {t(subItem.label)}
+              <Link className="group" href={subItem.href}>
+                <Card className="md:h-full hover:shadow-xl transition-shadow">
+                  <CardHeader className="items-center md:h-full">
+                    <CardTitle className="flex flex-row items-center justify-center gap-x-3 text-xl xl:text-2xl font-semibold">
+                      <Sparkle className="transition-[stroke] duration-300 group-hover:stroke-primary" />
+                      <h2 className="flex-1 text-center">{t(subItem.label)}</h2>
+                      <Sparkle className="transition-[stroke] duration-300 group-hover:stroke-primary" />
                     </CardTitle>
-                    <CardDescription className="text-sm lg:text-lg">
+                    <CardDescription className="text-md lg:text-lg">
                       {t(subItem.description)}
                     </CardDescription>
                   </CardHeader>
