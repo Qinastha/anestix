@@ -633,19 +633,19 @@
         },
         "gcs": {
           "label": "Glasgow Coma Score",
-          "option0": "15 points",
-          "option1": "14 points",
-          "option2": "13 points",
-          "option3": "12 points",
-          "option4": "11 points",
-          "option5": "10 points",
-          "option6": "9 points",
-          "option7": "8 points",
-          "option8": "7 points",
-          "option9": "6 points",
-          "option10": "5 points",
-          "option11": "4 points",
-          "option12": "3 points"
+          "option0": "Score 15",
+          "option1": "Score 14",
+          "option2": "Score 13",
+          "option3": "Score 12",
+          "option4": "Score 11",
+          "option5": "Score 10",
+          "option6": "Score 9",
+          "option7": "Score 8",
+          "option8": "Score 7",
+          "option9": "Score 6",
+          "option10": "Score 5",
+          "option11": "Score 4",
+          "option12": "Score 3"
         }
       },
       "result": {

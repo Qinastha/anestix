@@ -34,7 +34,7 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
 }) => {
   return (
     <div>
-      <h1 className="mb-2 text-lg md:text-xl text-center font-semibold underline underline-offset-4 decoration-primary">
+      <h1 className="mb-2 text-xl lg:text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
         {t(score.name)}
       </h1>
       <h6 className="mb-4 text-sm md:text-md">{t(score.description)}</h6>
@@ -75,10 +75,7 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                       }
                     >
                       <SelectTrigger className="w-full text-left text-xs whitespace-normal text-pretty">
-                        <SelectValue
-                          placeholder={t('select_an_option')}
-                          className="whitespace-normal text-pretty text-xs"
-                        />
+                        <SelectValue placeholder={t('select_an_option')} />
                       </SelectTrigger>
                       <SelectContent className="max-w-sm bg-card">
                         {criteria.options.map((option) => (
@@ -87,7 +84,7 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                             value={option.value.toString()}
                             className="border border-b-primary last:border-b-0 p-4"
                           >
-                            <span className="block whitespace-normal text-pretty text-xs">
+                            <span className="block whitespace-normal text-pretty text-sm">
                               {t(option.description!)} - {option.value}{' '}
                               {t('score')}
                             </span>

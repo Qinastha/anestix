@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 interface LanguageSwitcherProps {
   language: string;
@@ -37,13 +38,14 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       <DropdownMenuContent className="w-32">
         <DropdownMenuItem
           onSelect={() => action('ru')}
-          className="cursor-pointer hover:bg-muted"
+          className="p-4 cursor-pointer hover:bg-muted"
         >
           RU
         </DropdownMenuItem>
+        <Separator className="bg-primary" />
         <DropdownMenuItem
           onSelect={() => action('en')}
-          className="cursor-pointer hover:bg-muted"
+          className="p-4 cursor-pointer hover:bg-muted"
         >
           EN
         </DropdownMenuItem>
