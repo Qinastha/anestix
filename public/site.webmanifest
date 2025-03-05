@@ -7,8 +7,6 @@
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#020817",
-  "theme_color_light": "#4C8BF5",
-  "theme_color_dark": "#4C2CA0",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -40,13 +38,13 @@
   ],
   "related_applications": [],
   "prefer_related_applications": false,
-  "theme_mode": "light dark",
   "shortcuts": [
     {
       "name": "Dashboard",
       "short_name": "Dashboard",
       "description": "Quick access to all sections",
-      "url": "/dashboard"
+      "url": "/dashboard",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     }
   ]
 }

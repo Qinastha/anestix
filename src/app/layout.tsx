@@ -138,6 +138,16 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
+        <meta
+          name="theme-color"
+          content="#4C8BF5"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#4C2CA0"
+          media="(prefers-color-scheme: dark)"
+        />
       </head>
       <body className={inter.className}>
         <ClientI18nProvider>
