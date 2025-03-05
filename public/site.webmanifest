@@ -48,8 +48,8 @@
           "src": "/screenshot-tall-dashboard-ru.png",
           "sizes": "1320x2868",
           "type": "image/png",
-          "form_factor": "tall",
-          "label": "Tall screenshot of dashboard page in russian"
+          "form_factor": "narrow",
+          "label": "Narrow screenshot of dashboard page in russian"
           }
     ],
   "related_applications": [],
