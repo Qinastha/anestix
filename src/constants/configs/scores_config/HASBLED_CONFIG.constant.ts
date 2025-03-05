@@ -1,7 +1,7 @@
 import { ScoreConfig } from '@/interfaces/Scores.type';
 
 export const HASBLED_CONFIG: ScoreConfig = {
-  id: 'hasbled',
+  id: 'has-bled',
   name: 'scale.hasbled.name',
   description: 'scale.hasbled.description',
   criteria: [

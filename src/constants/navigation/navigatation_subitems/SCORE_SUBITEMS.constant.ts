@@ -17,9 +17,9 @@ export const SCORE_SUBITEMS: NavigationSubItem[] = [
     href: '/dashboard/scale-list/scale/glasgow',
   },
   {
-    label: 'dashboard.subItems.alderte.title',
-    description: 'dashboard.subItems.alderte.description',
-    href: '/dashboard/scale-list/scale/alderte',
+    label: 'dashboard.subItems.aldrete.title',
+    description: 'dashboard.subItems.aldrete.description',
+    href: '/dashboard/scale-list/scale/aldrete',
   },
   {
     label: 'dashboard.subItems.sofa.title',
@@ -59,11 +59,16 @@ export const SCORE_SUBITEMS: NavigationSubItem[] = [
   {
     label: 'dashboard.subItems.hasbled.title',
     description: 'dashboard.subItems.hasbled.description',
-    href: '/dashboard/scale-list/scale/hasbled',
+    href: '/dashboard/scale-list/scale/has-bled',
   },
   {
     label: 'dashboard.subItems.news2.title',
     description: 'dashboard.subItems.news2.description',
     href: '/dashboard/scale-list/scale/news2',
+  },
+  {
+    label: 'dashboard.subItems.pgcs.title',
+    description: 'dashboard.subItems.pgcs.description',
+    href: '/dashboard/scale-list/scale/pgcs',
   },
 ];

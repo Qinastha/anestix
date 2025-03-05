@@ -5,14 +5,14 @@ import { SCORES_LIST } from '@/constants/configs/SCORES_LIST.constant';
 import { ScoreConfig, ScoreResult } from '@/interfaces/Scores.type';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { DesktopScore } from '@/components/scale_calculator/DesktopScore';
-import { MobileScore } from '@/components/scale_calculator/MobileScore';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
 import { useParams } from 'next/navigation';
 import { SkeletonCalc } from '@/components/SkeletonCalc';
 import { motion } from 'motion/react';
 import { Separator } from '@/components/ui/separator';
-import { ResultScore } from '@/components/scale_calculator/ResultScore';
+import { MobileScore } from '@/components/score/MobileScore';
+import { DesktopScore } from '@/components/score/DesktopScore';
+import { ResultScore } from '@/components/score/ResultScore';
 
 export default function ScalePage() {
   const { t } = useTranslation();

@@ -27,7 +27,7 @@ export const ResultScore: React.FC<ResultScoreProps> = ({
         <div className="mt-6 text-sm lg:text-md xl:text-lg bg-card p-6 border border-primary rounded-lg shadow-lg space-y-4">
           {formatParagraphs(t(extraDescription)).map(
             (para: string, index: number) => (
-              <p key={index} className="leading-relaxed">
+              <p key={index} className="leading-relaxed font-light">
                 {index !== 0 && <b>{`${index}) `}</b>}
                 {''}
                 {para}

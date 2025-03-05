@@ -94,10 +94,10 @@
         "description": "Evaluates consciousness with a focus on brainstem reflexes and respiratory patterns for a detailed neurological assessment"
       },
       "gcs": {
-        "title": "GCS",
+        "title": "Glasgow Coma Scale (GCS)",
         "description": "Measures the level of consciousness following head injuries or neurological impairments"
       },
-      "alderte": {
+      "aldrete": {
         "title": "Aldrete",
         "description": "Determines a patient's readiness for discharge from post-anesthesia recovery by assessing activity, respiration, and consciousness"
       },
@@ -136,6 +136,10 @@
       "news2": {
         "title": "NEWS 2 Score",
         "description": "The score for assessing the severity of patients with acute respiratory syndromes is aimed to a greater extent at assessing the current condition of the patient and to a lesser extent at assessing the prognosis of the disease"
+      },
+      "pgcs": {
+        "title": "Pediatric Glasgow Coma Scale (pGCS)",
+        "description": "Use for children 2 years and younger only. For older children, use the standard Glasgow Coma Scale (GCS)."
       },
       "drug-calculators": {
         "title": "Drug dosage calculators",
@@ -313,7 +317,7 @@
       },
       "extraDescription": "It is recommended to perform RASS assessment in all patients admitted to hospital, as well as in all patients on mechanical ventilation; In patients with RASS of -3 points or less, sedation should be reduced or changed until reaching -2 to 0 points on the RASS scale; Patients with RASS of 2 points or more are insufficiently sedated and require determination of the cause of agitation (anxiety disorder, delirium, pain) and deepening of sedation until reaching -2 to 0 points on the RASS scale; If possible, excessive deepening of sedation (less than -2 points on the RASS scale) should be avoided unless there are indications for it."
     },
-    "alderte": {
+    "aldrete": {
       "name": "Modified Aldrete Score",
       "description": "This score demonstrates the patient's readiness for transfer to the ward after anesthesia.",
       "criteria": {
@@ -1067,6 +1071,42 @@
         "high": "High risk: continuous monitoring of vital signs"
       },
       "extraDescription": "Score of 3 in any individual parameter can be qualified as low-medium risk with recommended monitoring every hour"
+    },
+    "pgcs": {
+      "name": "Pediatric Glasgow Coma Scale (pGCS)",
+      "description": "The Pediatric Glasgow Coma Scale (pGCS) allows to obtain, track and communicate the mental status and level of consciousness for children (≤2 years of age)",
+      "criteria": {
+        "eye": {
+          "label": "Eye Opening",
+          "option1": "No response",
+          "option2": "To pain only",
+          "option3": "To verbal stimuli",
+          "option4": "Spontaneously"
+        },
+        "verbal": {
+          "label": "Verbal Response",
+          "option1": "No response",
+          "option2": "Moans in response to pain",
+          "option3": "Cries in response to pain",
+          "option4": "Irritable cries",
+          "option5": "Coos and babbles"
+        },
+        "motor": {
+          "label": "Motor Response",
+          "option1": "No response",
+          "option2": "Responds to pain with decerebrate posturing (abnormal extension)",
+          "option3": "Responds to pain with decorticate posturing (abnormal flexion)",
+          "option4": "Withdraws in response to pain",
+          "option5": "Withdraws to touch",
+          "option6": "Moves spontaneously and purposefully"
+        }
+      },
+      "result": {
+        "mild": "May indicate mild dysfunction, although a person with no neurologic disabilities would receive a GCS of 15",
+        "moderate": "May indicate moderate dysfunction",
+        "severe": "Is indicative of severe dysfunction"
+      },
+      "extraDescription": "Patients who are intubated are unable to speak, and their verbal score cannot be assessed. They are evaluated only based on eye opening and motor scores, and the suffix T is added to their score to indicate intubation. In intubated patients, the maximum GCS score is 10T and the minimum score is 2T."
     }
   },
   "calculators": {

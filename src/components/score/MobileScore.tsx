@@ -17,7 +17,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { ScoreConfig } from '@/interfaces/Scores.type';
-import { OptionInput } from '@/components/scale_calculator/OptionInput';
+import { OptionInput } from '@/components/score/OptionInput';
 
 interface MobileScaleCalcProps {
   score: ScoreConfig;

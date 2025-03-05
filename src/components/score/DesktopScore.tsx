@@ -11,9 +11,9 @@ import {
 } from '@/components/ui/table';
 import { ScoreConfig } from '@/interfaces/Scores.type';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
-import { OptionGridCell } from '@/components/scale_calculator/OptionGridCell';
-import { OptionInput } from '@/components/scale_calculator/OptionInput';
-import { OptionRadio } from '@/components/scale_calculator/OptionRadio';
+import { OptionInput } from '@/components/score/OptionInput';
+import { OptionRadio } from '@/components/score/OptionRadio';
+import { OptionGridCell } from '@/components/score/OptionGridCell';
 
 interface DesktopScaleCalcProps {
   score: ScoreConfig;
@@ -62,7 +62,7 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
       <h6 className="mb-4">{t(score.description)}</h6>
       <Table>
         <TableHeader>
-          <TableRow>
+          <TableRow className="hover:bg-inherit">
             <TableHead className={labelWidthClass}>
               {t('scale.criteria')}
             </TableHead>
