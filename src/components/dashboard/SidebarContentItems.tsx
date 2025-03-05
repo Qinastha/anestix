@@ -39,7 +39,6 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
   handleClose,
 }) => {
   const { t } = useTranslation();
-  const { theme, setTheme } = useTheme();
   const { language, changeLanguage } = useContext(LanguageContext);
 
   return (
@@ -125,7 +124,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
       </SidebarGroup>
       <div className="flex flex-row items-center justify-center gap-4 border-t border-sidebar-border p-4">
         <LanguageSwitcher language={language} action={changeLanguage} />
-        <ThemeSwitcher theme={theme} setTheme={setTheme} />
+        <ThemeSwitcher />
       </div>
     </SidebarContent>
   );

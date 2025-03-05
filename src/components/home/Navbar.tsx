@@ -1,4 +1,3 @@
-import { useTheme } from 'next-themes';
 import React, { useContext } from 'react';
 import { LanguageContext } from '@/context/LanguageContext';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +6,6 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
 export const Navbar: React.FC = () => {
-  const { theme, setTheme } = useTheme();
   const { language, changeLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
 
@@ -28,7 +26,7 @@ export const Navbar: React.FC = () => {
           className="flex gap-4"
         >
           <LanguageSwitcher language={language} action={changeLanguage} />
-          <ThemeSwitcher theme={theme} setTheme={setTheme} />
+          <ThemeSwitcher />
         </motion.div>
       </nav>
     </header>

@@ -2,17 +2,11 @@ import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
-interface ThemeSwitcherProps {
-  theme: string | undefined;
-  setTheme: (theme: 'light' | 'dark') => void;
-}
-
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
-  theme,
-  setTheme,
-}) => {
+export const ThemeSwitcher: React.FC = () => {
   const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -21,6 +15,13 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
   if (!mounted) {
     return null;
   }
+
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+
+  const toggleTheme = () => {
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -29,12 +30,8 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
       whileTap={{ scale: 0.95 }}
       whileHover={{ scale: 1.05 }}
     >
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      >
-        {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+      <Button variant="ghost" size="icon" onClick={toggleTheme}>
+        {currentTheme === 'light' ? <SunIcon /> : <MoonIcon />}
       </Button>
     </motion.div>
   );
