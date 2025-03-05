@@ -60,8 +60,22 @@ export const metadata: Metadata = {
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
+    // Other icons (Android, Manifest, etc.)
+    other: [
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
   },
-  manifest: '/site.webmanifest',
   // Open Graph for social sharing (Facebook, LinkedIn, etc.)
   openGraph: {
     title: 'Anestix – Advanced Anesthesiology & ICU Platform',
@@ -118,6 +132,11 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
+        <link
+          rel="manifest"
+          href="/site.webmanifest"
+          type="application/manifest+json"
         />
       </head>
       <body className={inter.className}>
