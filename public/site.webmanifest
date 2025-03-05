@@ -37,13 +37,20 @@
     }
   ],
     "screenshots": [
-      {
+    {
         "src": "/screenshot-wide-dashboard-ru.png",
         "sizes": "3372x2090",
         "type": "image/png",
         "form_factor": "wide",
         "label": "Wide screenshot of dashboard page in russian"
-      }
+      },
+        {
+          "src": "/screenshot-tall-dashboard-ru.png",
+          "sizes": "1320x2868",
+          "type": "image/png",
+          "form_factor": "tall",
+          "label": "Tall screenshot of dashboard page in russian"
+          }
     ],
   "related_applications": [],
   "prefer_related_applications": false,
