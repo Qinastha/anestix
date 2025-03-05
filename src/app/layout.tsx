@@ -63,6 +63,11 @@ export const metadata: Metadata = {
     // Other icons (Android, Manifest, etc.)
     other: [
       {
+        rel: 'manifest',
+        url: '/site.webmanifest',
+        type: 'application/manifest+json',
+      },
+      {
         rel: 'android-chrome',
         url: '/android-chrome-192x192.png',
         sizes: '192x192',
@@ -132,11 +137,6 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
-        />
-        <link
-          rel="manifest"
-          href="/site.webmanifest"
-          type="application/manifest+json"
         />
       </head>
       <body className={inter.className}>
