@@ -7,6 +7,7 @@ import { cookies } from 'next/headers';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ClientI18nProvider } from '@/components/ClientI18nProvider';
+import ThemeMetaUpdater from '@/components/ThemeMetaUpdater';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -134,13 +135,10 @@ export default async function RootLayout({
       <head>
         {/*3) Inject JSON-LD via a standard <script> tag.*/}
         <title>Anestix</title>
+        <ThemeMetaUpdater />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
-        />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
         />
       </head>
       <body className={inter.className}>

@@ -1,4 +1,5 @@
 {
+  "id": "/",
   "name": "Anestix – Anesthesiology & ICU Platform",
   "short_name": "Anestix",
   "description": "A global anesthesiology and ICU platform providing clinical guidelines, drug dosage calculators, sedation protocols, and more.",
@@ -7,7 +8,6 @@
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#020817",
-  "theme_color": "#2D26E2",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
