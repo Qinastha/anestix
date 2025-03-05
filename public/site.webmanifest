@@ -47,8 +47,7 @@
       "name": "Dashboard",
       "short_name": "Dashboard",
       "description": "Quick access to all sections",
-      "url": "/dashboard",
-//       "icons": [{ "src": "/icons/shortcut-calculators.png", "sizes": "192x192" }]
+      "url": "/dashboard"
     }
   ]
 }
