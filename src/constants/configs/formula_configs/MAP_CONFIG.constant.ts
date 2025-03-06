@@ -9,12 +9,14 @@ export const MAP_CONFIG: FormulaConfig = {
       label: 'calculators.sysBP',
       unit: 'units.mm_hg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'diaBP',
       label: 'calculators.diaBP',
       unit: 'units.mm_hg',
       type: 'number',
+      minValue: 0,
     },
   ],
   calculate: ({ sysBP, diaBP }, setResult) => {

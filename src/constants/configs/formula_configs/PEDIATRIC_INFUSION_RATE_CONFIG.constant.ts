@@ -9,18 +9,21 @@ export const PEDIATRIC_INFUSION_RATE_CONFIG: FormulaConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'dosePerKg',
       label: 'calculators.dosePerKg',
       unit: 'units.mcg_kg_min',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'drugConcentration',
       label: 'calculators.drugConcentration',
       unit: 'units.pct',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'totalVolume',

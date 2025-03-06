@@ -9,18 +9,21 @@ export const DAILY_DIURESIS_CONFIG: FormulaConfig = {
       label: 'calculators.dailyDiuresis.parameters.amount',
       unit: 'units.ml',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'period',
       label: 'calculators.dailyDiuresis.parameters.period',
       unit: 'units.h',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'weight',
       label: 'calculators.dailyDiuresis.parameters.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
   ],
   calculate: ({ amount, period, weight }, setResult) => {

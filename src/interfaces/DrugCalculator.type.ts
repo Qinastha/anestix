@@ -14,6 +14,8 @@ export interface DrugParameter {
   unit: MedicalUnits;
   type: 'number' | 'select' | 'boolean';
   optional?: boolean;
+  minValue?: number;
+  maxValue?: number;
   defaultValue?: number;
   options?: { label: string; value: string | number }[];
 }

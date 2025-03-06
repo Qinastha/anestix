@@ -9,12 +9,14 @@ export const POTASSIUM_DEFICIT_CONFIG: FormulaConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'currentPotassiumLvl',
       label: 'calculators.currentPotassiumLvl',
       unit: 'units.mmol_l',
       type: 'number',
+      minValue: 0,
       maxValue: 4.5,
     },
     {

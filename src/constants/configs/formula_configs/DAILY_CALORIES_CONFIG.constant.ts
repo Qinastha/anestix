@@ -9,18 +9,21 @@ export const DAILY_CALORIES_CONFIG: FormulaConfig = {
       label: 'calculators.dailyCalories.parameters.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'height',
       label: 'calculators.dailyCalories.parameters.height',
       unit: 'units.cm',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'age',
       label: 'calculators.dailyCalories.parameters.age',
       unit: 'units.years',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'sex',

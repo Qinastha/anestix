@@ -9,6 +9,7 @@ export const ACTILYSE_CONFIG: DrugCalculatorConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
   ],
   calculate: ({ weight }, setResult) => {

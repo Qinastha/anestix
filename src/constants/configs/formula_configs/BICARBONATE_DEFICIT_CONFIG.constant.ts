@@ -9,6 +9,7 @@ export const BICARBONATE_DEFICIT_CONFIG: FormulaConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'bicarbonateLevel',
@@ -17,6 +18,7 @@ export const BICARBONATE_DEFICIT_CONFIG: FormulaConfig = {
       // A value lower than 24 indicates a bicarbonate deficit.
       unit: 'units.mmol_l',
       type: 'number',
+      minValue: 0,
       maxValue: 24,
     },
   ],

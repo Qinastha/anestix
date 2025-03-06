@@ -9,18 +9,21 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
       label: 'calculators.creatinineClearance.parameters.age',
       unit: 'units.years',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'weight',
       label: 'calculators.creatinineClearance.parameters.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'creatinine',
       label: 'calculators.creatinineClearance.parameters.creatinine',
       unit: 'units.umol_l',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'sex',

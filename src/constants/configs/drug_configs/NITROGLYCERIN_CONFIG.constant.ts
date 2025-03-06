@@ -9,6 +9,7 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'dosePerKg',
@@ -35,6 +36,7 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       unit: 'units.ml',
       type: 'number',
       optional: true,
+      minValue: 0,
       defaultValue: 2,
     },
     {
@@ -43,6 +45,7 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       unit: 'units.ml',
       type: 'number',
       optional: true,
+      minValue: 0,
       defaultValue: 200,
     },
   ],

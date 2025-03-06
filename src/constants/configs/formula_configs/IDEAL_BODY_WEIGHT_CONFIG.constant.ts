@@ -25,6 +25,7 @@ export const IDEAL_BODY_WEIGHT_CONFIG: FormulaConfig = {
       label: 'calculators.devine.options.height.label',
       unit: 'units.cm',
       type: 'number',
+      minValue: 0,
     },
   ],
   calculate: ({ sex, height }, setResult) => {

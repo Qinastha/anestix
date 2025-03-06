@@ -9,12 +9,14 @@ export const PLASMA_EXCHANGE_CONFIG: FormulaConfig = {
       label: 'calculators.plasmaExchange.parameters.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'hematocrit',
       label: 'calculators.plasmaExchange.parameters.hematocrit',
       unit: 'units.pct',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'sex',
@@ -38,6 +40,7 @@ export const PLASMA_EXCHANGE_CONFIG: FormulaConfig = {
       unit: 'units.pct',
       type: 'number',
       defaultValue: 30,
+      minValue: 0,
     },
   ],
   calculate: ({ weight, hematocrit, removedPercentage, sex }, setResult) => {

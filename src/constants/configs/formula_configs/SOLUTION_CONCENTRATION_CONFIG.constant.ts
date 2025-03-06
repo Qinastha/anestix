@@ -20,12 +20,14 @@ export const SOLUTION_CONCENTRATION_CONFIG: FormulaConfig = {
       label: 'calculators.substanceAmount',
       unit: '',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'solutionVolume',
       label: 'calculators.solutionVolume',
       unit: 'units.ml',
       type: 'number',
+      minValue: 0,
     },
   ],
   calculate: ({ substanceAmount, unit, solutionVolume }, setResult) => {

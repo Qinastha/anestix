@@ -9,6 +9,7 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'inductionDose',
@@ -32,6 +33,7 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.ml',
       type: 'number',
       optional: true,
+      minValue: 0,
       defaultValue: 50,
     },
   ],

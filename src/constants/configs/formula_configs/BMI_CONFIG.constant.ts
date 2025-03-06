@@ -9,12 +9,14 @@ export const BMI_CONFIG: FormulaConfig = {
       label: 'calculators.bmi.parameters.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'height',
       label: 'calculators.bmi.parameters.height',
       unit: 'units.m',
       type: 'number',
+      minValue: 0,
     },
   ],
   calculate: ({ weight, height }, setResult) => {

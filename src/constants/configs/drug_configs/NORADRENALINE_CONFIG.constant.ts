@@ -9,6 +9,7 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'dosePerKg',
@@ -34,6 +35,7 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
       unit: 'units.ml',
       type: 'number',
       optional: true,
+      minValue: 0,
       defaultValue: 50,
     },
   ],

@@ -9,6 +9,7 @@ export const DEXON_CONFIG: DrugCalculatorConfig = {
       label: 'calculators.weight',
       unit: 'units.kg',
       type: 'number',
+      minValue: 0,
     },
     {
       key: 'dosePerKg',
