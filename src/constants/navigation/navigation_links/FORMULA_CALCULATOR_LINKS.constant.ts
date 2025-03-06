@@ -53,4 +53,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
     label: 'dashboard.links.bicarbonateDeficit',
     href: '/dashboard/calculators/formula-calculator/bicarbonateDeficit',
   },
+  {
+    label: 'dashboard.links.ett',
+    href: '/dashboard/calculators/formula-calculator/ett',
+  },
 ];

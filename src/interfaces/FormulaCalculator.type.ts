@@ -15,6 +15,8 @@ export interface FormulaParameter {
   type: 'number' | 'select' | 'boolean';
   options?: { label: string; value: string | number }[];
   optional?: boolean;
+  minValue?: number;
+  maxValue?: number;
   defaultValue?: number | string | boolean;
 }
 

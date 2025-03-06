@@ -7,6 +7,7 @@ import { cookies } from 'next/headers';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ClientI18nProvider } from '@/components/ClientI18nProvider';
+import ToastProvider from '@/components/ToastProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -144,7 +145,7 @@ export default async function RootLayout({
           content="#020817"
           media="(prefers-color-scheme: dark)"
         />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
@@ -164,6 +165,7 @@ export default async function RootLayout({
               disableTransitionOnChange
             >
               {children}
+              <ToastProvider />
               <SpeedInsights />
             </ThemeProvider>
           </LanguageProvider>

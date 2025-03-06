@@ -15,6 +15,7 @@ export const POTASSIUM_DEFICIT_CONFIG: FormulaConfig = {
       label: 'calculators.currentPotassiumLvl',
       unit: 'units.mmol_l',
       type: 'number',
+      maxValue: 4.5,
     },
     {
       key: 'potassiumChlorideSol',

@@ -17,26 +17,11 @@ export const BICARBONATE_DEFICIT_CONFIG: FormulaConfig = {
       // A value lower than 24 indicates a bicarbonate deficit.
       unit: 'units.mmol_l',
       type: 'number',
+      maxValue: 24,
     },
   ],
   calculate: ({ weight, bicarbonateLevel }, setResult) => {
     const BICARBONATE_NORMAL = 24;
-
-    if (+bicarbonateLevel >= BICARBONATE_NORMAL) {
-      setResult({
-        bicarbonateDeficit: {
-          label: 'calculators.bicarbonateDeficit.result.bicarbonateDeficit',
-          value: 0,
-          unit: 'units.mmol_l',
-        },
-        solutionVolume: {
-          label: 'calculators.bicarbonateDeficit.result.solutionVolume',
-          value: 0,
-          unit: 'units.ml',
-        },
-      });
-      return;
-    }
 
     // Calculate the bicarbonate deficit in mmol using:
     // Bicarbonate deficit = 0.4 × body weight (kg) × (24 – bicarbonateLevel)

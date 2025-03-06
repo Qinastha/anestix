@@ -1,4 +1,7 @@
+'use client';
 import { useCallback, useMemo, useState } from 'react';
+import { Bounce, toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 type CalculatorFormValues<T extends Param[]> = {
   [P in T[number] as P['key']]: P['type'] extends 'number'
@@ -14,6 +17,8 @@ interface Param {
   key: string;
   type: 'number' | 'select' | 'boolean';
   optional?: boolean;
+  minValue?: number;
+  maxValue?: number;
   defaultValue?: number | string | boolean;
   options?: { label: string; value: string | number }[];
 }
@@ -30,6 +35,7 @@ export function useCalculatorForm<TParam extends Param, TResult>({
   parameters,
   calculate,
 }: UseCalculatorFormArgs<TParam, TResult>) {
+  const { t } = useTranslation();
   //Initiate a form values with default params from config or ""
   const initialFormValues = useMemo(() => {
     const initial: Record<string, number | string | boolean> = {};
@@ -77,9 +83,31 @@ export function useCalculatorForm<TParam extends Param, TResult>({
   );
 
   const handleCalculate = useCallback(() => {
-    console.log(formValues);
+    const hasInvalidNumber = parameters.some((param) => {
+      if (param.type !== 'number') return false;
+      const value = formValues[param.key];
+      if (typeof value !== 'number') return false;
+      return (
+        (param.minValue !== undefined && value < param.minValue) ||
+        (param.maxValue !== undefined && value > param.maxValue)
+      );
+    });
+
+    if (hasInvalidNumber) {
+      toast.error(t('toasts.invalidRange'), {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: 'colored',
+        transition: Bounce,
+      });
+      return;
+    }
     calculate(formValues as CalculatorFormValues<TParam[]>, setResult);
-  }, [calculate, formValues]);
+  }, [calculate, formValues, parameters]);
 
   const allInputsFilled: boolean = useMemo(() => {
     return parameters.every((param) => {

@@ -43,6 +43,9 @@
     "mcg_ml": "µg/ml",
     "mcg_hr": "µg/hr"
   },
+  "toasts": {
+    "invalidRange": "Input value is out of allowed range"
+  },
   "home": {
     "Title": "Anestix",
     "Welcome": "Welcome to the Anesthesiologist's guide",
@@ -188,7 +191,8 @@
       "devine": "Ideal Body Weight",
       "map": "Mean Arterial Pressure (MAP)",
       "potassiumDeficit": "Potassium Deficit",
-      "bicarbonateDeficit": "Bicarbonate Deficit"
+      "bicarbonateDeficit": "Bicarbonate Deficit",
+      "ett": "Size of endotracheal tube (ETT) in pediatric patients (1 to 12 years)"
     }
   },
   "scale": {
@@ -1115,6 +1119,7 @@
     "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",
     "not_found": "Drug not found",
     "weight": "Weight",
+    "age": "Age",
     "bolus": "Bolus",
     "induction": "Induction of general anesthesia",
     "infusion": "Infusion",
@@ -1393,6 +1398,15 @@
         "solutionVolume": "Bicarbonate repletion via 4% NaHCO3 solution"
       },
       "annotation": "NOTE: Sodium bicarbonate solution allows for rapid correction of acidosis, but the sodium cations contained in the solution further increase the osmolarity of the extracellular fluid, thereby aggravating cellular dehydration.\n\nCalculator use 24 mmol/L as normal level of bicarbonate so for correct answer current level should be lower"
+    },
+    "ett": {
+      "label": "Calculate ET tube size for pediatric patients",
+      "result": {
+        "cuffedETT": "Cuffed ETT Diameter",
+        "uncuffedETT": "Ununcuffed ETT Diameter",
+        "ettDepth": "Insertion depth"
+      },
+      "annotation": "This calculator utilizes a Cole`s formula for size: \n1) Size uncuffed = (age / 4) + 4 \n2) Size cuffed = (age / 4) + 3. \n\nInsertion depth formula = (age in years / 2) + 12"
     }
   }
 }
