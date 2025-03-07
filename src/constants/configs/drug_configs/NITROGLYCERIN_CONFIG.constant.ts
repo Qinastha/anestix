@@ -17,6 +17,8 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mcg_kg_min',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 10,
       defaultValue: 2,
     },
     {

@@ -17,6 +17,8 @@ export const GOMH_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 150,
       defaultValue: 75,
     },
   ],

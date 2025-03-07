@@ -17,7 +17,9 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mcg_kg',
       type: 'number',
       optional: true,
-      defaultValue: 0.5,
+      minValue: 0,
+      maxDosage: 3,
+      defaultValue: 1,
     },
     {
       key: 'infusionDosePerKg',
@@ -25,6 +27,8 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mcg_kg_min',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 0.5,
       defaultValue: 0.1,
     },
     {
@@ -44,7 +48,7 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
     const inductionD =
       typeof inductionDose === 'number' && inductionDose > 0
         ? inductionDose
-        : 0.5;
+        : 1;
     const infusionD =
       typeof infusionDosePerKg === 'number' && infusionDosePerKg > 0
         ? infusionDosePerKg

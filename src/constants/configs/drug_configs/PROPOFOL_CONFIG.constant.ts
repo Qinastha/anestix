@@ -17,6 +17,8 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 2.5,
       defaultValue: 2,
     },
     {

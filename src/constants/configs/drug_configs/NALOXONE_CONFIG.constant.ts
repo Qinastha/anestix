@@ -17,6 +17,8 @@ export const NALOXONE_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 0.003,
       defaultValue: 0.002,
     },
   ],

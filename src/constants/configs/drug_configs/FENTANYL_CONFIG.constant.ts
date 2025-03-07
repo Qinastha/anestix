@@ -17,19 +17,21 @@ export const FENTANYL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mcg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 2.5,
       defaultValue: 0.5,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
     const dose =
       typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.5;
-    const total = +weight * (dose / 1000);
+    const total = +weight * dose;
 
     setResult({
       bolus: {
         label: 'calculators.induction',
-        value: Number(total.toFixed(3)),
-        unit: 'units.mg',
+        value: Number(total.toFixed(1)),
+        unit: 'units.mcg',
       },
     });
   },

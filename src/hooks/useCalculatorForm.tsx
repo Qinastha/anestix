@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useMemo, useState } from 'react';
-import { Bounce, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
 type CalculatorFormValues<T extends Param[]> = {
@@ -15,11 +15,14 @@ type CalculatorFormValues<T extends Param[]> = {
 
 interface Param {
   key: string;
+  label: string;
   type: 'number' | 'select' | 'boolean';
   optional?: boolean;
   minValue?: number;
   maxValue?: number;
   defaultValue?: number | string | boolean;
+  maxDosage?: number;
+  unit?: string;
   options?: { label: string; value: string | number }[];
 }
 
@@ -82,29 +85,74 @@ export function useCalculatorForm<TParam extends Param, TResult>({
     [parameters]
   );
 
-  const handleCalculate = useCallback(() => {
-    const hasInvalidNumber = parameters.some((param) => {
-      if (param.type !== 'number') return false;
-      const value = formValues[param.key];
-      if (typeof value !== 'number') return false;
-      return (
-        (param.minValue !== undefined && value < param.minValue) ||
-        (param.maxValue !== undefined && value > param.maxValue)
-      );
+  const { invalidParams, overDosageParams } = useMemo(() => {
+    const invalid: Param[] = [];
+    const overDosage: Param[] = [];
+    parameters.forEach((param) => {
+      if (param.type === 'number') {
+        const value = formValues[param.key];
+        if (typeof value !== 'number') return;
+        if (
+          (param.minValue !== undefined && value <= param.minValue) ||
+          (param.maxValue !== undefined && value >= param.maxValue)
+        ) {
+          invalid.push(param);
+        }
+        if (param.maxDosage !== undefined && value > param.maxDosage) {
+          overDosage.push(param);
+        }
+      }
     });
+    return { invalidParams: invalid, overDosageParams: overDosage };
+  }, [parameters, formValues]);
 
-    if (hasInvalidNumber) {
-      toast.error(t('toasts.invalidRange'), {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: 'colored',
-        transition: Bounce,
+  const handleCalculate = useCallback(() => {
+    if (invalidParams.length) {
+      invalidParams.forEach((invalidParam) => {
+        let translationKey = '';
+        // Determine the proper message key based on provided constraints.
+        if (
+          invalidParam.minValue !== undefined &&
+          invalidParam.maxValue !== undefined
+        ) {
+          translationKey = 'toasts.invalidRangeBoth';
+        } else if (invalidParam.minValue !== undefined) {
+          translationKey = 'toasts.invalidRangeMin';
+        } else if (invalidParam.maxValue !== undefined) {
+          translationKey = 'toasts.invalidRangeMax';
+        }
+
+        toast.error(
+          t(translationKey, {
+            paramName: t(invalidParam.label),
+            min: invalidParam.minValue,
+            max: invalidParam.maxValue,
+            unit: invalidParam.unit ? t(invalidParam.unit) : '',
+          }),
+          {
+            position: 'top-right',
+            autoClose: 2000,
+            theme: 'colored',
+          }
+        );
       });
       return;
+    }
+
+    if (overDosageParams.length) {
+      overDosageParams.forEach((overDosageParam) => {
+        toast.info(
+          t('toasts.overDosage', {
+            paramName: t(overDosageParam.label),
+            maxValue: overDosageParam.maxDosage,
+            unit: overDosageParam.unit ? t(overDosageParam.unit) : '',
+          }),
+          {
+            position: 'top-right',
+            autoClose: 2000,
+          }
+        );
+      });
     }
     calculate(formValues as CalculatorFormValues<TParam[]>, setResult);
   }, [calculate, formValues, parameters]);

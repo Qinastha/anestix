@@ -17,6 +17,8 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 1.5,
       defaultValue: 0.75,
     },
   ],

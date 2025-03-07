@@ -17,6 +17,8 @@ export const ROCURONIUM_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 1,
       defaultValue: 0.6,
     },
   ],

@@ -17,12 +17,13 @@ export const KETAMINE_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 2,
       defaultValue: 1,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
     const dose = typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 1;
-    // IV range 1.5–2 mg/kg => pick 2 mg/kg
     const total = +weight * dose;
 
     setResult({

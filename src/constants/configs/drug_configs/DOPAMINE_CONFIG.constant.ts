@@ -17,6 +17,8 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mcg_kg_min',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 5,
       defaultValue: 2,
     },
     {

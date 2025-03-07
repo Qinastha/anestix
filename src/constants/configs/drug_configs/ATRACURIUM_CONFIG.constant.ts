@@ -17,6 +17,8 @@ export const ATRACURIUM_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 0.6,
       defaultValue: 0.5,
     },
   ],

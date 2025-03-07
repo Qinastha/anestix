@@ -17,6 +17,7 @@ export interface DrugParameter {
   minValue?: number;
   maxValue?: number;
   defaultValue?: number;
+  maxDosage?: number;
   options?: { label: string; value: string | number }[];
 }
 

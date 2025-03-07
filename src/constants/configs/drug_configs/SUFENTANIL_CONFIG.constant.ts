@@ -17,6 +17,8 @@ export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
       unit: 'units.mcg_kg',
       type: 'number',
       optional: true,
+      minValue: 0,
+      maxDosage: 0.1,
       defaultValue: 0.05,
     },
   ],

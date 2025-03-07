@@ -44,7 +44,10 @@
     "mcg_hr": "µg/hr"
   },
   "toasts": {
-    "invalidRange": "Input value is out of allowed range"
+    "invalidRangeBoth": "Input value for \"{{paramName}}\" is out of allowed range. Please enter a value between {{min}} and {{max}} {{unit}}.",
+    "invalidRangeMin": "Input value for \"{{paramName}}\" is below the allowed minimum of {{min}} {{unit}}.",
+    "invalidRangeMax": "Input value for \"{{paramName}}\" is above the allowed maximum of {{max}} {{unit}}.",
+    "overDosage": "Input value for \"{{paramName}}\" exceeds the recommended dosage of {{maxValue}} {{unit}} as per the documentation."
   },
   "home": {
     "Title": "Anestix",
@@ -1285,7 +1288,7 @@
     },
     "thiopental": {
       "label": "Thiopental",
-      "annotation": "20 mL = 1 g or 10 mL = 500 mg freeze-dried. Usually reconstituted to a 1% solution. Typical IV dose 3–6 mg/kg. Onset ≈1–2 min; duration ≈20–25 min. \n\nThis config uses ~4.5 mg/kg by default with the ability to customize."
+      "annotation": "20 mL = 1 g or 10 mL = 500 mg freeze-dried. Usually reconstituted to a 1% solution. Typical IV dose 3–6 mg/kg. Onset ≈1–2 min; duration ≈20–25 min. \n\nThis config uses ~4 mg/kg by default with the ability to customize."
     },
     "propofol": {
       "label": "Propofol",
