@@ -15,8 +15,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   { icon: Home, description: '', title: 'dashboard.home', href: '/dashboard' },
   {
     icon: TableOfContents,
-    title: 'dashboard.scale-list.title',
-    description: 'dashboard.scale-list.description',
+    title: 'dashboard.score-list.title',
+    description: 'dashboard.score-list.description',
     href: '/dashboard/scale-list',
     subItems: SCORE_SUBITEMS,
   },

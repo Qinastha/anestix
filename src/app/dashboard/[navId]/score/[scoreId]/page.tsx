@@ -14,7 +14,7 @@ import { MobileScore } from '@/components/score/MobileScore';
 import { DesktopScore } from '@/components/score/DesktopScore';
 import { ResultScore } from '@/components/score/ResultScore';
 
-export default function ScalePage() {
+export default function ScorePage() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
   const ready = useDelayLoad(500);

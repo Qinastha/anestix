@@ -74,7 +74,7 @@
     "no_items": "There are no items available right now",
     "explore": "Explore",
     "home": "Home",
-    "scale-list": {
+    "score-list": {
       "title": "Scores",
       "description": "Empower your clinical decisions with our comprehensive range of medical scores, including RASS, FOUR, Glasgow, and more. Each section provides detailed scoring guides."
     },
@@ -195,7 +195,8 @@
       "map": "Mean Arterial Pressure (MAP)",
       "potassiumDeficit": "Potassium Deficit",
       "bicarbonateDeficit": "Bicarbonate Deficit",
-      "ett": "Size of endotracheal tube (ETT) in pediatric patients (1 to 12 years)"
+      "ett": "Size of endotracheal tube (ETT) in pediatric patients (1 to 12 years)",
+      "solutionDilution": "Solution Dilution Calculator"
     }
   },
   "scale": {
@@ -1122,6 +1123,7 @@
     "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",
     "not_found": "Drug not found",
     "weight": "Weight",
+    "height": "Height",
     "age": "Age",
     "bolus": "Bolus",
     "induction": "Induction of general anesthesia",
@@ -1136,7 +1138,6 @@
     "inductionMCG": "Induction MCG",
     "inductionML": "Induction ML",
     "drugVolume": "Drug Volume",
-    "diluentVolume": "Diluent Volume",
     "ivPerMin": "IV Per Min",
     "ivPerHr": "IV Per Hr",
     "totalVolume": "Total Volume after dilute",
@@ -1153,6 +1154,11 @@
     "currentPotassiumLvl": "Current Potassium Level",
     "potassiumChlorideSol": "Potassium Chloride Solution Concentration",
     "bicarbonateLevel": "Current Bicarbonate Level",
+    "stockConcentration": "Stock Concentration",
+    "desiredConcentration": "Desired Concentration",
+    "finalVolume": "Final Volume",
+    "stockSolutionVolume": "Volume of Stock Solution",
+    "diluentVolume": "Volume of Diluent",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
@@ -1164,10 +1170,6 @@
 
     "bmi": {
       "label": "Body Mass Index",
-      "parameters": {
-        "weight": "Weight",
-        "height": "Height"
-      },
       "result": {
         "bmi": "BMI"
       },
@@ -1410,6 +1412,11 @@
         "ettDepth": "Insertion depth"
       },
       "annotation": "This calculator utilizes a Cole`s formula for size: \n1) Size uncuffed = (age / 4) + 4 \n2) Size cuffed = (age / 4) + 3. \n\nInsertion depth formula = (age in years / 2) + 12"
+    },
+    "solutionDilution": {
+      "label": "Solution Dilution Calculator",
+      "annotation": "This calculator helps determine the necessary volumes to achieve a desired solution concentration.",
+      "error": "Please ensure the desired concentration is less than the stock concentration"
     }
   }
 }
