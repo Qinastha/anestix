@@ -5,22 +5,16 @@ export const SOLUTION_CONCENTRATION_CONFIG: FormulaConfig = {
   label: 'calculators.solutionConcentration.label',
   parameters: [
     {
-      key: 'unit',
-      label: 'calculators.unit',
-      type: 'select',
-      unit: '',
-      options: [
-        { label: 'units.mg', value: 'mg' },
-        { label: 'units.g', value: 'g' },
-        { label: 'units.mcg', value: 'mcg' },
-      ],
-    },
-    {
       key: 'substanceAmount',
       label: 'calculators.substanceAmount',
       unit: '',
-      type: 'number',
+      type: 'numberInUnits',
       minValue: 0,
+      options: [
+        { label: 'units.mg', value: 'units.mg', conversionFactor: 0.001 },
+        { label: 'units.g', value: 'units.g', conversionFactor: 1 },
+        { label: 'units.mcg', value: 'units.mcg', conversionFactor: 0.000001 },
+      ],
     },
     {
       key: 'solutionVolume',
@@ -30,28 +24,23 @@ export const SOLUTION_CONCENTRATION_CONFIG: FormulaConfig = {
       minValue: 0,
     },
   ],
-  calculate: ({ substanceAmount, unit, solutionVolume }, setResult) => {
-    // Convert the mass into grams based on the selected unit.
-    let massInGrams: number;
-    switch (unit) {
-      case 'mg':
-        massInGrams = +substanceAmount / 1000;
-        break;
-      case 'mcg':
-        massInGrams = +substanceAmount / 1000000;
-        break;
-      case 'g':
-      default:
-        massInGrams = +substanceAmount;
-    }
+  calculate: (
+    { substanceAmount, substanceAmount_unit, solutionVolume },
+    setResult
+  ) => {
+    const option = SOLUTION_CONCENTRATION_CONFIG.parameters[0].options?.find(
+      (o) => o.value === substanceAmount_unit
+    );
+    const conversionFactor = option?.conversionFactor || 1;
+    const massInGrams = +substanceAmount * conversionFactor;
 
     // Calculate percent concentration: (mass in g / volume in mL) * 100.
-    const concentrationPercent = (+massInGrams / +solutionVolume) * 100;
+    const concentrationPercent = (massInGrams / +solutionVolume) * 100;
 
     setResult({
       concentration: {
         label: 'calculators.concentration',
-        value: Number(concentrationPercent.toFixed(2)),
+        value: Number(concentrationPercent.toFixed(3)),
         unit: 'units.pct',
       },
     });

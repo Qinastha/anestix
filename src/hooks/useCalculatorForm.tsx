@@ -10,13 +10,13 @@ type CalculatorFormValues<T extends Param[]> = {
       ? string
       : P['type'] extends 'boolean'
         ? boolean
-        : never;
+        : string | number;
 };
 
 interface Param {
   key: string;
   label: string;
-  type: 'number' | 'select' | 'boolean';
+  type: 'number' | 'select' | 'boolean' | 'numberInUnits';
   optional?: boolean;
   minValue?: number;
   maxValue?: number;
@@ -43,7 +43,12 @@ export function useCalculatorForm<TParam extends Param, TResult>({
   const initialFormValues = useMemo(() => {
     const initial: Record<string, number | string | boolean> = {};
     parameters.forEach((param) => {
-      if (param.type === 'select') {
+      if (param.type === 'numberInUnits') {
+        if (param.defaultValue !== undefined) {
+          initial[param.key] = param.defaultValue;
+        }
+        initial[`${param.key}_unit`] = param.options?.[0]?.value || '';
+      } else if (param.type === 'select') {
         if (param.defaultValue !== undefined) {
           initial[param.key] = String(param.defaultValue);
         } else if (param.options && param.options.length > 0) {

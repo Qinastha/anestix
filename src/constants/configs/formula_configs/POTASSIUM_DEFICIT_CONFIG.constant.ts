@@ -48,7 +48,7 @@ export const POTASSIUM_DEFICIT_CONFIG: FormulaConfig = {
     setResult({
       potassiumDeficit: {
         label: 'calculators.potassiumDeficit.result.potassiumDeficit',
-        value: parseFloat(potassiumDeficit.toFixed(0)),
+        value: parseFloat(potassiumDeficit.toFixed(1)),
         unit: 'units.mmol_l',
       },
       amountOfSolMl: {

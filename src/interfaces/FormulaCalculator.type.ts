@@ -8,12 +8,18 @@ export type FormulaResultItem = {
 
 export type FormulaResult = Record<string, FormulaResultItem>;
 
+export type FormulaOption = {
+  label: string;
+  value: string | number;
+  conversionFactor?: number;
+};
+
 export interface FormulaParameter {
   key: string;
   label: string;
   unit: MedicalUnits;
-  type: 'number' | 'select' | 'boolean';
-  options?: { label: string; value: string | number }[];
+  type: 'number' | 'select' | 'boolean' | 'numberInUnits';
+  options?: FormulaOption[];
   optional?: boolean;
   minValue?: number;
   maxValue?: number;
