@@ -3,7 +3,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { SCORES_LIST } from '@/constants/configs/SCORES_LIST.constant';
 import { ScoreConfig, ScoreResult } from '@/interfaces/Scores.type';
-import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
 import { useParams } from 'next/navigation';
@@ -13,9 +12,10 @@ import { Separator } from '@/components/ui/separator';
 import { MobileScore } from '@/components/score/MobileScore';
 import { DesktopScore } from '@/components/score/DesktopScore';
 import { ResultScore } from '@/components/score/ResultScore';
+import { useTranslations } from 'use-intl';
 
 export default function ScorePage() {
-  const { t } = useTranslation();
+  const tScore = useTranslations('ScorePage');
   const isMobile = useIsMobile();
   const ready = useDelayLoad(500);
   const params = useParams();
@@ -71,7 +71,7 @@ export default function ScorePage() {
     <>
       {!score ? (
         <div className="p-4 text-center text-destructive">
-          <p>{t('scale.not_found')}</p>
+          <p>{tScore('not_found')}</p>
         </div>
       ) : (
         <motion.div
@@ -82,14 +82,14 @@ export default function ScorePage() {
           {isMobile ? (
             <MobileScore
               score={score}
-              t={t}
+              t={tScore}
               selectedValues={selectedValues}
               handleSelect={handleSelect}
             />
           ) : (
             <DesktopScore
               score={score}
-              t={t}
+              t={tScore}
               selectedValues={selectedValues}
               handleSelect={handleSelect}
             />
@@ -98,7 +98,7 @@ export default function ScorePage() {
           <ResultScore
             totalScore={totalScore}
             result={result.summaryText}
-            t={t}
+            t={tScore}
             extraDescription={score?.extraDescription}
           />
         </motion.div>

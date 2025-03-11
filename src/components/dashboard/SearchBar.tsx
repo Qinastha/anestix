@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
-import Link from 'next/link';
 import { useDebounce } from '@/hooks/useDebounce';
+import { useTranslations } from 'use-intl';
+import { Link } from '@/i18n/navigation';
 
 interface SearchResult {
   label: string;
@@ -16,7 +16,10 @@ interface SearchResult {
 }
 
 export const SearchBar = () => {
-  const { t } = useTranslation();
+  const tDash = useTranslations('Dashboard');
+  const tSubI = useTranslations('SubItemsList');
+  const tLink = useTranslations('LinksList');
+  const tSBar = useTranslations('SearchBar');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,19 +31,19 @@ export const SearchBar = () => {
     if (!lowerQuery) return [];
 
     return NAVIGATION_ITEMS.reduce((acc: SearchResult[], item) => {
-      const parentTitle = t(item.title);
+      const parentTitle = tDash(item.title);
       if (parentTitle.toLowerCase().includes(lowerQuery)) {
         acc.push({ label: parentTitle, href: item.href });
       }
       if (item.subItems?.length) {
         item.subItems.forEach((subItem) => {
-          const subLabel = t(subItem.label);
+          const subLabel = tSubI(subItem.label);
           if (subLabel.toLowerCase().includes(lowerQuery)) {
             acc.push({ label: subLabel, href: subItem.href });
           }
           if (subItem.links?.length) {
             subItem.links.forEach((link) => {
-              const linkLabel = t(link.label);
+              const linkLabel = tLink(link.label);
               if (linkLabel.toLowerCase().includes(lowerQuery)) {
                 acc.push({ label: linkLabel, href: link.href });
               }
@@ -109,7 +112,7 @@ export const SearchBar = () => {
             <div className="relative w-full">
               <Input
                 type="search"
-                placeholder={t('search')}
+                placeholder={tSBar('search')}
                 className="w-full"
                 autoFocus
                 onChange={(e) => setQuery(e.target.value)}
@@ -155,7 +158,7 @@ export const SearchBar = () => {
                         variants={listItemVariants}
                         className="px-4 py-2 "
                       >
-                        {t('No results found')}
+                        {tSBar('noResults')}
                       </motion.li>
                     )}
                   </motion.ul>
@@ -176,7 +179,7 @@ export const SearchBar = () => {
               onClick={() => setIsSearchOpen(true)}
             >
               <Search className="mr-2 h-4 w-4" />
-              <span>{t('search')}...</span>
+              <span>{tSBar('search')}...</span>
             </Button>
           </motion.div>
         )}

@@ -2,14 +2,20 @@ import type React from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { LanguageProvider } from '@/context/LanguageContext';
-import { cookies } from 'next/headers';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { ClientI18nProvider } from '@/components/ClientI18nProvider';
 import ToastProvider from '@/components/ToastProvider';
+import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
+import { Locale } from '@/i18n/navigation';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: 'Anestix – Advanced Anesthesiology & ICU Platform',
@@ -112,12 +118,16 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
-  const cookieStore = await cookies();
-  const langCookie: string = cookieStore.get('lang')?.value || 'ru';
-
+  const { locale } = await params;
+  const messages = await getMessages();
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
   // ------------------------------------------------------
   // 2) Define JSON-LD data as an object. We'll inject it in <head>.
   //    Choose your schema type accordingly: 'MedicalOrganization', 'EducationalWebSite', etc.
@@ -131,7 +141,7 @@ export default async function RootLayout({
       'Anestix is a global platform focusing on anesthesiology and ICU, offering clinical guidelines, drug dosage calculators, sedation protocols, and more.',
   };
   return (
-    <html lang={langCookie} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         {/*3) Inject JSON-LD via a standard <script> tag.*/}
         <title>Anestix</title>
@@ -156,20 +166,18 @@ export default async function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ClientI18nProvider>
-          <LanguageProvider initialLanguage={langCookie}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-              <ToastProvider />
-              <SpeedInsights />
-            </ThemeProvider>
-          </LanguageProvider>
-        </ClientI18nProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <ToastProvider />
+            <SpeedInsights />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

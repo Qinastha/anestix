@@ -2,35 +2,35 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const POTASSIUM_DEFICIT_CONFIG: FormulaConfig = {
   id: 'potassiumDeficit',
-  label: 'calculators.potassiumDeficit.label',
+  label: 'potassiumDeficit.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'currentPotassiumLvl',
-      label: 'calculators.currentPotassiumLvl',
-      unit: 'units.mmol_l',
+      label: 'currentPotassiumLvl',
+      unit: 'mmol_l',
       type: 'number',
       minValue: 0,
       maxValue: 4.5,
     },
     {
       key: 'potassiumChlorideSol',
-      label: 'calculators.potassiumChlorideSol',
-      unit: 'units.pct',
+      label: 'potassiumChlorideSol',
+      unit: 'pct',
       type: 'select',
       options: [
         {
-          label: '7.5%',
+          label: 'potassiumDeficit.drug_opt1',
           value: 1,
         },
         {
-          label: '4%',
+          label: 'potassiumDeficit.drug_opt2',
           value: 1.87,
         },
       ],
@@ -47,21 +47,21 @@ export const POTASSIUM_DEFICIT_CONFIG: FormulaConfig = {
     const maxAmountDay = 3 * +weight * +potassiumChlorideSol;
     setResult({
       potassiumDeficit: {
-        label: 'calculators.potassiumDeficit.result.potassiumDeficit',
+        label: 'potassiumDeficit.potassiumDeficit',
         value: parseFloat(potassiumDeficit.toFixed(1)),
-        unit: 'units.mmol_l',
+        unit: 'mmol_l',
       },
       amountOfSolMl: {
-        label: 'calculators.potassiumDeficit.result.amountOfSolMl',
+        label: 'potassiumDeficit.amountOfSolMl',
         value: parseFloat(amountOfSolMl.toFixed(1)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
       maxAmountDay: {
-        label: 'calculators.potassiumDeficit.result.maxAmountDay',
+        label: 'potassiumDeficit.maxAmountDay',
         value: parseFloat(maxAmountDay.toFixed(1)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
     });
   },
-  annotation: 'calculators.potassiumDeficit.annotation',
+  annotation: 'potassiumDeficit.annotation',
 };

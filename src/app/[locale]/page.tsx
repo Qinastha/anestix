@@ -1,15 +1,15 @@
 'use client';
 
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'motion/react';
 import { KEY_FEATURES } from '@/constants/KEY_FEATURES.constant';
-import { useTranslation } from 'react-i18next';
 import { Navbar } from '@/components/home/Navbar';
-import { ReactElement } from 'react';
+import { useTranslations } from 'use-intl';
+import { Link } from '@/i18n/navigation';
 
-export default function Home(): ReactElement {
-  const { t } = useTranslation();
+export default function Home() {
+  const tHome = useTranslations('Home');
+  const tFeat = useTranslations('Features');
   return (
     <div className="min-h-screen bg-background text-foreground p-4">
       <Navbar />
@@ -20,14 +20,14 @@ export default function Home(): ReactElement {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-bold mb-4">{t('home.Welcome')}</h2>
+          <h2 className="text-4xl font-bold mb-4">{tHome('welcome')}</h2>
           <p className="text-lg md:text-xl mb-8">
-            {t('home.PlatformDescription')}
+            {tHome('platformDescription')}
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/dashboard">
               <Button size="lg" className="bg-primary text-primary-foreground">
-                {t('home.EnterPlatform')}
+                {tHome('enterPlatform')}
               </Button>
             </Link>
           </motion.div>
@@ -46,9 +46,9 @@ export default function Home(): ReactElement {
               className="p-6 bg-card text-card-foreground rounded-lg shadow-md"
             >
               <h3 className="text-lg md:text-xl font-semibold mb-2">
-                {t(feature.title)}
+                {tFeat(feature.title)}
               </h3>
-              <p>{t(feature.description)}</p>
+              <p>{tFeat(feature.description)}</p>
             </motion.div>
           ))}
         </motion.div>

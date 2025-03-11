@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { MedicalUnits } from '@/types/MedicalUnits.type';
 import { AlertCircleIcon } from 'lucide-react';
+import { useTranslations } from 'use-intl';
 
 interface Result {
   label: string;
@@ -21,7 +21,8 @@ export const CalculatorSumContent = <TResult extends Result>({
   isDrugForm,
   annotation,
 }: CalculatorResultProps<TResult>) => {
-  const { t } = useTranslation();
+  const tCalc = useTranslations('CalculatorsPage');
+  const tUnit = useTranslations('Units');
 
   return (
     <>
@@ -38,20 +39,18 @@ export const CalculatorSumContent = <TResult extends Result>({
               <div className="inline-flex items-center justify-start mb-4">
                 <AlertCircleIcon className="text-md md:text-sm text-destructive mr-4" />
                 <p className="flex-1 text-xs md:text-sm lg:text-md text-destructive">
-                  {t('calculators.alert')}
+                  {tCalc('alert')}
                 </p>
               </div>
             )}
-            <h2 className="text-lg lg:text-xl mb-2">
-              {t('calculators.result')}
-            </h2>
+            <h2 className="text-lg lg:text-xl mb-2">{tCalc('result')}</h2>
             <ol className="list-disc list-inside mb-4">
               {Object.entries(result).map(([key, item]) => (
                 <li key={key} className="mb-1">
                   <span className="text-base">
-                    {t(item.label)}:{' '}
+                    {tCalc(item.label)}:{' '}
                     <span className="font-medium">
-                      {item.value} {t(item.unit)}
+                      {item.value} {tUnit(item.unit)}
                     </span>
                   </span>
                 </li>
@@ -80,7 +79,7 @@ export const CalculatorSumContent = <TResult extends Result>({
           transition={{ duration: 0.6 }}
           style={{ whiteSpace: 'pre-wrap' }}
         >
-          <p className="text-sm lg:text-base">{t(annotation)}</p>
+          <p className="text-sm lg:text-base">{annotation}</p>
         </motion.div>
       )}
     </>

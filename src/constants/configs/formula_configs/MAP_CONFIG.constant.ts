@@ -2,19 +2,19 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const MAP_CONFIG: FormulaConfig = {
   id: 'map',
-  label: 'calculators.map.label',
+  label: 'map.label',
   parameters: [
     {
       key: 'sysBP',
-      label: 'calculators.sysBP',
-      unit: 'units.mm_hg',
+      label: 'sysBP',
+      unit: 'mm_hg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'diaBP',
-      label: 'calculators.diaBP',
-      unit: 'units.mm_hg',
+      label: 'diaBP',
+      unit: 'mm_hg',
       type: 'number',
       minValue: 0,
     },
@@ -23,11 +23,11 @@ export const MAP_CONFIG: FormulaConfig = {
     const map = (1 / 3) * +sysBP + (2 / 3) * +diaBP;
     setResult({
       map: {
-        label: 'calculators.map.result',
+        label: 'map.result',
         value: parseFloat(map.toFixed(0)),
-        unit: 'units.mm_hg',
+        unit: 'mm_hg',
       },
     });
   },
-  annotation: 'calculators.map.annotation',
+  annotation: 'map.annotation',
 };

@@ -9,13 +9,13 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
-import Link from 'next/link';
+import { useTranslations } from 'use-intl';
+import { Link } from '@/i18n/navigation';
 
 export default function DashboardPage() {
-  const { t } = useTranslation();
+  const tDash = useTranslations('Dashboard');
 
   return (
     <div className="space-y-8">
@@ -25,7 +25,7 @@ export default function DashboardPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {t('dashboard.dashboard_title')}
+        {tDash('title')}
       </motion.h1>
       <motion.div
         className="grid gap-6 grid-cols-1 md:grid-cols-2 md:auto-rows-fr"
@@ -50,17 +50,17 @@ export default function DashboardPage() {
               <Card className="flex flex-col md:h-full md:justify-between hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg md:text-xl leading-relaxed">
-                    {t(item.title)}
+                    {tDash(item.title)}
                   </CardTitle>
                   <CardDescription className="text-sm md:text-md">
-                    {t(item.description)}
+                    {tDash(item.description)}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button asChild className="w-full" variant="default">
                     <Link href={item.href}>
                       <span className="whitespace-normal break-words text-center">
-                        {t('dashboard.explore')} {t(item.title).toLowerCase()}{' '}
+                        {tDash('explore')} {tDash(item.title).toLowerCase()}{' '}
                       </span>
                     </Link>
                   </Button>

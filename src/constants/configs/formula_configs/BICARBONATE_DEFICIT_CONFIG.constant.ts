@@ -2,21 +2,19 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const BICARBONATE_DEFICIT_CONFIG: FormulaConfig = {
   id: 'bicarbonateDeficit',
-  label: 'calculators.bicarbonateDeficit.label',
+  label: 'bicarbonateDeficit.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'bicarbonateLevel',
-      label: 'calculators.bicarbonateLevel',
-      // Bicarbonate level in mmol/L.
-      // A value lower than 24 indicates a bicarbonate deficit.
-      unit: 'units.mmol_l',
+      label: 'bicarbonateLevel',
+      unit: 'mmol_l',
       type: 'number',
       minValue: 0,
       maxValue: 24,
@@ -38,16 +36,16 @@ export const BICARBONATE_DEFICIT_CONFIG: FormulaConfig = {
 
     setResult({
       bicarbonateDeficit: {
-        label: 'calculators.bicarbonateDeficit.result.bicarbonateDeficit',
+        label: 'bicarbonateDeficit.bicarbonateDeficit',
         value: parseFloat(bicarbonateDeficit.toFixed(0)),
-        unit: 'units.mmol_l',
+        unit: 'mmol_l',
       },
       solutionVolume: {
-        label: 'calculators.bicarbonateDeficit.result.solutionVolume',
+        label: 'bicarbonateDeficit.solutionVolume',
         value: parseFloat(solutionVolume.toFixed(1)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
     });
   },
-  annotation: 'calculators.bicarbonateDeficit.annotation',
+  annotation: 'bicarbonateDeficit.annotation',
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { useTranslation } from 'react-i18next';
 import { Switch } from '@/components/ui/switch';
 import { MedicalUnits } from '@/types/MedicalUnits.type';
 import { CalculatorSelect } from '@/components/calculators/CalculatorSelect';
 import { CalculatorInput } from '@/components/calculators/CalculatorInput';
 import { CalculatorInputWithUnit } from '@/components/calculators/CalculatorInputWithUnit';
+import { useTranslations } from 'use-intl';
 
 interface CalculatorFormParameter {
   key: string;
@@ -30,7 +30,8 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
   handleChange,
   allInputsFilled,
 }: CalculatorFormProps<TParam>) => {
-  const { t } = useTranslation();
+  const tCalc = useTranslations('CalculatorsPage');
+  const tUnit = useTranslations('Units');
   return (
     <>
       <motion.div
@@ -55,17 +56,17 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
             >
               <label className="flex flex-row justify-between text-base font-medium mb-1 gap-4">
                 <span className={customUnit ? 'basis-2/3' : ''}>
-                  {t(param.label)}
+                  {tCalc(param.label)}
                 </span>{' '}
                 <span className={`pr-4 ${customUnit ? 'basis 1/3' : ''}`}>
-                  {t(param.unit) || t(customUnit.toString())}
+                  {tUnit(param.unit) || tUnit(customUnit.toString())}
                 </span>
               </label>
               {param.type === 'select' ? (
                 <CalculatorSelect
                   formValues={formValues}
                   param={param}
-                  t={t}
+                  t={tCalc}
                   handleChange={handleChange}
                 />
               ) : param.type === 'boolean' ? (
@@ -80,13 +81,14 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
                   param={param}
                   formValues={formValues}
                   handleChange={handleChange}
-                  t={t}
+                  tCalc={tCalc}
+                  tUnit={tUnit}
                 />
               ) : (
                 <CalculatorInput
                   formValues={formValues}
                   param={param}
-                  t={t}
+                  t={tUnit}
                   handleChange={handleChange}
                 />
               )}
@@ -100,7 +102,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
         onClick={handleCalculate}
         disabled={!allInputsFilled}
       >
-        {t('calculators.calculate')}
+        {tCalc('calculate')}
       </Button>
     </>
   );

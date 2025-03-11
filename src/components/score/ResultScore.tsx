@@ -17,10 +17,10 @@ export const ResultScore: React.FC<ResultScoreProps> = ({
   return (
     <>
       <div className="mt-6 text-lg xl:text-xl font-semibold tracking-widest leading-relaxed">
-        {t('scale.totalScore')} {totalScore}
+        {t('totalScore')} {totalScore}
       </div>
       <div className="mt-2 text-md lg:text-md xl:text-lg tracking-widest leading-relaxed">
-        {t('scale.result')} {t(result)}
+        {t('result')} {t(result)}
       </div>
 
       {extraDescription && (

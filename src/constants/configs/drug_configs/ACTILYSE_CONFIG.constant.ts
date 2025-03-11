@@ -2,12 +2,12 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const ACTILYSE_CONFIG: DrugCalculatorConfig = {
   id: 'actilyse',
-  label: 'calculators.actilyse.label',
+  label: 'actilyse.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
@@ -18,21 +18,21 @@ export const ACTILYSE_CONFIG: DrugCalculatorConfig = {
     const infusion = Number((totalDose * 0.9).toFixed(1));
     setResult({
       bolus: {
-        label: 'calculators.actilyse.bolus',
+        label: 'actilyse.bolus',
         value: bolus,
-        unit: 'units.mg',
+        unit: 'mg',
       },
       infusion: {
-        label: 'calculators.actilyse.infusion',
+        label: 'actilyse.infusion',
         value: infusion,
-        unit: 'units.mg',
+        unit: 'mg',
       },
       total: {
-        label: 'calculators.actilyse.total',
+        label: 'total',
         value: Number(totalDose.toFixed(1)),
-        unit: 'units.mg',
+        unit: 'mg',
       },
     });
   },
-  annotation: 'calculators.actilyse.annotation',
+  annotation: 'actilyse.annotation',
 };

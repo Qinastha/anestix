@@ -2,28 +2,28 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const IDEAL_BODY_WEIGHT_CONFIG: FormulaConfig = {
   id: 'devine',
-  label: 'calculators.devine.label',
+  label: 'devine.label',
   parameters: [
     {
       key: 'sex',
-      label: 'calculators.devine.options.sex.label',
+      label: 'sex',
       unit: '',
       type: 'select',
       options: [
         {
-          label: 'calculators.devine.options.sex.male',
+          label: 'male',
           value: 'male',
         },
         {
-          label: 'calculators.devine.options.sex.female',
+          label: 'female',
           value: 'female',
         },
       ],
     },
     {
       key: 'height',
-      label: 'calculators.devine.options.height.label',
-      unit: 'units.cm',
+      label: 'height',
+      unit: 'cm',
       type: 'number',
       minValue: 0,
     },
@@ -49,11 +49,11 @@ export const IDEAL_BODY_WEIGHT_CONFIG: FormulaConfig = {
 
     setResult({
       idealWeight: {
-        label: 'calculators.devine.result.idealWeight',
+        label: 'devine.idealWeight',
         value: parseFloat(idealWeight.toFixed(1)),
-        unit: 'units.kg',
+        unit: 'kg',
       },
     });
   },
-  annotation: 'calculators.devine.annotation',
+  annotation: 'devine.annotation',
 };

@@ -15,16 +15,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import React, { useContext } from 'react';
+import React from 'react';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
-import { useTheme } from 'next-themes';
-import { LanguageContext } from '@/context/LanguageContext';
-import { useTranslation } from 'react-i18next';
-import Link from 'next/link';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { sortByLabel } from '@/utils/sortByLabel';
 import { Separator } from '@/components/ui/separator';
+import { useTranslations } from 'use-intl';
+import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 
 export interface SidebarContentItemsProps {
   openGroups: string[];
@@ -38,16 +37,16 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
   toggleGroup,
   handleClose,
 }) => {
-  const { t } = useTranslation();
-  const { language, changeLanguage } = useContext(LanguageContext);
-
+  const tDash = useTranslations('Dashboard');
+  const tSubI = useTranslations('SubItemsList');
+  const locale = useLocale();
   return (
     <SidebarContent className="p-2 flex flex-col justify-between">
       <SidebarGroup>
         <SidebarGroupContent>
           <SidebarMenu className="flex flex-col gap-3">
             {NAVIGATION_ITEMS.map((item) => {
-              const sortedLinks = sortByLabel(item.subItems, t);
+              const sortedLinks = sortByLabel(locale, tSubI, item.subItems);
               return (
                 <SidebarMenuItem key={item.title} className="w-full">
                   {item.subItems ? (
@@ -61,7 +60,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                             <div className="flex flex-row w-full items-center">
                               <item.icon className="mr-2 h-4 w-4" />
                               <span className="text-md font-sans">
-                                {t(item.title)}
+                                {tDash(item.title)}
                               </span>
                             </div>
                             <ChevronDown
@@ -93,7 +92,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                                 onClick={() => handleClose()}
                               >
                                 <span className="text-xs font-light">
-                                  {t(subItem.label)}
+                                  {tSubI(subItem.label)}
                                 </span>
                               </Link>
                             </SidebarMenuButton>
@@ -110,7 +109,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                           onClick={() => handleClose()}
                         >
                           <item.icon className="h-4 w-4" />
-                          <span className="text-lg">{t(item.title)}</span>
+                          <span className="text-lg">{tDash(item.title)}</span>
                         </Link>
                       </SidebarMenuButton>
                       <Separator />
@@ -123,7 +122,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
         </SidebarGroupContent>
       </SidebarGroup>
       <div className="flex flex-row items-center justify-center gap-4 border-t border-sidebar-border p-4">
-        <LanguageSwitcher language={language} action={changeLanguage} />
+        <LanguageSwitcher />
         <ThemeSwitcher />
       </div>
     </SidebarContent>

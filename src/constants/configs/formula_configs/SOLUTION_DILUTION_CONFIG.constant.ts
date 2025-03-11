@@ -2,33 +2,33 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const SOLUTION_DILUTION_CONFIG: FormulaConfig = {
   id: 'solutionDilution',
-  label: 'calculators.solutionDilution.label',
+  label: 'solutionDilution.label',
   parameters: [
     {
       key: 'stockConcentration',
-      label: 'calculators.stockConcentration',
-      unit: 'units.pct',
+      label: 'stockConcentration',
+      unit: 'pct',
       type: 'number',
       minValue: 0,
       maxValue: 100,
     },
     {
       key: 'desiredConcentration',
-      label: 'calculators.desiredConcentration',
-      unit: 'units.pct',
+      label: 'desiredConcentration',
+      unit: 'pct',
       type: 'number',
       minValue: 0,
       maxValue: 100,
     },
     {
       key: 'finalVolume',
-      label: 'calculators.finalVolume',
+      label: 'finalVolume',
       unit: '',
       type: 'numberInUnits',
       minValue: 0,
       options: [
-        { label: 'units.ml', value: 'units.ml', conversionFactor: 1 },
-        { label: 'units.l', value: 'units.l', conversionFactor: 1000 },
+        { label: 'unit_ml', value: 'ml', conversionFactor: 1 },
+        { label: 'unit_l', value: 'l', conversionFactor: 1000 },
       ],
     },
   ],
@@ -39,7 +39,7 @@ export const SOLUTION_DILUTION_CONFIG: FormulaConfig = {
     if (desiredConcentration >= stockConcentration) {
       setResult({
         error: {
-          label: 'calculators.solutionDilution.error',
+          label: 'solutionDilution.error',
           value: NaN,
           unit: '',
         },
@@ -70,16 +70,16 @@ export const SOLUTION_DILUTION_CONFIG: FormulaConfig = {
 
     setResult({
       stockSolutionVolume: {
-        label: 'calculators.stockSolutionVolume',
+        label: 'stockSolutionVolume',
         value: Number(stockSolutionVolume.toFixed(2)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
       diluentVolume: {
-        label: 'calculators.diluentVolume',
+        label: 'diluentVolume',
         value: Number(diluentVolume.toFixed(2)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
     });
   },
-  annotation: 'calculators.solutionDilution.annotation',
+  annotation: 'solutionDilution.annotation',
 };

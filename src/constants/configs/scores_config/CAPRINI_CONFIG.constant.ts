@@ -2,358 +2,321 @@ import { ScoreConfig } from '@/interfaces/Scores.type';
 
 export const CAPRINI_CONFIG: ScoreConfig = {
   id: 'caprini',
-  name: 'scale.caprini.name',
-  description: 'scale.caprini.description',
+  name: 'caprini.name',
+  description: 'caprini.description',
   criteria: [
     // 1. Age, years
     {
       id: 'age',
-      label: 'scale.caprini.criteria.age.label',
+      label: 'caprini.criteria.age.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.age.option0' }, // ≤40
-        { value: 1, description: 'scale.caprini.criteria.age.option1' }, // 41–60
-        { value: 2, description: 'scale.caprini.criteria.age.option2' }, // 61–74
-        { value: 3, description: 'scale.caprini.criteria.age.option3' }, // ≥75
+        { value: 0, description: 'caprini.criteria.age.option0' }, // ≤40
+        { value: 1, description: 'caprini.criteria.age.option1' }, // 41–60
+        { value: 2, description: 'caprini.criteria.age.option2' }, // 61–74
+        { value: 3, description: 'caprini.criteria.age.option3' }, // ≥75
       ],
     },
-    // 2. Sex (no points assigned)
-    // {
-    //   id: 'sex',
-    //   label: 'scale.caprini.criteria.sex.label',
-    //   type: 'radio',
-    //   options: [
-    //     { value: 0, description: 'scale.caprini.criteria.sex.male' },
-    //     { value: 0, description: 'scale.caprini.criteria.sex.female' },
-    //   ],
-    // },
     // 3. Type of Surgery
     {
       id: 'surgery',
-      label: 'scale.caprini.criteria.surgery.label',
+      label: 'caprini.criteria.surgery.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.surgery.none' },
-        { value: 1, description: 'scale.caprini.criteria.surgery.minor' },
-        { value: 2, description: 'scale.caprini.criteria.surgery.major' },
-        {
-          value: 5,
-          description: 'scale.caprini.criteria.surgery.arthroplasty',
-        },
+        { value: 0, description: 'caprini.criteria.surgery.none' },
+        { value: 1, description: 'caprini.criteria.surgery.minor' },
+        { value: 2, description: 'caprini.criteria.surgery.major' },
+        { value: 5, description: 'caprini.criteria.surgery.arthroplasty' },
       ],
     },
     // 4. Recent (<1 month) Major Surgery
     {
       id: 'recentMajorSurgery',
-      label: 'scale.caprini.criteria.recentMajorSurgery.label',
+      label: 'caprini.criteria.recentMajorSurgery.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          description: 'scale.caprini.criteria.recentMajorSurgery.no',
-        },
-        {
-          value: 1,
-          description: 'scale.caprini.criteria.recentMajorSurgery.yes',
-        },
+        { value: 0, description: 'caprini.criteria.recentMajorSurgery.no' },
+        { value: 1, description: 'caprini.criteria.recentMajorSurgery.yes' },
       ],
     },
     // 5. Congestive Heart Failure (CHF)
     {
       id: 'chf',
-      label: 'scale.caprini.criteria.chf.label',
+      label: 'caprini.criteria.chf.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.chf.no' },
-        { value: 1, description: 'scale.caprini.criteria.chf.yes' },
+        { value: 0, description: 'caprini.criteria.chf.no' },
+        { value: 1, description: 'caprini.criteria.chf.yes' },
       ],
     },
     // 6. Sepsis
     {
       id: 'sepsis',
-      label: 'scale.caprini.criteria.sepsis.label',
+      label: 'caprini.criteria.sepsis.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.sepsis.no' },
-        { value: 1, description: 'scale.caprini.criteria.sepsis.yes' },
+        { value: 0, description: 'caprini.criteria.sepsis.no' },
+        { value: 1, description: 'caprini.criteria.sepsis.yes' },
       ],
     },
     // 7. Pneumonia
     {
       id: 'pneumonia',
-      label: 'scale.caprini.criteria.pneumonia.label',
+      label: 'caprini.criteria.pneumonia.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.pneumonia.no' },
-        { value: 1, description: 'scale.caprini.criteria.pneumonia.yes' },
+        { value: 0, description: 'caprini.criteria.pneumonia.no' },
+        { value: 1, description: 'caprini.criteria.pneumonia.yes' },
       ],
     },
     // 8. Immobilizing Plaster Cast
     {
       id: 'plasterCast',
-      label: 'scale.caprini.criteria.plasterCast.label',
+      label: 'caprini.criteria.plasterCast.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.plasterCast.no' },
-        { value: 2, description: 'scale.caprini.criteria.plasterCast.yes' },
+        { value: 0, description: 'caprini.criteria.plasterCast.no' },
+        { value: 2, description: 'caprini.criteria.plasterCast.yes' },
       ],
     },
     // 9. Hip, Pelvis, or Leg Fracture
     {
       id: 'fracture',
-      label: 'scale.caprini.criteria.fracture.label',
+      label: 'caprini.criteria.fracture.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.fracture.no' },
-        { value: 5, description: 'scale.caprini.criteria.fracture.yes' },
+        { value: 0, description: 'caprini.criteria.fracture.no' },
+        { value: 5, description: 'caprini.criteria.fracture.yes' },
       ],
     },
     // 10. Stroke
     {
       id: 'stroke',
-      label: 'scale.caprini.criteria.stroke.label',
+      label: 'caprini.criteria.stroke.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.stroke.no' },
-        { value: 5, description: 'scale.caprini.criteria.stroke.yes' },
+        { value: 0, description: 'caprini.criteria.stroke.no' },
+        { value: 5, description: 'caprini.criteria.stroke.yes' },
       ],
     },
     // 11. Multiple Trauma
     {
       id: 'multipleTrauma',
-      label: 'scale.caprini.criteria.multipleTrauma.label',
+      label: 'caprini.criteria.multipleTrauma.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.multipleTrauma.no' },
-        { value: 5, description: 'scale.caprini.criteria.multipleTrauma.yes' },
+        { value: 0, description: 'caprini.criteria.multipleTrauma.no' },
+        { value: 5, description: 'caprini.criteria.multipleTrauma.yes' },
       ],
     },
     // 12. Acute Spinal Cord Injury Causing Paralysis
     {
       id: 'spinalInjury',
-      label: 'scale.caprini.criteria.spinalInjury.label',
+      label: 'caprini.criteria.spinalInjury.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.spinalInjury.no' },
-        { value: 5, description: 'scale.caprini.criteria.spinalInjury.yes' },
+        { value: 0, description: 'caprini.criteria.spinalInjury.no' },
+        { value: 5, description: 'caprini.criteria.spinalInjury.yes' },
       ],
     },
     // 13. Varicose Veins
     {
       id: 'varicose',
-      label: 'scale.caprini.criteria.varicose.label',
+      label: 'caprini.criteria.varicose.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.varicose.no' },
-        { value: 1, description: 'scale.caprini.criteria.varicose.yes' },
+        { value: 0, description: 'caprini.criteria.varicose.no' },
+        { value: 1, description: 'caprini.criteria.varicose.yes' },
       ],
     },
     // 14. Current Swollen Legs
     {
       id: 'swollenLegs',
-      label: 'scale.caprini.criteria.swollenLegs.label',
+      label: 'caprini.criteria.swollenLegs.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.swollenLegs.no' },
-        { value: 1, description: 'scale.caprini.criteria.swollenLegs.yes' },
+        { value: 0, description: 'caprini.criteria.swollenLegs.no' },
+        { value: 1, description: 'caprini.criteria.swollenLegs.yes' },
       ],
     },
     // 15. Current Central Venous Access
     {
       id: 'centralAccess',
-      label: 'scale.caprini.criteria.centralAccess.label',
+      label: 'caprini.criteria.centralAccess.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.centralAccess.no' },
-        { value: 2, description: 'scale.caprini.criteria.centralAccess.yes' },
+        { value: 0, description: 'caprini.criteria.centralAccess.no' },
+        { value: 2, description: 'caprini.criteria.centralAccess.yes' },
       ],
     },
     // 16. History of DVT/PE
     {
       id: 'dvtPe',
-      label: 'scale.caprini.criteria.dvtPe.label',
+      label: 'caprini.criteria.dvtPe.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.dvtPe.no' },
-        { value: 3, description: 'scale.caprini.criteria.dvtPe.yes' },
+        { value: 0, description: 'caprini.criteria.dvtPe.no' },
+        { value: 3, description: 'caprini.criteria.dvtPe.yes' },
       ],
     },
     // 17. Family History of Thrombosis
     {
       id: 'familyThrombosis',
-      label: 'scale.caprini.criteria.familyThrombosis.label',
+      label: 'caprini.criteria.familyThrombosis.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.familyThrombosis.no' },
-        {
-          value: 3,
-          description: 'scale.caprini.criteria.familyThrombosis.yes',
-        },
+        { value: 0, description: 'caprini.criteria.familyThrombosis.no' },
+        { value: 3, description: 'caprini.criteria.familyThrombosis.yes' },
       ],
     },
     // 18. Positive Factor V Leiden
     {
       id: 'factorVLeiden',
-      label: 'scale.caprini.criteria.factorVLeiden.label',
+      label: 'caprini.criteria.factorVLeiden.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.factorVLeiden.no' },
-        { value: 3, description: 'scale.caprini.criteria.factorVLeiden.yes' },
+        { value: 0, description: 'caprini.criteria.factorVLeiden.no' },
+        { value: 3, description: 'caprini.criteria.factorVLeiden.yes' },
       ],
     },
     // 19. Positive Prothrombin 20210A
     {
       id: 'prothrombin',
-      label: 'scale.caprini.criteria.prothrombin.label',
+      label: 'caprini.criteria.prothrombin.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.prothrombin.no' },
-        { value: 3, description: 'scale.caprini.criteria.prothrombin.yes' },
+        { value: 0, description: 'caprini.criteria.prothrombin.no' },
+        { value: 3, description: 'caprini.criteria.prothrombin.yes' },
       ],
     },
     // 20. Elevated Serum Homocysteine
     {
       id: 'homocysteine',
-      label: 'scale.caprini.criteria.homocysteine.label',
+      label: 'caprini.criteria.homocysteine.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.homocysteine.no' },
-        { value: 3, description: 'scale.caprini.criteria.homocysteine.yes' },
+        { value: 0, description: 'caprini.criteria.homocysteine.no' },
+        { value: 3, description: 'caprini.criteria.homocysteine.yes' },
       ],
     },
     // 21. Positive Lupus Anticoagulant
     {
       id: 'lupusAnticoagulant',
-      label: 'scale.caprini.criteria.lupusAnticoagulant.label',
+      label: 'caprini.criteria.lupusAnticoagulant.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          description: 'scale.caprini.criteria.lupusAnticoagulant.no',
-        },
-        {
-          value: 3,
-          description: 'scale.caprini.criteria.lupusAnticoagulant.yes',
-        },
+        { value: 0, description: 'caprini.criteria.lupusAnticoagulant.no' },
+        { value: 3, description: 'caprini.criteria.lupusAnticoagulant.yes' },
       ],
     },
     // 22. Elevated Anticardiolipin Antibody
     {
       id: 'anticardiolipin',
-      label: 'scale.caprini.criteria.anticardiolipin.label',
+      label: 'caprini.criteria.anticardiolipin.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.anticardiolipin.no' },
-        { value: 3, description: 'scale.caprini.criteria.anticardiolipin.yes' },
+        { value: 0, description: 'caprini.criteria.anticardiolipin.no' },
+        { value: 3, description: 'caprini.criteria.anticardiolipin.yes' },
       ],
     },
     // 23. Heparin-induced Thrombocytopenia (HIT)
     {
       id: 'hit',
-      label: 'scale.caprini.criteria.hit.label',
+      label: 'caprini.criteria.hit.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.hit.no' },
-        { value: 3, description: 'scale.caprini.criteria.hit.yes' },
+        { value: 0, description: 'caprini.criteria.hit.no' },
+        { value: 3, description: 'caprini.criteria.hit.yes' },
       ],
     },
     // 24. Other Congenital or Acquired Thrombophilia
     {
       id: 'otherThrombophilia',
-      label: 'scale.caprini.criteria.otherThrombophilia.label',
+      label: 'caprini.criteria.otherThrombophilia.label',
       type: 'radio',
       options: [
-        {
-          value: 0,
-          description: 'scale.caprini.criteria.otherThrombophilia.no',
-        },
-        {
-          value: 3,
-          description: 'scale.caprini.criteria.otherThrombophilia.yes',
-        },
+        { value: 0, description: 'caprini.criteria.otherThrombophilia.no' },
+        { value: 3, description: 'caprini.criteria.otherThrombophilia.yes' },
       ],
     },
     // 25. Mobility
     {
       id: 'mobility',
-      label: 'scale.caprini.criteria.mobility.label',
+      label: 'caprini.criteria.mobility.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.mobility.normal' },
-        { value: 1, description: 'scale.caprini.criteria.mobility.bedRest' },
-        { value: 2, description: 'scale.caprini.criteria.mobility.confined' },
+        { value: 0, description: 'caprini.criteria.mobility.normal' },
+        { value: 1, description: 'caprini.criteria.mobility.bedRest' },
+        { value: 2, description: 'caprini.criteria.mobility.confined' },
       ],
     },
     // 26. History of Inflammatory Bowel Disease
     {
       id: 'ibd',
-      label: 'scale.caprini.criteria.ibd.label',
+      label: 'caprini.criteria.ibd.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.ibd.no' },
-        { value: 1, description: 'scale.caprini.criteria.ibd.yes' },
+        { value: 0, description: 'caprini.criteria.ibd.no' },
+        { value: 1, description: 'caprini.criteria.ibd.yes' },
       ],
     },
     // 27. BMI >25
     {
       id: 'bmi',
-      label: 'scale.caprini.criteria.bmi.label',
+      label: 'caprini.criteria.bmi.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.bmi.no' },
-        { value: 1, description: 'scale.caprini.criteria.bmi.yes' },
+        { value: 0, description: 'caprini.criteria.bmi.no' },
+        { value: 1, description: 'caprini.criteria.bmi.yes' },
       ],
     },
     // 28. Acute Myocardial Infarction (MI)
     {
       id: 'mi',
-      label: 'scale.caprini.criteria.mi.label',
+      label: 'caprini.criteria.mi.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.mi.no' },
-        { value: 1, description: 'scale.caprini.criteria.mi.yes' },
+        { value: 0, description: 'caprini.criteria.mi.no' },
+        { value: 1, description: 'caprini.criteria.mi.yes' },
       ],
     },
     // 29. Chronic Obstructive Pulmonary Disease (COPD)
     {
       id: 'copd',
-      label: 'scale.caprini.criteria.copd.label',
+      label: 'caprini.criteria.copd.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.copd.no' },
-        { value: 1, description: 'scale.caprini.criteria.copd.yes' },
+        { value: 0, description: 'caprini.criteria.copd.no' },
+        { value: 1, description: 'caprini.criteria.copd.yes' },
       ],
     },
     // 30. Present or Previous Malignancy
     {
       id: 'malignancy',
-      label: 'scale.caprini.criteria.malignancy.label',
+      label: 'caprini.criteria.malignancy.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.malignancy.no' },
-        { value: 2, description: 'scale.caprini.criteria.malignancy.yes' },
+        { value: 0, description: 'caprini.criteria.malignancy.no' },
+        { value: 2, description: 'caprini.criteria.malignancy.yes' },
       ],
     },
     // 31. Other Risk Factors
     {
       id: 'otherRiskFactors',
-      label: 'scale.caprini.criteria.otherRiskFactors.label',
+      label: 'caprini.criteria.otherRiskFactors.label',
       type: 'radio',
       options: [
-        { value: 0, description: 'scale.caprini.criteria.otherRiskFactors.no' },
-        {
-          value: 1,
-          description: 'scale.caprini.criteria.otherRiskFactors.yes',
-        },
+        { value: 0, description: 'caprini.criteria.otherRiskFactors.no' },
+        { value: 1, description: 'caprini.criteria.otherRiskFactors.yes' },
       ],
     },
   ],
   resultThresholds: [
-    { min: 0, max: 0, summaryText: 'scale.caprini.result.lowest' },
-    { min: 1, max: 2, summaryText: 'scale.caprini.result.low' },
-    { min: 3, max: 4, summaryText: 'scale.caprini.result.moderate' },
-    { min: 5, max: 6, summaryText: 'scale.caprini.result.high' },
-    { min: 7, max: 8, summaryText: 'scale.caprini.result.high2' },
-    { min: 9, max: 99, summaryText: 'scale.caprini.result.highest' },
+    { min: 0, max: 0, summaryText: 'caprini.result.lowest' },
+    { min: 1, max: 2, summaryText: 'caprini.result.low' },
+    { min: 3, max: 4, summaryText: 'caprini.result.moderate' },
+    { min: 5, max: 6, summaryText: 'caprini.result.high' },
+    { min: 7, max: 8, summaryText: 'caprini.result.high2' },
+    { min: 9, max: 99, summaryText: 'caprini.result.highest' },
   ],
 };

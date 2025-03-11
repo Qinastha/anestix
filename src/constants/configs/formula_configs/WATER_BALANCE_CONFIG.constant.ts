@@ -2,59 +2,59 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const WATER_BALANCE_CONFIG: FormulaConfig = {
   id: 'waterBalance',
-  label: 'calculators.dailyWaterBalance.label',
+  label: 'dailyWaterBalance.label',
   parameters: [
     {
       key: 'waterIntake',
-      label: 'calculators.dailyWaterBalance.parameters.waterIntake',
-      unit: 'units.ml',
+      label: 'dailyWaterBalance.waterIntake',
+      unit: 'ml',
       type: 'number',
     },
     {
       key: 'foodIntake',
-      label: 'calculators.dailyWaterBalance.parameters.foodIntake',
-      unit: 'units.ml',
+      label: 'dailyWaterBalance.foodIntake',
+      unit: 'ml',
       type: 'number',
     },
     {
       key: 'infusionIntake',
-      label: 'calculators.dailyWaterBalance.parameters.infusionIntake',
-      unit: 'units.ml',
+      label: 'dailyWaterBalance.infusionIntake',
+      unit: 'ml',
       type: 'number',
     },
     {
       key: 'urineOutput',
-      label: 'calculators.dailyWaterBalance.parameters.urineOutput',
-      unit: 'units.ml',
+      label: 'dailyWaterBalance.urineOutput',
+      unit: 'ml',
       type: 'number',
     },
     {
       key: 'fecesOutput',
-      label: 'calculators.dailyWaterBalance.parameters.fecesOutput',
-      unit: 'units.ml',
+      label: 'dailyWaterBalance.fecesOutput',
+      unit: 'ml',
       type: 'number',
     },
     {
       key: 'extraOutput',
-      label: 'calculators.dailyWaterBalance.parameters.extraOutput',
-      unit: 'units.ml',
+      label: 'dailyWaterBalance.extraOutput',
+      unit: 'ml',
       type: 'number',
     },
     {
       key: 'weight',
-      label: 'calculators.dailyWaterBalance.parameters.weight',
-      unit: 'units.kg',
+      label: 'dailyWaterBalance.weight',
+      unit: 'kg',
       type: 'number',
     },
     {
       key: 'hyperthermia',
-      label: 'calculators.dailyWaterBalance.parameters.hyperthermia',
+      label: 'dailyWaterBalance.hyperthermia',
       unit: '',
       type: 'boolean',
     },
     {
       key: 'mechanicalVentilation',
-      label: 'calculators.dailyWaterBalance.parameters.mechanicalVentilation',
+      label: 'dailyWaterBalance.mechanicalVentilation',
       unit: '',
       type: 'boolean',
     },
@@ -82,11 +82,11 @@ export const WATER_BALANCE_CONFIG: FormulaConfig = {
 
     setResult({
       balance: {
-        label: 'calculators.dailyWaterBalance.result.balance',
+        label: 'dailyWaterBalance.balance',
         value: parseFloat(balance.toFixed(1)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
     });
   },
-  annotation: 'calculators.dailyWaterBalance.annotation',
+  annotation: 'dailyWaterBalance.annotation',
 };

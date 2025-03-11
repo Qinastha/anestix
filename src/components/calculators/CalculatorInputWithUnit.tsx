@@ -7,10 +7,17 @@ interface Props {
   param: FormulaParameter;
   formValues: Record<string, number | string | boolean>;
   handleChange: (key: string, value: number | string | boolean) => void;
-  t: (key: string) => string;
+  tCalc: (key: string) => string;
+  tUnit: (key: string) => string;
 }
 
-const InputWithUnit = ({ param, formValues, handleChange, t }: Props) => {
+const InputWithUnit = ({
+  param,
+  formValues,
+  handleChange,
+  tCalc,
+  tUnit,
+}: Props) => {
   const numericValueKey = param.key;
   const unitKey = `${param.key}_unit`;
 
@@ -21,7 +28,7 @@ const InputWithUnit = ({ param, formValues, handleChange, t }: Props) => {
           param={{ ...param, key: numericValueKey }}
           formValues={formValues}
           handleChange={handleChange}
-          t={t}
+          t={tUnit}
         />
       </span>
       <span className="basis-1/3">
@@ -29,7 +36,7 @@ const InputWithUnit = ({ param, formValues, handleChange, t }: Props) => {
           param={{ key: unitKey, label: param.label, options: param.options }}
           formValues={formValues}
           handleChange={handleChange}
-          t={t}
+          t={tCalc}
         />
       </span>
     </div>

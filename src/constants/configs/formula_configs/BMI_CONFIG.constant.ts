@@ -2,24 +2,24 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const BMI_CONFIG: FormulaConfig = {
   id: 'bmi',
-  label: 'calculators.bmi.label',
+  label: 'bmi.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'height',
-      label: 'calculators.height',
+      label: 'height',
       unit: '',
       type: 'numberInUnits',
       minValue: 0,
       options: [
-        { label: 'units.m', value: 'units.m', conversionFactor: 1 },
-        { label: 'units.cm', value: 'units.cm', conversionFactor: 0.01 },
+        { label: 'unit_m', value: 'm', conversionFactor: 1 },
+        { label: 'unit_cm', value: 'cm', conversionFactor: 0.01 },
       ],
     },
   ],
@@ -31,11 +31,11 @@ export const BMI_CONFIG: FormulaConfig = {
     const bmi = +weight / (heightInMeters * heightInMeters);
     setResult({
       bmi: {
-        label: 'calculators.bmi.result.bmi',
+        label: 'bmi.bmi',
         value: parseFloat(bmi.toFixed(1)),
-        unit: 'units.kg_m2',
+        unit: 'kg_m2',
       },
     });
   },
-  annotation: 'calculators.bmi.annotation',
+  annotation: 'bmi.annotation',
 };

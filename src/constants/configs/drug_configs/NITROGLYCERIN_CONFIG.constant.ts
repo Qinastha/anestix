@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
   id: 'nitroglycerin',
-  label: 'calculators.nitroglycerin.label',
+  label: 'nitroglycerin.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mcg_kg_min',
+      label: 'dosePerKg',
+      unit: 'mcg_kg_min',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -23,19 +23,19 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'drugAmountInMl',
-      label: 'calculators.drugAmountInMl',
-      unit: 'units.mg_ml',
+      label: 'drugAmountInMl',
+      unit: 'mg_ml',
       type: 'select',
       options: [
-        { label: '10 mg', value: 10 },
-        { label: '1 mg', value: 1 },
-        { label: '5 mg', value: 5 },
+        { label: 'nitroglycerin.drug_var1', value: 10 },
+        { label: 'nitroglycerin.drug_var2', value: 1 },
+        { label: 'nitroglycerin.drug_var3', value: 5 },
       ],
     },
     {
       key: 'drugVolume',
-      label: 'calculators.drugVolume',
-      unit: 'units.ml',
+      label: 'drugVolume',
+      unit: 'ml',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -43,8 +43,8 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'totalVolume',
-      label: 'calculators.totalVolume',
-      unit: 'units.ml',
+      label: 'totalVolume',
+      unit: 'ml',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -75,26 +75,26 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
     const volumePerHr = volumePerMin * 60;
     setResult({
       infusionPerMun: {
-        label: 'calculators.infusion',
+        label: 'infusion',
         value: Number(infusionRateMcgMin.toFixed(1)),
-        unit: 'units.mcg_min',
+        unit: 'mcg_min',
       },
       infusionPerHr: {
-        label: 'calculators.infusion',
+        label: 'infusion',
         value: Number(infusionRateMgHr.toFixed(2)),
-        unit: 'units.mg_hr',
+        unit: 'mg_hr',
       },
       volumePerMin: {
-        label: 'calculators.ivPerMin',
+        label: 'ivPerMin',
         value: Number(volumePerMin.toFixed(2)),
-        unit: 'units.ml_min',
+        unit: 'ml_min',
       },
       volumePerHr: {
-        label: 'calculators.ivPerHr',
+        label: 'ivPerHr',
         value: Number(volumePerHr.toFixed(2)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
     });
   },
-  annotation: 'calculators.nitroglycerin.annotation',
+  annotation: 'nitroglycerin.annotation',
 };

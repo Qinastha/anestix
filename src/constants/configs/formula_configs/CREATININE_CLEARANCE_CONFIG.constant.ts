@@ -2,41 +2,41 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
   id: 'creatinineClearance',
-  label: 'calculators.creatinineClearance.label',
+  label: 'creatinineClearance.label',
   parameters: [
     {
       key: 'age',
-      label: 'calculators.creatinineClearance.parameters.age',
-      unit: 'units.years',
+      label: 'age',
+      unit: 'years',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'weight',
-      label: 'calculators.creatinineClearance.parameters.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'creatinine',
-      label: 'calculators.creatinineClearance.parameters.creatinine',
-      unit: 'units.umol_l',
+      label: 'creatinine',
+      unit: 'umol_l',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'sex',
-      label: 'calculators.creatinineClearance.parameters.sex',
+      label: 'sex',
       unit: '',
       type: 'select',
       options: [
         {
-          label: 'calculators.creatinineClearance.options.sex.male',
+          label: 'male',
           value: 'male',
         },
         {
-          label: 'calculators.creatinineClearance.options.sex.female',
+          label: 'female',
           value: 'female',
         },
       ],
@@ -48,11 +48,11 @@ export const CREATININE_CLEARANCE_CONFIG: FormulaConfig = {
 
     setResult({
       clearance: {
-        label: 'calculators.creatinineClearance.result.clearance',
+        label: 'creatinineClearance.clearance',
         value: parseFloat(clearance.toFixed(1)),
-        unit: 'units.ml_min_m2',
+        unit: 'ml_min_m2',
       },
     });
   },
-  annotation: 'calculators.creatinineClearance.annotation',
+  annotation: 'creatinineClearance.annotation',
 };

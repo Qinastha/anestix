@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
   id: 'sufentanil',
-  label: 'calculators.sufentanil.label',
+  label: 'sufentanil.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mcg_kg',
+      label: 'dosePerKg',
+      unit: 'mcg_kg',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -29,11 +29,11 @@ export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       bolus: {
-        label: 'calculators.induction',
+        label: 'induction',
         value: Number(total.toFixed(2)),
-        unit: 'units.mcg',
+        unit: 'mcg',
       },
     });
   },
-  annotation: 'calculators.sufentanil.annotation',
+  annotation: 'sufentanil.annotation',
 };

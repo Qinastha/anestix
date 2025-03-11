@@ -9,17 +9,18 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
 
-interface LanguageSwitcherProps {
-  language: string;
-  action: (lang: string) => void;
-}
+export const LanguageSwitcher: React.FC = () => {
+  const locale: string = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+  const handleLanguageChange = (lang: string) => {
+    router.replace(pathname, { locale: lang });
+  };
 
-export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
-  language,
-  action,
-}) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -31,24 +32,22 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           whileHover={{ scale: 1.05 }}
         >
           <Button variant="outline" className="w-12 bg-inherit">
-            {language.toUpperCase() || 'RU'}
+            {locale.toUpperCase() || 'RU'}
           </Button>
         </motion.div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-32">
-        <DropdownMenuItem
-          onSelect={() => action('ru')}
-          className="p-4 cursor-pointer hover:bg-muted"
-        >
-          RU
-        </DropdownMenuItem>
-        <Separator className="bg-primary" />
-        <DropdownMenuItem
-          onSelect={() => action('en')}
-          className="p-4 cursor-pointer hover:bg-muted"
-        >
-          EN
-        </DropdownMenuItem>
+        {routing.locales.map((locale) => {
+          return (
+            <DropdownMenuItem
+              key={locale}
+              className="cursor-pointer hover:bg-muted p-4"
+              onSelect={() => handleLanguageChange(locale)}
+            >
+              {locale.toUpperCase()}
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );

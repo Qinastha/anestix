@@ -2,40 +2,40 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const PEDIATRIC_INFUSION_RATE_CONFIG: FormulaConfig = {
   id: 'pediatricInfusion',
-  label: 'calculators.pediatricInfusion.label',
+  label: 'pediatricInfusion.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mcg_kg_min',
+      label: 'dosePerKg',
+      unit: 'mcg_kg_min',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'drugConcentration',
-      label: 'calculators.drugConcentration',
-      unit: 'units.pct',
+      label: 'drugConcentration',
+      unit: 'pct',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'totalVolume',
-      label: 'calculators.totalVolume',
-      unit: 'units.ml',
+      label: 'totalVolume',
+      unit: 'ml',
       type: 'select',
       options: [
-        { label: '20 ml', value: 20 },
-        { label: '10 ml', value: 10 },
-        { label: '50 ml', value: 50 },
-        { label: '100 ml', value: 100 },
-        { label: '200 ml', value: 200 },
+        { label: 'volume_20', value: 20 },
+        { label: 'volume_10', value: 10 },
+        { label: 'volume_50', value: 50 },
+        { label: 'volume_100', value: 100 },
+        { label: 'volume_200', value: 200 },
       ],
     },
   ],
@@ -69,11 +69,11 @@ export const PEDIATRIC_INFUSION_RATE_CONFIG: FormulaConfig = {
 
     setResult({
       infusionRate: {
-        label: 'calculators.ivPerHr',
+        label: 'ivPerHr',
         value: Number(infusionRateMlPerHour.toFixed(2)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
     });
   },
-  annotation: 'calculators.pediatricInfusion.annotation',
+  annotation: 'pediatricInfusion.annotation',
 };

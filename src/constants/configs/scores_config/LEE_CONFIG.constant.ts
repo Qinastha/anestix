@@ -2,98 +2,96 @@ import { ScoreConfig } from '@/interfaces/Scores.type';
 
 export const LEE_CONFIG: ScoreConfig = {
   id: 'lee',
-  name: 'scale.lee.name',
-  description: 'scale.lee.description',
+  name: 'lee.name',
+  description: 'lee.description',
   criteria: [
     {
       id: 'highRiskSurgery',
-      label: 'scale.lee.criteria.highRiskSurgery.label',
+      label: 'lee.criteria.highRiskSurgery.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          description: 'scale.lee.criteria.highRiskSurgery.option0',
+          description: 'lee.criteria.highRiskSurgery.option0',
         },
         {
           value: 1,
-          description: 'scale.lee.criteria.highRiskSurgery.option1',
+          description: 'lee.criteria.highRiskSurgery.option1',
         },
       ],
     },
     {
       id: 'historyIschemicHeartDisease',
-      label: 'scale.lee.criteria.historyIschemicHeartDisease.label',
+      label: 'lee.criteria.historyIschemicHeartDisease.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          description: 'scale.lee.criteria.historyIschemicHeartDisease.option0',
+          description: 'lee.criteria.historyIschemicHeartDisease.option0',
         },
         {
           value: 1,
-          description: 'scale.lee.criteria.historyIschemicHeartDisease.option1',
+          description: 'lee.criteria.historyIschemicHeartDisease.option1',
         },
       ],
     },
     {
       id: 'historyCHF',
-      label: 'scale.lee.criteria.historyCHF.label',
+      label: 'lee.criteria.historyCHF.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          description: 'scale.lee.criteria.historyCHF.option0',
+          description: 'lee.criteria.historyCHF.option0',
         },
         {
           value: 1,
-          description: 'scale.lee.criteria.historyCHF.option1',
+          description: 'lee.criteria.historyCHF.option1',
         },
       ],
     },
     {
       id: 'historyCerebrovascularDisease',
-      label: 'scale.lee.criteria.historyCerebrovascularDisease.label',
+      label: 'lee.criteria.historyCerebrovascularDisease.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          description:
-            'scale.lee.criteria.historyCerebrovascularDisease.option0',
+          description: 'lee.criteria.historyCerebrovascularDisease.option0',
         },
         {
           value: 1,
-          description:
-            'scale.lee.criteria.historyCerebrovascularDisease.option1',
+          description: 'lee.criteria.historyCerebrovascularDisease.option1',
         },
       ],
     },
     {
       id: 'insulinTreatment',
-      label: 'scale.lee.criteria.insulinTreatment.label',
+      label: 'lee.criteria.insulinTreatment.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          description: 'scale.lee.criteria.insulinTreatment.option0',
+          description: 'lee.criteria.insulinTreatment.option0',
         },
         {
           value: 1,
-          description: 'scale.lee.criteria.insulinTreatment.option1',
+          description: 'lee.criteria.insulinTreatment.option1',
         },
       ],
     },
     {
       id: 'creatinineOver2',
-      label: 'scale.lee.criteria.creatinineOver2.label',
+      label: 'lee.criteria.creatinineOver2.label',
       type: 'radio',
       options: [
         {
           value: 0,
-          description: 'scale.lee.criteria.creatinineOver2.option0',
+          description: 'lee.criteria.creatinineOver2.option0',
         },
         {
           value: 1,
-          description: 'scale.lee.criteria.creatinineOver2.option1',
+          description: 'lee.criteria.creatinineOver2.option1',
         },
       ],
     },
@@ -102,23 +100,23 @@ export const LEE_CONFIG: ScoreConfig = {
     {
       min: 0,
       max: 0,
-      summaryText: 'scale.lee.result.class1',
+      summaryText: 'lee.result.class1',
     },
     {
       min: 1,
       max: 1,
-      summaryText: 'scale.lee.result.class2',
+      summaryText: 'lee.result.class2',
     },
     {
       min: 2,
       max: 2,
-      summaryText: 'scale.lee.result.class3',
+      summaryText: 'lee.result.class3',
     },
     {
       min: 3,
       max: 6,
-      summaryText: 'scale.lee.result.class4',
+      summaryText: 'lee.result.class4',
     },
   ],
-  extraDescription: 'scale.lee.extraDescription',
+  extraDescription: 'lee.extraDescription',
 };

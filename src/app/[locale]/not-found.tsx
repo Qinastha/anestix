@@ -11,7 +11,7 @@ export default function NotFound() {
           Sorry, we couldn&#39;t find the page you&#39;re looking for.
         </p>
         <Link
-          href="/"
+          href="/public"
           className="px-6 py-3 bg-primary text-buttonText rounded-md font-semibold animate-pulse hover:animate-none"
         >
           Return Home

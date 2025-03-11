@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { motion } from 'motion/react';
 import { useParams } from 'next/navigation';
@@ -15,16 +13,24 @@ import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { Sparkle } from 'lucide-react';
 import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
 import { sortByLabel } from '@/utils/sortByLabel';
+import { useTranslations } from 'use-intl';
+import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 
 export default function SubitemsPage() {
-  const { t } = useTranslation();
+  const tSubI = useTranslations('SubItemsList');
   const { navId } = useParams();
+  const locale = useLocale();
 
   const navItem = NAVIGATION_ITEMS.find(
     (item) => item.href === `/dashboard/${navId}`
   );
 
-  const sortedSubItems: NavigationSubItem[] = sortByLabel(navItem?.subItems, t);
+  const sortedSubItems: NavigationSubItem[] = sortByLabel(
+    locale,
+    tSubI,
+    navItem?.subItems
+  );
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">
@@ -44,11 +50,13 @@ export default function SubitemsPage() {
                   <CardHeader className="items-center md:h-full">
                     <CardTitle className="flex flex-row items-center justify-center gap-x-3 text-xl xl:text-2xl font-semibold">
                       <Sparkle className="transition-[stroke] duration-300 group-hover:stroke-primary" />
-                      <h2 className="flex-1 text-center">{t(subItem.label)}</h2>
+                      <h2 className="flex-1 text-center">
+                        {tSubI(subItem.label)}
+                      </h2>
                       <Sparkle className="transition-[stroke] duration-300 group-hover:stroke-primary" />
                     </CardTitle>
                     <CardDescription className="text-md lg:text-lg">
-                      {t(subItem.description)}
+                      {tSubI(subItem.description)}
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -57,7 +65,7 @@ export default function SubitemsPage() {
           ))}
         </>
       ) : (
-        <p className="text-center text-lg">{t('dashboard.no_items')}</p>
+        <p className="text-center text-lg">{tSubI('no_items')}</p>
       )}
     </div>
   );

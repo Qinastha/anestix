@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
   id: 'dopamine',
-  label: 'calculators.dopamine.label',
+  label: 'dopamine.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mcg_kg_min',
+      label: 'dosePerKg',
+      unit: 'mcg_kg_min',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -23,18 +23,18 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'drugAmountInMl',
-      label: 'calculators.drugAmountInMl',
-      unit: 'units.mg_ml',
+      label: 'drugAmountInMl',
+      unit: 'mg_ml',
       type: 'select',
       options: [
-        { label: '40 mg', value: 40 },
-        { label: '5 mg', value: 5 },
+        { label: 'dopamine.drug_var1', value: 40 },
+        { label: 'dopamine.drug_var2', value: 5 },
       ],
     },
     {
       key: 'drugVolume',
-      label: 'calculators.drugVolume',
-      unit: 'units.ml',
+      label: 'drugVolume',
+      unit: 'ml',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -42,8 +42,8 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'totalVolume',
-      label: 'calculators.totalVolume',
-      unit: 'units.ml',
+      label: 'totalVolume',
+      unit: 'ml',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -78,21 +78,21 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       infusion: {
-        label: 'calculators.infusion',
+        label: 'infusion',
         value: Number(infusionRateMgMin.toFixed(3)),
-        unit: 'units.mg_per_min',
+        unit: 'mg_per_min',
       },
       volumePerMin: {
-        label: 'calculators.ivPerMin',
+        label: 'ivPerMin',
         value: Number(volumePerMin.toFixed(2)),
-        unit: 'units.ml_min',
+        unit: 'ml_min',
       },
       volumePerHr: {
-        label: 'calculators.ivPerHr',
+        label: 'ivPerHr',
         value: Number(volumePerHr.toFixed(2)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
     });
   },
-  annotation: 'calculators.dopamine.annotation',
+  annotation: 'dopamine.annotation',
 };

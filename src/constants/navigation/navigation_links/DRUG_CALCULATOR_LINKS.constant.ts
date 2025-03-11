@@ -2,67 +2,67 @@ import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 
 export const DRUG_CALCULATOR_LINKS: NavigationSubItemLink[] = [
   {
-    label: 'dashboard.links.actilyse',
+    label: 'actilyse',
     href: '/dashboard/calculators/drug-calculator/actilyse',
   },
   {
-    label: 'dashboard.links.thiopental',
+    label: 'thiopental',
     href: '/dashboard/calculators/drug-calculator/thiopental',
   },
   {
-    label: 'dashboard.links.propofol',
+    label: 'propofol',
     href: '/dashboard/calculators/drug-calculator/propofol',
   },
   {
-    label: 'dashboard.links.ketamine',
+    label: 'ketamine',
     href: '/dashboard/calculators/drug-calculator/ketamine',
   },
   {
-    label: 'dashboard.links.gomh',
+    label: 'gomh',
     href: '/dashboard/calculators/drug-calculator/gomh',
   },
   {
-    label: 'dashboard.links.fentanyl',
+    label: 'fentanyl',
     href: '/dashboard/calculators/drug-calculator/fentanyl',
   },
   {
-    label: 'dashboard.links.ditilin',
+    label: 'ditilin',
     href: '/dashboard/calculators/drug-calculator/ditilin',
   },
   {
-    label: 'dashboard.links.atracurium',
+    label: 'atracurium',
     href: '/dashboard/calculators/drug-calculator/atracurium',
   },
   {
-    label: 'dashboard.links.dexon',
+    label: 'dexon',
     href: '/dashboard/calculators/drug-calculator/dexon',
   },
   {
-    label: 'dashboard.links.naloxone',
+    label: 'naloxone',
     href: '/dashboard/calculators/drug-calculator/naloxone',
   },
   {
-    label: 'dashboard.links.noradrenaline',
+    label: 'noradrenaline',
     href: '/dashboard/calculators/drug-calculator/noradrenaline',
   },
   {
-    label: 'dashboard.links.dopamine',
+    label: 'dopamine',
     href: '/dashboard/calculators/drug-calculator/dopamine',
   },
   {
-    label: 'dashboard.links.nitroglycerin',
+    label: 'nitroglycerin',
     href: '/dashboard/calculators/drug-calculator/nitroglycerin',
   },
   {
-    label: 'dashboard.links.sufentanil',
+    label: 'sufentanil',
     href: '/dashboard/calculators/drug-calculator/sufentanil',
   },
   {
-    label: 'dashboard.links.rocuronium',
+    label: 'rocuronium',
     href: '/dashboard/calculators/drug-calculator/rocuronium',
   },
   {
-    label: 'dashboard.links.remifentanyl',
+    label: 'remifentanyl',
     href: '/dashboard/calculators/drug-calculator/remifentanyl',
   },
 ];

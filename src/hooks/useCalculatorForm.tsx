@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'use-intl';
 
 type CalculatorFormValues<T extends Param[]> = {
   [P in T[number] as P['key']]: P['type'] extends 'number'
@@ -38,7 +38,9 @@ export function useCalculatorForm<TParam extends Param, TResult>({
   parameters,
   calculate,
 }: UseCalculatorFormArgs<TParam, TResult>) {
-  const { t } = useTranslation();
+  const tToasts = useTranslations('Toasts');
+  const tUnits = useTranslations('Units');
+  const tCalc = useTranslations('CalculatorsPage');
   //Initiate a form values with default params from config or ""
   const initialFormValues = useMemo(() => {
     const initial: Record<string, number | string | boolean> = {};
@@ -120,19 +122,19 @@ export function useCalculatorForm<TParam extends Param, TResult>({
           invalidParam.minValue !== undefined &&
           invalidParam.maxValue !== undefined
         ) {
-          translationKey = 'toasts.invalidRangeBoth';
+          translationKey = 'invalidRangeBoth';
         } else if (invalidParam.minValue !== undefined) {
-          translationKey = 'toasts.invalidRangeMin';
+          translationKey = 'invalidRangeMin';
         } else if (invalidParam.maxValue !== undefined) {
-          translationKey = 'toasts.invalidRangeMax';
+          translationKey = 'invalidRangeMax';
         }
 
         toast.error(
-          t(translationKey, {
-            paramName: t(invalidParam.label),
+          tToasts(translationKey, {
+            paramName: tCalc(invalidParam.label),
             min: invalidParam.minValue,
             max: invalidParam.maxValue,
-            unit: invalidParam.unit ? t(invalidParam.unit) : '',
+            unit: tUnits(invalidParam.unit) ?? '',
           }),
           {
             position: 'top-right',
@@ -147,10 +149,10 @@ export function useCalculatorForm<TParam extends Param, TResult>({
     if (overDosageParams.length) {
       overDosageParams.forEach((overDosageParam) => {
         toast.info(
-          t('toasts.overDosage', {
-            paramName: t(overDosageParam.label),
+          tToasts('overDosage', {
+            paramName: tCalc(overDosageParam.label),
             maxValue: overDosageParam.maxDosage,
-            unit: overDosageParam.unit ? t(overDosageParam.unit) : '',
+            unit: tUnits(overDosageParam.unit) || '',
           }),
           {
             position: 'top-right',

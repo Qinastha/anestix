@@ -1,11 +1,12 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 import { sortByLabel } from '@/utils/sortByLabel';
+import { useTranslations } from 'use-intl';
+import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 
 type ReusableListProps = {
   items: NavigationSubItemLink[];
@@ -16,8 +17,13 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
   items,
   Icon,
 }) => {
-  const { t } = useTranslation();
-  const sortedLinks: NavigationSubItemLink[] = sortByLabel(items, t);
+  const locale = useLocale();
+  const tLink = useTranslations('LinksList');
+  const sortedLinks: NavigationSubItemLink[] = sortByLabel(
+    locale,
+    tLink,
+    items
+  );
 
   return (
     <div className="p-4 space-y-2">
@@ -34,7 +40,7 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
             <div className="flex items-center space-y-2 p-4 rounded-lg shadow shadow-primary hover:translate-x-2 transition-all duration-300">
               <Icon className="mr-2" />
               <span className="text-md md:text-lg font-medium">
-                {t(item.label)}
+                {tLink(item.label)}
               </span>
             </div>
           </Link>

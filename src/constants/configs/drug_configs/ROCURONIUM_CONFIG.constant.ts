@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const ROCURONIUM_CONFIG: DrugCalculatorConfig = {
   id: 'rocuronium',
-  label: 'calculators.rocuronium.label',
+  label: 'rocuronium.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mg_kg',
+      label: 'dosePerKg',
+      unit: 'mg_kg',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -29,11 +29,11 @@ export const ROCURONIUM_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       bolus: {
-        label: 'calculators.induction',
+        label: 'induction',
         value: Number(total.toFixed(0)),
-        unit: 'units.mg',
+        unit: 'mg',
       },
     });
   },
-  annotation: 'calculators.rocuronium.annotation',
+  annotation: 'rocuronium.annotation',
 };

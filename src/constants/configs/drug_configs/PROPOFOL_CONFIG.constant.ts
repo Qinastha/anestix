@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
   id: 'propofol',
-  label: 'calculators.propofol.label',
+  label: 'propofol.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mg_kg',
+      label: 'dosePerKg',
+      unit: 'mg_kg',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -23,17 +23,17 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'tivaDosage',
-      label: 'calculators.tivaAnestesiaDepth',
+      label: 'tivaAnestesiaDepth',
       unit: '',
       type: 'select',
       options: [
-        { label: 'calculators.propofol.tiva.sedation', value: 4 },
-        { label: 'calculators.propofol.tiva.lightPain', value: 6 },
-        { label: 'calculators.propofol.tiva.laryngealMask', value: 8 },
-        { label: 'calculators.propofol.tiva.moderatePain', value: 10 },
-        { label: 'calculators.propofol.tiva.intubation', value: 12 },
-        { label: 'calculators.propofol.tiva.strongPain', value: 14 },
-        { label: 'calculators.propofol.tiva.deep', value: 16 },
+        { label: 'propofol.tiva.sedation', value: 4 },
+        { label: 'propofol.tiva.lightPain', value: 6 },
+        { label: 'propofol.tiva.laryngealMask', value: 8 },
+        { label: 'propofol.tiva.moderatePain', value: 10 },
+        { label: 'propofol.tiva.intubation', value: 12 },
+        { label: 'propofol.tiva.strongPain', value: 14 },
+        { label: 'propofol.tiva.deep', value: 16 },
       ],
     },
   ],
@@ -48,16 +48,16 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       bolus: {
-        label: 'calculators.induction',
+        label: 'induction',
         value: Number(totalBolus.toFixed(2)),
-        unit: 'units.mg',
+        unit: 'mg',
       },
       tiva: {
-        label: 'calculators.tivaDosePerHr',
+        label: 'tivaDosePerHr',
         value: Number(tivaDoseMlPerHour.toFixed(1)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
     });
   },
-  annotation: 'calculators.propofol.annotation',
+  annotation: 'propofol.annotation',
 };

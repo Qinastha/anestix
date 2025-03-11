@@ -2,63 +2,63 @@ import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 
 export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
   {
-    label: 'dashboard.links.bmi',
+    label: 'bmi',
     href: '/dashboard/calculators/formula-calculator/bmi',
   },
   {
-    label: 'dashboard.links.calories',
+    label: 'calories',
     href: '/dashboard/calculators/formula-calculator/dailyCalorie',
   },
   {
-    label: 'dashboard.links.creatinine',
+    label: 'creatinine',
     href: '/dashboard/calculators/formula-calculator/creatinineClearance',
   },
   {
-    label: 'dashboard.links.waterBalance',
+    label: 'waterBalance',
     href: '/dashboard/calculators/formula-calculator/waterBalance',
   },
   {
-    label: 'dashboard.links.dailyDiuresis',
+    label: 'dailyDiuresis',
     href: '/dashboard/calculators/formula-calculator/dailyDiuresis',
   },
   {
-    label: 'dashboard.links.algover',
+    label: 'algover',
     href: '/dashboard/calculators/formula-calculator/algover',
   },
   {
-    label: 'dashboard.links.plasmaExchange',
+    label: 'plasmaExchange',
     href: '/dashboard/calculators/formula-calculator/plasmaExchange',
   },
   {
-    label: 'dashboard.links.pediatricInfusion',
+    label: 'pediatricInfusion',
     href: '/dashboard/calculators/formula-calculator/pediatricInfusion',
   },
   {
-    label: 'dashboard.links.solutionConcentration',
+    label: 'solutionConcentration',
     href: '/dashboard/calculators/formula-calculator/solutionConcentration',
   },
   {
-    label: 'dashboard.links.devine',
+    label: 'devine',
     href: '/dashboard/calculators/formula-calculator/devine',
   },
   {
-    label: 'dashboard.links.map',
+    label: 'map',
     href: '/dashboard/calculators/formula-calculator/map',
   },
   {
-    label: 'dashboard.links.potassiumDeficit',
+    label: 'potassiumDeficit',
     href: '/dashboard/calculators/formula-calculator/potassiumDeficit',
   },
   {
-    label: 'dashboard.links.bicarbonateDeficit',
+    label: 'bicarbonateDeficit',
     href: '/dashboard/calculators/formula-calculator/bicarbonateDeficit',
   },
   {
-    label: 'dashboard.links.ett',
+    label: 'ett',
     href: '/dashboard/calculators/formula-calculator/ett',
   },
   {
-    label: 'dashboard.links.solutionDilution',
+    label: 'solutionDilution',
     href: '/dashboard/calculators/formula-calculator/solutionDilution',
   },
 ];

@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
   id: 'noradrenaline',
-  label: 'calculators.noradrenaline.label',
+  label: 'noradrenaline.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mcg_kg_min',
+      label: 'dosePerKg',
+      unit: 'mcg_kg_min',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -23,18 +23,18 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'drugVolume',
-      label: 'calculators.drugVolume',
-      unit: 'units.ml',
+      label: 'drugVolume',
+      unit: 'ml',
       type: 'select',
       options: [
-        { label: '4 ml', value: 4 },
-        { label: '8 ml', value: 8 },
+        { label: 'noradrenaline.drug_var1', value: 4 },
+        { label: 'noradrenaline.drug_var2', value: 8 },
       ],
     },
     {
       key: 'totalVolume',
-      label: 'calculators.totalVolume',
-      unit: 'units.ml',
+      label: 'totalVolume',
+      unit: 'ml',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -58,21 +58,21 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       infusion: {
-        label: 'calculators.infusion',
+        label: 'infusion',
         value: Number(infusionRate.toFixed(2)),
-        unit: 'units.mcg_min',
+        unit: 'mcg_min',
       },
       volumePerMin: {
-        label: 'calculators.ivPerMin',
+        label: 'ivPerMin',
         value: Number(volumePerMin.toFixed(2)),
-        unit: 'units.ml_min',
+        unit: 'ml_min',
       },
       volumePerHr: {
-        label: 'calculators.ivPerHr',
+        label: 'ivPerHr',
         value: Number(volumePerHr.toFixed(2)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
     });
   },
-  annotation: 'calculators.noradrenaline.annotation',
+  annotation: 'noradrenaline.annotation',
 };

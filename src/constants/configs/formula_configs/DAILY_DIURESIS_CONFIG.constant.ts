@@ -2,26 +2,26 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const DAILY_DIURESIS_CONFIG: FormulaConfig = {
   id: 'dailyDiuresis',
-  label: 'calculators.dailyDiuresis.label',
+  label: 'dailyDiuresis.label',
   parameters: [
     {
       key: 'amount',
-      label: 'calculators.dailyDiuresis.parameters.amount',
-      unit: 'units.ml',
+      label: 'urineAmount',
+      unit: 'ml',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'period',
-      label: 'calculators.dailyDiuresis.parameters.period',
-      unit: 'units.h',
+      label: 'period',
+      unit: 'h',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'weight',
-      label: 'calculators.dailyDiuresis.parameters.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
@@ -31,16 +31,16 @@ export const DAILY_DIURESIS_CONFIG: FormulaConfig = {
     const hourlyDiuresis = +amount / (+period * +weight);
     setResult({
       absoluteDiuresis: {
-        label: 'calculators.dailyDiuresis.result.absoluteDiuresis',
+        label: 'dailyDiuresis.absoluteDiuresis',
         value: parseFloat(absoluteHourlyDiuresis.toFixed(2)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
       hourlyDiuresis: {
-        label: 'calculators.dailyDiuresis.result.hourlyDiuresis',
+        label: 'dailyDiuresis.hourlyDiuresis',
         value: parseFloat(hourlyDiuresis.toFixed(2)),
-        unit: 'units.ml_kg_hr',
+        unit: 'ml_kg_hr',
       },
     });
   },
-  annotation: 'calculators.dailyDiuresis.annotation',
+  annotation: 'dailyDiuresis.annotation',
 };

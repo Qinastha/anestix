@@ -2,24 +2,36 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const SOLUTION_CONCENTRATION_CONFIG: FormulaConfig = {
   id: 'solutionConcentration',
-  label: 'calculators.solutionConcentration.label',
+  label: 'solutionConcentration.label',
   parameters: [
     {
       key: 'substanceAmount',
-      label: 'calculators.substanceAmount',
+      label: 'substanceAmount',
       unit: '',
       type: 'numberInUnits',
       minValue: 0,
       options: [
-        { label: 'units.mg', value: 'units.mg', conversionFactor: 0.001 },
-        { label: 'units.g', value: 'units.g', conversionFactor: 1 },
-        { label: 'units.mcg', value: 'units.mcg', conversionFactor: 0.000001 },
+        {
+          label: 'unit_mg',
+          value: 'mg',
+          conversionFactor: 0.001,
+        },
+        {
+          label: 'unit_g',
+          value: 'g',
+          conversionFactor: 1,
+        },
+        {
+          label: 'unit_mcg',
+          value: 'mcg',
+          conversionFactor: 0.000001,
+        },
       ],
     },
     {
       key: 'solutionVolume',
-      label: 'calculators.solutionVolume',
-      unit: 'units.ml',
+      label: 'solutionVolume',
+      unit: 'ml',
       type: 'number',
       minValue: 0,
     },
@@ -39,11 +51,11 @@ export const SOLUTION_CONCENTRATION_CONFIG: FormulaConfig = {
 
     setResult({
       concentration: {
-        label: 'calculators.concentration',
+        label: 'concentration',
         value: Number(concentrationPercent.toFixed(3)),
-        unit: 'units.pct',
+        unit: 'pct',
       },
     });
   },
-  annotation: 'calculators.solutionConcentration.annotation',
+  annotation: 'solutionConcentration.annotation',
 };

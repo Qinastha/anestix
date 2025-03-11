@@ -2,12 +2,12 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const ETT_CONFIG: FormulaConfig = {
   id: 'ett',
-  label: 'calculators.ett.label',
+  label: 'ett.label',
   parameters: [
     {
       key: 'age',
-      label: 'calculators.age',
-      unit: 'units.years',
+      label: 'age',
+      unit: 'years',
       type: 'number',
       minValue: 1,
       maxValue: 13,
@@ -19,21 +19,21 @@ export const ETT_CONFIG: FormulaConfig = {
     const cuffedETT = +age / 4 + 3;
     setResult({
       cuffedETT: {
-        label: 'calculators.ett.result.cuffedETT',
+        label: 'ett.cuffedETT',
         value: parseFloat(cuffedETT.toFixed(0)),
-        unit: 'units.mm',
+        unit: 'mm',
       },
       uncuffedETT: {
-        label: 'calculators.ett.result.uncuffedETT',
+        label: 'ett.uncuffedETT',
         value: parseFloat(uncuffedETT.toFixed(0)),
-        unit: 'units.mm',
+        unit: 'mm',
       },
       ettDepth: {
-        label: 'calculators.ett.result.ettDepth',
+        label: 'ett.ettDepth',
         value: parseFloat(ETTDepth.toFixed(0)),
-        unit: 'units.cm',
+        unit: 'cm',
       },
     });
   },
-  annotation: 'calculators.ett.annotation',
+  annotation: 'ett.annotation',
 };

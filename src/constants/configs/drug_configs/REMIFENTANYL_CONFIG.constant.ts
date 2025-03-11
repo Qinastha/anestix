@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
   id: 'remifentanyl',
-  label: 'calculators.remifentanyl.label',
+  label: 'remifentanyl.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'inductionDose',
-      label: 'calculators.inductionDose',
-      unit: 'units.mcg_kg',
+      label: 'inductionDose',
+      unit: 'mcg_kg',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -23,8 +23,8 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'infusionDosePerKg',
-      label: 'calculators.infusionDosePerKg',
-      unit: 'units.mcg_kg_min',
+      label: 'infusionDosePerKg',
+      unit: 'mcg_kg_min',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -33,8 +33,8 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
     },
     {
       key: 'totalVolume',
-      label: 'calculators.totalVolume',
-      unit: 'units.ml',
+      label: 'totalVolume',
+      unit: 'ml',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -76,31 +76,31 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       inductionMCG: {
-        label: 'calculators.inductionMCG',
+        label: 'inductionMCG',
         value: Number(inductionDoseRes.toFixed(1)),
-        unit: 'units.mcg',
+        unit: 'mcg',
       },
       inductionML: {
-        label: 'calculators.inductionML',
+        label: 'inductionML',
         value: Number(inductionVolume.toFixed(1)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
       infusion: {
-        label: 'calculators.infusion',
+        label: 'infusion',
         value: Number(infusionHourlyRate.toFixed(2)),
-        unit: 'units.mcg_hr',
+        unit: 'mcg_hr',
       },
       volumePerMin: {
-        label: 'calculators.ivPerMin',
+        label: 'ivPerMin',
         value: Number(volumePerMin.toFixed(2)),
-        unit: 'units.ml_min',
+        unit: 'ml_min',
       },
       volumePerHr: {
-        label: 'calculators.ivPerHr',
+        label: 'ivPerHr',
         value: Number(volumePerHr.toFixed(2)),
-        unit: 'units.ml_hr',
+        unit: 'ml_hr',
       },
     });
   },
-  annotation: 'calculators.remifentanyl.annotation',
+  annotation: 'remifentanyl.annotation',
 };

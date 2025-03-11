@@ -2,19 +2,19 @@ import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
 
 export const DITILIN_CONFIG: DrugCalculatorConfig = {
   id: 'ditilin',
-  label: 'calculators.ditilin.label',
+  label: 'ditilin.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'dosePerKg',
-      label: 'calculators.dosePerKg',
-      unit: 'units.mg_kg',
+      label: 'dosePerKg',
+      unit: 'mg_kg',
       type: 'number',
       optional: true,
       minValue: 0,
@@ -29,11 +29,11 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       bolus: {
-        label: 'calculators.induction',
+        label: 'induction',
         value: Number(total.toFixed(2)),
-        unit: 'units.mg',
+        unit: 'mg',
       },
     });
   },
-  annotation: 'calculators.ditilin.annotation',
+  annotation: 'ditilin.annotation',
 };

@@ -21,7 +21,7 @@ import { OptionInput } from '@/components/score/OptionInput';
 
 interface MobileScaleCalcProps {
   score: ScoreConfig;
-  t: (s: string) => string;
+  t: (key: string) => string;
   selectedValues: Record<string, number | null>;
   handleSelect: (criteriaId: string, value: number) => void;
 }
@@ -42,8 +42,8 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
       <Table className="w-full table-fixed">
         <TableHeader>
           <TableRow>
-            <TableHead className="w-1/2">{t('scale.criteria')}</TableHead>
-            <TableHead className="w-1/2">{t('scale.respOptions')}</TableHead>
+            <TableHead className="w-1/2">{t('criteria')}</TableHead>
+            <TableHead className="w-1/2">{t('respOptions')}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

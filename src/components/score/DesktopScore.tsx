@@ -63,11 +63,9 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-inherit">
-            <TableHead className={labelWidthClass}>
-              {t('scale.criteria')}
-            </TableHead>
+            <TableHead className={labelWidthClass}>{t('criteria')}</TableHead>
             <TableHead className={optionsWidthClass}>
-              {t('scale.respOptions')}
+              {t('respOptions')}
             </TableHead>
           </TableRow>
         </TableHeader>

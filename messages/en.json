@@ -1,10 +1,14 @@
 {
-  "select_an_option": "Select an option",
-  "search": "Search",
-  "score": "point",
-  "no": "No",
-  "yes": "Yes",
-  "units": {
+  "General": {
+    "select_an_option": "Select an option",
+    "search": "Search",
+    "score": "point",
+    "no": "No",
+    "yes": "Yes",
+    "noResult": "No results found",
+    "": ""
+  },
+  "Units": {
     "kg_m2": "kg/m²",
     "kcal_day": "kcal/day",
     "ml_min": "mL/min",
@@ -15,7 +19,7 @@
     "kg": "kg",
     "g": "g",
     "mg": "mg",
-    "mcg": "µg",
+    "mcg": "mcg",
     "l": "L",
     "mg_dl": "mg/dL",
     "umol_l": "µmol/L",
@@ -30,50 +34,57 @@
     "bpm": "bpm",
     "years": "years",
     "h": "hours",
-    "mcg_kg": "µg/kg",
-    "mcg_kg_min": "µg/kg/min",
-    "mcg_kg_hr": "µg/kg/hr",
+    "mcg_kg": "mcg/kg",
+    "mcg_kg_min": "mcg/kg/min",
+    "mcg_kg_hr": "mcg/kg/hr",
     "mg_per_min": "mg per min",
     "mg_hr": "mg/hr",
     "mg_kg": "mg/kg",
     "mg_kg_min": "mg/kg/min",
     "mg_kg_hr": "mg/kg/hr",
-    "mcg_min": "µg/min",
+    "mcg_min": "mcg/min",
     "mg_ml": "mg/ml",
-    "mcg_ml": "µg/ml",
-    "mcg_hr": "µg/hr"
+    "mcg_ml": "mcg/ml",
+    "mcg_hr": "mcg/hr",
+    "": ""
   },
-  "toasts": {
-    "invalidRangeBoth": "Input value for \"{{paramName}}\" is out of allowed range. Please enter a value between {{min}} and {{max}} {{unit}}.",
-    "invalidRangeMin": "Input value for \"{{paramName}}\" is below the allowed minimum of {{min}} {{unit}}.",
-    "invalidRangeMax": "Input value for \"{{paramName}}\" is above the allowed maximum of {{max}} {{unit}}.",
-    "overDosage": "Input value for \"{{paramName}}\" exceeds the recommended dosage of {{maxValue}} {{unit}} as per the documentation."
+  "Toasts": {
+    "invalidRangeBoth": "Input value for \"{paramName}\" is out of allowed range. Please enter a value between {min, number} and {max, number} {unit}.",
+    "invalidRangeMin": "Input value for \"{paramName}\" is below the allowed minimum of {min, number} {unit}.",
+    "invalidRangeMax": "Input value for \"{paramName}\" is above the allowed maximum of {max, number} {unit}.",
+    "overDosage": "Input value for \"{paramName}\" exceeds the recommended dosage of {maxValue, number} {unit} as per the documentation."
   },
-  "home": {
-    "Title": "Anestix",
-    "Welcome": "Welcome to the Anesthesiologist's guide",
-    "EnterPlatform": "Enter Platform",
-    "PlatformDescription": "Your comprehensive platform for anesthesiology professionals"
+  "Home": {
+    "title": "Anestix",
+    "welcome": "Welcome to the Anesthesiologist's guide",
+    "enterPlatform": "Enter Platform",
+    "platformDescription": "Your comprehensive platform for anesthesiology professionals",
+    "": ""
   },
-  "key_features": {
+  "SearchBar": {
+    "search": "Search",
+    "noResults": "No Results"
+  },
+  "Features": {
     "comprehensive_resources": {
       "title": "Comprehensive Resources",
       "description": "Access a wide range of anesthesiology resources, clinical guidelines, and research papers."
     },
-    "calculators_for_scales": {
-      "title": "Calculators for Score",
-      "description": "Utilize built-in calculators for common anesthesiology score, risk assessments, dosage calculations, and more to support informed clinical decision-making."
+    "interactive_scores": {
+      "title": "Interactive score pages",
+      "description": "Various medical scores to estimate risk / prognosis for ICU patients"
     },
-    "continuous_learning": {
-      "title": "Continuous Learning",
-      "description": "Stay updated with the latest in anesthesiology practices, certifications, and continuing medical education opportunities."
+    "medical_calculators": {
+      "title": "Calculators for drug dosages & formulas",
+      "description": "Utilize built-in calculators for risk assessments, dosage dosages, and more to support informed clinical decision-making."
     }
   },
-  "dashboard": {
-    "dashboard_title": "Dashboard",
+  "Dashboard": {
+    "title": "Dashboard",
     "no_items": "There are no items available right now",
     "explore": "Explore",
     "home": "Home",
+    "": "",
     "score-list": {
       "title": "Scores",
       "description": "Empower your clinical decisions with our comprehensive range of medical scores, including RASS, FOUR, Glasgow, and more. Each section provides detailed scoring guides."
@@ -89,8 +100,11 @@
     "skills": {
       "title": "Skills",
       "description": "Dive into in‑depth information on medical procedures and practical skills across many sub‑sections."
-    },
-    "subItems": {
+    }
+  },
+    "SubItemsList": {
+      "no_items": "There are no items available right now",
+      "": "",
       "rass": {
         "title": "RASS",
         "description": "Assesses sedation and agitation levels in critically ill patients to guide sedation management"
@@ -119,7 +133,7 @@
         "title": "Apache II",
         "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data"
       },
-      "wells" : {
+      "wells": {
         "title": "Wells Score (PE)",
         "description": "Score for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE"
       },
@@ -164,7 +178,7 @@
         "description": "Explore detailed instructions and techniques for safe and effective intubation procedures"
       }
     },
-    "links": {
+    "LinksList": {
       "actilyse": "Actilyse",
       "bmi": "Body mass index",
       "calories": "Daily calorie requirements",
@@ -197,9 +211,8 @@
       "bicarbonateDeficit": "Bicarbonate Deficit",
       "ett": "Size of endotracheal tube (ETT) in pediatric patients (1 to 12 years)",
       "solutionDilution": "Solution Dilution Calculator"
-    }
   },
-  "scale": {
+  "ScorePage": {
     "criteria": "Criteria",
     "respOptions": "Response Options",
     "totalScore": "Total Score: ",
@@ -207,6 +220,9 @@
     "not_found": "Score configuration not found",
     "yes": "Yes",
     "no": "No",
+    "score": "point",
+    "select_an_option": "Select an option",
+    "": "",
     "glasgow": {
       "name": "Glasgow Coma Score",
       "description": "Assessment of consciousness based on eye, verbal, and motor responses.",
@@ -370,7 +386,7 @@
       "description": "A score for assessing the extent of organ dysfunction.",
       "criteria": {
         "respiratory": {
-          "label": "PaO2/FiO2",
+          "label": "PaO2",
           "option0": "≥ 400 mm Hg (53.3 kPa)",
           "option1": "< 400 mm Hg (53.3 kPa)",
           "option2": "< 300 mm Hg (40 kPa)",
@@ -1047,10 +1063,18 @@
       "description": "A score for assessing the severity of patients with acute respiratory syndromes and is aimed to a greater extent at assessing the current condition of the patient and to a lesser extent at assessing the prognosis of the disease",
       "criteria": {
         "respiratoryRate": {
-          "label": "Respiratory Rate (breaths/min)"
+          "label": "Respiratory Rate (breaths/min)",
+          "option0": "12-20",
+          "option1": "9-11",
+          "option2": "21-24",
+          "option3": "≤8 or ≥25"
         },
         "spo2": {
-          "label": "SpO2 (%)"
+          "label": "SpO2 (%)",
+          "option0": "≥96%",
+          "option1": "94-95%",
+          "option2": "92-93%",
+          "option3": "≤91%"
         },
         "oxygenSupplementation": {
           "label": "Oxygen Supplementation",
@@ -1058,13 +1082,25 @@
           "option2": "Supplemental oxygen"
         },
         "temperature": {
-          "label": "Temperature (°C)"
+          "label": "Temperature (°C)",
+          "option0": "36.1-38.0°C",
+          "option1": "35.1-36.0°C or 38.1-39.0°C",
+          "option2": "≥39.1°C",
+          "option3": "≤35.0°C"
         },
         "systolicBP": {
-          "label": "Systolic Blood Pressure (mmHg)"
+          "label": "Systolic Blood Pressure (mmHg)",
+          "option0": "111-219",
+          "option1": "101-110",
+          "option2": "91-100",
+          "option3": "≤90 or ≥220"
         },
         "pulse": {
-          "label": "Pulse (bpm)"
+          "label": "Pulse (bpm)",
+          "option0": "51-90",
+          "option1": "41-50 or 91-110",
+          "option2": "111-130",
+          "option3": "≤40 or ≥131"
         },
         "consciousness": {
           "label": "Consciousness",
@@ -1117,14 +1153,18 @@
       "extraDescription": "Patients who are intubated are unable to speak, and their verbal score cannot be assessed. They are evaluated only based on eye opening and motor scores, and the suffix T is added to their score to indicate intubation. In intubated patients, the maximum GCS score is 10T and the minimum score is 2T."
     }
   },
-  "calculators": {
+  "CalculatorsPage": {
     "calculate": "Calculate",
     "result": "Calculated Results:",
     "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",
-    "not_found": "Drug not found",
+    "not_found": "Config not found",
     "weight": "Weight",
     "height": "Height",
     "age": "Age",
+    "sex": "Sex",
+    "male": "Male",
+    "female": "Female",
+    "activity": "Activity Level",
     "bolus": "Bolus",
     "induction": "Induction of general anesthesia",
     "infusion": "Infusion",
@@ -1141,7 +1181,7 @@
     "ivPerMin": "IV Per Min",
     "ivPerHr": "IV Per Hr",
     "totalVolume": "Total Volume after dilute",
-    "drugAmountInMl": "Drug Concentration ih mL",
+    "drugAmountInMl": "Drug Concentration in mL",
     "drugConcentration": "Drug Concentration",
     "tivaAnestesiaDepth": "TIVA - anesthesia depth",
     "tivaDosePerHr": "TIVA - IV per hour",
@@ -1159,133 +1199,88 @@
     "finalVolume": "Final Volume",
     "stockSolutionVolume": "Volume of Stock Solution",
     "diluentVolume": "Volume of Diluent",
+    "creatinine": "Serum Creatinine",
+    "heartRate": "Heart Rate",
+    "systolicBP": "Systolic Blood Pressure",
+    "urineAmount" : "Urine amount",
+    "period": "Period",
+    "hematocrit": "Hematocrit",
+    "removedPercentage": "Removal Percentage for RPV",
+    "unit_mg": "mg",
+    "unit_g": "g",
+    "unit_mcg": "mcg",
+    "unit_m": "m",
+    "unit_cm": "cm",
+    "unit_ml": "ml",
+    "unit_l": "l",
+    "volume_20": "20 ml",
+    "volume_10": "10 ml",
+    "volume_50": "50 ml",
+    "volume_100": "100 ml",
+    "volume_200": "200 ml",
+    "": "",
 
     "actilyse": {
       "label": "Actilyse (Alteplase) Calculator",
       "bolus": "Bolus Dose (IV over 1 min)",
       "infusion": "Infusion Dose (IV over 60 mins)",
-      "total": "Total",
       "annotation": "Typical total dose 0.9 mg/kg. Administer 10% as a bolus over 1 minute, then infuse the remaining 90% over 60 minutes. \n\nThis config uses 0.9 mg/kg (bolus: 10%, infusion: 90%)."
     },
 
     "bmi": {
       "label": "Body Mass Index",
-      "result": {
-        "bmi": "BMI"
-      },
+      "bmi": "BMI",
       "annotation": "BMI reference ranges are based on WHO guidelines: \n- under 18.5 (underweight) \n- 18.5–24.9 (normal) \n- 25–29.9 (overweight) \n- ≥30 (obese)."
     },
 
     "dailyCalories": {
       "label": "Daily Calorie Requirements",
-      "parameters": {
-        "weight": "Weight",
-        "height": "Height",
-        "age": "Age",
-        "sex": "Sex",
-        "activity": "Activity Level"
-      },
-      "options": {
-        "sex": {
-          "male": "Male",
-          "female": "Female"
-        },
-        "activity": {
-          "sedentary": "Sedentary",
-          "lightActivity": "Light Activity",
-          "moderateActivity": "Moderate Activity",
-          "veryActive": "Very Active",
-          "superActive": "Super Active"
-        }
-      },
-      "result": {
-        "bmr": "Basal Metabolic Rate",
-        "tdee": "Total Daily Energy Expenditure"
-      },
+      "sedentary": "Sedentary",
+      "lightActivity": "Light Activity",
+      "moderateActivity": "Moderate Activity",
+      "veryActive": "Very Active",
+      "superActive": "Super Active",
+      "bmr": "Basal Metabolic Rate",
+      "tdee": "Total Daily Energy Expenditure",
       "annotation": "This calculation uses the Mifflin-St Jeor formula. Actual calorie needs may vary by individual."
     },
 
     "creatinineClearance": {
       "label": "Creatinine Clearance",
-      "parameters": {
-        "age": "Age",
-        "weight": "Weight",
-        "creatinine": "Serum Creatinine",
-        "sex": "Sex"
-      },
-      "options": {
-        "sex": {
-          "male": "Male",
-          "female": "Female"
-        }
-      },
-      "result": {
-        "clearance": "Creatinine Clearance"
-      },
+      "clearance": "Creatinine Clearance",
       "annotation": "Uses the Cockcroft-Gault formula to estimate creatinine clearance\nStage I: Kidney damage with normal or increased GFR ≥90 mL/min/1.73 m²\nStage II: Kidney damage with mild decrease in GFR (60–89 mL/min/1.73 m²)\nStage III: Moderate decrease in GFR (30–59 mL/min/1.73 m²)\nStage IV: Severe decrease in GFR (15–29 mL/min/1.73 m²)\nStage V: Kidney failure (GFR <15 mL/min/1.73 m²)"    },
 
     "dailyWaterBalance": {
       "label": "Daily Water Balance",
-      "parameters": {
-        "waterIntake": "Water Intake",
-        "foodIntake": "Food Intake",
-        "infusionIntake": "Infusion Intake",
-        "urineOutput": "Urine Output",
-        "fecesOutput": "Feces Output",
-        "extraOutput": "Other Losses",
-        "weight": "Weight",
-        "hyperthermia": "Hyperthermia",
-        "mechanicalVentilation": "Mechanical Ventilation"
-      },
-      "result": {
-        "balance": "Daily water balance taking into account perspiration"
-      },
+      "waterIntake": "Water Intake",
+      "foodIntake": "Food Intake",
+      "infusionIntake": "Infusion Intake",
+      "urineOutput": "Urine Output",
+      "fecesOutput": "Feces Output",
+      "extraOutput": "Other Losses",
+      "weight": "Weight",
+      "hyperthermia": "Hyperthermia",
+      "mechanicalVentilation": "Mechanical Ventilation",
+      "balance": "Daily water balance taking into account perspiration",
       "annotation": "This provides a rough estimate of water balance based on intake and output. Clinical context may require adjustments."
     },
 
     "algoverIndex": {
       "label": "Algover Index",
-      "parameters": {
-        "heartRate": "Heart Rate",
-        "systolicBP": "Systolic Blood Pressure"
-      },
-      "result": {
-        "index": "Algover Index"
-      },
+      "index": "Algover Index",
       "annotation": "Algover index helps estimate hypovolemia risk; values above 1.0 may indicate significant volume depletion."
     },
     "dailyDiuresis": {
       "label": "Hourly Diuresis Rate",
-      "parameters": {
-        "amount" : "Urine amount",
-        "period": "Period",
-        "weight": "Weight"
-      },
-      "result": {
-        "absoluteDiuresis": "Absolute hourly Diuresis Rate",
-        "hourlyDiuresis": "Hourly Diuresis Rate"
-      },
+      "absoluteDiuresis": "Absolute hourly Diuresis Rate",
+      "hourlyDiuresis": "Hourly Diuresis Rate",
       "annotation": "The following values \u200B\u200Bare usually used as a guide (in ml/kg/h):\nAdults: the norm is considered to be ≈0.5–1 ml/kg/h (some sources give up to 2 ml/kg/h, everything depends on specific clinical conditions).\nChildren: the indicator is higher and strongly depends on age (in newborns it can reach 2–3 ml/kg/h, in older children it is closer to the indicators of adults)."
     },
     "plasmaExchange": {
       "label": "Plasma Exchange Calculator",
-      "parameters": {
-        "weight": "Weight",
-        "hematocrit": "Hematocrit",
-        "sex": "Sex",
-        "removedPercentage": "Removal Percentage for RPV"
-      },
-      "options": {
-        "sex": {
-          "male": "Male",
-          "female": "Female"
-        }
-      },
-      "result": {
-        "totalBloodVolume": "Total Blood Volume",
-        "plasmaVolume": "Circulating Plasma Volume",
-        "removedPlasmaVolume": "Removed Plasma Volume"
-      },
+      "totalBloodVolume": "Total Blood Volume",
+      "plasmaVolume": "Circulating Plasma Volume",
+      "removedPlasmaVolume": "Removed Plasma Volume",
       "annotation": "Formulas used in this calculator:\n1. Total Blood Volume (TBV) = Weight (kg) × Coefficient, where the coefficient is 70 mL/kg for males and 65 mL/kg for females.\n2. Circulating Plasma Volume (PV) = TBV × ((100 - Hematocrit) / 100).\n3. Removed Plasma Volume (RPV) = PV × (Removal Percentage / 100) × Correction Factor.\n\nThe Correction Factor is fixed at 1.05 by default and adjusts the removal volume based on clinical requirements."
     },
     "thiopental": {
@@ -1335,14 +1330,21 @@
     },
     "noradrenaline": {
       "label": "Noradrenaline (Norepinephrine)",
+      "drug_var1": "4 ml",
+      "drug_var2": "8 ml",
       "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 µg/kg/min. \n\nThis config uses ~0.1 µg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
     },
     "dopamine": {
       "label": "Dopamine",
+      "drug_var1": "40 mg",
+      "drug_var2": "5 mg",
       "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 µg/kg/min. Typical infusion 2–20 µg/kg/min. \n\nThis config uses ~2 µg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "nitroglycerin": {
       "label": "Nitroglycerin",
+      "drug_var1": "10 mg",
+      "drug_var2": "1 mg",
+      "drug_var3": "5 mg",
       "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 µg/mL. \n\nTypical infusion 0.5–10 µg/kg/min. This config uses ~2 µg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "sufentanil": {
@@ -1367,19 +1369,7 @@
     },
     "devine": {
       "label": "Ideal Body Weight",
-      "options": {
-        "sex": {
-          "label": "Sex",
-          "male": "Male",
-          "female": "Female"
-        },
-        "height": {
-          "label": "Height"
-        }
-      },
-      "result": {
-        "idealWeight": "Ideal Weight"
-      },
+      "idealWeight": "Ideal Weight",
       "annotation": "Formula for calculating ideal body weight using the Devine method:\n\n- For men: IBW = 50 + 2.3 x (K * height (in centimeters) - 60);\n\n- For women: IBW = 45.5 + 2.3 x (K * height (in centimeters) - 60)\n\nK = 0.393701, the conversion factor from centimeters to inches."
     },
     "map": {
@@ -1389,28 +1379,24 @@
     },
     "potassiumDeficit": {
       "label": "Potassium Deficit Calculator",
-      "result": {
-        "potassiumDeficit": "Potassium deficit",
-        "amountOfSolMl": "Potassium repletion via potassium chloride",
-        "maxAmountDay": "Maximum daily intake of potassium chloride"
-      },
+      "drug_opt1": "7.5%",
+      "drug_opt2": "4%",
+      "potassiumDeficit": "Potassium deficit",
+      "amountOfSolMl": "Potassium repletion via potassium chloride",
+      "maxAmountDay": "Maximum daily intake of potassium chloride",
       "annotation": "1) Never give potassium I.M or rapid I.V push\n2) Never give more than 1.5 g KCl or 20 mmol of K+ over 1 hour"
     },
     "bicarbonateDeficit": {
       "label": "Calculate bicarbonate deficit",
-      "result": {
-        "bicarbonateDeficit": "Bicarbonate deficit",
-        "solutionVolume": "Bicarbonate repletion via 4% NaHCO3 solution"
-      },
+      "bicarbonateDeficit": "Bicarbonate deficit",
+      "solutionVolume": "Bicarbonate repletion via 4% NaHCO3 solution",
       "annotation": "NOTE: Sodium bicarbonate solution allows for rapid correction of acidosis, but the sodium cations contained in the solution further increase the osmolarity of the extracellular fluid, thereby aggravating cellular dehydration.\n\nCalculator use 24 mmol/L as normal level of bicarbonate so for correct answer current level should be lower"
     },
     "ett": {
       "label": "Calculate ET tube size for pediatric patients",
-      "result": {
-        "cuffedETT": "Cuffed ETT Diameter",
-        "uncuffedETT": "Ununcuffed ETT Diameter",
-        "ettDepth": "Insertion depth"
-      },
+      "cuffedETT": "Cuffed ETT Diameter",
+      "uncuffedETT": "Ununcuffed ETT Diameter",
+      "ettDepth": "Insertion depth",
       "annotation": "This calculator utilizes a Cole`s formula for size: \n1) Size uncuffed = (age / 4) + 4 \n2) Size cuffed = (age / 4) + 3. \n\nInsertion depth formula = (age in years / 2) + 12"
     },
     "solutionDilution": {

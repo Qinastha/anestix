@@ -2,42 +2,42 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const PLASMA_EXCHANGE_CONFIG: FormulaConfig = {
   id: 'plasmaExchange',
-  label: 'calculators.plasmaExchange.label',
+  label: 'plasmaExchange.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.plasmaExchange.parameters.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'hematocrit',
-      label: 'calculators.plasmaExchange.parameters.hematocrit',
-      unit: 'units.pct',
+      label: 'hematocrit',
+      unit: 'pct',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'sex',
-      label: 'calculators.plasmaExchange.parameters.sex',
+      label: 'sex',
       unit: '',
       type: 'select',
       options: [
         {
-          label: 'calculators.plasmaExchange.options.sex.male',
+          label: 'male',
           value: 'male',
         },
         {
-          label: 'calculators.plasmaExchange.options.sex.female',
+          label: 'female',
           value: 'female',
         },
       ],
     },
     {
       key: 'removedPercentage',
-      label: 'calculators.plasmaExchange.parameters.removedPercentage',
-      unit: 'units.pct',
+      label: 'removedPercentage',
+      unit: 'pct',
       type: 'number',
       defaultValue: 30,
       minValue: 0,
@@ -55,21 +55,21 @@ export const PLASMA_EXCHANGE_CONFIG: FormulaConfig = {
 
     setResult({
       totalBloodVolume: {
-        label: 'calculators.plasmaExchange.result.totalBloodVolume',
+        label: 'plasmaExchange.totalBloodVolume',
         value: parseFloat(totalBloodVolume.toFixed(0)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
       plasmaVolume: {
-        label: 'calculators.plasmaExchange.result.plasmaVolume',
+        label: 'plasmaExchange.plasmaVolume',
         value: parseFloat(plasmaVolume.toFixed(0)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
       removedPlasmaVolume: {
-        label: 'calculators.plasmaExchange.result.removedPlasmaVolume',
+        label: 'plasmaExchange.removedPlasmaVolume',
         value: parseFloat(removedPlasmaVolume.toFixed(0)),
-        unit: 'units.ml',
+        unit: 'ml',
       },
     });
   },
-  annotation: 'calculators.plasmaExchange.annotation',
+  annotation: 'plasmaExchange.annotation',
 };

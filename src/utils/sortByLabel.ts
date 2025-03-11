@@ -1,11 +1,15 @@
 export function sortByLabel<T extends { label: string }>(
-  items?: T[],
-  translator?: (label: string) => string
+  locale: string,
+  translate: (key: string) => string,
+  items?: T[]
 ): T[] {
   if (!items) return [];
-  return [...items].sort((a, b) => {
-    const labelA = translator ? translator(a.label) : a.label;
-    const labelB = translator ? translator(b.label) : b.label;
-    return labelA.localeCompare(labelB);
-  });
+  return [...items].sort((a, b) =>
+    translate(a.label)
+      .toLocaleLowerCase()
+      .localeCompare(translate(b.label).toLocaleLowerCase(), locale, {
+        sensitivity: 'base',
+        ignorePunctuation: true,
+      })
+  );
 }

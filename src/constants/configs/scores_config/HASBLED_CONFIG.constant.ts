@@ -2,12 +2,12 @@ import { ScoreConfig } from '@/interfaces/Scores.type';
 
 export const HASBLED_CONFIG: ScoreConfig = {
   id: 'has-bled',
-  name: 'scale.hasbled.name',
-  description: 'scale.hasbled.description',
+  name: 'hasbled.name',
+  description: 'hasbled.description',
   criteria: [
     {
       id: 'hypertension',
-      label: 'scale.hasbled.criteria.hypertension.label',
+      label: 'hasbled.criteria.hypertension.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -16,7 +16,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'renal',
-      label: 'scale.hasbled.criteria.renal.label',
+      label: 'hasbled.criteria.renal.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -25,7 +25,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'liver',
-      label: 'scale.hasbled.criteria.liver.label',
+      label: 'hasbled.criteria.liver.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -34,7 +34,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'stroke',
-      label: 'scale.hasbled.criteria.stroke.label',
+      label: 'hasbled.criteria.stroke.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -43,7 +43,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'bleeding',
-      label: 'scale.hasbled.criteria.bleeding.label',
+      label: 'hasbled.criteria.bleeding.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -52,7 +52,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'labileINR',
-      label: 'scale.hasbled.criteria.labileINR.label',
+      label: 'hasbled.criteria.labileINR.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -61,7 +61,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'age',
-      label: 'scale.hasbled.criteria.age.label',
+      label: 'hasbled.criteria.age.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -70,7 +70,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'medication',
-      label: 'scale.hasbled.criteria.medication.label',
+      label: 'hasbled.criteria.medication.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -79,7 +79,7 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
     {
       id: 'alcohol',
-      label: 'scale.hasbled.criteria.alcohol.label',
+      label: 'hasbled.criteria.alcohol.label',
       type: 'radio',
       options: [
         { value: 0, description: 'no' },
@@ -88,12 +88,12 @@ export const HASBLED_CONFIG: ScoreConfig = {
     },
   ],
   resultThresholds: [
-    { min: 0, max: 0, summaryText: 'scale.hasbled.result.lowest' },
-    { min: 1, max: 1, summaryText: 'scale.hasbled.result.low' },
-    { min: 2, max: 2, summaryText: 'scale.hasbled.result.moderate' },
-    { min: 3, max: 3, summaryText: 'scale.hasbled.result.high1' },
-    { min: 4, max: 4, summaryText: 'scale.hasbled.result.high2' },
-    { min: 5, max: 5, summaryText: 'scale.hasbled.result.high3' },
-    { min: 6, max: 9, summaryText: 'scale.hasbled.result.veryHigh' },
+    { min: 0, max: 0, summaryText: 'hasbled.result.lowest' },
+    { min: 1, max: 1, summaryText: 'hasbled.result.low' },
+    { min: 2, max: 2, summaryText: 'hasbled.result.moderate' },
+    { min: 3, max: 3, summaryText: 'hasbled.result.high1' },
+    { min: 4, max: 4, summaryText: 'hasbled.result.high2' },
+    { min: 5, max: 5, summaryText: 'hasbled.result.high3' },
+    { min: 6, max: 9, summaryText: 'hasbled.result.veryHigh' },
   ],
 };

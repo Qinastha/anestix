@@ -2,19 +2,19 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const ALGOVER_CONFIG: FormulaConfig = {
   id: 'algover',
-  label: 'calculators.algoverIndex.label',
+  label: 'algoverIndex.label',
   parameters: [
     {
       key: 'heartRate',
-      label: 'calculators.algoverIndex.parameters.heartRate',
-      unit: 'units.bpm',
+      label: 'heartRate',
+      unit: 'bpm',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'systolicBP',
-      label: 'calculators.algoverIndex.parameters.systolicBP',
-      unit: 'units.mm_hg',
+      label: 'systolicBP',
+      unit: 'mm_hg',
       type: 'number',
       minValue: 0,
     },
@@ -23,11 +23,11 @@ export const ALGOVER_CONFIG: FormulaConfig = {
     const index = +heartRate / +systolicBP;
     setResult({
       index: {
-        label: 'calculators.algoverIndex.result.index',
+        label: 'algoverIndex.index',
         value: parseFloat(index.toFixed(1)),
         unit: '',
       },
     });
   },
-  annotation: 'calculators.algoverIndex.annotation',
+  annotation: 'algoverIndex.annotation',
 };

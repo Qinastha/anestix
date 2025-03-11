@@ -2,69 +2,69 @@ import { FormulaConfig } from '@/interfaces/FormulaCalculator.type';
 
 export const DAILY_CALORIES_CONFIG: FormulaConfig = {
   id: 'dailyCalorie',
-  label: 'calculators.dailyCalories.label',
+  label: 'dailyCalories.label',
   parameters: [
     {
       key: 'weight',
-      label: 'calculators.dailyCalories.parameters.weight',
-      unit: 'units.kg',
+      label: 'weight',
+      unit: 'kg',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'height',
-      label: 'calculators.dailyCalories.parameters.height',
-      unit: 'units.cm',
+      label: 'height',
+      unit: 'cm',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'age',
-      label: 'calculators.dailyCalories.parameters.age',
-      unit: 'units.years',
+      label: 'age',
+      unit: 'years',
       type: 'number',
       minValue: 0,
     },
     {
       key: 'sex',
-      label: 'calculators.dailyCalories.parameters.sex',
+      label: 'sex',
       type: 'select',
       unit: '',
       options: [
         {
-          label: 'calculators.dailyCalories.options.sex.male',
+          label: 'male',
           value: 'male',
         },
         {
-          label: 'calculators.dailyCalories.options.sex.female',
+          label: 'female',
           value: 'female',
         },
       ],
     },
     {
       key: 'activity',
-      label: 'calculators.dailyCalories.parameters.activity',
+      label: 'activity',
       type: 'select',
       unit: '',
       options: [
         {
-          label: 'calculators.dailyCalories.options.activity.sedentary',
+          label: 'dailyCalories.sedentary',
           value: 1.2,
         },
         {
-          label: 'calculators.dailyCalories.options.activity.lightActivity',
+          label: 'dailyCalories.lightActivity',
           value: 1.375,
         },
         {
-          label: 'calculators.dailyCalories.options.activity.moderateActivity',
+          label: 'dailyCalories.moderateActivity',
           value: 1.55,
         },
         {
-          label: 'calculators.dailyCalories.options.activity.veryActive',
+          label: 'dailyCalories.veryActive',
           value: 1.725,
         },
         {
-          label: 'calculators.dailyCalories.options.activity.superActive',
+          label: 'dailyCalories.superActive',
           value: 1.9,
         },
       ],
@@ -79,16 +79,16 @@ export const DAILY_CALORIES_CONFIG: FormulaConfig = {
 
     setResult({
       bmr: {
-        label: 'calculators.dailyCalories.result.bmr',
+        label: 'dailyCalories.bmr',
         value: parseFloat(bmr.toFixed(1)),
-        unit: 'units.kcal_day',
+        unit: 'kcal_day',
       },
       tdee: {
-        label: 'calculators.dailyCalories.result.tdee',
+        label: 'dailyCalories.tdee',
         value: parseFloat(tdee.toFixed(1)),
-        unit: 'units.kcal_day',
+        unit: 'kcal_day',
       },
     });
   },
-  annotation: 'calculators.dailyCalories.annotation',
+  annotation: 'dailyCalories.annotation',
 };
