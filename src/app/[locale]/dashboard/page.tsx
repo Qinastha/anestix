@@ -62,7 +62,7 @@ export default function DashboardPage() {
                     variant="default"
                   >
                     {item.underDev ? (
-                      <span className="whitespace-normal break-words text-center">
+                      <span className="whitespace-normal break-words text-center !text-foreground">
                         {tDash('underDev')} {tDash(item.title).toLowerCase()}
                       </span>
                     ) : (
