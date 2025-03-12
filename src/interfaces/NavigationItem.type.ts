@@ -16,4 +16,5 @@ export interface NavigationItem {
   description: string;
   href: string;
   subItems?: NavigationSubItem[];
+  underDev?: boolean;
 }

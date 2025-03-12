@@ -56,12 +56,22 @@ export default function DashboardPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button asChild className="w-full" variant="default">
-                    <Link href={item.href}>
+                  <Button
+                    asChild
+                    className={`w-full ${item.underDev ? 'bg-accent hover:bg-accent cursor-no-drop' : 'bg-primary'}`}
+                    variant="default"
+                  >
+                    {item.underDev ? (
                       <span className="whitespace-normal break-words text-center">
-                        {tDash('explore')} {tDash(item.title).toLowerCase()}{' '}
+                        {tDash('underDev')} {tDash(item.title).toLowerCase()}
                       </span>
-                    </Link>
+                    ) : (
+                      <Link href={item.href}>
+                        <span className="whitespace-normal break-words text-center">
+                          {tDash('explore')} {tDash(item.title).toLowerCase()}
+                        </span>
+                      </Link>
+                    )}
                   </Button>
                 </CardContent>
               </Card>

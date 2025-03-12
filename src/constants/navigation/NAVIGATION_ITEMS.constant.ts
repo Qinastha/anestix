@@ -33,6 +33,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     description: 'ultrasound.description',
     href: '/dashboard/ultrasound',
     subItems: ULTRASOUND_SUBITEMS,
+    underDev: true,
   },
   {
     icon: Book,
@@ -40,5 +41,6 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     description: 'skills.description',
     href: '/dashboard/skills',
     subItems: SKILLS_SUBITEMS,
+    underDev: true,
   },
 ];
