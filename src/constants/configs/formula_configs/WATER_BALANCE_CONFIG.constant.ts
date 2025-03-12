@@ -5,6 +5,12 @@ export const WATER_BALANCE_CONFIG: FormulaConfig = {
   label: 'dailyWaterBalance.label',
   parameters: [
     {
+      key: 'infusionIntake',
+      label: 'dailyWaterBalance.infusionIntake',
+      unit: 'ml',
+      type: 'number',
+    },
+    {
       key: 'waterIntake',
       label: 'dailyWaterBalance.waterIntake',
       unit: 'ml',
@@ -13,12 +19,6 @@ export const WATER_BALANCE_CONFIG: FormulaConfig = {
     {
       key: 'foodIntake',
       label: 'dailyWaterBalance.foodIntake',
-      unit: 'ml',
-      type: 'number',
-    },
-    {
-      key: 'infusionIntake',
-      label: 'dailyWaterBalance.infusionIntake',
       unit: 'ml',
       type: 'number',
     },

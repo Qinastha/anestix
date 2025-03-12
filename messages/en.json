@@ -238,17 +238,17 @@
           "label": "Verbal Response",
           "option1": "No verbal response",
           "option2": "Incomprehensible sounds",
-          "option3": "Inappropriate words",
-          "option4": "Confused",
+          "option3": "Pronounces individual words",
+          "option4": "Pronounces isolated phrases, slurred speech",
           "option5": "Oriented"
         },
         "motor": {
           "label": "Motor Response",
           "option1": "No motor response",
-          "option2": "Extension to pain",
+          "option2": "Abnormal extension to pain",
           "option3": "Abnormal flexion to pain",
           "option4": "Withdrawal from pain",
-          "option5": "Localizes pain",
+          "option5": "Appropriate movement to pain",
           "option6": "Obeys commands"
         }
       },
@@ -270,33 +270,33 @@
           "label": "Eye Response",
           "option0": "No response",
           "option1": "Eye opening to pain",
-          "option2": "Eye opening to verbal command",
-          "option3": "Eyes tracking",
-          "option4": "Eyes open, spontaneous"
+          "option2": "Eye opening to voice",
+          "option3": "Spontaneous eye opening without tracking",
+          "option4": "Spontaneous eye opening with blinking and tracking"
         },
         "motor": {
           "label": "Motor Response",
-          "option0": "No response",
-          "option1": "Abnormal extension",
+          "option0": "Absent or myoclonus",
+          "option1": "Extension to pain",
           "option2": "Flexion to pain",
           "option3": "Localizes pain",
           "option4": "Obeys commands"
         },
         "brainstem": {
           "label": "Brainstem Reflexes",
-          "option0": "No response",
-          "option1": "One reflex present",
-          "option2": "Both reflexes abnormal",
-          "option3": "One reflex abnormal",
-          "option4": "Normal"
+          "option0": "Pupillary, corneal, and cough reflexes absent",
+          "option1": "Pupillary and corneal reflexes absent",
+          "option2": "Either pupillary or corneal reflex absent",
+          "option3": "One pupil dilated and unreactive to light",
+          "option4": "Pupillary and corneal reflexes preserved"
         },
         "respiration": {
           "label": "Respiration",
-          "option0": "Apnea",
-          "option1": "No spontaneous breathing",
-          "option2": "Breathing with effort",
-          "option3": "Irregular breathing",
-          "option4": "Regular breathing"
+          "option0": "Mechanical ventilation or apnea",
+          "option1": "Mechanical with spontaneous breaths",
+          "option2": "Spontaneous, irregular breathing",
+          "option3": "Cheyne-Stokes respiration",
+          "option4": "Spontaneous, normal, effective breathing"
         }
       },
       "result": {

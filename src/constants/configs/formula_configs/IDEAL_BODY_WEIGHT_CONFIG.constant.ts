@@ -25,7 +25,7 @@ export const IDEAL_BODY_WEIGHT_CONFIG: FormulaConfig = {
       label: 'height',
       unit: 'cm',
       type: 'number',
-      minValue: 0,
+      minValue: 140,
     },
   ],
   calculate: ({ sex, height }, setResult) => {

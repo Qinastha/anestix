@@ -5,13 +5,13 @@ export const CARDVARIANTS_BASE = {
     y: 0,
     transition: {
       delay: i * 0.15,
-      duration: 0.3,
+      duration: 0.2,
     },
   }),
   hover: {
     scale: 1.03,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
     },
   },
 };

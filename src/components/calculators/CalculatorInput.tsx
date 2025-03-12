@@ -28,7 +28,7 @@ export const CalculatorInput = <TParam extends Param>({
     <Input
       type="number"
       placeholder={
-        param.optional
+        param.defaultValue
           ? String(param.defaultValue)
           : param.unit
             ? t(param.unit)
