@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
-import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { LanguageSwitcher } from '@/components/switchers/LanguageSwitcher';
+import { ThemeSwitcher } from '@/components/switchers/ThemeSwitcher';
 import { useTranslations } from 'use-intl';
 
 export const Navbar: React.FC = () => {

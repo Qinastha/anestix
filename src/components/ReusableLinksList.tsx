@@ -35,6 +35,7 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
           variants={CARDVARIANTS_BASE}
           initial="initial"
           animate="animate"
+          whileHover="hover"
         >
           <Link href={item.href}>
             <div className="flex items-center space-y-2 p-4 rounded-lg shadow shadow-primary hover:translate-x-2 transition-all duration-300">

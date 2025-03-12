@@ -17,7 +17,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     icon: TableOfContents,
     title: 'score-list.title',
     description: 'score-list.description',
-    href: '/dashboard/scale-list',
+    href: '/dashboard/score-list',
     subItems: SCORE_SUBITEMS,
   },
   {

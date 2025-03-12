@@ -4,7 +4,7 @@ export const SCORE_SUBITEMS: NavigationSubItem[] = [
   {
     label: 'rass.title',
     description: 'rass.description',
-    href: '/dashboard/scale-list/score/rass',
+    href: '/dashboard/score-list/score/rass',
   },
   {
     label: 'four.title',

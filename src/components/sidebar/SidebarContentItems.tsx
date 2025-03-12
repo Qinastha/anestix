@@ -16,8 +16,8 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import React from 'react';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
-import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { LanguageSwitcher } from '@/components/switchers/LanguageSwitcher';
+import { ThemeSwitcher } from '@/components/switchers/ThemeSwitcher';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
 import { sortByLabel } from '@/utils/sortByLabel';
 import { Separator } from '@/components/ui/separator';

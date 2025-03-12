@@ -1,11 +1,11 @@
 import type React from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ToastProvider from '@/components/ToastProvider';
-import { getMessages } from 'next-intl/server';
+import ToastProvider from '@/components/providers/ToastProvider';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
@@ -17,104 +17,83 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  title: 'Anestix – Advanced Anesthesiology & ICU Platform',
-  description:
-    'Anestix is a global platform focusing on anesthesiology and ICU, offering clinical guidelines, drug dosage calculators, sedation protocols, and more.',
-  // A rich and expanded set of relevant keywords
-  keywords: [
-    'anesthesiology',
-    'anesthesia',
-    'ICU',
-    'intensive care',
-    'medical guidelines',
-    'critical care',
-    'drug dosage calculators',
-    'fentanyl dosage',
-    'noradrenaline dosage',
-    'propofol dosage',
-    'dopamine dosage',
-    'actilyse dosage',
-    'aldrete score',
-    'apache II score',
-    'four score',
-    'gcs score',
-    'nihss',
-    'sofa score',
-    'rass score',
-    'sedation protocols',
-    'bicarbonate deficit calculator',
-    'plasma exchange calculator',
-    'pediatric infusion rate',
-    'creatinine clearance formula',
-    'mechanical ventilation',
-    'analgesia guidelines',
-    'intubation',
-    'advanced airway management',
-    'medical calculators',
-    'medicine',
-    'Anestix',
-  ],
-  // Provide full icon definitions (placeholders for you to replace/confirm)
-  icons: {
-    // Favicons
-    icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', type: 'image/x-icon' },
-    ],
-    // Apple touch icon (iOS)
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    // Other icons (Android, Manifest, etc.)
-    other: [
-      {
-        rel: 'manifest',
-        url: '/site.webmanifest',
-        type: 'application/manifest+json',
-      },
-      {
-        rel: 'android-chrome',
-        url: '/android-chrome-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        rel: 'android-chrome',
-        url: '/android-chrome-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
-  },
-  // Open Graph for social sharing (Facebook, LinkedIn, etc.)
-  openGraph: {
-    title: 'Anestix – Advanced Anesthesiology & ICU Platform',
-    description:
-      'Anestix is a global platform focusing on anesthesiology and ICU, offering clinical guidelines, drug dosage calculators, sedation protocols, and more.',
-    url: 'https://anestix.vercel.app',
-    siteName: 'Anestix',
-    locale: 'en_US',
-    type: 'website',
-    // images: ['/og-image.png'],
-  },
-  // Twitter Card metadata (for rich previews on Twitter/X)
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Anestix – Advanced Anesthesiology & ICU Platform',
-    description:
-      'Anestix is a global platform focusing on anesthesiology and ICU, offering clinical guidelines, drug dosage calculators, sedation protocols, and more.',
-    // images: ['/og-image.png'],
-  },
-  // Tell search engines to index and follow links on this domain
-  robots: 'index, follow',
-  // Canonical URL for the root of your site
-  metadataBase: new URL('https://anestix.vercel.app'),
-  alternates: {
-    canonical: 'https://anestix.vercel.app',
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: 'MetadataRoute' });
+  const keywords = tMeta.raw('keywords') as string[];
+
+  // If invalid locale, show 404
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
+  return {
+    title: tMeta('title'),
+    description: tMeta('description'),
+    // A rich and expanded set of relevant keywords
+    keywords: keywords,
+    // Provide full icon definitions (placeholders for you to replace/confirm)
+    icons: {
+      // Favicons
+      icon: [
+        { url: '/icon.png', sizes: '96x96', type: 'image/png' },
+        { url: '/icon.svg', sizes: '1000x1000', type: 'image/svg' },
+        { url: '/favicon.ico', sizes: '96x96', type: 'image/x-icon' },
+      ],
+      // Apple touch icon (iOS)
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+      // Other icons (Android, Manifest, etc.)
+      other: [
+        {
+          rel: 'manifest',
+          url: '/site.webmanifest',
+          type: 'application/manifest+json',
+        },
+        {
+          rel: 'android-chrome',
+          url: '/android-chrome-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          rel: 'android-chrome',
+          url: '/android-chrome-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    // Open Graph for social sharing (Facebook, LinkedIn, etc.)
+    openGraph: {
+      title: tMeta('title'),
+      description: tMeta('description'),
+      url: 'https://anestix.vercel.app',
+      siteName: 'Anestix',
+      locale: locale === 'ru' ? 'ru_RU' : 'en_US',
+      type: 'website',
+      // images: ['/og-image.png'],
+    },
+    // Twitter Card metadata (for rich previews on Twitter/X)
+    twitter: {
+      card: 'summary_large_image',
+      title: tMeta('title'),
+      description: tMeta('description'),
+      // images: ['/og-image.png'],
+    },
+    // Tell search engines to index and follow links on this domain
+    robots: 'index, follow',
+    // Canonical URL for the root of your site
+    metadataBase: new URL('https://anestix.vercel.app'),
+    alternates: {
+      canonical: 'https://anestix.vercel.app',
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -144,7 +123,6 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         {/*3) Inject JSON-LD via a standard <script> tag.*/}
-        <title>Anestix</title>
         <meta
           name="theme-color"
           content="#ffffff"
@@ -165,7 +143,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} scroll-smooth`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider
             attribute="class"

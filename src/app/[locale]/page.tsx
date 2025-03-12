@@ -3,9 +3,9 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'motion/react';
 import { KEY_FEATURES } from '@/constants/KEY_FEATURES.constant';
-import { Navbar } from '@/components/home/Navbar';
 import { useTranslations } from 'use-intl';
 import { Link } from '@/i18n/navigation';
+import { Navbar } from '@/components/landing/Navbar';
 
 export default function Home() {
   const tHome = useTranslations('Home');

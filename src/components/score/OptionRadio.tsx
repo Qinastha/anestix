@@ -30,7 +30,7 @@ export const OptionRadio: React.FC<DesktopScaleRadioProps> = ({
           />
           <label
             htmlFor={`${criteria.id}-${option.value}`}
-            className="cursor-pointer text-sm"
+            className="cursor-pointer text-sm text-pretty"
           >
             <span>
               {t(option.description)} - {option.value} {t('score')}

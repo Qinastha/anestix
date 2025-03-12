@@ -33,9 +33,9 @@ export default function SubitemsPage() {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">
+    <>
       {sortedSubItems && sortedSubItems.length > 0 ? (
-        <>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">
           {sortedSubItems.map((subItem, index: number) => (
             <motion.div
               key={subItem.label}
@@ -63,10 +63,10 @@ export default function SubitemsPage() {
               </Link>
             </motion.div>
           ))}
-        </>
+        </div>
       ) : (
-        <p className="text-center text-lg">{tSubI('no_items')}</p>
+        <p className="text-center text-lg w-full">{tSubI('no_items')}</p>
       )}
-    </div>
+    </>
   );
 }

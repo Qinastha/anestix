@@ -1,12 +1,60 @@
 {
-  "General": {
-    "select_an_option": "Select an option",
-    "search": "Search",
-    "score": "point",
-    "no": "No",
-    "yes": "Yes",
-    "noResult": "No results found",
-    "": ""
+  "Manifest": {
+    "name": "Anestix – Anesthesiology & ICU Platform",
+    "shortName": "Anestix",
+    "description": "A global anesthesiology and ICU platform providing clinical guidelines, drug dosage calculators, sedation protocols, and more.",
+    "screenshots": {
+      "wideLabel": "Wide representation of operating room",
+      "narrowLabel": "Narrow representation of operating room"
+    },
+    "shortcuts": {
+      "dashboard": {
+        "name": "Dashboard",
+        "shortName": "Dashboard",
+        "description": "Quick access to all sections"
+      }
+    }
+  },
+  "MetadataRoute": {
+    "title": "Anestix – Advanced Anesthesiology & ICU Platform",
+    "description": "Anestix is a global platform focusing on anesthesiology and ICU, offering clinical guidelines, drug dosage calculators, sedation protocols, and more.",
+    "keywords": [
+      "anesthesiology",
+      "anesthesia",
+      "ICU",
+      "intensive care",
+      "medical guidelines",
+      "critical care",
+      "drug dosage calculators",
+      "fentanyl dosage",
+      "noradrenaline dosage",
+      "propofol dosage",
+      "dopamine dosage",
+      "actilyse dosage",
+      "aldrete score",
+      "apache II score",
+      "four score",
+      "gcs score",
+      "nihss",
+      "sofa score",
+      "rass score",
+      "sedation protocols",
+      "bicarbonate deficit calculator",
+      "plasma exchange calculator",
+      "pediatric infusion rate",
+      "creatinine clearance formula",
+      "mechanical ventilation",
+      "analgesia guidelines",
+      "intubation",
+      "advanced airway management",
+      "medical calculators",
+      "medicine",
+      "Anestix"
+    ]
+  },
+  "MetadataDashboard": {
+    "title": "Dashboard",
+    "description": "Quick access to all sections that are available "
   },
   "Units": {
     "kg_m2": "kg/m²",
@@ -84,6 +132,8 @@
     "no_items": "There are no items available right now",
     "explore": "Explore",
     "home": "Home",
+    "metaTitleDefault": "Section",
+    "metaDescDefault": "Navigation items page",
     "": "",
     "score-list": {
       "title": "Scores",
@@ -222,6 +272,8 @@
     "no": "No",
     "score": "point",
     "select_an_option": "Select an option",
+    "metaTitleDefault": "Score",
+    "metaDescDefault": "Medical score for ICU and anesthesiology",
     "": "",
     "glasgow": {
       "name": "Glasgow Coma Score",
@@ -1154,6 +1206,7 @@
     }
   },
   "CalculatorsPage": {
+    "metaTitleDefault": "Calculator",
     "calculate": "Calculate",
     "result": "Calculated Results:",
     "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",

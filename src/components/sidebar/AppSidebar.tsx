@@ -2,8 +2,8 @@
 
 import { useState, useCallback } from 'react';
 import { Sidebar } from '@/components/ui/sidebar';
-import { SidebarContentItems } from '@/components/dashboard/SidebarContentItems';
-import { MobileSidebar } from '@/components/dashboard/MobileSidebar';
+import { SidebarContentItems } from '@/components/sidebar/SidebarContentItems';
+import { MobileSidebar } from '@/components/sidebar/MobileSidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export const AppSidebar = () => {
