@@ -6,7 +6,7 @@ import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.consta
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string; navId: string };
+  params: Promise<{ locale: string; navId: string }>;
 }): Promise<Metadata> {
   const { locale, navId } = await params;
   const tDash = await getTranslations({ locale, namespace: 'Dashboard' });

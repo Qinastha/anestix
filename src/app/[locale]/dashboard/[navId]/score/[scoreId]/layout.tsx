@@ -6,7 +6,7 @@ import React from 'react';
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string; scoreId: string };
+  params: Promise<{ locale: string; scoreId: string }>;
 }): Promise<Metadata> {
   const { locale, scoreId } = await params;
   const tScore = await getTranslations({ locale, namespace: 'ScorePage' });

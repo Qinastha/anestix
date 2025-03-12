@@ -6,7 +6,7 @@ import { FORMULA_CALCULATOR_LIST } from '@/constants/configs/FORMULA_CALCULATOR_
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string; formulaId: string };
+  params: Promise<{ locale: string; formulaId: string }>;
 }): Promise<Metadata> {
   const { locale, formulaId } = await params;
   const tCalc = await getTranslations({

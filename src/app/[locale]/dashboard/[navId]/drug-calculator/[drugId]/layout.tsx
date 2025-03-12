@@ -6,7 +6,7 @@ import { DRUG_CALCULATOR_LIST } from '@/constants/configs/DRUG_CALCULATOR_LIST.c
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string; drugId: string };
+  params: Promise<{ locale: string; drugId: string }>;
 }): Promise<Metadata> {
   const { locale, drugId } = await params;
   const tCalc = await getTranslations({
