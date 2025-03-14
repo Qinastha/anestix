@@ -45,7 +45,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
       <SidebarGroup>
         <SidebarGroupContent>
           <SidebarMenu className="flex flex-col gap-3">
-            {NAVIGATION_ITEMS.map((item) => {
+            {NAVIGATION_ITEMS.filter((item) => !item.underDev).map((item) => {
               const sortedLinks = sortByLabel(locale, tSubI, item.subItems);
               return (
                 <SidebarMenuItem key={item.title} className="w-full">
