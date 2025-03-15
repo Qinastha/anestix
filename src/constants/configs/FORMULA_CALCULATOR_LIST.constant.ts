@@ -14,6 +14,7 @@ import { POTASSIUM_DEFICIT_CONFIG } from '@/constants/configs/formula_configs/PO
 import { BICARBONATE_DEFICIT_CONFIG } from '@/constants/configs/formula_configs/BICARBONATE_DEFICIT_CONFIG.constant';
 import { ETT_CONFIG } from '@/constants/configs/formula_configs/ETT_CONFIG.constant';
 import { SOLUTION_DILUTION_CONFIG } from '@/constants/configs/formula_configs/SOLUTION_DILUTION_CONFIG.constant';
+import { ANION_GAP_CONFIG } from '@/constants/configs/formula_configs/ANION_GAP_CONFIG.constant';
 
 export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [BMI_CONFIG.id]: BMI_CONFIG,
@@ -31,4 +32,5 @@ export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [BICARBONATE_DEFICIT_CONFIG.id]: BICARBONATE_DEFICIT_CONFIG,
   [ETT_CONFIG.id]: ETT_CONFIG,
   [SOLUTION_DILUTION_CONFIG.id]: SOLUTION_DILUTION_CONFIG,
+  [ANION_GAP_CONFIG.id]: ANION_GAP_CONFIG,
 };

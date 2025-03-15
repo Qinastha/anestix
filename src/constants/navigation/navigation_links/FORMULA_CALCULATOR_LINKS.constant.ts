@@ -61,4 +61,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
     label: 'solutionDilution',
     href: '/dashboard/calculators/formula-calculator/solutionDilution',
   },
+  {
+    label: 'anionGap',
+    href: '/dashboard/calculators/formula-calculator/anionGap',
+  },
 ];
