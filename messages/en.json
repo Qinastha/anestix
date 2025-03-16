@@ -217,6 +217,10 @@
         "title": "Phoenix Sepsis Score",
         "description": "A tool to assess life-threatening organ dysfunction due to infection in pediatric patients."
       },
+      "apgar": {
+        "title": "Apgar Score",
+        "description": "A quick test performed on a baby at 1 and 5 minutes after birth to determine physical condition"
+      },
       "drug-calculators": {
         "title": "Drug dosage calculators",
         "description": "Use our drug dosage calculators for accurate medication dosing, tailored to patient-specific parameters"
@@ -1272,7 +1276,48 @@
         "noSepsis": "No sepsis",
         "sepsisSuspected": "Sepsis suspected (≥2 points)"
       }
+    },
+  "apgar": {
+    "name": "Apgar Score",
+    "description": "A quick test performed on a baby at 1 and 5 minutes after birth to determine physical condition",
+    "extraDescription": "The 1-minute score determines how well the baby tolerated the birthing process.;The 5-minute score tells the health care provider how well the baby is doing outside the mother's womb.",
+    "criteria": {
+      "hr": {
+        "label": "Pulse",
+        "option0": "Absent",
+        "option1": "< 100 beats per minute",
+        "option2": "≥ 100 beats per minute"
+      },
+      "lung": {
+        "label": "Breathing effort",
+        "option0": "Not breathing",
+        "option1": "Respirations are slow or irregular",
+        "option2": "Regular breathing"
+      },
+      "muscle": {
+        "label": "Muscle tone",
+        "option0": "Muscles are loose and floppy",
+        "option1": "Some muscle tone (flexion)",
+        "option2": "Flexed arms and legs that resist extension"
+      },
+      "skin": {
+        "label": "Skin color",
+        "option0": "Totally blue",
+        "option1": "Pink and the extremities are blue (acrocyanosis)",
+        "option2": "No cyanosis body and extremities pink"
+      },
+      "reflex": {
+        "label": "Reflex response to irritable stimuli",
+        "option0": "No response to stimulation",
+        "option1": "Grimacing",
+        "option2": "Grimacing and a cough, sneeze, or vigorous cry"
+      }
+    },
+    "result": {
+      "distress": "Distress",
+      "normal": "Normal"
     }
+  }
   },
   "CalculatorsPage": {
     "metaTitleDefault": "Calculator",

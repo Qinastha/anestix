@@ -76,4 +76,9 @@ export const SCORE_SUBITEMS: NavigationSubItem[] = [
     description: 'phoenix.description',
     href: '/dashboard/score-list/score/phoenix',
   },
+  {
+    label: 'apgar.title',
+    description: 'apgar.description',
+    href: '/dashboard/score-list/score/apgar',
+  },
 ];

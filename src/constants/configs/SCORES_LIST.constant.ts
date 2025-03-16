@@ -14,6 +14,7 @@ import { HASBLED_CONFIG } from '@/constants/configs/scores_config/HASBLED_CONFIG
 import { CAPRINI_CONFIG } from '@/constants/configs/scores_config/CAPRINI_CONFIG.constant';
 import { GCS_CHILD_CONFIG } from '@/constants/configs/scores_config/GCS_CHILD_CONFIG.constant';
 import { PHOENIX_CONFIG } from '@/constants/configs/scores_config/PHOENIX_CONFIG.constant';
+import { APGAR_CONFIG } from '@/constants/configs/scores_config/APGAR_CONFIG.constant';
 
 export const SCORES_LIST: Record<string, ScoreConfig> = {
   [GCS_CONFIG.id]: GCS_CONFIG,
@@ -31,4 +32,5 @@ export const SCORES_LIST: Record<string, ScoreConfig> = {
   [NEWS2_CONFIG.id]: NEWS2_CONFIG,
   [GCS_CHILD_CONFIG.id]: GCS_CHILD_CONFIG,
   [PHOENIX_CONFIG.id]: PHOENIX_CONFIG,
+  [APGAR_CONFIG.id]: APGAR_CONFIG,
 };

@@ -38,7 +38,7 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
           whileHover="hover"
         >
           <Link href={item.href}>
-            <div className="flex items-center space-y-2 p-4 rounded-lg shadow shadow-primary hover:translate-x-2 transition-all duration-300">
+            <div className="flex items-center p-4 rounded-lg shadow shadow-primary hover:translate-x-2 transition-all duration-300">
               <Icon className="mr-2" />
               <span className="text-md md:text-lg font-medium">
                 {tLink(item.label)}
