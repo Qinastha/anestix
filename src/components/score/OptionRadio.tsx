@@ -19,7 +19,7 @@ export const OptionRadio: React.FC<DesktopScaleRadioProps> = ({
   return (
     <RadioGroup
       value={selectedValue !== null ? selectedValue.toString() : ''}
-      onValueChange={(value) => handleSelect(criteria.id, Number(value))}
+      onValueChange={(value) => handleSelect(criteria.id, +value)}
       className="flex flex-col space-y-2"
     >
       {criteria.options.map((option) => (

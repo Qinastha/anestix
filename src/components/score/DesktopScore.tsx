@@ -105,12 +105,12 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
                       gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
                     }}
                   >
-                    {criteria.options.map((option) => {
+                    {criteria.options.map((option, index: number) => {
                       const isSelected =
                         selectedValues[criteria.id] === option.value;
                       return (
                         <div
-                          key={option.value}
+                          key={index}
                           className="cursor-pointer self-center"
                           onClick={() =>
                             handleSelect(criteria.id, option.value)

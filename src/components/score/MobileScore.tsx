@@ -71,20 +71,20 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                           : ''
                       }
                       onValueChange={(value) =>
-                        handleSelect(criteria.id, Number(value))
+                        handleSelect(criteria.id, +value)
                       }
                     >
                       <SelectTrigger className="w-full text-left text-xs whitespace-normal text-pretty">
                         <SelectValue placeholder={t('select_an_option')} />
                       </SelectTrigger>
-                      <SelectContent className="max-w-sm bg-card">
-                        {criteria.options.map((option) => (
+                      <SelectContent className="max-w-sm bg-card text-pretty text-sm">
+                        {criteria.options.map((option, index: number) => (
                           <SelectItem
-                            key={option.value}
+                            key={index}
                             value={option.value.toString()}
                             className="border border-b-primary last:border-b-0 p-4"
                           >
-                            <span className="block whitespace-normal text-pretty text-sm">
+                            <span className="block whitespace-normal text-pretty">
                               {t(option.description!)} - {option.value}{' '}
                               {t('score')}
                             </span>

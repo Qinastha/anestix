@@ -71,4 +71,9 @@ export const SCORE_SUBITEMS: NavigationSubItem[] = [
     description: 'pgcs.description',
     href: '/dashboard/score-list/score/pgcs',
   },
+  {
+    label: 'phoenix.title',
+    description: 'phoenix.description',
+    href: '/dashboard/score-list/score/phoenix',
+  },
 ];

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React from 'react';
 import { SCORES_LIST } from '@/constants/configs/SCORES_LIST.constant';
-import { ScoreConfig, ScoreResult } from '@/interfaces/Scores.type';
+import { ScoreConfig } from '@/interfaces/Scores.type';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useDelayLoad } from '@/hooks/useDelayLoad';
 import { useParams } from 'next/navigation';
@@ -13,6 +13,7 @@ import { MobileScore } from '@/components/score/MobileScore';
 import { DesktopScore } from '@/components/score/DesktopScore';
 import { ResultScore } from '@/components/score/ResultScore';
 import { useTranslations } from 'use-intl';
+import { useScore } from '@/hooks/useScore';
 
 export default function ScorePage() {
   const tScore = useTranslations('ScorePage');
@@ -22,42 +23,8 @@ export default function ScorePage() {
   const scoreId = params.scoreId as string;
   const score = SCORES_LIST[scoreId] as ScoreConfig | undefined;
 
-  const [selectedValues, setSelectedValues] = useState<
-    Record<string, number | null>
-  >(() => {
-    const initial: Record<string, number | null> = {};
-    score?.criteria.forEach((c) => {
-      initial[c.id] = null;
-    });
-    return initial;
-  });
-
-  const handleSelect = useCallback((criteriaId: string, value: number) => {
-    setSelectedValues((prev) => ({
-      ...prev,
-      [criteriaId]: value,
-    }));
-  }, []);
-
-  const totalScore: number = useMemo(() => {
-    return Object.values(selectedValues).reduce<number>(
-      (acc, val) => (val !== null ? acc + val : acc),
-      0
-    );
-  }, [selectedValues]);
-
-  const getScaleResult = useCallback(
-    (total: number): ScoreResult => {
-      if (!score!.resultThresholds) return { total, summaryText: '' };
-      const threshold = score!.resultThresholds.find(
-        (th) => total >= th.min && total <= th.max
-      );
-      return threshold
-        ? { total, summaryText: threshold.summaryText }
-        : { total, summaryText: '' };
-    },
-    [score]
-  );
+  const { selectedValues, handleSelect, totalScore, getScaleResult } =
+    useScore(score);
 
   const result = getScaleResult(totalScore);
 
@@ -67,42 +34,44 @@ export default function ScorePage() {
     );
   }
 
+  if (!score) {
+    return (
+      <div className="p-4 text-center text-destructive w-full">
+        <p>{tScore('not_found')}</p>
+      </div>
+    );
+  }
+
   return (
     <>
-      {!score ? (
-        <div className="p-4 text-center text-destructive">
-          <p>{tScore('not_found')}</p>
-        </div>
-      ) : (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {isMobile ? (
-            <MobileScore
-              score={score}
-              t={tScore}
-              selectedValues={selectedValues}
-              handleSelect={handleSelect}
-            />
-          ) : (
-            <DesktopScore
-              score={score}
-              t={tScore}
-              selectedValues={selectedValues}
-              handleSelect={handleSelect}
-            />
-          )}
-          <Separator />
-          <ResultScore
-            totalScore={totalScore}
-            result={result.summaryText}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {isMobile ? (
+          <MobileScore
+            score={score}
             t={tScore}
-            extraDescription={score?.extraDescription}
+            selectedValues={selectedValues}
+            handleSelect={handleSelect}
           />
-        </motion.div>
-      )}
+        ) : (
+          <DesktopScore
+            score={score}
+            t={tScore}
+            selectedValues={selectedValues}
+            handleSelect={handleSelect}
+          />
+        )}
+        <Separator />
+        <ResultScore
+          totalScore={totalScore}
+          result={result.summaryText}
+          t={tScore}
+          extraDescription={score?.extraDescription}
+        />
+      </motion.div>
     </>
   );
 }
