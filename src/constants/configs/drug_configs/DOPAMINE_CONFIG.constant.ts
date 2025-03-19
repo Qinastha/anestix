@@ -19,6 +19,7 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 5,
+      recDosage: 'dopamine.recDosage',
       defaultValue: 2,
     },
     {

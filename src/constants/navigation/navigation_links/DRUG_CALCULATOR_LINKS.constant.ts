@@ -65,4 +65,8 @@ export const DRUG_CALCULATOR_LINKS: NavigationSubItemLink[] = [
     label: 'remifentanyl',
     href: '/dashboard/calculators/drug-calculator/remifentanyl',
   },
+  {
+    label: 'midazolam',
+    href: '/dashboard/calculators/drug-calculator/midazolam',
+  },
 ];

@@ -8,17 +8,24 @@ export type DrugResultItem = {
 
 export type DrugResult = Record<string, DrugResultItem>;
 
+export type DrugOption = {
+  label: string;
+  value: string | number;
+  conversionFactor?: number;
+};
+
 export interface DrugParameter {
   key: string;
   label: string;
   unit: MedicalUnits;
-  type: 'number' | 'select' | 'boolean';
+  type: 'number' | 'select' | 'boolean' | 'numberInUnits';
   optional?: boolean;
   minValue?: number;
   maxValue?: number;
   defaultValue?: number;
   maxDosage?: number;
-  options?: { label: string; value: string | number }[];
+  recDosage?: string;
+  options?: DrugOption[];
 }
 
 export interface DrugCalculatorConfig {

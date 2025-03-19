@@ -1,23 +1,32 @@
 import React from 'react';
 import { CalculatorInput } from './CalculatorInput';
 import { CalculatorSelect } from './CalculatorSelect';
-import { FormulaParameter } from '@/interfaces/FormulaCalculator.type';
 
-interface Props {
-  param: FormulaParameter;
+type Param = {
+  key: string;
+  label: string;
+  options?: {
+    label: string;
+    value: string | number;
+    conversionFactor?: number;
+  }[];
+};
+
+interface Props<TParam extends Param> {
+  param: TParam;
   formValues: Record<string, number | string | boolean>;
   handleChange: (key: string, value: number | string | boolean) => void;
   tCalc: (key: string) => string;
   tUnit: (key: string) => string;
 }
 
-const InputWithUnit = ({
+const InputWithUnit = <TParam extends Param>({
   param,
   formValues,
   handleChange,
   tCalc,
   tUnit,
-}: Props) => {
+}: Props<TParam>) => {
   const numericValueKey = param.key;
   const unitKey = `${param.key}_unit`;
 
@@ -28,7 +37,7 @@ const InputWithUnit = ({
           param={{ ...param, key: numericValueKey }}
           formValues={formValues}
           handleChange={handleChange}
-          t={tUnit}
+          t={tCalc}
         />
       </span>
       <span className="basis-1/3">

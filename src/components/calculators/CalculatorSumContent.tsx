@@ -60,7 +60,7 @@ export const CalculatorSumContent = <TResult extends Result>({
             {annotation && (
               <motion.hr
                 key="divider"
-                className="my-4 border-primary"
+                className="my-6 border-primary border-2 rounded"
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: '100%', opacity: 1 }}
                 transition={{ duration: 0.5 }}

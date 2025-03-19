@@ -19,6 +19,7 @@ export const ATRACURIUM_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 0.6,
+      recDosage: 'atracurium.recDosage',
       defaultValue: 0.5,
     },
   ],

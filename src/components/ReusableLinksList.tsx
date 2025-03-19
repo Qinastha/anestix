@@ -40,7 +40,7 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
           <Link href={item.href}>
             <div className="flex items-center p-4 rounded-lg shadow shadow-primary hover:translate-x-2 transition-all duration-300">
               <Icon className="mr-2" />
-              <span className="text-md md:text-lg font-medium">
+              <span className="text-md md:text-lg font-medium flex-1">
                 {tLink(item.label)}
               </span>
             </div>

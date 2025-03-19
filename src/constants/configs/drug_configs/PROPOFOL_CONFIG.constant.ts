@@ -19,6 +19,7 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 2.5,
+      recDosage: 'propofol.recDosage',
       defaultValue: 2,
     },
     {

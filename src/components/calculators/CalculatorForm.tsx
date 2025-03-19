@@ -88,7 +88,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
                 <CalculatorInput
                   formValues={formValues}
                   param={param}
-                  t={tUnit}
+                  t={tCalc}
                   handleChange={handleChange}
                 />
               )}

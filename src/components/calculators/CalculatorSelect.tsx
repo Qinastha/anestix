@@ -7,12 +7,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { FormulaOption } from '@/interfaces/FormulaCalculator.type';
 
 interface Param {
   key: string;
   label: string;
-  options?: FormulaOption[];
+  options?: {
+    label: string;
+    value: string | number;
+    conversionFactor?: number;
+  }[];
 }
 
 interface CalculatorSelectProps<TParam extends Param> {

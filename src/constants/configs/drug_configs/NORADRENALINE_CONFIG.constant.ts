@@ -19,6 +19,7 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 1,
+      recDosage: 'dopamine.recDosage',
       defaultValue: 0.1,
     },
     {

@@ -19,12 +19,12 @@ export const THIOPENTAIL_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 6,
-      defaultValue: 4,
+      recDosage: 'thiopental.recDosage',
+      defaultValue: 3,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
     const dose = typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 4;
-    // Typical induction bolus range: 3–6 mg/kg => pick ~4.5 mg/kg
     const total = +weight * dose;
 
     setResult({

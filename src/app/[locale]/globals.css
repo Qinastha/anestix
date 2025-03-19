@@ -70,9 +70,9 @@
     /* Sidebar primary foreground: white text on active sidebar items for optimal contrast */
     --sidebar-primary-foreground: 0 0% 100%;
     /* Sidebar accent color: used for hover states or secondary highlights in the sidebar */
-    --sidebar-accent: 210 15% 85%;
+    --sidebar-accent: 221.2 83.2% 53.3%;
     /* Sidebar accent foreground: dark text to maintain readability on accent backgrounds */
-    --sidebar-accent-foreground: 210 15% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
     /* Sidebar border color: a soft light gray to subtly delineate sections within the sidebar */
     --sidebar-border: 210 10% 85%;
     /* Sidebar ring color: used for focus outlines within the sidebar; matches the primary interactive tone */

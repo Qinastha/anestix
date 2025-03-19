@@ -95,6 +95,7 @@
     "mcg_ml": "mcg/ml",
     "mcg_hr": "mcg/hr",
     "g_l": "g/L",
+    "months": "months",
     "": ""
   },
   "Toasts": {
@@ -271,7 +272,8 @@
       "bicarbonateDeficit": "Bicarbonate Deficit",
       "ett": "Size of endotracheal tube (ETT) in pediatric patients (1 to 12 years)",
       "solutionDilution": "Solution Dilution Calculator",
-      "anionGap": "Anion Gap"
+      "anionGap": "Anion Gap",
+      "midazolam": "Midazolam"
   },
   "ScorePage": {
     "criteria": "Criteria",
@@ -1376,6 +1378,14 @@
     "sodiumLevel": "Current Sodium Level",
     "albuminLevel": "Current Albumin Level",
     "chlorideLevel": "Current Chloride Level",
+    "oralSedation": "Oral Sedation Dose",
+    "imSedation": "IM Sedation Dose",
+    "ivSedation": "IV Sedation Dose",
+    "intranasal": "Intranasal Dose",
+    "eplilepticBolus": "Status Epilepticus Bolus Dose",
+    "eplilepticInfusion": "Status Epilepticus Infusion per min",
+    "imPremed": "IM Premedication Dose",
+    "ivInduction": "IV Induction Dose",
     "unit_mg": "mg",
     "unit_g": "g",
     "unit_mcg": "mcg",
@@ -1383,6 +1393,8 @@
     "unit_cm": "cm",
     "unit_ml": "ml",
     "unit_l": "l",
+    "unit_months": "months",
+    "unit_years": "years",
     "volume_20": "20 ml",
     "volume_10": "10 ml",
     "volume_50": "50 ml",
@@ -1455,11 +1467,13 @@
     },
     "thiopental": {
       "label": "Thiopental",
-      "annotation": "20 mL = 1 g or 10 mL = 500 mg freeze-dried. Usually reconstituted to a 1% solution. Typical IV dose 3–6 mg/kg. Onset ≈1–2 min; duration ≈20–25 min. \n\nThis config uses ~4 mg/kg by default with the ability to customize."
+      "recDosage": "IV dose 3–5 mg/kg",
+      "annotation": "Thiopental is a rapid-onset, short-acting barbiturate used primarily for the induction of anesthesia and for short surgical procedures. It is also utilized in the management of status epilepticus and for reducing intracranial pressure.\n\nConcentration and Preparation:\n- Available as a freeze-dried powder: 500 mg in 10 mL or 1 g in 20 mL vials.\n- Typically reconstituted to a 2.5% solution (25 mg/mL) using sterile water or saline. For continuous IV infusion, concentrations of 0.2% or 0.4% are used. \n\nDosage Considerations:\n- Adult IV induction: 3–5 mg/kg administered over 20–40 seconds. \n- Pediatric IV induction: 2–7 mg/kg based on age and clinical status. \n\nOnset and Duration:\n- Onset: 30–40 seconds after IV administration. \n- Duration: 5–10 minutes. \n\nWarnings and Precautions:\n- Respiratory Depression: Risk of apnea and respiratory depression; ensure resuscitative equipment is available. \n- Cardiovascular Effects: May cause hypotension, especially in hypovolemic or hypertensive patients. \n- Contraindications: Severe cardiovascular disease, porphyria, hypersensitivity to barbiturates. \n- Use in Specific Populations: Caution in patients with hepatic or renal impairment, asthma, myasthenia gravis, or severe anemia. \n\nMonitoring:\n- Continuous monitoring of respiratory and cardiovascular status during administration. \n- Observe for signs of over-sedation or adverse reactions."
     },
     "propofol": {
       "label": "Propofol",
-      "annotation": "20 ml = 200 mg emulsion. Typical dosages: 1.5–2.5 mg/kg for induction and TIVA maintenance rates range from 4 mg/kg/hr (for light sedation) to 16 mg/kg/hr (for deep anesthesia). Onset ≈20–40 sec; duration ≈6–8 min. \n\nThis configuration uses ~2 mg/kg for induction and ~4 mg/kg/hr for TIVA maintenance by default with the ability to adjust.",
+      "recDosage": "IV dose 1–2.5 mg/kg",
+      "annotation": "Propofol is a short-acting intravenous anesthetic agent used for the induction and maintenance of general anesthesia, as well as for sedation in various medical procedures. It is known for its rapid onset and quick recovery profile.\n\n20 ml = 200 mg emulsion\n\nIndications:\n• Induction of general anesthesia\n• Maintenance of general anesthesia\n• Sedation for mechanically ventilated patients in the Intensive Care Unit (ICU)\n• Monitored Anesthesia Care (MAC) sedation for procedures\n\nDosage Considerations:\n• Adult Induction of Anesthesia:\n  - Healthy adults <65 years: 2 to 2.5 mg/kg IV bolus\n  - Elderly, debilitated, or ASA-PS III/IV patients: Reduce dose; typically 1 to 1.5 mg/kg IV bolus\n• Adult Maintenance of Anesthesia:\n  - Continuous infusion: 100 to 200 mcg/kg/min (6 to 12 mg/kg/hr)\n  - Adjust infusion rate based on patient response and surgical conditions\n• Adult Sedation in ICU:\n  - Initiate at 5 mcg/kg/min (0.3 mg/kg/hr) IV infusion\n  - Titrate by 5 to 10 mcg/kg/min (0.3 to 0.6 mg/kg/hr) every 5 to 10 minutes to achieve desired sedation level\n  - Maintenance infusion: Typically 5 to 50 mcg/kg/min (0.3 to 3 mg/kg/hr)\n• Pediatric Induction of Anesthesia (≥2 months):\n  - 2.5 to 3.5 mg/kg IV bolus\n• Pediatric Maintenance of Anesthesia:\n  - Continuous infusion: 125 to 300 mcg/kg/min (7.5 to 18 mg/kg/hr)\n  - Following the first 30 minutes, infusion rates may be reduced\n\nWarnings:\n• Risk of hypotension and respiratory depression, especially with rapid administration or high doses\n• Use caution in patients with cardiac, respiratory, renal, or hepatic impairment\n• Not recommended for sedation in pediatric ICU patients due to risk of Propofol Infusion Syndrome\n• Strict aseptic technique required to prevent microbial contamination\n\nMonitoring:\n• Continuous monitoring of respiratory and cardiovascular status\n• Observe for signs of hypotension, apnea, or airway obstruction\n• Regular assessment of sedation levels and adjust dosage accordingly\n\nNote: Dosages should be individualized based on patient factors, procedure requirements, and clinical response. Always consult current clinical guidelines and institutional protocols.",
       "tiva": {
         "sedation": "Sedation",
         "lightPain": "Light pain",
@@ -1472,66 +1486,79 @@
     },
     "ketamine": {
       "label": "Ketamine",
-      "annotation": "May be selected in hypotensive patients. \n\n2 mL = 100 mg. Typical IV dose 1.5–2 mg/kg. Onset ≈1–2 min IV; duration ≈15–20 min IV. \n\nThis config uses ~1 mg/kg by default with the ability to customize."
+      "recDosage": "IV dose 1.5–4.5 mg/kg",
+      "annotation": "Ketamine is a dissociative anesthetic used for induction and maintenance of anesthesia and pain management. It is particularly useful in hypotensive patients due to its cardiovascular stimulant properties.\n\n2 mL = 100 mg.\n\nIndications:\n- Induction and maintenance of anesthesia\n- Pain management, including in opioid-tolerant patients\n- Treatment of refractory status epilepticus\n\nDosage Considerations:\n- Adult IV induction: 1 to 4.5 mg/kg IV; 2 mg/kg typically produces 5 to 10 minutes of surgical anesthesia within 30 seconds\n- Adult IM induction: 6.5 to 13 mg/kg IM; 9 to 13 mg/kg typically produces 12 to 25 minutes of surgical anesthesia within 3 to 4 minutes\n- Pediatric IV induction: 1 to 2 mg/kg IV over 60 seconds\n- Pediatric IM induction: 4 to 5 mg/kg IM\n- Pain management (adults): 0.3 mg/kg IV slow push; may repeat 0.15 mg/kg after 5 minutes; maximum cumulative dose 0.6 mg/kg in 45 minutes\n\nWarnings:\n- May cause transient increases in blood pressure, heart rate, and cardiac output; use with caution in patients with cardiovascular disease\n- Risk of emergence reactions, including vivid dreams, hallucinations, and delirium; pretreatment with a benzodiazepine may reduce incidence\n- Potential for respiratory depression, especially with rapid IV administration or high doses\n- Use with caution in patients with elevated intracranial or intraocular pressure\n- May increase muscle tone, making it unsuitable for procedures requiring muscle relaxation\n\nMonitoring:\n- Continuous monitoring of vital signs, including blood pressure, heart rate, and respiratory function\n- Observe for signs of emergence reactions during recovery\n- Monitor for potential adverse psychiatric effects, particularly in patients with a history of mental health disorders"
     },
     "gomh": {
       "label": "Sodium Oxybutyrate",
-      "annotation": "1 mL = 200 mg. Typical dose 50–150 mg/kg IV. Onset ≈5–10 min; duration 20–60+ min. \n\nThis config uses ~75 mg/kg by default with the ability to customize."
+      "recDosage": "IV dose 50–150 mg/kg",
+      "annotation": "1 mL = 200 mg. Typical intravenous (IV) dose ranges from 50 to 150 mg/kg. Onset of action is approximately 5–10 minutes, with a duration of 20–60+ minutes.\n\nNote: While sodium oxybate (the sodium salt of gamma-hydroxybutyric acid, or GHB) has been used historically as an anesthetic agent in some countries, its use in modern anesthesiology and intensive care units (ICUs) is limited. This is due to its potential for abuse, dependence, and the availability of safer alternatives. \n\nIn the United States, sodium oxybate is primarily approved for the treatment of narcolepsy with cataplexy and excessive daytime sleepiness. Its use is restricted under a Risk Evaluation and Mitigation Strategy (REMS) program to mitigate risks of abuse and serious adverse effects. Therefore, the application of sodium oxybate in anesthesiology and ICU settings should be approached with caution, considering current clinical guidelines and regulatory restrictions."
     },
     "fentanyl": {
       "label": "Fentanyl",
-      "annotation": "2 mL amp = 0.05 mg (50 µg). Typical bolus 0.5–2.5 µg/kg. Onset rapid; duration ≈10–15 min. \n\nThis config uses ~0.5 µg/kg by default with the ability to customize."
+      "recDosage": "IV dose 0.5–2 mcg/kg",
+      "annotation": "Fentanyl is a potent synthetic opioid analgesic used for pain management and as an adjunct to anesthesia. It is approximately 100 times more potent than morphine.\n\n2 ml = 0,05 mg (50 mcg) \n\nIndications:\n- Adjunct to general anesthesia\n- Management of acute and chronic pain\n\nDosage Considerations:\n- IV bolus: 0.5–2 mcg/kg\n- Continuous IV infusion: 0.5–3 mcg/kg/min\n- Transdermal patch: 12–100 mcg/hr, replaced every 72 hours\n\nWarnings:\n- Risk of respiratory depression, especially with concomitant use of CNS depressants\n- Potential for misuse, addiction, and dependence\n- Use caution in patients with hepatic or renal impairment\n- Contraindicated in patients with severe respiratory conditions or those who have used MAO inhibitors within the past 14 days\n\nMonitoring:\n- Continuous monitoring of respiratory and cardiovascular status during administration\n- Observe for signs of hypotension, bradycardia, and hypoventilation\n- Monitor for signs of misuse, abuse, or addiction"
     },
     "ditilin": {
       "label": "Ditilin (Succinylcholine)",
+      "recDosage": "IV dose 0.6–1.5 mg/kg",
       "annotation": "5 mL = 100 mg. Typical dose 0.6–1.5 mg/kg IV for rapid muscle relaxation. Onset ≈30–60 s; duration ≈5–10 min. \n\nThis config uses ~0.75 mg/kg by default with the ability to customize."
     },
     "atracurium": {
       "label": "Atracurium",
+      "recDosage": "IV dose 0.5–0.6 mg/kg",
       "annotation": "2.5 mL = 25 mg or 5 mL = 50 mg. Typical bolus 0.5–0.6 mg/kg. Onset ~3–5 min; duration ≈15–35 min. \n\nThis config uses ~0.5 mg/kg by default with the ability to customize."
     },
     "dexon": {
       "label": "Dexamethasone",
+      "recDosage": "IV dose 0.06–0.11 mg/kg",
       "annotation": "1 mL = 4 mg. Typical single dose ~4–8 mg (1–2 amps) or ~0.06–0.11 mg/kg. \n\nThis config uses ~0.08 mg/kg by default with the ability to customize."
     },
     "naloxone": {
       "label": "Naloxone",
-      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 µg/kg IV. \n\nThis config uses ~2 µg/kg (~0.002 mg/kg) by default with the ability to customize."
+      "recDosage": "IV dose 1.5–3 mcg/kg",
+      "annotation": "1 mL = 0.4 mg. Typical bolus ~1.5–3 mcg/kg IV. \n\nThis config uses ~2 mcg/kg (~0.002 mg/kg) by default with the ability to customize."
     },
     "noradrenaline": {
       "label": "Noradrenaline (Norepinephrine)",
       "drug_var1": "4 ml",
       "drug_var2": "8 ml",
-      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 µg/kg/min. \n\nThis config uses ~0.1 µg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
+      "recDosage": "0.1–1 mcg/kg/min",
+      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.1 mcg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
     },
     "dopamine": {
       "label": "Dopamine",
       "drug_var1": "40 mg",
       "drug_var2": "5 mg",
-      "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 µg/kg/min. Typical infusion 2–20 µg/kg/min. \n\nThis config uses ~2 µg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+      "recDosage": "2–5 mcg/kg/min",
+      "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 mcg/kg/min. Typical infusion 2–20 mcg/kg/min. \n\nThis config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "nitroglycerin": {
       "label": "Nitroglycerin",
       "drug_var1": "10 mg",
       "drug_var2": "1 mg",
       "drug_var3": "5 mg",
-      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 µg/mL. \n\nTypical infusion 0.5–10 µg/kg/min. This config uses ~2 µg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+      "recDosage": "0.5–10 mcg/kg/min",
+      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
     },
     "sufentanil": {
       "label": "Sufentanil",
-      "annotation": "50 µg/ml stand for 5 mL = 250 µg. Typical range for induction is 0.05 - 0.1 µg/kg. May be administered in divided dose. \n\nThis config uses ~0.05 µg/kg by default with the ability to customize."
+      "recDosage": "IV dose 0.05–0.1 mcg/kg",
+      "annotation": "50 mcg/ml stand for 5 mL = 250 mcg. Typical range for induction is 0.05 - 0.1 mcg/kg. May be administered in divided dose. \n\nThis config uses ~0.05 mcg/kg by default with the ability to customize."
     },
     "rocuronium": {
       "label": "Rocuronium",
+      "recDosage": "IV dose 0.6–1 mg/kg",
       "annotation": "5 mL = 50 mg. Typical bolus 0.6–1 mg/kg. Onset ~1–2 min; duration ~30–50 min. \n\nThis config uses ~0.6 mg/kg by default with the ability to customize."
     },
     "pediatricInfusion": {
       "label": "Pediatric infusion rate",
-      "annotation": "Keep in mind that this formula is valid only if exactly 1 mL of the 1% drug solution is used for dilution; any change in this volume requires recalculating the final concentration! \n\nInfusion rate (mL/h) = (weight (kg) × 60 × dose (µg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)."
+      "annotation": "Keep in mind that this formula is valid only if exactly 1 mL of the 1% drug solution is used for dilution; any change in this volume requires recalculating the final concentration! \n\nInfusion rate (mL/h) = (weight (kg) × 60 × dose (mcg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)."
     },
     "remifentanyl": {
       "label": "Remifentanyl",
-      "annotation": "2 mg in 5 ml. Typical induction dose is 1-3 µg/kg and infusion rate ~0,125-0,5 µg/kg/min. \n\nThis config uses ~1 µg/kg for induction and 0,1 µg/kg/min by default with the ability to customize."
+      "recDosage": "0.125–0.5 mcg/kg/min",
+      "annotation": "2 mg in 5 ml. Typical induction dose is 1-3 mcg/kg and infusion rate ~0,125-0,5 mcg/kg/min. \n\nThis config uses ~1 mcg/kg for induction and 0,1 mcg/kg/min by default with the ability to customize."
     },
     "solutionConcentration": {
       "label": "Solution Concentration",
@@ -1583,6 +1610,10 @@
       "deltaRatio": "Delta Ratio",
       "albuminDeltaRatio": "Albumin Corrected Delta Ratio",
       "annotation": "Anion gap normal range is typically between 3 and 11 mmol/L, while anything below 3 mmol/L is considered abnormally low, and above 11 mmol/L is usually considered abnormally high. \n\nInterpretation of the delta ratio: \n1) Delta Ratio < 0.4: Hyperchloremic normal anion gap acidosis. \n2) Delta Ratio < 1: High anion gap (AG) & normal AG acidosis. \n3) Delta Ratio 1 to 2: Pure anion gap acidosis. \n- Lactic acidosis: average value 1.6. \n- Diabetic ketoacidosis (DKA) is more likely to have a ratio closer to 1 due to urine ketone loss. \n4) Delta Ratio > 2: High AG acidosis and a concurrent metabolic alkalosis or a pre-existing compensated respiratory acidosis."
+    },
+    "midazolam": {
+      "label": "Midazolam",
+      "annotation": "Midazolam is a short-acting benzodiazepine used for sedation and amnesia in medical procedures. It is also used for managing status epilepticus and as premedication before anesthesia.\n\n3 ml = 15mg.\n\nIndications:\n- Procedural sedation and anesthesia induction\n- Status epilepticus treatment (IM/IV)\n- Preoperative sedation\n\nDosage Considerations:\n- Pediatric oral sedation: Max 20 mg or 0.5 mg/kg\n- Pediatric IM sedation: 0.1 mg/kg\n- Pediatric IV sedation: 0.05-0.075 mg/kg\n- Pediatric intranasal: 0.2-0.25 mg/kg\n- Adult IV induction: 0.2 mg/kg\n- Adult IM premedication: 0.07 mg/kg\n- Adult IV sedation: 0.05 mg/kg\n\nWarnings:\n- Risk of respiratory depression, especially when combined with opioids or CNS depressants.\n- May cause dependence with prolonged use.\n- Use caution in elderly and renally impaired patients.\n\nMonitoring:\n- Continuous monitoring required for respiratory function.\n- Patients should be observed for signs of over-sedation or adverse reactions."
     }
   }
 }

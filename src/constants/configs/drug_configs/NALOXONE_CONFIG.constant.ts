@@ -19,6 +19,7 @@ export const NALOXONE_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 0.003,
+      recDosage: 'naloxone.recDosage',
       defaultValue: 0.002,
     },
   ],

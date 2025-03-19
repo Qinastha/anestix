@@ -19,6 +19,7 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 1.5,
+      recDosage: 'ditilin.recDosage',
       defaultValue: 0.75,
     },
   ],

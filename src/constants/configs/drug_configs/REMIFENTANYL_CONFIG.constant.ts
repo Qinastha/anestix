@@ -19,6 +19,7 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 3,
+      recDosage: 'remifentanyl.recDosage',
       defaultValue: 1,
     },
     {

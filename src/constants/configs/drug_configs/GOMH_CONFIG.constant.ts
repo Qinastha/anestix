@@ -19,6 +19,7 @@ export const GOMH_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 150,
+      recDosage: 'gomh.recDosage',
       defaultValue: 75,
     },
   ],

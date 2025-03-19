@@ -5,6 +5,7 @@ interface Param {
   key: string;
   label: string;
   optional?: boolean;
+  recDosage?: string;
   defaultValue?: number | string | boolean;
   unit?: string;
 }
@@ -23,17 +24,10 @@ export const CalculatorInput = <TParam extends Param>({
   handleChange,
 }: CalculatorInputProps<TParam>) => {
   const formValue = formValues[param.key];
-  const unitValue = formValues[`${param.key}_unit`];
   return (
     <Input
       type="number"
-      placeholder={
-        param.defaultValue
-          ? String(param.defaultValue)
-          : param.unit
-            ? t(param.unit)
-            : t(unitValue.toString() || '')
-      }
+      placeholder={param.recDosage ? t(param.recDosage) : ''}
       value={formValue !== undefined ? Number(formValue) : ''}
       onChange={(e) => handleChange(param.key, e.target.value)}
       className="w-full text-base placeholder:text-muted-foreground placeholder:text-base"

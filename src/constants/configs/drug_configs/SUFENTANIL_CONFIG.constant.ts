@@ -19,6 +19,7 @@ export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 0.1,
+      recDosage: 'sufentanil.recDosage',
       defaultValue: 0.05,
     },
   ],

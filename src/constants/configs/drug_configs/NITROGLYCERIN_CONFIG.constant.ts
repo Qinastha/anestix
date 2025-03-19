@@ -19,6 +19,7 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 10,
+      recDosage: 'nitroglycerin.recDosage',
       defaultValue: 2,
     },
     {

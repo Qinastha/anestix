@@ -19,6 +19,7 @@ export const ROCURONIUM_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 1,
+      recDosage: 'rocuronium.recDosage',
       defaultValue: 0.6,
     },
   ],

@@ -19,6 +19,7 @@ export const FENTANYL_CONFIG: DrugCalculatorConfig = {
       optional: true,
       minValue: 0,
       maxDosage: 2.5,
+      recDosage: 'fentanyl.recDosage',
       defaultValue: 0.5,
     },
   ],
