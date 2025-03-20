@@ -16,7 +16,6 @@ export const THIOPENTAIL_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 6,
       recDosage: 'thiopental.recDosage',
@@ -24,8 +23,7 @@ export const THIOPENTAIL_CONFIG: DrugCalculatorConfig = {
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
-    const dose = typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 4;
-    const total = +weight * dose;
+    const total = +weight * +dosePerKg;
 
     setResult({
       bolus: {

@@ -16,22 +16,19 @@ export const DEXON_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
-      maxDosage: 0.11,
+      maxDosage: 9,
       recDosage: 'dexon.recDosage',
-      defaultValue: 0.08,
+      defaultValue: 0.5,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
-    const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.08;
-    const total = +weight * dose;
+    const total = +weight * +dosePerKg;
 
     setResult({
       bolus: {
         label: 'iv',
-        value: Number(total.toFixed(2)),
+        value: Number(total.toFixed(1)),
         unit: 'mg',
       },
     });

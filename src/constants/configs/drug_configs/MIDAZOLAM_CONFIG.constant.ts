@@ -20,7 +20,6 @@ export const MIDAZOLAM_CONFIG: DrugCalculatorConfig = {
       unit: '',
       type: 'numberInUnits',
       minValue: 0,
-      optional: true,
       options: [
         { label: 'unit_years', value: 'years', conversionFactor: 1 },
         { label: 'unit_months', value: 'months', conversionFactor: 1 / 12 },

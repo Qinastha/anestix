@@ -50,17 +50,20 @@ export function useCalculatorForm<TParam extends Param, TResult>({
           initial[param.key] = param.defaultValue;
         }
         initial[`${param.key}_unit`] = param.options?.[0]?.value || '';
-      } else if (param.type === 'select') {
+      }
+      if (param.type === 'select') {
         if (param.defaultValue !== undefined) {
           initial[param.key] = String(param.defaultValue);
         } else if (param.options && param.options.length > 0) {
           initial[param.key] = String(param.options[0].value);
         }
-      } else if (param.type === 'number') {
+      }
+      if (param.type === 'number') {
         if (param.defaultValue !== undefined) {
           initial[param.key] = param.defaultValue;
         }
-      } else if (param.type === 'boolean') {
+      }
+      if (param.type === 'boolean') {
         initial[param.key] = param.defaultValue ?? false;
       }
     });
@@ -81,8 +84,10 @@ export function useCalculatorForm<TParam extends Param, TResult>({
         }
 
         const param = parameters.find((p) => p.key === key);
-        const parsedValue = param?.type === 'number' ? Number(value) : value;
-
+        const parsedValue =
+          param?.type === 'number' || param?.type === 'numberInUnits'
+            ? Number(value)
+            : value;
         return {
           ...prev,
           [key]: parsedValue,
@@ -96,7 +101,7 @@ export function useCalculatorForm<TParam extends Param, TResult>({
     const invalid: Param[] = [];
     const overDosage: Param[] = [];
     parameters.forEach((param) => {
-      if (param.type === 'number') {
+      if (param.type === 'number' || param.type === 'numberInUnits') {
         const value = formValues[param.key];
         if (typeof value !== 'number') return;
         if (

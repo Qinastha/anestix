@@ -16,7 +16,6 @@ export const ATRACURIUM_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 0.6,
       recDosage: 'atracurium.recDosage',
@@ -24,9 +23,7 @@ export const ATRACURIUM_CONFIG: DrugCalculatorConfig = {
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
-    const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.5;
-    const total = +weight * dose;
+    const total = +weight * +dosePerKg;
 
     setResult({
       bolus: {

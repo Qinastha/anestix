@@ -38,4 +38,5 @@ export type MedicalUnits =
   | 'mcg_hr'
   | 'g_l'
   | 'months'
+  | 'mg_day'
   | '';

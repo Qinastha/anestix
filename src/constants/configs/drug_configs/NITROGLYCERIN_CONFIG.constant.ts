@@ -16,7 +16,6 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mcg_kg_min',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 10,
       recDosage: 'nitroglycerin.recDosage',
@@ -38,7 +37,6 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       label: 'drugVolume',
       unit: 'ml',
       type: 'number',
-      optional: true,
       minValue: 0,
       defaultValue: 2,
     },
@@ -47,7 +45,6 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       label: 'totalVolume',
       unit: 'ml',
       type: 'number',
-      optional: true,
       minValue: 0,
       defaultValue: 200,
     },
@@ -56,21 +53,15 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
     { weight, dosePerKg, drugAmountInMl, drugVolume, totalVolume },
     setResult
   ) => {
-    const dose = typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 2;
-    const drugVol =
-      typeof drugVolume === 'number' && drugVolume > 0 ? drugVolume : 2;
-    const totalVol =
-      typeof totalVolume === 'number' && totalVolume > 0 ? totalVolume : 200;
-
     // - Infusion rate in mcg/min:
-    const infusionRateMcgMin = +weight * dose;
+    const infusionRateMcgMin = +weight * +dosePerKg;
     // - Infusion rate in mg/hr:
-    const infusionRateMgHr = +weight * (dose / 1000) * 60;
+    const infusionRateMgHr = +weight * (+dosePerKg / 1000) * 60;
     // - Infusion rate in mg/min:
     const infusionRateMgMin = infusionRateMgHr / 60;
 
-    const drugAmount = drugVol * +drugAmountInMl;
-    const concentration = drugAmount / totalVol;
+    const drugAmount = +drugVolume * +drugAmountInMl;
+    const concentration = drugAmount / +totalVolume;
     // Calculate the pump rate in ml/min (mg/min divided by mg/ml)
     const volumePerMin = infusionRateMgMin / concentration;
     const volumePerHr = volumePerMin * 60;

@@ -1,4 +1,5 @@
 import { DrugCalculatorConfig } from '@/interfaces/DrugCalculator.type';
+import { MedicalUnits } from '@/types/MedicalUnits.type';
 
 export const NALOXONE_CONFIG: DrugCalculatorConfig = {
   id: 'naloxone',
@@ -14,26 +15,35 @@ export const NALOXONE_CONFIG: DrugCalculatorConfig = {
     {
       key: 'dosePerKg',
       label: 'dosePerKg',
-      unit: 'mg_kg',
-      type: 'number',
-      optional: true,
+      unit: '',
+      type: 'numberInUnits',
       minValue: 0,
-      maxDosage: 0.003,
+      maxDosage: 3,
       recDosage: 'naloxone.recDosage',
-      defaultValue: 0.002,
+      defaultValue: 1.5,
+      options: [
+        {
+          label: 'unit_mcg_kg',
+          value: 'mcg_kg',
+          conversionFactor: 0.001,
+        },
+        {
+          label: 'unit_mg_kg',
+          value: 'mg_kg',
+          conversionFactor: 1,
+        },
+      ],
     },
   ],
-  calculate: ({ weight, dosePerKg }, setResult) => {
-    const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.002;
-    // ~1.5–3 mcg/kg => pick ~2 => 0.002 mg/kg
-    const total = +weight * dose;
+  calculate: ({ weight, dosePerKg, dosePerKg_unit }, setResult) => {
+    const unit = dosePerKg_unit.toString().split('_')[0] as MedicalUnits;
+    const total = +weight * +dosePerKg;
 
     setResult({
       bolus: {
         label: 'iv',
-        value: Number(total.toFixed(3)),
-        unit: 'mg',
+        value: Number(total.toFixed(2)),
+        unit: unit,
       },
     });
   },

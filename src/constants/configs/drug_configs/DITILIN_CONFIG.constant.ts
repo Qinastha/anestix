@@ -16,17 +16,14 @@ export const DITILIN_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
-      maxDosage: 1.5,
+      maxDosage: 2,
       recDosage: 'ditilin.recDosage',
       defaultValue: 0.75,
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
-    const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.75;
-    const total = +weight * dose;
+    const total = +weight * +dosePerKg;
 
     setResult({
       bolus: {

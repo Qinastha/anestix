@@ -16,7 +16,6 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mcg_kg_min',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 1,
       recDosage: 'dopamine.recDosage',
@@ -37,22 +36,17 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
       label: 'totalVolume',
       unit: 'ml',
       type: 'number',
-      optional: true,
       minValue: 0,
       defaultValue: 50,
     },
   ],
   calculate: ({ weight, dosePerKg, drugVolume, totalVolume }, setResult) => {
-    const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.1;
-    const totalVol =
-      typeof totalVolume === 'number' && totalVolume > 0 ? totalVolume : 50;
-    const infusionRate = +weight * dose;
+    const infusionRate = +weight * +dosePerKg;
     const infusionRateMg = infusionRate / 1000;
     // Assume the vial contains 2 mg per ml (i.e. 8 mg for a 4 ml vial)
-    const drugAmount = +drugVolume * 2;
+    const drugAmountMg = +drugVolume * 2;
     // Calculate the final concentration in mg/ml
-    const concentration = +drugAmount / totalVol;
+    const concentration = +drugAmountMg / +totalVolume;
     // Calculate the pump rate in ml/min (mg/min divided by mg/ml)
     const volumePerMin = infusionRateMg / concentration;
     const volumePerHr = volumePerMin * 60;

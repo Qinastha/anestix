@@ -16,7 +16,6 @@ export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mcg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 0.1,
       recDosage: 'sufentanil.recDosage',
@@ -24,9 +23,7 @@ export const SUFENTANIL_CONFIG: DrugCalculatorConfig = {
     },
   ],
   calculate: ({ weight, dosePerKg }, setResult) => {
-    const dose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 0.05;
-    const total = +weight * dose;
+    const total = +weight * +dosePerKg;
 
     setResult({
       bolus: {

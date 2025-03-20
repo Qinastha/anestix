@@ -16,7 +16,6 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mcg_kg_min',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 5,
       recDosage: 'dopamine.recDosage',
@@ -37,7 +36,6 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       label: 'drugVolume',
       unit: 'ml',
       type: 'number',
-      optional: true,
       minValue: 0,
       defaultValue: 5,
     },
@@ -46,7 +44,6 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       label: 'totalVolume',
       unit: 'ml',
       type: 'number',
-      optional: true,
       minValue: 0,
       defaultValue: 500,
     },
@@ -55,23 +52,17 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
     { weight, dosePerKg, drugAmountInMl, drugVolume, totalVolume },
     setResult
   ) => {
-    // Use provided values or fall back to defaults.
-    const mcgDose =
-      typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 2;
-    const mgDose = mcgDose / 1000;
-    const ampVolume =
-      typeof drugVolume === 'number' && drugVolume > 0 ? drugVolume : 5;
-    const totalVol =
-      typeof totalVolume === 'number' && totalVolume > 0 ? totalVolume : 500;
+    const mcgDose = +dosePerKg;
+    const mgDose = mcgDose / 1000; // Convert mcg to mg
 
     // Calculate the infusion rate in mg/min.
     const infusionRateMgMin = +weight * mgDose;
 
     // Calculate the total drug amount in the ampule (mg).
-    const totalDrugMg = ampVolume * +drugAmountInMl;
+    const totalDrugMg = +drugVolume * +drugAmountInMl;
 
     // Determine the final concentration (mg/ml) after dilution.
-    const concentration = totalDrugMg / totalVol;
+    const concentration = totalDrugMg / +totalVolume;
 
     // Calculate the pump rate: volume to infuse per minute and per hour.
     const volumePerMin = infusionRateMgMin / concentration;

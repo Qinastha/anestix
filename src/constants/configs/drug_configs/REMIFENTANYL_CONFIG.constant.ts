@@ -16,7 +16,6 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       label: 'inductionDose',
       unit: 'mcg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 3,
       recDosage: 'remifentanyl.recDosage',
@@ -27,7 +26,6 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       label: 'infusionDosePerKg',
       unit: 'mcg_kg_min',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 0.5,
       defaultValue: 0.1,
@@ -37,7 +35,6 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       label: 'totalVolume',
       unit: 'ml',
       type: 'number',
-      optional: true,
       minValue: 0,
       defaultValue: 50,
     },
@@ -46,27 +43,14 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
     { weight, inductionDose, infusionDosePerKg, totalVolume },
     setResult
   ) => {
-    const inductionD =
-      typeof inductionDose === 'number' && inductionDose > 0
-        ? inductionDose
-        : 1;
-    const infusionD =
-      typeof infusionDosePerKg === 'number' && infusionDosePerKg > 0
-        ? infusionDosePerKg
-        : 0.1;
-
-    const totalVol =
-      typeof totalVolume === 'number' && totalVolume > 0 ? totalVolume : 50;
-
-    //Ремифентанил 2мг в 5 мл
     const drugAmount = 2;
     // Calculate the final concentration in mg/ml
-    const concentration = drugAmount / totalVol;
+    const concentration = drugAmount / +totalVolume;
 
-    const inductionDoseRes = +weight * inductionD;
+    const inductionDoseRes = +weight * +inductionDose;
     const inductionVolume = inductionDoseRes / 1000 / concentration;
 
-    const infusionRate = +weight * infusionD;
+    const infusionRate = +weight * +infusionDosePerKg;
     const infusionHourlyRate = infusionRate * 60;
 
     const infusionRateMg = infusionRate / 1000;

@@ -16,7 +16,6 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
       label: 'dosePerKg',
       unit: 'mg_kg',
       type: 'number',
-      optional: true,
       minValue: 0,
       maxDosage: 2.5,
       recDosage: 'propofol.recDosage',
@@ -39,10 +38,7 @@ export const PROPOFOL_CONFIG: DrugCalculatorConfig = {
     },
   ],
   calculate: ({ weight, dosePerKg, tivaDosage }, setResult) => {
-    const dose = typeof dosePerKg === 'number' && dosePerKg > 0 ? dosePerKg : 2;
-
-    // For induction bolus range ~1.5–2.5 mg/kg => pick ~2 mg/kg
-    const totalBolus = +weight * dose;
+    const totalBolus = +weight * +dosePerKg;
 
     // Calculate TIVA rate in ml/h based on a 10 mg/mL concentration
     const tivaDoseMlPerHour = (+weight * +tivaDosage) / 10;
