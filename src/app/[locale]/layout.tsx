@@ -30,6 +30,7 @@ export async function generateMetadata({
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
+  const siteUrl = 'https://anestix.vercel.app';
   return {
     title: tMeta('title'),
     description: tMeta('description'),
@@ -73,17 +74,34 @@ export async function generateMetadata({
       title: tMeta('title'),
       description: tMeta('description'),
       url: 'https://anestix.vercel.app',
-      siteName: 'Anestix',
+      siteName: siteUrl,
       locale: locale === 'ru' ? 'ru_RU' : 'en_US',
       type: 'website',
-      images: ['/android-chrome-512x512.png'],
+      images: [
+        {
+          url: '/android-chrome-512x512.png',
+          alt: 'Anestix',
+          width: 512,
+          height: 512,
+          type: 'image/png',
+        },
+      ],
     },
     // Twitter Card metadata (for rich previews on Twitter/X)
     twitter: {
       card: 'summary_large_image',
       title: tMeta('title'),
       description: tMeta('description'),
-      images: ['/android-chrome-512x512.png'],
+      site: siteUrl,
+      images: [
+        {
+          url: '/android-chrome-512x512.png',
+          alt: 'Anestix',
+          width: 512,
+          height: 512,
+          type: 'image/png',
+        },
+      ],
     },
     // Tell search engines to index and follow links on this domain
     robots: 'index, follow',
