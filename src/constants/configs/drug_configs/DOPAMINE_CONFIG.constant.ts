@@ -17,7 +17,7 @@ export const DOPAMINE_CONFIG: DrugCalculatorConfig = {
       unit: 'mcg_kg_min',
       type: 'number',
       minValue: 0,
-      maxDosage: 5,
+      maxDosage: 20,
       recDosage: 'dopamine.recDosage',
       defaultValue: 2,
     },

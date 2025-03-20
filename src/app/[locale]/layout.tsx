@@ -76,14 +76,14 @@ export async function generateMetadata({
       siteName: 'Anestix',
       locale: locale === 'ru' ? 'ru_RU' : 'en_US',
       type: 'website',
-      // images: ['/og-image.png'],
+      images: ['/android-chrome-512x512.png'],
     },
     // Twitter Card metadata (for rich previews on Twitter/X)
     twitter: {
       card: 'summary_large_image',
       title: tMeta('title'),
       description: tMeta('description'),
-      // images: ['/og-image.png'],
+      images: ['/android-chrome-512x512.png'],
     },
     // Tell search engines to index and follow links on this domain
     robots: 'index, follow',

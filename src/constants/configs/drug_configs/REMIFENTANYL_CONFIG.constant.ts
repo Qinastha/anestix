@@ -17,9 +17,9 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       unit: 'mcg_kg',
       type: 'number',
       minValue: 0,
-      maxDosage: 3,
-      recDosage: 'remifentanyl.recDosage',
-      defaultValue: 1,
+      maxDosage: 1,
+      recDosage: 'remifentanyl.recDosageInduction',
+      defaultValue: 0.5,
     },
     {
       key: 'infusionDosePerKg',
@@ -27,8 +27,17 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
       unit: 'mcg_kg_min',
       type: 'number',
       minValue: 0,
-      maxDosage: 0.5,
+      maxDosage: 2,
+      recDosage: 'remifentanyl.recDosageInfusion',
       defaultValue: 0.1,
+    },
+    {
+      key: 'drugAmount',
+      label: 'drugAmount',
+      unit: 'mg',
+      type: 'number',
+      minValue: 0,
+      defaultValue: 2,
     },
     {
       key: 'totalVolume',
@@ -40,18 +49,17 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
     },
   ],
   calculate: (
-    { weight, inductionDose, infusionDosePerKg, totalVolume },
+    { weight, inductionDose, infusionDosePerKg, drugAmount, totalVolume },
     setResult
   ) => {
-    const drugAmount = 2;
     // Calculate the final concentration in mg/ml
-    const concentration = drugAmount / +totalVolume;
+    const concentration = +drugAmount / +totalVolume;
 
     const inductionDoseRes = +weight * +inductionDose;
     const inductionVolume = inductionDoseRes / 1000 / concentration;
 
     const infusionRate = +weight * +infusionDosePerKg;
-    const infusionHourlyRate = infusionRate * 60;
+    const infusionHourlyRateInMG = (infusionRate * 60) / 1000;
 
     const infusionRateMg = infusionRate / 1000;
 
@@ -61,19 +69,19 @@ export const REMIFENTANYL_CONFIG: DrugCalculatorConfig = {
 
     setResult({
       inductionMCG: {
-        label: 'inductionMCG',
+        label: 'induction',
         value: Number(inductionDoseRes.toFixed(1)),
         unit: 'mcg',
       },
       inductionML: {
-        label: 'inductionML',
+        label: 'induction',
         value: Number(inductionVolume.toFixed(1)),
         unit: 'ml',
       },
       infusion: {
         label: 'infusion',
-        value: Number(infusionHourlyRate.toFixed(2)),
-        unit: 'mcg_hr',
+        value: Number(infusionHourlyRateInMG.toFixed(2)),
+        unit: 'mg_hr',
       },
       volumePerMin: {
         label: 'ivPerMin',

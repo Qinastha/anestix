@@ -264,7 +264,7 @@
       "sufentanil": "Sufentanil",
       "rocuronium": "Rocuronium",
       "pediatricInfusion": "Pediatric infusion rate",
-      "remifentanyl": "Remifentanyl",
+      "remifentanyl": "Remifentanil",
       "solutionConcentration": "Solution Concentration",
       "solutionVolume": "Solution Volume",
       "devine": "Ideal Body Weight",
@@ -1324,6 +1324,7 @@
   },
   "CalculatorsPage": {
     "metaTitleDefault": "Calculator",
+    "metaDescDefault": "Calculator page",
     "calculate": "Calculate",
     "result": "Calculated Results:",
     "alert": "This calculator is for double-checking dosage and should NOT be used as the sole reference.",
@@ -1335,6 +1336,7 @@
     "male": "Male",
     "female": "Female",
     "activity": "Activity Level",
+    "dose": "Dose",
     "bolus": "Bolus",
     "induction": "Induction of general anesthesia",
     "infusion": "Infusion",
@@ -1348,6 +1350,7 @@
     "inductionMCG": "Induction MCG",
     "inductionML": "Induction ML",
     "drugVolume": "Drug Volume",
+    "drugAmount": "Drug Amount",
     "ivPerMin": "IV Per Min",
     "ivPerHr": "IV Per Hr",
     "totalVolume": "Total Volume after dilute",
@@ -1409,7 +1412,7 @@
       "label": "Actilyse (Alteplase) Calculator",
       "bolus": "Bolus Dose (IV over 1 min)",
       "infusion": "Infusion Dose (IV over 60 mins)",
-      "annotation": "Typical total dose 0.9 mg/kg. Administer 10% as a bolus over 1 minute, then infuse the remaining 90% over 60 minutes. \n\nThis config uses 0.9 mg/kg (bolus: 10%, infusion: 90%)."
+      "annotation": "Alteplase (brand name: Actilyse) is a recombinant tissue plasminogen activator (rt-PA) used as a thrombolytic agent to dissolve blood clots in various medical conditions.\n\nIndications:\n- Acute Ischemic Stroke: Administered to improve functional outcomes by dissolving clots obstructing cerebral blood flow.\n- Acute Massive Pulmonary Embolism: Employed to lyse clots in the pulmonary arteries, especially in cases with hemodynamic instability.\n- Blocked Catheters: Applied in small doses to clear occlusions in central venous catheters.\n\nDosage and Administration:\n- Acute Ischemic Stroke: The recommended total dose is 0.9 mg/kg (maximum 90 mg). Administer 10% of the total dose as an initial intravenous bolus over 1 minute, followed by the remaining 90% as a continuous infusion over 60 minutes.\n- Pulmonary Embolism: Typically, 100 mg is administered over 2 hours; however, lower doses (e.g., 0.6 mg/kg) have been studied to reduce bleeding risks.\n- Blocked Catheters: Instill 2 mg/2 mL into the occluded catheter; if function is not restored within 120 minutes, a second dose may be administered.\n\nContraindications:\n- Active internal bleeding\n- Recent intracranial or intraspinal surgery or trauma\n- Severe uncontrolled hypertension\n- Known bleeding diathesis\n- Current use of oral anticoagulants with an elevated INR\n\nWarnings and Precautions:\n- Bleeding Risk: Monitor patients for signs of bleeding, including intracranial hemorrhage. Use caution in patients with recent major surgery, gastrointestinal bleeding, or other conditions that may increase bleeding risk.\n- Angioedema: Be vigilant for signs of orolingual angioedema, especially in patients on concomitant ACE inhibitors.\n- Cholesterol Embolization: Rarely, systemic embolization of cholesterol may occur.\n\nMonitoring:\n- Neurological Assessments: Frequently monitor for any signs of neurological deterioration.\n- Blood Pressure: Maintain blood pressure within recommended limits before, during, and after administration.\n- Laboratory Tests: Obtain baseline coagulation parameters and monitor as clinically indicated.\n\nNote: The use of alteplase should adhere strictly to established guidelines and protocols, considering the specific clinical scenario and patient characteristics."
     },
 
     "bmi": {
@@ -1526,42 +1529,42 @@
       "label": "Noradrenaline (Norepinephrine)",
       "drug_var1": "4 ml",
       "drug_var2": "8 ml",
-      "recDosage": "0.1–1 mcg/kg/min",
-      "annotation": "4 mL amp = 8 mg or 8 mL amp = 16 mg. Common infusion 0.1–1 mcg/kg/min. \n\nThis config uses ~0.1 mcg/kg/min (0.0001 mg/kg/min) by default with the ability to customize."
+      "recDosage": "0.01–0.5 mcg/kg/min",
+      "annotation": "Norepinephrine, also known as noradrenaline, is a potent vasopressor primarily used to manage severe hypotension and shock by stimulating α-adrenergic receptors, leading to vasoconstriction and increased blood pressure.\n\n4 mL ampule = 8 mg or 8 mL ampule = 16 mg.\n\nIndications:\n- Acute hypotension\n- Septic shock\n- Cardiogenic shock\n\nDosage Considerations:\n- Initial IV infusion: 8 to 12 mcg/min, titrated based on patient response.\n- Maintenance IV infusion: Typically 2 to 4 mcg/min.\n- High-dose therapy: Doses exceeding 0.5 mcg/kg/min may be associated with increased mortality and are generally reserved for refractory shock cases. \n\nWarnings:\n- Tissue ischemia: Risk of peripheral and visceral ischemia due to potent vasoconstriction; ensure adequate blood volume before administration. \n- Extravasation: Can cause local tissue necrosis; infuse through a large vein and monitor the infusion site closely. \n- Arrhythmias: Potential to induce cardiac arrhythmias; monitor cardiac function during infusion. \n\nMonitoring:\n- Continuous blood pressure monitoring until desired blood pressure is achieved, then every five minutes for the duration of the infusion. \n- Regular assessment of infusion site for signs of extravasation.\n- Continuous cardiac monitoring for arrhythmias."
     },
     "dopamine": {
       "label": "Dopamine",
       "drug_var1": "40 mg",
       "drug_var2": "5 mg",
-      "recDosage": "2–5 mcg/kg/min",
-      "annotation": "5 mL = 200 mg or 25 mg. Starter dose range is 2-5 mcg/kg/min. Typical infusion 2–20 mcg/kg/min. \n\nThis config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+      "recDosage": "0.5–20 mcg/kg/min",
+      "annotation": "Dopamine it is a dopamine receptor agonist and is their endogenous ligand, used to improve hemodynamic status in patients with distributive shock or shock due to reduced cardiac output.\n\n5 mL = 200 mg (40 mg/mL) concentrate.\n\nIndications:\n- Treatment of shock due to myocardial infarction, trauma, endotoxic septicemia, open-heart surgery, renal failure, and chronic cardiac decompensation.\n\nDosage Considerations:\n- Low infusion rate (0.5-2 mcg/kg/min): Primarily stimulates dopaminergic receptors, leading to renal and mesenteric vasodilation.\n- Intermediate infusion rate (2-10 mcg/kg/min): Stimulates beta1-adrenergic receptors, enhancing myocardial contractility and cardiac output.\n- High infusion rate (10-20 mcg/kg/min): Stimulates alpha-adrenergic receptors, resulting in vasoconstriction and increased blood pressure.\n\nWarnings:\n- May cause tachycardia, arrhythmias, or excessive vasoconstriction at high doses.\n- Use with caution in patients with occlusive vascular diseases.\n- Correct hypovolemia before initiating dopamine therapy.\n\nMonitoring:\n- Continuous monitoring of cardiac function, blood pressure, and urine output is essential during dopamine infusion.\n- Regular assessment of the infusion site to prevent local ischemia or necrosis."
     },
     "nitroglycerin": {
       "label": "Nitroglycerin",
-      "drug_var1": "10 mg",
-      "drug_var2": "1 mg",
-      "drug_var3": "5 mg",
-      "recDosage": "0.5–10 mcg/kg/min",
-      "annotation": "1, 5, or 10 mg/mL vials. Often diluted to 100 mcg/mL. \n\nTypical infusion 0.5–10 mcg/kg/min. This config uses ~2 mcg/kg/min (0.002 mg/kg/min) by default with the ability to customize."
+      "drug_var1": "10 mg/ml",
+      "drug_var2": "5 mg/ml",
+      "recDosage": "0.1-3 mcg/kg/min",
+      "annotation": "Nitroglycerin is a potent vasodilator primarily used in the management of angina pectoris, acute myocardial infarction, and perioperative hypertension. It works by relaxing vascular smooth muscle, leading to vasodilation and reduced myocardial oxygen demand.\n\nConcentrations and Preparations:\n- Intravenous (IV) Solution: Available in concentrations such as 5 mg/mL or 10mg/mL, which can be diluted to desired concentrations for infusion.\n- Sublingual Tablets: Commonly available in doses of 0.3 mg, 0.4 mg, and 0.6 mg.\n- Transdermal Ointment: Typically a 2% formulation.\n\nIndications:\n- Management of angina pectoris\n- Acute myocardial infarction\n- Perioperative hypertension control\n- Acute heart failure\n\nDosage Considerations:\n- IV Infusion: Start at 0.1 mcg/kg/min and titrate up to 3 mcg/kg/min. Continuous monitoring of blood pressure and heart rate is essential.\n- Sublingual Administration: 0.3-0.6 mg every 5 minutes as needed for chest pain, up to 3 doses in 15 minutes. If pain persists after three doses, seek emergency medical attention. \n- Transdermal Ointment: Apply 1-2 inches of 2% nitroglycerin ointment on a non-hairy area of the upper body. Onset of activity is 3-5 minutes, with a duration of action of approximately 8 hours. \n\nWarnings:\n- May cause severe hypotension; monitor blood pressure closely.\n- Contraindicated in patients using phosphodiesterase inhibitors (e.g., sildenafil) within the past 24-48 hours due to the risk of profound hypotension.\n- Use with caution in patients with hypovolemia or severe anemia.\n- May cause reflex tachycardia; consider co-administration with beta-blockers if appropriate.\n\nMonitoring:\n- Continuous blood pressure and heart rate monitoring during IV administration.\n- Watch for signs of hypotension, tachycardia, or headache.\n- Assess for tolerance development with prolonged use; a nitrate-free interval may be necessary to prevent tolerance."
     },
     "sufentanil": {
       "label": "Sufentanil",
-      "recDosage": "IV dose 0.05–0.1 mcg/kg",
-      "annotation": "50 mcg/ml stand for 5 mL = 250 mcg. Typical range for induction is 0.05 - 0.1 mcg/kg. May be administered in divided dose. \n\nThis config uses ~0.05 mcg/kg by default with the ability to customize."
+      "recDosage": "1-2 mcg/kg - IV induction dose ",
+      "annotation": "Sufentanil is a potent synthetic opioid analgesic used in anesthesia for its rapid onset and short duration of action. It is primarily utilized for induction and maintenance of anesthesia, as well as for postoperative pain management.\n\n 5 mL = 250 mcg (50 mcg/mL).\n\n Indications:\n  • Induction and maintenance of anesthesia\n  • Supplement to balanced anesthesia\n  • Postoperative analgesia\n\n Dosage Considerations:\n  • Adult IV induction:\n    - Low-dose: 0.1-2 mcg/kg, THEN 10-50 mcg IV PRN\n    - High-dose: 8-30 mcg/kg (as sole anesthetic agent), THEN 25-30 mcg IV PRN\n  • Adult IV maintenance:\n    - Continuous infusion: 0.5-1.5 mcg/kg/hr\n  • Pediatric IV induction:\n    - 0.2-0.5 mcg/kg, often combined with other anesthetic agents\n\n Onset and Duration:\n  • IV administration:\n    - Onset: Rapid, within 1-3 minutes\n    - Duration: Dose-dependent; typically 20-45 minutes\n\n Warnings:\n  • Risk of respiratory depression, especially with high doses or rapid administration.\n  • May cause muscle rigidity; consider premedication with a muscle relaxant.\n  • Use caution in patients with impaired respiratory function or head injuries.\n\n Monitoring:\n  • Continuous monitoring of respiratory and cardiovascular status is essential.\n  • Observe for signs of hypoventilation or apnea.\n  • Monitor for signs of opioid-induced muscle rigidity and take appropriate measures if necessary."
     },
     "rocuronium": {
       "label": "Rocuronium",
-      "recDosage": "IV dose 0.6–1 mg/kg",
-      "annotation": "5 mL = 50 mg. Typical bolus 0.6–1 mg/kg. Onset ~1–2 min; duration ~30–50 min. \n\nThis config uses ~0.6 mg/kg by default with the ability to customize."
+      "recDosage": "IV dose 0.6–1.2 mg/kg",
+      "annotation": "Rocuronium is a non-depolarizing neuromuscular blocking agent used to facilitate tracheal intubation and provide skeletal muscle relaxation during surgery or mechanical ventilation.\n\nConcentration:\n- 5 mL vial = 50 mg (10 mg/mL).\n\nIndications:\n- Rapid sequence and routine tracheal intubation.\n- Skeletal muscle relaxation during surgery.\n- Facilitation of mechanical ventilation in adequately sedated patients.\n\nDosage Considerations:\n- Adults:\n  - Intubation: 0.6 mg/kg IV; onset within 1–2 minutes; duration approximately 30–50 minutes. For rapid sequence intubation, doses up to 1.2 mg/kg IV may be used. \n  - Maintenance: 0.1–0.2 mg/kg IV as needed; or continuous infusion at rates of 4–16 mcg/kg/min. \n- Pediatrics:\n  - Intubation: 0.6 mg/kg IV; onset and duration may vary with age. \n  - Maintenance: 0.075–0.125 mg/kg IV as needed; or continuous infusion at rates of 7–10 mcg/kg/min. \n\nWarnings:\n- Risk of anaphylactic reactions; emergency treatment should be readily available. \n- Use with caution in patients with neuromuscular diseases (e.g., myasthenia gravis), electrolyte imbalances, or severe acid-base disturbances. \n- Continuous monitoring of neuromuscular function is recommended to assess depth of blockade and recovery. \n- Ensure adequate sedation and analgesia in paralyzed patients to prevent awareness during paralysis. \n\nMonitoring:\n- Neuromuscular transmission with a peripheral nerve stimulator.\n- Vital signs, including heart rate and blood pressure.\n- Signs of residual neuromuscular blockade during recovery."
     },
     "pediatricInfusion": {
       "label": "Pediatric infusion rate",
       "annotation": "Keep in mind that this formula is valid only if exactly 1 mL of the 1% drug solution is used for dilution; any change in this volume requires recalculating the final concentration! \n\nInfusion rate (mL/h) = (weight (kg) × 60 × dose (mcg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)."
     },
     "remifentanyl": {
-      "label": "Remifentanyl",
-      "recDosage": "0.125–0.5 mcg/kg/min",
-      "annotation": "2 mg in 5 ml. Typical induction dose is 1-3 mcg/kg and infusion rate ~0,125-0,5 mcg/kg/min. \n\nThis config uses ~1 mcg/kg for induction and 0,1 mcg/kg/min by default with the ability to customize."
+      "label": "Remifentanil",
+      "recDosageInduction": "0.5–1 mcg/kg/min",
+      "recDosageInfusion": "0.05–2 mcg/kg/min",
+      "annotation": "Remifentanil is a potent, ultra-short-acting synthetic opioid analgesic used during and after surgery to relieve pain and enhance the effects of general anesthesia. It is commonly administered intravenously and is not suitable for epidural or intrathecal administration due to formulation components. \n\nDosage Forms:\n- 1 mg per vial (lyophilized powder)\n- 2 mg per vial (lyophilized powder)\n- 5 mg per vial (lyophilized powder)\n\nIndications:\n- Analgesic component during induction and maintenance of general anesthesia for inpatient and outpatient procedures\n- Analgesic component of monitored anesthesia care in adult patients\n- Continuation as an analgesic into the immediate postoperative period under direct supervision\n\nDosage Considerations:\n- Dosages should be individualized based on patient factors such as age, weight, and concomitant medications.\n\nAdults:\n  • Induction of Anesthesia:\n    - With hypnotic or volatile agent: 0.5–1 mcg/kg/min IV infusion until after intubation; may administer an initial dose of 1 mcg/kg over 30–60 seconds if intubation is to occur less than 8 minutes after starting the infusion. \n  • Maintenance of Anesthesia:\n    - With nitrous oxide (66%): 0.25–0.5 mcg/kg/min IV infusion; may administer supplemental IV bolus doses of 0.5–1 mcg/kg every 2–5 minutes in response to light anesthesia or transient episodes of intense surgical stress. \n    - With isoflurane (starting at 0.5 minimum alveolar concentration [MAC]): 0.25 mcg/kg/min IV infusion; may administer supplemental IV bolus doses of 0.5–1 mcg/kg every 2–5 minutes. \n    - With sevoflurane (starting at 0.8 MAC): 0.25 mcg/kg/min IV infusion; may administer supplemental IV bolus doses of 0.5–1 mcg/kg every 2–5 minutes. \n  • Monitored Anesthesia Care:\n    - Initial IV infusion rate: 0.1 mcg/kg/min; may adjust by 0.025 mcg/kg/min every 5 minutes to balance analgesia and respiratory rate. \n\nPediatric Patients (1–12 years):\n  • Maintenance of Anesthesia:\n    - With halothane, sevoflurane, or isoflurane: 0.25 mcg/kg/min IV infusion; may administer supplemental IV bolus doses of 1 mcg/kg over 30–60 seconds as needed. \n\nWarnings and Precautions:\n- Respiratory Depression: Serious, life-threatening, or fatal respiratory depression may occur; monitor patients closely, especially during initiation and following dosage increases. \n- Muscle Rigidity: May cause skeletal muscle rigidity, including chest wall rigidity, especially with rapid IV administration or high doses; manage with neuromuscular blocking agents if necessary. \n- Hypotension and Bradycardia: May cause decreases in blood pressure and heart rate; monitor cardiovascular status and manage accordingly. \n- Opioid-Induced Hyperalgesia: High doses or prolonged use may be associated with hyperalgesia; consider reducing the dose or discontinuing the infusion if this occurs. \n- Concomitant Use with CNS Depressants: Use with benzodiazepines or other CNS depressants may result in profound sedation, respiratory depression, coma, or death; monitor patients closely. \n\nMonitoring:\n- Continuous monitoring of respiratory and cardiovascular status is required during administration. \n- Ensure resuscitative and intubation equipment, oxygen, and opioid antagonists are readily available. \n\nNote:\n- Due to its rapid onset and short duration of action, remifentanil should be administered only by persons specifically trained in the use of anesthetic drugs and the management of the respiratory effects of potent opioids. \n- Not recommended as the sole agent for induction of anesthesia because loss of consciousness cannot be assured and because of a high incidence of apnea, muscle rigidity, and tachycardia. \n- Upon discontinuation, alternative analgesics should be administered prior to discontinuation to ensure adequate postoperative analgesia."
     },
     "solutionConcentration": {
       "label": "Solution Concentration",

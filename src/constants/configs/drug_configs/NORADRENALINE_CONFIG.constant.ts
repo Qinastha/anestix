@@ -17,9 +17,9 @@ export const NORADRENALINE_CONFIG: DrugCalculatorConfig = {
       unit: 'mcg_kg_min',
       type: 'number',
       minValue: 0,
-      maxDosage: 1,
-      recDosage: 'dopamine.recDosage',
-      defaultValue: 0.1,
+      maxDosage: 0.5,
+      recDosage: 'noradrenaline.recDosage',
+      defaultValue: 0.05,
     },
     {
       key: 'drugVolume',

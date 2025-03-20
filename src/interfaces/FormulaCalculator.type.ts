@@ -34,5 +34,5 @@ export interface FormulaConfig {
     params: Record<string, number | string | boolean>,
     setResult: (result: FormulaResult) => void
   ) => void;
-  annotation?: string;
+  annotation: string;
 }

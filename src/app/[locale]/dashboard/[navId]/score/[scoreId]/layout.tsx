@@ -12,10 +12,21 @@ export async function generateMetadata({
   const tScore = await getTranslations({ locale, namespace: 'ScorePage' });
 
   const score = SCORES_LIST[scoreId];
-
+  const titleText = score ? tScore(score.name) : tScore('metaTitleDefault');
+  const descriptionText = score
+    ? tScore(score.description)
+    : tScore('metaDescDefault');
   return {
-    title: score ? tScore(score.name) : tScore('metaTitleDefault'),
-    description: score ? tScore(score.description) : tScore('metaDescDefault'),
+    title: titleText,
+    description: descriptionText,
+    openGraph: {
+      title: titleText,
+      description: descriptionText,
+    },
+    twitter: {
+      title: titleText,
+      description: descriptionText,
+    },
   };
 }
 

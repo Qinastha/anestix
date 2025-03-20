@@ -16,8 +16,24 @@ export async function generateMetadata({
 
   const formulaCalc = FORMULA_CALCULATOR_LIST[formulaId];
 
+  const titleText = formulaCalc
+    ? tCalc(formulaCalc.label)
+    : tCalc('metaTitleDefault');
+  const descriptionText = formulaCalc
+    ? tCalc(formulaCalc.annotation)
+    : tCalc('metaDescDefault');
+
   return {
-    title: formulaCalc ? tCalc(formulaCalc.label) : tCalc('metaTitleDefault'),
+    title: titleText,
+    description: descriptionText,
+    openGraph: {
+      title: titleText,
+      description: descriptionText,
+    },
+    twitter: {
+      title: titleText,
+      description: descriptionText,
+    },
   };
 }
 

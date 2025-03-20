@@ -15,9 +15,24 @@ export async function generateMetadata({
   });
 
   const drugCalc = DRUG_CALCULATOR_LIST[drugId];
+  const titleText = drugCalc
+    ? tCalc(drugCalc.label)
+    : tCalc('metaTitleDefault');
+  const descriptionText = drugCalc
+    ? tCalc(drugCalc.annotation)
+    : tCalc('metaDescDefault');
 
   return {
-    title: drugCalc ? tCalc(drugCalc.label) : tCalc('metaTitleDefault'),
+    title: titleText,
+    description: descriptionText,
+    openGraph: {
+      title: titleText,
+      description: descriptionText,
+    },
+    twitter: {
+      title: titleText,
+      description: descriptionText,
+    },
   };
 }
 

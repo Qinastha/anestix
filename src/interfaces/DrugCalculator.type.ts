@@ -36,5 +36,5 @@ export interface DrugCalculatorConfig {
     params: Record<string, number | string>,
     setResult: (result: DrugResult) => void
   ) => void;
-  annotation?: string;
+  annotation: string;
 }

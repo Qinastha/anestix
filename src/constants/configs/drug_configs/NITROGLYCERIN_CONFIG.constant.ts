@@ -17,9 +17,9 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       unit: 'mcg_kg_min',
       type: 'number',
       minValue: 0,
-      maxDosage: 10,
+      maxDosage: 3,
       recDosage: 'nitroglycerin.recDosage',
-      defaultValue: 2,
+      defaultValue: 0.1,
     },
     {
       key: 'drugAmountInMl',
@@ -28,8 +28,7 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       type: 'select',
       options: [
         { label: 'nitroglycerin.drug_var1', value: 10 },
-        { label: 'nitroglycerin.drug_var2', value: 1 },
-        { label: 'nitroglycerin.drug_var3', value: 5 },
+        { label: 'nitroglycerin.drug_var2', value: 5 },
       ],
     },
     {
@@ -46,40 +45,24 @@ export const NITROGLYCERIN_CONFIG: DrugCalculatorConfig = {
       unit: 'ml',
       type: 'number',
       minValue: 0,
-      defaultValue: 200,
+      defaultValue: 50,
     },
   ],
   calculate: (
     { weight, dosePerKg, drugAmountInMl, drugVolume, totalVolume },
     setResult
   ) => {
-    // - Infusion rate in mcg/min:
-    const infusionRateMcgMin = +weight * +dosePerKg;
-    // - Infusion rate in mg/hr:
-    const infusionRateMgHr = +weight * (+dosePerKg / 1000) * 60;
-    // - Infusion rate in mg/min:
-    const infusionRateMgMin = infusionRateMgHr / 60;
-
+    const doseInMg = (+weight * +dosePerKg) / 1000;
+    const doseInHr = doseInMg * 60;
     const drugAmount = +drugVolume * +drugAmountInMl;
     const concentration = drugAmount / +totalVolume;
     // Calculate the pump rate in ml/min (mg/min divided by mg/ml)
-    const volumePerMin = infusionRateMgMin / concentration;
-    const volumePerHr = volumePerMin * 60;
+    const volumePerHr = doseInHr / concentration;
     setResult({
-      infusionPerMun: {
+      dose: {
         label: 'infusion',
-        value: Number(infusionRateMcgMin.toFixed(1)),
-        unit: 'mcg_min',
-      },
-      infusionPerHr: {
-        label: 'infusion',
-        value: Number(infusionRateMgHr.toFixed(2)),
+        value: Number(doseInHr.toFixed(2)),
         unit: 'mg_hr',
-      },
-      volumePerMin: {
-        label: 'ivPerMin',
-        value: Number(volumePerMin.toFixed(2)),
-        unit: 'ml_min',
       },
       volumePerHr: {
         label: 'ivPerHr',
