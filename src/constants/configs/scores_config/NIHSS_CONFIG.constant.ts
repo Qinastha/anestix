@@ -8,6 +8,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'loc',
       label: 'nihss.criteria.loc.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.loc.option0' },
         { value: 1, description: 'nihss.criteria.loc.option1' },
@@ -18,6 +19,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'locQuestions',
       label: 'nihss.criteria.locQuestions.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.locQuestions.option0' },
         { value: 1, description: 'nihss.criteria.locQuestions.option1' },
@@ -27,6 +29,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'locCommands',
       label: 'nihss.criteria.locCommands.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.locCommands.option0' },
         { value: 1, description: 'nihss.criteria.locCommands.option1' },
@@ -36,6 +39,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'bestGaze',
       label: 'nihss.criteria.bestGaze.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.bestGaze.option0' },
         { value: 1, description: 'nihss.criteria.bestGaze.option1' },
@@ -45,6 +49,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'visualFields',
       label: 'nihss.criteria.visualFields.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.visualFields.option0' },
         { value: 1, description: 'nihss.criteria.visualFields.option1' },
@@ -55,6 +60,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'facialPalsy',
       label: 'nihss.criteria.facialPalsy.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.facialPalsy.option0' },
         { value: 1, description: 'nihss.criteria.facialPalsy.option1' },
@@ -65,6 +71,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'motorArmLeft',
       label: 'nihss.criteria.motorArmLeft.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.motorArmLeft.option0' },
         { value: 1, description: 'nihss.criteria.motorArmLeft.option1' },
@@ -76,6 +83,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'motorArmRight',
       label: 'nihss.criteria.motorArmRight.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.motorArmRight.option0' },
         { value: 1, description: 'nihss.criteria.motorArmRight.option1' },
@@ -87,6 +95,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'motorLegLeft',
       label: 'nihss.criteria.motorLegLeft.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.motorLegLeft.option0' },
         { value: 1, description: 'nihss.criteria.motorLegLeft.option1' },
@@ -98,6 +107,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'motorLegRight',
       label: 'nihss.criteria.motorLegRight.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.motorLegRight.option0' },
         { value: 1, description: 'nihss.criteria.motorLegRight.option1' },
@@ -109,6 +119,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'limbAtaxia',
       label: 'nihss.criteria.limbAtaxia.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.limbAtaxia.option0' },
         { value: 1, description: 'nihss.criteria.limbAtaxia.option1' },
@@ -118,6 +129,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'sensory',
       label: 'nihss.criteria.sensory.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.sensory.option0' },
         { value: 1, description: 'nihss.criteria.sensory.option1' },
@@ -127,6 +139,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'bestLanguage',
       label: 'nihss.criteria.bestLanguage.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.bestLanguage.option0' },
         { value: 1, description: 'nihss.criteria.bestLanguage.option1' },
@@ -137,6 +150,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'dysarthria',
       label: 'nihss.criteria.dysarthria.label',
+      type: 'base',
       options: [
         { value: 0, description: 'nihss.criteria.dysarthria.option0' },
         { value: 1, description: 'nihss.criteria.dysarthria.option1' },
@@ -146,6 +160,7 @@ export const NIHSS_CONFIG: ScoreConfig = {
     {
       id: 'extinctionInattention',
       label: 'nihss.criteria.extinctionInattention.label',
+      type: 'base',
       options: [
         {
           value: 0,
