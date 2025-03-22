@@ -79,8 +79,14 @@ export const SOFA_CONFIG: ScoreConfig = {
     },
   ],
   resultThresholds: [
-    { min: 0, max: 6, summaryText: 'sofa.result.low' },
-    { min: 7, max: 9, summaryText: 'sofa.result.moderate' },
-    { min: 10, max: 24, summaryText: 'sofa.result.high' },
+    { min: 0, max: 1, summaryText: 'sofa.result.mortality0' },
+    { min: 2, max: 3, summaryText: 'sofa.result.mortality1' },
+    { min: 4, max: 5, summaryText: 'sofa.result.mortality2' },
+    { min: 6, max: 7, summaryText: 'sofa.result.mortality3' },
+    { min: 8, max: 9, summaryText: 'sofa.result.mortality4' },
+    { min: 10, max: 11, summaryText: 'sofa.result.mortality5' },
+    { min: 12, max: 14, summaryText: 'sofa.result.mortality6' },
+    { min: 15, max: 24, summaryText: 'sofa.result.mortality7' },
   ],
+  extraDescription: 'sofa.extraDescription',
 };

@@ -319,4 +319,5 @@ export const CAPRINI_CONFIG: ScoreConfig = {
     { min: 7, max: 8, summaryText: 'caprini.result.high2' },
     { min: 9, max: 99, summaryText: 'caprini.result.highest' },
   ],
+  extraDescription: 'caprini.extraDescription',
 };

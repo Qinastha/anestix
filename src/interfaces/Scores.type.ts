@@ -52,5 +52,5 @@ export interface ScoreConfig {
   criteria: ScoreCriteria[];
   result?: ScoreResult;
   resultThresholds: ScoreResultThreshold[];
-  extraDescription?: string;
+  extraDescription: string;
 }

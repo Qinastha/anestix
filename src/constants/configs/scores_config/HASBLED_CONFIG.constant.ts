@@ -96,4 +96,5 @@ export const HASBLED_CONFIG: ScoreConfig = {
     { min: 5, max: 5, summaryText: 'hasbled.result.high3' },
     { min: 6, max: 9, summaryText: 'hasbled.result.veryHigh' },
   ],
+  extraDescription: 'hasbled.extraDescription',
 };

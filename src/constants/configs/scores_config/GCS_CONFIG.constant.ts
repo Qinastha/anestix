@@ -51,4 +51,5 @@ export const GCS_CONFIG: ScoreConfig = {
     { min: 4, max: 5, summaryText: 'glasgow.result.deepComa' },
     { min: 0, max: 3, summaryText: 'glasgow.result.terminalComa' },
   ],
+  extraDescription: 'glasgow.extraDescription',
 };

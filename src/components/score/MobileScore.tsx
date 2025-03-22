@@ -61,7 +61,6 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                   <OptionInput
                     handleSelect={handleSelect}
                     criteria={criteria}
-                    t={t}
                   />
                 ) : (
                   <div>

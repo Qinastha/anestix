@@ -88,7 +88,6 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
                   <OptionInput
                     handleSelect={handleSelect}
                     criteria={criteria}
-                    t={t}
                   />
                 ) : criteria.type === 'radio' ? (
                   <OptionRadio

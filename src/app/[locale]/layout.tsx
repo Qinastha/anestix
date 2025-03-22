@@ -10,6 +10,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { Locale } from '@/i18n/navigation';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -172,6 +173,7 @@ export default async function RootLayout({
             {children}
             <ToastProvider />
             <SpeedInsights />
+            <Analytics />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

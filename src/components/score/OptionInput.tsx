@@ -6,13 +6,11 @@ import { ScoreCriteriaInput } from '@/interfaces/Scores.type';
 interface DesktopScaleInputProps {
   handleSelect: (criteria: ScoreCriteriaInput, value: number) => void;
   criteria: ScoreCriteriaInput;
-  t: (key: string) => string;
 }
 
 export const OptionInput: React.FC<DesktopScaleInputProps> = ({
   handleSelect,
   criteria,
-  t,
 }) => {
   const [val, setVal] = useState<number | string>('');
 
@@ -35,10 +33,11 @@ export const OptionInput: React.FC<DesktopScaleInputProps> = ({
       value={val !== undefined ? val : ''}
       onChange={(e) => handleChange(e)}
       className="p-2 rounded w-full placeholder:text-start placeholder:text-xs lg:placeholder:text-sm"
-      placeholder={t(criteria.label)}
+      placeholder={`${criteria.minValue} - ${criteria.maxValue}`}
       min={criteria.minValue}
       max={criteria.maxValue}
       pattern="[0-9]*"
+      required
     />
   );
 };

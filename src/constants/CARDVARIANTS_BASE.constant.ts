@@ -4,14 +4,14 @@ export const CARDVARIANTS_BASE = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.15,
-      duration: 0.2,
+      delay: i * 0.1,
+      duration: 0.15,
     },
   }),
   hover: {
     scale: 1.03,
     transition: {
-      duration: 0.2,
+      duration: 0.15,
     },
   },
 };

@@ -164,7 +164,7 @@
         "description": "Assesses sedation and agitation levels in critically ill patients to guide sedation management"
       },
       "four": {
-        "title": "FOUR",
+        "title": "FOUR Score",
         "description": "Evaluates consciousness with a focus on brainstem reflexes and respiratory patterns for a detailed neurological assessment"
       },
       "gcs": {
@@ -172,23 +172,23 @@
         "description": "Measures the level of consciousness following head injuries or neurological impairments"
       },
       "aldrete": {
-        "title": "Aldrete",
+        "title": "Aldrete Score",
         "description": "Determines a patient's readiness for discharge from post-anesthesia recovery by assessing activity, respiration, and consciousness"
       },
       "sofa": {
-        "title": "SOFA",
-        "description": "Quantifies organ dysfunction in sepsis cases to aid in critical care decision-making"
+        "title": "SOFA Score",
+        "description": "Used to track a patient’s status during their stay in an intensive care unit (ICU) to determine the extent of organ function or rate of failure"
       },
       "nihss": {
         "title": "NIHSS",
         "description": "Quantifies neurological deficits to evaluate stroke severity and guide treatment"
       },
       "apacheii": {
-        "title": "Apache II",
+        "title": "Apache II Score",
         "description": "Scores illness severity and predicts mortality in ICU patients based on acute physiology and chronic health data"
       },
       "wells": {
-        "title": "Wells Score (PE)",
+        "title": "Wells Score",
         "description": "Score for assessing the clinical probability of pulmonary embolism are used in stable patients (without shock, hypotension) with suspected PE"
       },
       "pesi": {
@@ -222,6 +222,10 @@
       "apgar": {
         "title": "Apgar Score",
         "description": "A quick test performed on a baby at 1 and 5 minutes after birth to determine physical condition"
+      },
+      "qsofa": {
+        "title": "qSOFA Score",
+        "description": "Rapid assessment tool for sepsis without the need for laboratory tests, making it particularly useful in urgent and resource-limited settings."
       },
       "drug-calculators": {
         "title": "Drug dosage calculators",
@@ -291,7 +295,7 @@
     "": "",
     "glasgow": {
       "name": "Glasgow Coma Score",
-      "description": "Assessment of consciousness based on eye, verbal, and motor responses.",
+      "description": "Fundamental component for monitoring neurological status. Regular GCS assessments allow healthcare providers to detect changes in a patient’s level of consciousness, facilitating timely interventions. For instance, a decrease in GCS score may indicate deterioration, prompting further diagnostic evaluation or therapeutic measures.",
       "criteria": {
         "eye": {
           "label": "Eye Opening",
@@ -326,11 +330,12 @@
         "moderateComa": "Moderate coma",
         "deepComa": "Deep coma",
         "terminalComa": "Terminal coma"
-      }
+      },
+      "extraDescription": "While the GCS is widely used, it has limitations, especially in cases involving intubated patients, severe facial injuries, or when assessing young children. In such scenarios, alternative or modified assessment tools may be employed to ensure accurate evaluation."
     },
     "four": {
       "name": "FOUR Score",
-      "description": "A coma score used to assess patients with impaired consciousness.",
+      "description": "FOUR score is based on the bare minimum of tests necessary for assessing a patient with altered consciousness, it includes much important information that is not assessed by the GCS, including measurement of brainstem reflexes; determination of eye opening, blinking, and tracking; a broad spectrum of motor responses; and the presence of abnormal breath rhythms.",
       "criteria": {
         "eye": {
           "label": "Eye Response",
@@ -373,7 +378,8 @@
         "comaI": "Coma I (moderate)",
         "comaII": "Coma II (deep)",
         "comaIII": "Coma III (extreme), death of the cerebral cortex"
-      }
+      },
+      "extraDescription": "Unlike the Glasgow Coma Scale, the FOUR Score evaluates brainstem activity and respiratory patterns, allowing better assessment of severe neurological states. With a 0–16 range, it offers clearer insight even when verbal response isn't measurable."
     },
     "rass": {
       "name": "RASS Score",
@@ -405,12 +411,11 @@
         "veryAgitated": "Very agitated",
         "combative": "Combative"
       },
-      "extraDescription": "It is recommended to perform RASS assessment in all patients admitted to hospital, as well as in all patients on mechanical ventilation; In patients with RASS of -3 points or less, sedation should be reduced or changed until reaching -2 to 0 points on the RASS scale; Patients with RASS of 2 points or more are insufficiently sedated and require determination of the cause of agitation (anxiety disorder, delirium, pain) and deepening of sedation until reaching -2 to 0 points on the RASS scale; If possible, excessive deepening of sedation (less than -2 points on the RASS scale) should be avoided unless there are indications for it."
+      "extraDescription": "It is recommended to perform RASS assessment in all patients admitted to hospital, as well as in all patients on mechanical ventilation.\n• In patients with RASS of -3 points or less, sedation should be reduced or changed until reaching -2 to 0 points on the RASS scale;\n• Patients with RASS of 2 points or more are insufficiently sedated and require determination of the cause of agitation (anxiety disorder, delirium, pain) and deepening of sedation until reaching -2 to 0 points on the RASS scale;\n• If possible, excessive deepening of sedation (less than -2 points on the RASS scale) should be avoided unless there are indications for it."
     },
     "aldrete": {
       "name": "Modified Aldrete Score",
-      "description": "This score demonstrates the patient's readiness for transfer to the ward after anesthesia.",
-      "criteria": {
+      "description": "The Modified Aldrete Score is used in post-anesthesia care units (PACU) to assess when a patient has recovered sufficiently from anesthesia to be safely discharged to a regular hospital ward. It evaluates five domains: activity, respiration, circulation, consciousness, and oxygen saturation.",      "criteria": {
         "activity": {
           "label": "Activity",
           "option0": "No movement on command",
@@ -445,43 +450,44 @@
       "result": {
         "readyForTransfer": "Ready for transfer",
         "notReadyForTransfer": "Not ready for transfer"
-      }
+      },
+      "extraDescription": "Widely used in PACUs, the Modified Aldrete Score standardizes discharge criteria by evaluating motor activity, respiration, hemodynamics, consciousness, and oxygenation. A score ≥9 suggests readiness for ward transfer. It helps reduce post-anesthesia complications by identifying residual sedation, hypoventilation, or hemodynamic instability early. Reassessment every 10–15 minutes is recommended until criteria are met."
     },
     "sofa": {
-      "name": "SOFA Score",
-      "description": "A score for assessing the extent of organ dysfunction.",
+      "name": "Sequential Organ Failure Assessment (SOFA) Score",
+      "description": "The SOFA score is used to track a patient’s status during their stay in an intensive care unit (ICU) to determine the extent of organ function or rate of failure. It assesses six organ systems and assigns a score from 0 to 4 for each, with higher scores indicating greater dysfunction.",
       "criteria": {
         "respiratory": {
-          "label": "PaO2",
-          "option0": "≥ 400 mm Hg (53.3 kPa)",
-          "option1": "< 400 mm Hg (53.3 kPa)",
-          "option2": "< 300 mm Hg (40 kPa)",
-          "option3": "< 200 mm Hg (26.7 kPa) with respiratory support",
-          "option4": "< 100 mm Hg (13.3 kPa) with respiratory support"
+          "label": "Respiratory (mmHg) *",
+          "option0": "• P/F ratio: >400\nor\n• S/F ratio: >302",
+          "option1": "• P/F ratio: <400\nor\n • S/F ratio: <302",
+          "option2": "• P/F ratio: <300\nor\n • S/F ratio: <221",
+          "option3": "• P/F ratio: <200\nor\n • S/F ratio: <142\nwith MV (CPAP included)",
+          "option4": "• P/F ratio: <100\nor\n • S/F ratio: <67\nwith MV (CPAP included)"
         },
         "platelets": {
           "label": "Platelets (×10³/mcL)",
-          "option0": "≥ 150 ×10³/mcL (≥ 150 ×10⁹/L)",
-          "option1": "< 150 ×10³/mcL (< 150 ×10⁹/L)",
-          "option2": "< 100 ×10³/mcL (< 100 ×10⁹/L)",
-          "option3": "< 50 ×10³/mcL (< 50 ×10⁹/L)",
-          "option4": "< 20 ×10³/mcL (< 20 ×10⁹/L)"
+          "option0": "≥ 150",
+          "option1": "< 150",
+          "option2": "< 100",
+          "option3": "< 50",
+          "option4": "< 20"
         },
         "bilirubin": {
-          "label": "Bilirubin (mg/dL)",
-          "option0": "< 1.2 mg/dL (20 μmol/L)",
-          "option1": "1.2–1.9 mg/dL (20–32 μmol/L)",
-          "option2": "2.0–5.9 mg/dL (33–101 μmol/L)",
-          "option3": "6.0–11.9 mg/dL (102–204 μmol/L)",
-          "option4": "> 12.0 mg/dL (204 μmol/L)"
+          "label": "Bilirubin",
+          "option0": "< 1.2 mg/dL\n(20 μmol/L)",
+          "option1": "1.2–1.9 mg/dL\n(20–32 μmol/L)",
+          "option2": "2.0–5.9 mg/dL\n(33–101 μmol/L)",
+          "option3": "6.0–11.9 mg/dL\n(102–204 μmol/L)",
+          "option4": "> 12.0 mg/dL\n(204 μmol/L)"
         },
         "cardiovascular": {
-          "label": "Cardiovascular (with medication doses given for ≥ 1 hour)",
+          "label": "Cardiovascular (doses in mcg/kg/min)",
           "option0": "MAP ≥ 70 mm Hg",
           "option1": "MAP < 70 mm Hg",
-          "option2": "Dopamine < 5 µg/kg/min or any dose of dobutamine",
-          "option3": "Dopamine 5.1–15 µg/kg/min or epinephrine ≤ 0.1 µg/kg/min or norepinephrine ≤ 0.1 µg/kg/min",
-          "option4": "Dopamine > 15 µg/kg/min or epinephrine > 0.1 µg/kg/min or norepinephrine > 0.1 µg/kg/min"
+          "option2": "• Dopamine < 5\nor\n• any Dobutamine dose",
+          "option3": "• Dopamine 5.1–15\nor\n• Epinephrine ≤ 0.1\nor\n• Norepinephrine ≤ 0.1",
+          "option4": "• Dopamine > 15\nor\n• Epinephrine > 0.1\nor\n• Norepinephrine > 0.1"
         },
         "gcs": {
           "label": "Glasgow Coma Score",
@@ -492,19 +498,25 @@
           "option4": "< 6 points"
         },
         "creatinine": {
-          "label": "Creatinine (mg/dL)",
-          "option0": "< 1.2 mg/dL (110 μmol/L)",
-          "option1": "1.2–1.9 mg/dL (110–170 μmol/L)",
-          "option2": "2.0–3.4 mg/dL (171–299 μmol/L)",
-          "option3": "3.5–4.9 mg/dL (300–400 μmol/L)",
-          "option4": "> 5.0 mg/dL (440 μmol/L)"
+          "label": "Creatinine or Urine output",
+          "option0": "< 1.2 mg/dL\n(110 μmol/L)",
+          "option1": "1.2–1.9 mg/dL\n(110–170 μmol/L)",
+          "option2": "2.0–3.4 mg/dL\n(171–299 μmol/L)",
+          "option3": "3.5–4.9 mg/dL\n(300–400 μmol/L)\nor\n< 500 ml/day",
+          "option4": "> 5.0 mg/dL\n(440 μmol/L)\nor\n< 200 ml/day"
         }
       },
       "result": {
-        "low": "Low risk of organ dysfunction",
-        "moderate": "Moderate risk",
-        "high": "High risk of organ failure"
-      }
+        "mortality0": "Mortality: initial score 0.0%, highest score 0.0%",
+        "mortality1": "Mortality: initial score 6.4%, highest score 1.5%",
+        "mortality2": "Mortality: initial score 20.2%, highest score 6.7%",
+        "mortality3": "Mortality: initial score 21.5%, highest score 18.2%",
+        "mortality4": "Mortality: initial score 33.3%, highest score 26.3%",
+        "mortality5": "Mortality: initial score 50.0%, highest score 45.8%",
+        "mortality6": "Mortality: initial score 95.2%, highest score 80.0%",
+        "mortality7": "Mortality: initial score 95.2%, highest score 89.7%"
+      },
+      "extraDescription": "An increase in SOFA score ≥2 points in the presence of suspected infection is one of the criteria for diagnosing sepsis according to Sepsis-3 guidelines.\n\n* Respiratory:\n- P/F ratio calculated as: PaO2 / FiO2 as decimal\n- S/F ratio calculated as: SpO2 / FiO2 as decimal"
     },
     "nihss": {
       "name": "NIH Stroke Score",
@@ -624,7 +636,7 @@
     },
     "apacheii": {
       "name": "APACHE II Score",
-      "description": "APACHE II score is a general measure of disease severity and mortality risk based on current physiologic measurements, age & previous health conditions.\n\nNOTE: Some of the presented options have multiple possible ranges!",
+      "description": "APACHE II score is a general measure of disease severity and mortality risk based on current physiologic measurements, age & previous health conditions.\n\nNOTE: Some of the presented options have multiple possible ranges! Choose worst values in past 24h.",
       "criteria": {
         "age": {
           "label": "Age, years",
@@ -641,7 +653,7 @@
           "option2": "Yes, nonoperative or emergency postoperative"
         },
         "temperature": {
-          "label": "Rectal temperature (°C)",
+          "label": "Temperature (°C)",
           "option0": "36-38.5°C",
           "option1": "• 34-36°C\nor\n• 38.5-39°C",
           "option2": "32-34°C",
@@ -703,13 +715,13 @@
           "option4": "• ≥7.0\nor\n• 2.5"
         },
         "creatinine": {
-          "label": "Serum Creatinine (mg/100 mL)",
-          "option0": "0.6-1.5",
-          "option1": "• Less than 0.6\nor\n• 1.5-2.0 (CHRONIC)",
-          "option2": "2.0-3.5 (CHRONIC)",
-          "option3": "• 1.5-2.0 (ACUTE)\nor\n• ≥3.5 (CHRONIC)",
-          "option4": "2.0-3.5 (ACUTE)",
-          "option5": "≥3.5 (ACUTE)"
+          "label": "Serum Creatinine (µmol/L)",
+          "option0": "53–133",
+          "option1": "• Less than 53\nor\n• 133–177 (CKI)",
+          "option2": "177–310 (CKI)",
+          "option3": "• 133–177 (AKI)\nor\n• ≥310 (CKI)",
+          "option4": "177–310 (AKI)",
+          "option5": "≥310 (AKI)"
         },
         "hematocrit": {
           "label": "Hematocrit (%)",
@@ -917,7 +929,7 @@
           "none": "None",
           "minor": "Minor (anesthesia <45 min)",
           "major": "Major (>45 min, laparoscopic/arthroscopic)",
-          "arthroplasty": "Elective major lower extremity arthroplasty"
+          "arthroplasty": "Elective major arthroplasty or hip, pelvis, leg fracture"
         },
         "recentMajorSurgery": {
           "label": "Recent (<1 month) Major Surgery",
@@ -1068,8 +1080,8 @@
         "high": "High risk: Combined mechanical and pharmacologic prophylaxis for 7–10 days.",
         "high2": "Very high risk: Combined prophylaxis for 7–10 days.",
         "highest": "Highest risk: Combined prophylaxis for 30 days."
-      }
-    },
+      },
+      "extraDescription": "The Caprini Score is endorsed by the American Venous Forum and validated in surgical and hospitalized patients to guide VTE prophylaxis. It stratifies patients based on cumulative risk factors, helping tailor the duration and type of prophylaxis. Higher scores correlate with increased VTE incidence, particularly in cancer and orthopedic surgery patients. The score is especially valuable in perioperative planning and improving adherence to thromboprophylaxis protocols."    },
     "hasbled": {
       "name": "HAS-BLED Score",
       "description": "This score estimates the risk of major bleeding in patients on anticoagulation to guide management in atrial fibrillation care.",
@@ -1110,7 +1122,8 @@
         "high2": "High risk of major bleeding (8.9%, 8.7 bleeds per 100 patients per year)",
         "high3": "High risk of major bleeding (9.1%, 12.5 bleeds per 100 patients per year)",
         "veryHigh": "Very high risk of major bleeding. Scores above 5 are too rare to determine risk, but are likely to exceed 10%"
-      }
+      },
+      "extraDescription": "The most important pitfall is using HAS-BLED as an absolute cut-off to withhold or withdraw anticoagulation. Keep in mind that in the vast majority of AF patients risk of stroke (and associated outcome) outweighs risk of bleeding. Instead, HAS-BLED should be used as an alarmbell which assists in minimizing the potential risk of bleeding by signaling risk factors that can be avoided or reversed."
     },
     "news2": {
       "name": "NEWS 2 Score",
@@ -1308,7 +1321,27 @@
       "distress": "Distress",
       "normal": "Normal"
     }
-  }
+  },
+    "qsofa" : {
+      "name": "qSofa Score",
+      "description": "Tool used to identify patients with suspected infection who are at greater risk for poor outcomes, such as increased mortality or prolonged intensive care unit (ICU) stays. It is designed for rapid assessment without the need for laboratory tests, making it particularly useful in urgent and resource-limited settings.",
+      "criteria": {
+        "mental": {
+          "label": "A Glasgow Coma Scale (GCS) score less than 15"
+        },
+        "respiratory": {
+          "label": "Respiratory rate of 22 breaths per minute or greater"
+        },
+        "sysBp": {
+          "label": "Systolic blood pressure (SBP) of 100 mmHg or less"
+        }
+      },
+      "result": {
+        "notHighRisk": "A qSOFA score ≤ 1 suggests a lower risk of poor outcome; continue clinical assessment and monitoring.",
+        "highRisk": "A qSOFA score ≥2 suggests a high risk of poor outcome; consider further evaluation for sepsis and escalation of care."
+      },
+      "extraDescription": "qSOFA was introduced as part of the Sepsis-3 definition in 2016 to provide a quick bedside assessment tool that does not require laboratory data. Unlike the full SOFA score, qSOFA can be calculated outside the ICU, such as in emergency departments or general wards, helping clinicians promptly identify patients who may require escalation of care. While it is a rapid screening tool, it does not replace clinical judgment or more comprehensive diagnostic assessments."
+    }
   },
   "CalculatorsPage": {
     "metaTitleDefault": "Calculator",

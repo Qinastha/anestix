@@ -113,4 +113,5 @@ export const ALDRETE_CONFIG: ScoreConfig = {
       summaryText: 'aldrete.result.notReadyForTransfer',
     },
   ],
+  extraDescription: 'aldrete.extraDescription',
 };

@@ -81,4 +81,9 @@ export const SCORE_SUBITEMS: NavigationSubItem[] = [
     description: 'apgar.description',
     href: '/dashboard/score-list/score/apgar',
   },
+  {
+    label: 'qsofa.title',
+    description: 'qsofa.description',
+    href: '/dashboard/score-list/score/qsofa',
+  },
 ];

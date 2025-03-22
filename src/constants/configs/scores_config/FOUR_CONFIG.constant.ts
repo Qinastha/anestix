@@ -63,4 +63,5 @@ export const FOUR_CONFIG: ScoreConfig = {
     { min: 1, max: 6, summaryText: 'four.result.comaII' },
     { min: 0, max: 0, summaryText: 'four.result.comaIII' },
   ],
+  extraDescription: 'four.extraDescription',
 };
