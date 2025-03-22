@@ -8,6 +8,7 @@ export const FOUR_CONFIG: ScoreConfig = {
     {
       id: 'eye',
       label: 'four.criteria.eye.label',
+      type: 'base',
       options: [
         { value: 0, description: 'four.criteria.eye.option0' },
         { value: 1, description: 'four.criteria.eye.option1' },
@@ -19,6 +20,7 @@ export const FOUR_CONFIG: ScoreConfig = {
     {
       id: 'motor',
       label: 'four.criteria.motor.label',
+      type: 'base',
       options: [
         { value: 0, description: 'four.criteria.motor.option0' },
         { value: 1, description: 'four.criteria.motor.option1' },
@@ -30,6 +32,7 @@ export const FOUR_CONFIG: ScoreConfig = {
     {
       id: 'brainstem',
       label: 'four.criteria.brainstem.label',
+      type: 'base',
       options: [
         { value: 0, description: 'four.criteria.brainstem.option0' },
         { value: 1, description: 'four.criteria.brainstem.option1' },
@@ -41,6 +44,7 @@ export const FOUR_CONFIG: ScoreConfig = {
     {
       id: 'respiration',
       label: 'four.criteria.respiration.label',
+      type: 'base',
       options: [
         { value: 0, description: 'four.criteria.respiration.option0' },
         { value: 1, description: 'four.criteria.respiration.option1' },

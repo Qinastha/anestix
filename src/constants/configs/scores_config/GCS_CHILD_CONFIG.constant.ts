@@ -8,6 +8,7 @@ export const GCS_CHILD_CONFIG: ScoreConfig = {
     {
       id: 'eye',
       label: 'pgcs.criteria.eye.label',
+      type: 'base',
       options: [
         { value: 1, description: 'pgcs.criteria.eye.option1' },
         { value: 2, description: 'pgcs.criteria.eye.option2' },
@@ -18,6 +19,7 @@ export const GCS_CHILD_CONFIG: ScoreConfig = {
     {
       id: 'verbal',
       label: 'pgcs.criteria.verbal.label',
+      type: 'base',
       options: [
         { value: 1, description: 'pgcs.criteria.verbal.option1' },
         { value: 2, description: 'pgcs.criteria.verbal.option2' },
@@ -29,6 +31,7 @@ export const GCS_CHILD_CONFIG: ScoreConfig = {
     {
       id: 'motor',
       label: 'pgcs.criteria.motor.label',
+      type: 'base',
       options: [
         { value: 1, description: 'pgcs.criteria.motor.option1' },
         { value: 2, description: 'pgcs.criteria.motor.option2' },

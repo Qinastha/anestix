@@ -8,6 +8,7 @@ export const SOFA_CONFIG: ScoreConfig = {
     {
       id: 'respiratory',
       label: 'sofa.criteria.respiratory.label',
+      type: 'base',
       options: [
         { value: 0, description: 'sofa.criteria.respiratory.option0' },
         { value: 1, description: 'sofa.criteria.respiratory.option1' },
@@ -19,6 +20,7 @@ export const SOFA_CONFIG: ScoreConfig = {
     {
       id: 'platelets',
       label: 'sofa.criteria.platelets.label',
+      type: 'base',
       options: [
         { value: 0, description: 'sofa.criteria.platelets.option0' },
         { value: 1, description: 'sofa.criteria.platelets.option1' },
@@ -30,6 +32,7 @@ export const SOFA_CONFIG: ScoreConfig = {
     {
       id: 'bilirubin',
       label: 'sofa.criteria.bilirubin.label',
+      type: 'base',
       options: [
         { value: 0, description: 'sofa.criteria.bilirubin.option0' },
         { value: 1, description: 'sofa.criteria.bilirubin.option1' },
@@ -41,6 +44,7 @@ export const SOFA_CONFIG: ScoreConfig = {
     {
       id: 'cardiovascular',
       label: 'sofa.criteria.cardiovascular.label',
+      type: 'base',
       options: [
         { value: 0, description: 'sofa.criteria.cardiovascular.option0' },
         { value: 1, description: 'sofa.criteria.cardiovascular.option1' },
@@ -52,6 +56,7 @@ export const SOFA_CONFIG: ScoreConfig = {
     {
       id: 'gcs',
       label: 'sofa.criteria.gcs.label',
+      type: 'base',
       options: [
         { value: 0, description: 'sofa.criteria.gcs.option0' },
         { value: 1, description: 'sofa.criteria.gcs.option1' },
@@ -63,6 +68,7 @@ export const SOFA_CONFIG: ScoreConfig = {
     {
       id: 'creatinine',
       label: 'sofa.criteria.creatinine.label',
+      type: 'base',
       options: [
         { value: 0, description: 'sofa.criteria.creatinine.option0' },
         { value: 1, description: 'sofa.criteria.creatinine.option1' },

@@ -73,11 +73,10 @@ export const CalculatorSumContent = <TResult extends Result>({
       {annotation && (
         <motion.div
           key="annotation"
-          className="mt-3"
+          className="mt-3 whitespace-pre-wrap text-pretty"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          style={{ whiteSpace: 'pre-wrap' }}
         >
           <p className="text-sm lg:text-base">{annotation}</p>
         </motion.div>

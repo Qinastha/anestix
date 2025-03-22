@@ -1,5 +1,4 @@
 import React from 'react';
-import { formatParagraphs } from '@/utils/formatParagraphs';
 
 interface ResultScoreProps {
   totalScore: number;
@@ -16,25 +15,17 @@ export const ResultScore: React.FC<ResultScoreProps> = ({
 }) => {
   return (
     <>
-      <div className="mt-6 text-lg xl:text-xl font-semibold tracking-widest leading-relaxed">
+      <h4 className="mt-6 text-lg xl:text-xl font-semibold tracking-widest leading-relaxed">
         {t('totalScore')} {totalScore}
-      </div>
-      <div className="mt-2 text-md lg:text-md xl:text-lg tracking-widest leading-relaxed">
+      </h4>
+      <h5 className="mt-2 text-md lg:text-md xl:text-lg tracking-widest leading-relaxed">
         {t('result')} {t(result)}
-      </div>
+      </h5>
 
       {extraDescription && (
-        <div className="mt-6 text-sm lg:text-md xl:text-lg p-6 border border-primary rounded-lg shadow-lg space-y-4">
-          {formatParagraphs(t(extraDescription)).map(
-            (para: string, index: number) => (
-              <p key={index} className="leading-relaxed font-light">
-                {index !== 0 && <b>{`${index}) `}</b>}
-                {''}
-                {para}
-              </p>
-            )
-          )}
-        </div>
+        <section className="mt-6 text-sm lg:text-md xl:text-lg p-6 border border-primary rounded-lg shadow-lg space-y-4 whitespace-pre-wrap text-pretty">
+          <p className="leading-relaxed font-light">{t(extraDescription)}</p>
+        </section>
       )}
     </>
   );

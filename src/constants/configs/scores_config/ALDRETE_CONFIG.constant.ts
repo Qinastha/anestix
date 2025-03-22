@@ -8,6 +8,7 @@ export const ALDRETE_CONFIG: ScoreConfig = {
     {
       id: 'activity',
       label: 'aldrete.criteria.activity.label',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -26,6 +27,7 @@ export const ALDRETE_CONFIG: ScoreConfig = {
     {
       id: 'breathing',
       label: 'aldrete.criteria.breathing.label',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -44,6 +46,7 @@ export const ALDRETE_CONFIG: ScoreConfig = {
     {
       id: 'bloodPressure',
       label: 'aldrete.criteria.bloodPressure.label',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -62,6 +65,7 @@ export const ALDRETE_CONFIG: ScoreConfig = {
     {
       id: 'consciousness',
       label: 'aldrete.criteria.consciousness.label',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -80,6 +84,7 @@ export const ALDRETE_CONFIG: ScoreConfig = {
     {
       id: 'spo2',
       label: 'aldrete.criteria.spo2.label',
+      type: 'base',
       options: [
         {
           value: 0,

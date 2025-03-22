@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { ScoreConfig } from '@/interfaces/Scores.type';
+import { ScoreConfig, ScoreCriteria } from '@/interfaces/Scores.type';
 import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { OptionInput } from '@/components/score/OptionInput';
 import { OptionRadio } from '@/components/score/OptionRadio';
@@ -19,7 +19,7 @@ interface DesktopScaleCalcProps {
   score: ScoreConfig;
   t: (key: string) => string;
   selectedValues: Record<string, number | null>;
-  handleSelect: (criteriaId: string, value: number) => void;
+  handleSelect: (criteria: ScoreCriteria, value: number) => void;
 }
 
 export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
@@ -59,7 +59,7 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
       <h1 className="mb-4 text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
         {t(score.name)}
       </h1>
-      <h6 className="mb-4">{t(score.description)}</h6>
+      <h6 className="mb-4 whitespace-pre-wrap">{t(score.description)}</h6>
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-inherit">
@@ -79,14 +79,13 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
               className="hover:bg-inherit"
             >
               <TableCell className={`${labelWidthClass}`}>
-                <span className="font-semibold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent">
+                <span className="font-semibold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent text-pretty whitespace-pre-wrap">
                   {t(criteria.label)}
                 </span>
               </TableCell>
               <TableCell className={`${optionsWidthClass} p-4`}>
                 {criteria.type === 'input' ? (
                   <OptionInput
-                    selectedValues={selectedValues}
                     handleSelect={handleSelect}
                     criteria={criteria}
                     t={t}
@@ -112,9 +111,7 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
                         <div
                           key={index}
                           className="cursor-pointer self-center"
-                          onClick={() =>
-                            handleSelect(criteria.id, option.value)
-                          }
+                          onClick={() => handleSelect(criteria, option.value)}
                         >
                           <OptionGridCell
                             option={option}

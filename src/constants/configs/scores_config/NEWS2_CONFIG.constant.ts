@@ -8,6 +8,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'respiratoryRate',
       label: 'news2.criteria.respiratoryRate.label',
+      type: 'base',
       options: [
         { value: 0, description: 'news2.criteria.respiratoryRate.option0' },
         { value: 1, description: 'news2.criteria.respiratoryRate.option1' },
@@ -18,6 +19,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'spo2',
       label: 'news2.criteria.spo2.label',
+      type: 'base',
       options: [
         { value: 0, description: 'news2.criteria.spo2.option0' },
         { value: 1, description: 'news2.criteria.spo2.option1' },
@@ -28,6 +30,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'oxygenSupplementation',
       label: 'news2.criteria.oxygenSupplementation.label',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -42,6 +45,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'temperature',
       label: 'news2.criteria.temperature.label',
+      type: 'base',
       options: [
         { value: 0, description: 'news2.criteria.temperature.option0' },
         { value: 1, description: 'news2.criteria.temperature.option1' },
@@ -52,6 +56,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'systolicBP',
       label: 'news2.criteria.systolicBP.label',
+      type: 'base',
       options: [
         { value: 0, description: 'news2.criteria.systolicBP.option0' },
         { value: 1, description: 'news2.criteria.systolicBP.option1' },
@@ -62,6 +67,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'pulse',
       label: 'news2.criteria.pulse.label',
+      type: 'base',
       options: [
         { value: 0, description: 'news2.criteria.pulse.option0' },
         { value: 1, description: 'news2.criteria.pulse.option1' },
@@ -72,6 +78,7 @@ export const NEWS2_CONFIG: ScoreConfig = {
     {
       id: 'consciousness',
       label: 'news2.criteria.consciousness.label',
+      type: 'base',
       options: [
         { value: 0, description: 'news2.criteria.consciousness.option1' },
         { value: 3, description: 'news2.criteria.consciousness.option2' },

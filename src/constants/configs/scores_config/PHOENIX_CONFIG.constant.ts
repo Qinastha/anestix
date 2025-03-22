@@ -8,7 +8,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'respiratory',
       label: 'phoenix.criteria.respiratory.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -31,7 +31,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'coagulation_platelets',
       label: 'phoenix.criteria.coagulation_platelets.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -46,7 +46,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'coagulation_inr',
       label: 'phoenix.criteria.coagulation_inr.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -61,7 +61,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'coagulation_d_dimer',
       label: 'phoenix.criteria.coagulation_d_dimer.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -76,7 +76,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'coagulation_fibrinogen',
       label: 'phoenix.criteria.coagulation_fibrinogen.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -91,7 +91,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'neurological_gcs',
       label: 'phoenix.criteria.neurological_gcs.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -110,7 +110,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'cardiovascular_lactate',
       label: 'phoenix.criteria.cardiovascular_lactate.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -129,7 +129,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'cardiovascular_med',
       label: 'phoenix.criteria.cardiovascular_med.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,
@@ -148,7 +148,7 @@ export const PHOENIX_CONFIG: ScoreConfig = {
     {
       id: 'cardiovascular_map',
       label: 'phoenix.criteria.cardiovascular_map.label',
-      type: 'radio',
+      type: 'base',
       options: [
         {
           value: 0,

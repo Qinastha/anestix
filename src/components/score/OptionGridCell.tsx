@@ -31,13 +31,15 @@ export const OptionGridCell: React.FC<DesktopScaleCellProps> = ({
               type: 'spring',
               stiffness: 300,
             }}
-            className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty ${
+            className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty whitespace-pre-wrap ${
               isSelected
                 ? 'bg-primary border-secondary text-buttonText'
                 : 'border-primary'
             }`}
           >
-            <span className="max-w-full text-xs">{t(option.description!)}</span>
+            <span className="text-xs max-h-full max-w-full">
+              {t(option.description)}
+            </span>
           </motion.div>
         </TooltipTrigger>
         <TooltipContent

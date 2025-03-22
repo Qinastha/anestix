@@ -8,6 +8,7 @@ export const GCS_CONFIG: ScoreConfig = {
     {
       id: 'eye',
       label: 'glasgow.criteria.eye.label',
+      type: 'base',
       options: [
         { value: 1, description: 'glasgow.criteria.eye.option1' },
         { value: 2, description: 'glasgow.criteria.eye.option2' },
@@ -18,6 +19,7 @@ export const GCS_CONFIG: ScoreConfig = {
     {
       id: 'verbal',
       label: 'glasgow.criteria.verbal.label',
+      type: 'base',
       options: [
         { value: 1, description: 'glasgow.criteria.verbal.option1' },
         { value: 2, description: 'glasgow.criteria.verbal.option2' },
@@ -29,6 +31,7 @@ export const GCS_CONFIG: ScoreConfig = {
     {
       id: 'motor',
       label: 'glasgow.criteria.motor.label',
+      type: 'base',
       options: [
         { value: 1, description: 'glasgow.criteria.motor.option1' },
         { value: 2, description: 'glasgow.criteria.motor.option2' },

@@ -1,5 +1,10 @@
 import { useState, useMemo, useCallback } from 'react';
-import { ScoreConfig, ScoreResult } from '@/interfaces/Scores.type';
+import {
+  ScoreConfig,
+  ScoreCriteria,
+  ScoreCriteriaInput,
+  ScoreResult,
+} from '@/interfaces/Scores.type';
 
 export function useScore(score?: ScoreConfig) {
   const [selectedValues, setSelectedValues] = useState<
@@ -12,10 +17,37 @@ export function useScore(score?: ScoreConfig) {
     return initial;
   });
 
-  const handleSelect = useCallback((criteriaId: string, value: number) => {
+  const valueInterpret = (
+    criteria: ScoreCriteriaInput,
+    val: number
+  ): number => {
+    let interpretedValue: number;
+    switch (criteria.factorType) {
+      case 'multiply': {
+        interpretedValue = val * criteria.factor;
+        break;
+      }
+      case 'subtract': {
+        interpretedValue = criteria.factor - val;
+        break;
+      }
+      default:
+        interpretedValue = val;
+        break;
+    }
+    return Math.max(0, interpretedValue);
+  };
+
+  const handleSelect = useCallback((criteria: ScoreCriteria, value: number) => {
+    let updatedValue: number;
+    if (criteria.type === 'input' && value !== 0) {
+      updatedValue = valueInterpret(criteria, value);
+    } else {
+      updatedValue = value;
+    }
     setSelectedValues((prev) => ({
       ...prev,
-      [criteriaId]: value,
+      [criteria.id]: updatedValue,
     }));
   }, []);
 

@@ -8,6 +8,7 @@ export const APGAR_CONFIG: ScoreConfig = {
     {
       id: 'hr',
       label: 'apgar.criteria.hr.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apgar.criteria.hr.option0' },
         { value: 1, description: 'apgar.criteria.hr.option1' },
@@ -17,6 +18,7 @@ export const APGAR_CONFIG: ScoreConfig = {
     {
       id: 'lung',
       label: 'apgar.criteria.lung.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apgar.criteria.lung.option0' },
         { value: 1, description: 'apgar.criteria.lung.option1' },
@@ -26,6 +28,7 @@ export const APGAR_CONFIG: ScoreConfig = {
     {
       id: 'muscle',
       label: 'apgar.criteria.muscle.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apgar.criteria.muscle.option0' },
         { value: 1, description: 'apgar.criteria.muscle.option1' },
@@ -35,6 +38,7 @@ export const APGAR_CONFIG: ScoreConfig = {
     {
       id: 'skin',
       label: 'apgar.criteria.skin.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apgar.criteria.skin.option0' },
         { value: 1, description: 'apgar.criteria.skin.option1' },
@@ -44,6 +48,7 @@ export const APGAR_CONFIG: ScoreConfig = {
     {
       id: 'reflex',
       label: 'apgar.criteria.reflex.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apgar.criteria.reflex.option0' },
         { value: 1, description: 'apgar.criteria.reflex.option1' },

@@ -16,14 +16,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ScoreConfig } from '@/interfaces/Scores.type';
+import { ScoreConfig, ScoreCriteria } from '@/interfaces/Scores.type';
 import { OptionInput } from '@/components/score/OptionInput';
 
 interface MobileScaleCalcProps {
   score: ScoreConfig;
   t: (key: string) => string;
   selectedValues: Record<string, number | null>;
-  handleSelect: (criteriaId: string, value: number) => void;
+  handleSelect: (criteria: ScoreCriteria, value: number) => void;
 }
 
 export const MobileScore: React.FC<MobileScaleCalcProps> = ({
@@ -37,7 +37,9 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
       <h1 className="mb-2 text-xl lg:text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
         {t(score.name)}
       </h1>
-      <h6 className="mb-4 text-sm md:text-md">{t(score.description)}</h6>
+      <h6 className="mb-4 text-sm md:text-md whitespace-pre-wrap">
+        {t(score.description)}
+      </h6>
 
       <Table className="w-full table-fixed">
         <TableHeader>
@@ -50,14 +52,13 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
           {score.criteria.map((criteria) => (
             <TableRow key={criteria.id} className="hover:bg-inherit">
               <TableCell className="w-1/2">
-                <span className="font-semibold text-sm bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent">
+                <span className="font-semibold text-sm bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent text-pretty whitespace-pre-wrap">
                   {t(criteria.label)}
                 </span>
               </TableCell>
               <TableCell className="w-1/2 p-3 items-center">
                 {criteria.type === 'input' ? (
                   <OptionInput
-                    selectedValues={selectedValues}
                     handleSelect={handleSelect}
                     criteria={criteria}
                     t={t}
@@ -70,9 +71,7 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                           ? selectedValues[criteria.id]?.toString()
                           : ''
                       }
-                      onValueChange={(value) =>
-                        handleSelect(criteria.id, +value)
-                      }
+                      onValueChange={(value) => handleSelect(criteria, +value)}
                     >
                       <SelectTrigger className="w-full text-left text-xs whitespace-normal text-pretty">
                         <SelectValue placeholder={t('select_an_option')} />
@@ -84,8 +83,8 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                             value={option.value.toString()}
                             className="border border-b-primary last:border-b-0 p-4"
                           >
-                            <span className="block whitespace-normal text-pretty">
-                              {t(option.description!)} - {option.value}{' '}
+                            <span className="block text-pretty whitespace-pre-wrap">
+                              {t(option.description)} - {option.value}{' '}
                               {t('score')}
                             </span>
                           </SelectItem>

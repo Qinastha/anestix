@@ -9,7 +9,10 @@ export const PESI_CONFIG: ScoreConfig = {
       id: 'age',
       label: 'pesi.criteria.age', // "Возраст (в годах)"
       type: 'input', // user enters age in years; score = возраст
-      options: [],
+      factor: 1,
+      factorType: 'multiply',
+      minValue: 0,
+      maxValue: 120,
     },
     {
       id: 'gender',

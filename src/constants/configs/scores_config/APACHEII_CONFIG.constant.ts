@@ -8,6 +8,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'age',
       label: 'apacheii.criteria.age.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.age.option0' },
         { value: 2, description: 'apacheii.criteria.age.option1' },
@@ -19,6 +20,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'chronicHealth',
       label: 'apacheii.criteria.chronicHealth.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.chronicHealth.option0' },
         { value: 2, description: 'apacheii.criteria.chronicHealth.option1' },
@@ -28,6 +30,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'temperature',
       label: 'apacheii.criteria.temperature.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.temperature.option0' },
         { value: 1, description: 'apacheii.criteria.temperature.option1' },
@@ -39,6 +42,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'map',
       label: 'apacheii.criteria.map.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.map.option0' },
         { value: 2, description: 'apacheii.criteria.map.option1' },
@@ -49,6 +53,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'heartRate',
       label: 'apacheii.criteria.heartRate.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.heartRate.option0' },
         { value: 2, description: 'apacheii.criteria.heartRate.option1' },
@@ -59,6 +64,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'respiratoryRate',
       label: 'apacheii.criteria.respiratoryRate.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.respiratoryRate.option0' },
         { value: 1, description: 'apacheii.criteria.respiratoryRate.option1' },
@@ -70,6 +76,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'oxygenation',
       label: 'apacheii.criteria.oxygenation.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.oxygenation.option0' },
         { value: 1, description: 'apacheii.criteria.oxygenation.option1' },
@@ -81,6 +88,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'ph',
       label: 'apacheii.criteria.ph.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.ph.option0' },
         { value: 1, description: 'apacheii.criteria.ph.option1' },
@@ -92,6 +100,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'sodium',
       label: 'apacheii.criteria.sodium.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.sodium.option0' },
         { value: 1, description: 'apacheii.criteria.sodium.option1' },
@@ -103,6 +112,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'potassium',
       label: 'apacheii.criteria.potassium.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.potassium.option0' },
         { value: 1, description: 'apacheii.criteria.potassium.option1' },
@@ -114,6 +124,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'creatinine',
       label: 'apacheii.criteria.creatinine.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.creatinine.option0' },
         { value: 2, description: 'apacheii.criteria.creatinine.option1' },
@@ -126,6 +137,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'hematocrit',
       label: 'apacheii.criteria.hematocrit.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.hematocrit.option0' },
         { value: 1, description: 'apacheii.criteria.hematocrit.option1' },
@@ -136,6 +148,7 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'wbc',
       label: 'apacheii.criteria.wbc.label',
+      type: 'base',
       options: [
         { value: 0, description: 'apacheii.criteria.wbc.option0' },
         { value: 1, description: 'apacheii.criteria.wbc.option1' },
@@ -146,21 +159,11 @@ export const APACHEII_CONFIG: ScoreConfig = {
     {
       id: 'gcs',
       label: 'apacheii.criteria.gcs.label',
-      options: [
-        { value: 0, description: 'apacheii.criteria.gcs.option0' },
-        { value: 1, description: 'apacheii.criteria.gcs.option1' },
-        { value: 2, description: 'apacheii.criteria.gcs.option2' },
-        { value: 3, description: 'apacheii.criteria.gcs.option3' },
-        { value: 4, description: 'apacheii.criteria.gcs.option4' },
-        { value: 5, description: 'apacheii.criteria.gcs.option5' },
-        { value: 6, description: 'apacheii.criteria.gcs.option6' },
-        { value: 7, description: 'apacheii.criteria.gcs.option7' },
-        { value: 8, description: 'apacheii.criteria.gcs.option8' },
-        { value: 9, description: 'apacheii.criteria.gcs.option9' },
-        { value: 10, description: 'apacheii.criteria.gcs.option10' },
-        { value: 11, description: 'apacheii.criteria.gcs.option11' },
-        { value: 12, description: 'apacheii.criteria.gcs.option12' },
-      ],
+      type: 'input',
+      factor: 15,
+      factorType: 'subtract',
+      maxValue: 15,
+      minValue: 3,
     },
   ],
   resultThresholds: [
@@ -173,4 +176,5 @@ export const APACHEII_CONFIG: ScoreConfig = {
     { min: 30, max: 34, summaryText: 'apacheii.result.mortality30to34' },
     { min: 35, max: 100, summaryText: 'apacheii.result.mortality35plus' },
   ],
+  extraDescription: 'apacheii.extraDescription',
 };

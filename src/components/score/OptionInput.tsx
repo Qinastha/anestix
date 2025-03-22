@@ -1,31 +1,44 @@
 'use client';
 import { Input } from '@/components/ui/input';
-import React from 'react';
-import { ScoreCriteria } from '@/interfaces/Scores.type';
+import React, { useState } from 'react';
+import { ScoreCriteriaInput } from '@/interfaces/Scores.type';
 
 interface DesktopScaleInputProps {
-  selectedValues: Record<string, number | null>;
-  handleSelect: (criteriaId: string, value: number) => void;
-  criteria: ScoreCriteria;
+  handleSelect: (criteria: ScoreCriteriaInput, value: number) => void;
+  criteria: ScoreCriteriaInput;
   t: (key: string) => string;
 }
 
 export const OptionInput: React.FC<DesktopScaleInputProps> = ({
-  selectedValues,
   handleSelect,
   criteria,
   t,
 }) => {
+  const [val, setVal] = useState<number | string>('');
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const input = e.target.value;
+    setVal(input);
+    if (
+      +input < criteria.minValue ||
+      +input > criteria.maxValue ||
+      input === ''
+    ) {
+      handleSelect(criteria, 0);
+      return;
+    }
+    handleSelect(criteria, +input);
+  }
   return (
     <Input
       type="number"
-      value={selectedValues[criteria.id]?.toString() ?? ''}
-      onChange={(e) => {
-        const value = Number(e.target.value);
-        handleSelect(criteria.id, value);
-      }}
+      value={val !== undefined ? val : ''}
+      onChange={(e) => handleChange(e)}
       className="p-2 rounded w-full placeholder:text-start placeholder:text-xs lg:placeholder:text-sm"
       placeholder={t(criteria.label)}
+      min={criteria.minValue}
+      max={criteria.maxValue}
+      pattern="[0-9]*"
     />
   );
 };
