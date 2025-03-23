@@ -59,7 +59,7 @@ export default function FormulaCalculatorPage() {
         allInputsFilled={allInputsFilled}
       />
 
-      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg bg-card">
+      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg">
         <CalculatorSumContent
           result={result}
           annotation={tCalc(config.annotation)}

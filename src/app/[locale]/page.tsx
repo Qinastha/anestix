@@ -26,9 +26,7 @@ export default function Home() {
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/dashboard">
-              <Button size="lg" className="bg-primary text-primary-foreground">
-                {tHome('enterPlatform')}
-              </Button>
+              <Button size="lg">{tHome('enterPlatform')}</Button>
             </Link>
           </motion.div>
         </motion.div>
@@ -43,7 +41,7 @@ export default function Home() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="p-6 bg-card text-card-foreground rounded-lg shadow-md"
+              className="p-6 bg-card text-foreground rounded-lg shadow-md"
             >
               <h3 className="text-lg md:text-xl font-semibold mb-2">
                 {tFeat(feature.title)}

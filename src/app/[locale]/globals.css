@@ -1,173 +1,111 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    /* Light theme color variables */
-
-    /* Base background color (white) */
-    --background: 0 0% 100%;
-    /* Base text color (dark blue/gray) */
-    --foreground: 222.2 84% 4.9%;
-
-    /* Card background color (white) */
-    --card: 0 0% 100%;
-    /* Card text color (dark blue/gray) */
-    --card-foreground: 222.2 84% 4.9%;
-
-    /* Popover background color (white) */
-    --popover: 0 0% 100%;
-    /* Popover text color (dark blue/gray) */
-    --popover-foreground: 222.2 84% 4.9%;
-
-    /* Primary color for interactive elements (blue-ish tone) */
-    --primary: 221.2 83.2% 53.3%;
-    /* Foreground color on primary elements (nearly white) */
-    --primary-foreground: 210 40% 98%;
-
-    /* Secondary color for accents (light tone) */
-    --secondary: 210 40% 96.1%;
-    /* Foreground color on secondary elements (dark blue/gray) */
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    /* Muted color for less emphasized elements (light tone) */
-    --muted: 210 40% 96.1%;
-    /* Foreground color on muted elements (medium gray) */
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    /* Accent color for highlights (light tone) */
-    --accent: 210 40% 96.1%;
-    /* Foreground color on accent elements (dark blue/gray) */
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    /* Destructive color for error states (red-ish tone) */
-    --destructive: 0 84.2% 60.2%;
-    /* Foreground color on destructive elements (nearly white) */
-    --destructive-foreground: 210 40% 98%;
-
-    /* Border color (light gray) */
-    --border: 214.3 31.8% 91.4%;
-    /* Input background color (light gray) */
-    --input: 214.3 31.8% 91.4%;
-    /* Ring color for focus states (blue-ish tone) */
-    --ring: 221.2 83.2% 53.3%;
-
-    /* Border radius for elements */
-    --radius: 0.5rem;
-
-    /* Text color - a very light, almost white blue */
-    --buttonText: 210 40% 98%;
-
-    /* ===== Sidebar Variables (Light Theme) ===== */
-
-    /* Sidebar background color: a very light off-white with a subtle blue tint */
-    --sidebar-background: 210 16% 98%;
-    /* Sidebar text color: dark blue/gray for clear readability */
-    --sidebar-foreground: 210 15% 20%;
-    /* Sidebar primary color: used for active or selected sidebar items; aligns with the main primary color */
-    --sidebar-primary: 221.2 83.2% 53.3%;
-    /* Sidebar primary foreground: white text on active sidebar items for optimal contrast */
-    --sidebar-primary-foreground: 0 0% 100%;
-    /* Sidebar accent color: used for hover states or secondary highlights in the sidebar */
-    --sidebar-accent: 221.2 83.2% 53.3%;
-    /* Sidebar accent foreground: dark text to maintain readability on accent backgrounds */
-    --sidebar-accent-foreground: 210 40% 98%;
-    /* Sidebar border color: a soft light gray to subtly delineate sections within the sidebar */
-    --sidebar-border: 210 10% 85%;
-    /* Sidebar ring color: used for focus outlines within the sidebar; matches the primary interactive tone */
-    --sidebar-ring: 221.2 83.2% 53.3%;
-  }
-
-  .dark {
-    /* Dark theme color variables */
-
-    /* Base background color for dark theme (dark blue/gray) */
-    --background: 222.2 84% 4.9%;
-    /* Base text color for dark theme (nearly white) */
-    --foreground: 210 40% 98%;
-
-    /* Card background color for dark theme:
-       A slightly lighter variant of the base background, which helps cards stand out
-       without introducing a strong blue tint. */
-    --card: 210 45% 10%;
-
-    /* Card text color for dark theme:
-       A subtly muted off-white that maintains clear readability on card surfaces. */
-    --card-foreground: 0 0% 92%;
-
-    /* Popover background color for dark theme (dark blue/gray) */
-    --popover: 222.2 84% 4.9%;
-    /* Popover text color for dark theme (nearly white) */
-    --popover-foreground: 210 40% 98%;
-
-    /* Primary color for interactive elements in dark theme (purple/blue-ish tone) */
-    --primary: 263.4 70% 50.4%;
-    /* Foreground color on primary elements (nearly white) */
-    --primary-foreground: 210 40% 98%;
-
-    /* Secondary color for accents in dark theme (dark gray tone) */
-    --secondary: 217.2 32.6% 17.5%;
-    /* Foreground color on secondary elements (nearly white) */
-    --secondary-foreground: 210 40% 98%;
-
-    /* Muted color for less emphasized elements in dark theme (dark gray tone) */
-    --muted: 217.2 32.6% 17.5%;
-    /* Foreground color on muted elements (medium gray) */
-    --muted-foreground: 215 20.2% 65.1%;
-
-    /* Accent color for highlights in dark theme (dark gray tone) */
-    --accent: 217.2 32.6% 17.5%;
-    /* Foreground color on accent elements (nearly white) */
-    --accent-foreground: 210 40% 98%;
-
-    /* Destructive color for error states in dark theme (darker red tone) */
-    --destructive: 0 84.2% 60.2%;
-    /* Foreground color on destructive elements (nearly white) */
-    --destructive-foreground: 210 40% 98%;
-
-    /* Border color for dark theme (dark gray tone) */
-    --border: 217.2 32.6% 17.5%;
-    /* Input background color for dark theme (dark gray tone) */
-    --input: 217.2 32.6% 17.5%;
-    /* Ring color for focus states in dark theme (purple/blue-ish tone) */
-    --ring: 263.4 70% 50.4%;
-
-    /* Text color */
-    --buttonText: 210 40% 98%;
-
-    /* ===== Sidebar Variables (Dark Theme) ===== */
-
-    /* Sidebar background color: a dark blue/gray to distinctly separate the sidebar area */
-    --sidebar-background: 210 15% 12%;
-    /* Sidebar text color: white for high contrast on the dark background */
-    --sidebar-foreground: 0 0% 100%;
-    /* Sidebar primary color: used for active or selected items; a vibrant blue for prominence */
-    --sidebar-primary: 263.4 70% 50.4%;
-    /* Sidebar primary foreground: white text on active sidebar items */
-    --sidebar-primary-foreground: 0 0% 100%;
-    /* Sidebar accent color: used for hover or secondary highlights; a muted warm tone for subtle emphasis */
-    --sidebar-accent: 263.4 70% 50.4%;
-    /* Sidebar accent foreground: white text ensures clarity on the accent background */
-    --sidebar-accent-foreground: 0 0% 100%;
-    /* Sidebar border color: a slightly lighter dark tone to neatly delineate sidebar sections */
-    --sidebar-border: 210 10% 15%;
-    /* Sidebar ring color: used for focus outlines within the sidebar; mirrors the vibrant primary tone */
-    --sidebar-ring: 263.4 70% 50.4%;
-  }
+@custom-variant dark (&:is(.dark *));
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --radius: 0.625rem;
+  --card: oklch(99% 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(99% 0.003 5);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(54.6% 0.22 262.9);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(45% 0.05 265.14);
+  --accent: oklch(0.95 0.0025 5);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(92.9% 0.0126 255.53);
+  --ring: oklch(54.6% 0.2153 262.87);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(54.6% 0.22 262.9);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(54.6% 0.22 262.9);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(54.6% 0.22 262.9);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.dark {
+  --background: oklch(13.71% 0.036 258.53);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(18.5% 0.03 263.2);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(20% 0.04 270);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(49% 0.24 292.6);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(28% 0.0369 259.97);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.85 0.025 290);
+  --accent: oklch(25% 0.03 260);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(28% 0.0369 259.97);
+  --ring: oklch(49% 0.24 292.6);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(20% 0.03 265);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(49% 0.24 292.6);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(49% 0.24 292.6);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(49% 0.24 292.6);
 }
 
-.scale_select_placeholder[data-placeholder] {
-  @apply text-xs text-blue-500;
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {

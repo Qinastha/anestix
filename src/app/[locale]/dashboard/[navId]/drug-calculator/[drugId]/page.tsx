@@ -56,7 +56,7 @@ export default function DrugCalculatorPage() {
         allInputsFilled={allInputsFilled}
       />
 
-      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg bg-card">
+      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg">
         <CalculatorSumContent
           result={result}
           isDrugForm={true}

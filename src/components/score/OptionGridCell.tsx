@@ -31,9 +31,9 @@ export const OptionGridCell: React.FC<DesktopScaleCellProps> = ({
               type: 'spring',
               stiffness: 300,
             }}
-            className={`flex items-center p-1 justify-center text-center rounded border aspect-[6/5] h-5/6 text-pretty whitespace-pre-wrap ${
+            className={`flex items-center p-1 justify-center text-center rounded-md border aspect-[6/5] h-5/6 text-pretty whitespace-pre-wrap ${
               isSelected
-                ? 'bg-primary border-secondary text-buttonText'
+                ? 'bg-primary border-secondary text-white'
                 : 'border-primary'
             }`}
           >
@@ -42,9 +42,7 @@ export const OptionGridCell: React.FC<DesktopScaleCellProps> = ({
             </span>
           </motion.div>
         </TooltipTrigger>
-        <TooltipContent
-          className={isSelected ? 'bg-accent text-foreground' : 'bg-primary'}
-        >
+        <TooltipContent className="bg-popover text-foreground">
           <span>
             {option.value} {t('score')}
           </span>

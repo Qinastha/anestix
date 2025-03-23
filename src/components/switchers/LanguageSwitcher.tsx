@@ -41,10 +41,11 @@ export const LanguageSwitcher: React.FC = () => {
           return (
             <DropdownMenuItem
               key={locale}
-              className="cursor-pointer hover:bg-muted p-4"
+              className="cursor-pointer hover:bg-muted p-4 flex flex-col"
               onSelect={() => handleLanguageChange(locale)}
             >
-              {locale.toUpperCase()}
+              <span className="flex-1">{locale.toUpperCase()}</span>
+              <hr className="bg-primary w-full h-px" />
             </DropdownMenuItem>
           );
         })}

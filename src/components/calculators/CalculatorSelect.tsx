@@ -36,7 +36,7 @@ export const CalculatorSelect = <TParam extends Param>({
       value={String(formValues[param.key] ?? '')}
       onValueChange={(value) => handleChange(param.key, value)}
     >
-      <SelectTrigger className="w-full text-base text-pretty whitespace-normal text-start">
+      <SelectTrigger className="w-full text-base text-pretty whitespace-normal text-start truncate">
         <SelectValue placeholder={t(param.label)} />
       </SelectTrigger>
       <SelectContent className="max-w-sm">

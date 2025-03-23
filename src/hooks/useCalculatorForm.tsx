@@ -137,9 +137,9 @@ export function useCalculatorForm<TParam extends Param, TResult>({
         toast.error(
           tToasts(translationKey, {
             paramName: tCalc(invalidParam.label),
-            min: invalidParam.minValue,
-            max: invalidParam.maxValue,
-            unit: tUnits(invalidParam.unit) ?? '',
+            min: invalidParam.minValue ?? 0,
+            max: invalidParam.maxValue ?? 0,
+            unit: invalidParam.unit ? tUnits(invalidParam.unit) : '',
           }),
           {
             position: 'top-right',
@@ -156,8 +156,8 @@ export function useCalculatorForm<TParam extends Param, TResult>({
         toast.info(
           tToasts('overDosage', {
             paramName: tCalc(overDosageParam.label),
-            maxValue: overDosageParam.maxDosage,
-            unit: tUnits(overDosageParam.unit) || '',
+            maxValue: overDosageParam.maxDosage ?? 0,
+            unit: overDosageParam.unit ? tUnits(overDosageParam.unit) : '',
           }),
           {
             position: 'top-right',

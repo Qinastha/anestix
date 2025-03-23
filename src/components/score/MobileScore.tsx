@@ -43,7 +43,7 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
 
       <Table className="w-full table-fixed">
         <TableHeader>
-          <TableRow>
+          <TableRow className="hover:bg-inherit">
             <TableHead className="w-1/2">{t('criteria')}</TableHead>
             <TableHead className="w-1/2">{t('respOptions')}</TableHead>
           </TableRow>
@@ -52,7 +52,7 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
           {score.criteria.map((criteria) => (
             <TableRow key={criteria.id} className="hover:bg-inherit">
               <TableCell className="w-1/2">
-                <span className="font-semibold text-sm bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent text-pretty whitespace-pre-wrap">
+                <span className="font-semibold text-sm bg-gradient-to-br from-primary to-card-foreground dark:to-Text bg-clip-text text-transparent text-pretty whitespace-pre-wrap">
                   {t(criteria.label)}
                 </span>
               </TableCell>
@@ -72,17 +72,17 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
                       }
                       onValueChange={(value) => handleSelect(criteria, +value)}
                     >
-                      <SelectTrigger className="w-full text-left text-xs whitespace-normal text-pretty">
+                      <SelectTrigger className="w-full text-left text-xs text-pretty truncate">
                         <SelectValue placeholder={t('select_an_option')} />
                       </SelectTrigger>
-                      <SelectContent className="max-w-sm bg-card text-pretty text-sm">
+                      <SelectContent className="max-w-sm text-pretty text-sm">
                         {criteria.options.map((option, index: number) => (
                           <SelectItem
                             key={index}
                             value={option.value.toString()}
                             className="border border-b-primary last:border-b-0 p-4"
                           >
-                            <span className="block text-pretty whitespace-pre-wrap">
+                            <span className="text-pretty whitespace-pre-wrap">
                               {t(option.description)} - {option.value}{' '}
                               {t('score')}
                             </span>

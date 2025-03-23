@@ -59,7 +59,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                           <span className="flex flex-row justify-between items-center w-full">
                             <div className="flex flex-row w-full items-center">
                               <item.icon className="mr-2 h-4 w-4" />
-                              <span className="text-md font-sans">
+                              <span className="text-md font-sans font-medium">
                                 {tDash(item.title)}
                               </span>
                             </div>
@@ -91,7 +91,7 @@ export const SidebarContentItems: React.FC<SidebarContentItemsProps> = ({
                                 href={subItem.href}
                                 onClick={() => handleClose()}
                               >
-                                <span className="text-xs font-light">
+                                <span className="text-xs">
                                   {tSubI(subItem.label)}
                                 </span>
                               </Link>

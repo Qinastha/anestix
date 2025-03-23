@@ -32,7 +32,7 @@ export const OptionInput: React.FC<DesktopScaleInputProps> = ({
       type="number"
       value={val !== undefined ? val : ''}
       onChange={(e) => handleChange(e)}
-      className="p-2 rounded w-full placeholder:text-start placeholder:text-xs lg:placeholder:text-sm"
+      className="p-2 rounded-md w-full placeholder:text-start placeholder:text-xs lg:placeholder:text-sm"
       placeholder={`${criteria.minValue} - ${criteria.maxValue}`}
       min={criteria.minValue}
       max={criteria.maxValue}

@@ -20,7 +20,7 @@ export default function Error({
       </p>
       <Button
         onClick={() => reset()}
-        className="px-6 py-3 bg-destructive text-buttonText font-semibold rounded-md hover:bg-primary hover:transition-all"
+        className="px-6 py-3 bg-destructive font-semibold rounded-md hover:bg-primary hover:transition-all"
       >
         {' '}
         Try again

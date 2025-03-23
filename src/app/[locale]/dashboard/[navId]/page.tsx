@@ -48,14 +48,14 @@ export default function SubitemsPage() {
               <Link className="group" href={subItem.href}>
                 <Card className="md:h-full hover:shadow-xl transition-shadow">
                   <CardHeader className="items-center md:h-full">
-                    <CardTitle className="flex flex-row items-center justify-center gap-x-3 text-xl xl:text-2xl font-semibold">
+                    <CardTitle className="flex flex-row items-center justify-center gap-x-3 text-lg xl:text-xl font-semibold">
                       <Sparkle className="transition-[stroke] duration-300 group-hover:stroke-primary" />
                       <h2 className="flex-1 text-center">
                         {tSubI(subItem.label)}
                       </h2>
                       <Sparkle className="transition-[stroke] duration-300 group-hover:stroke-primary" />
                     </CardTitle>
-                    <CardDescription className="text-md lg:text-lg">
+                    <CardDescription className="text-md">
                       {tSubI(subItem.description)}
                     </CardDescription>
                   </CardHeader>

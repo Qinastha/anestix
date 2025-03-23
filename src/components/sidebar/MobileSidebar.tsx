@@ -22,7 +22,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
         <Dialog.Trigger asChild>
           <button
             aria-label="Toggle sidebar navigation"
-            className="fixed bottom-5 right-5 z-50 rounded-full bg-primary p-2 text-buttonText shadow-lg [min-width:950px]:hidden"
+            className="fixed bottom-5 right-5 z-50 rounded-full bg-primary text-white p-2 shadow-lg [min-width:950px]:hidden"
           >
             <svg
               className="h-6 w-6"
@@ -49,12 +49,12 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
           <Dialog.Description className="sr-only">
             Use this menu to navigate the application sections.
           </Dialog.Description>
-          <div className="h-full w-full flex flex-col border-sidebar-border bg-sidebar-background text-sidebar-foreground">
+          <div className="h-full w-full flex flex-col">
             <Button
               variant="outline"
               onClick={() => setOpen(false)}
               aria-label="Close sidebar"
-              className="text-primary text-2xl font-bold bg-sidebar self-end"
+              className="text-primary hover:text-destructive text-2xl font-bold bg-sidebar self-end"
               size="icon"
             >
               &times;

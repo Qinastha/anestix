@@ -79,7 +79,7 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
               className="hover:bg-inherit"
             >
               <TableCell className={`${labelWidthClass}`}>
-                <span className="font-semibold bg-gradient-to-br from-primary to-card-foreground dark:to-buttonText bg-clip-text text-transparent text-pretty whitespace-pre-wrap">
+                <span className="font-semibold bg-gradient-to-br from-primary to-muted-foreground bg-clip-text text-transparent text-pretty whitespace-pre-wrap">
                   {t(criteria.label)}
                 </span>
               </TableCell>
