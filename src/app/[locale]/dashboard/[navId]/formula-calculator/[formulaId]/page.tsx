@@ -48,12 +48,7 @@ export default function FormulaCalculatorPage() {
       transition={{ duration: 0.4 }}
     >
       <Card className="p-4 w-full flex flex-col">
-        <motion.h1
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-xl lg:text-2xl mb-6 text-center font-semibold underline underline-offset-4 decoration-primary"
-        >
+        <motion.h1 className="text-xl lg:text-2xl mb-6 text-center font-semibold underline underline-offset-4 decoration-primary">
           {tCalc(config.label)}
         </motion.h1>
 

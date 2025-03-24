@@ -41,7 +41,7 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
           key={item.label}
           className="w-full h-full pb-4"
           variants={CHILD_VARIANT_Y}
-          whileHover={{ scale: 1.03 }}
+          whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >

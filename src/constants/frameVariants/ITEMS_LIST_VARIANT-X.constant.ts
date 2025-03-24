@@ -21,7 +21,7 @@ export const PARENT_VARIANT_X = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.13,
     },
   },
 };
