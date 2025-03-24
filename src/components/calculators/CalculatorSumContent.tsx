@@ -57,15 +57,13 @@ export const CalculatorSumContent = <TResult extends Result>({
               ))}
             </ol>
 
-            {annotation && (
-              <motion.hr
-                key="divider"
-                className="my-6 border-primary border-2 rounded-md"
-                initial={{ width: 0, opacity: 0 }}
-                animate={{ width: '100%', opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              />
-            )}
+            <motion.hr
+              key="divider"
+              className="my-6 border-primary border-2 rounded-md"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: '100%', opacity: 1 }}
+              transition={{ duration: 0.5, type: 'tween' }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -74,11 +72,8 @@ export const CalculatorSumContent = <TResult extends Result>({
         <motion.div
           key="annotation"
           className="mt-3 whitespace-pre-wrap text-pretty"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
         >
-          <p className="text-sm lg:text-base">{annotation}</p>
+          <motion.p className="text-sm lg:text-base">{annotation}</motion.p>
         </motion.div>
       )}
     </>

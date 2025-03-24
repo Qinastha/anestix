@@ -25,15 +25,13 @@ export const LanguageSwitcher: React.FC = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.05 }}
         >
-          <Button variant="outline" className="w-12 bg-inherit">
-            {locale.toUpperCase() || 'RU'}
-          </Button>
+          <Button variant="ghost">{locale.toUpperCase() || 'RU'}</Button>
         </motion.div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-32">
@@ -45,7 +43,7 @@ export const LanguageSwitcher: React.FC = () => {
               onSelect={() => handleLanguageChange(locale)}
             >
               <span className="flex-1">{locale.toUpperCase()}</span>
-              <hr className="bg-primary w-full h-px" />
+              <hr className="bg-primary w-full h-0.5" />
             </DropdownMenuItem>
           );
         })}

@@ -29,7 +29,9 @@ export const OptionGridCell: React.FC<DesktopScaleCellProps> = ({
             animate={{ scale: isSelected ? 1.05 : 1 }}
             transition={{
               type: 'spring',
-              stiffness: 300,
+              stiffness: 500,
+              duration: 0.2,
+              delay: 0,
             }}
             className={`flex items-center p-1 justify-center text-center rounded-md border aspect-[6/5] h-5/6 text-pretty whitespace-pre-wrap ${
               isSelected

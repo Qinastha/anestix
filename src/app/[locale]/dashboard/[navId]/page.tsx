@@ -9,13 +9,16 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { Sparkle } from 'lucide-react';
 import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
 import { sortByLabel } from '@/utils/sortByLabel';
 import { useTranslations } from 'use-intl';
 import { Link } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
+import {
+  CHILD_VARIANT_Y,
+  PARENT_VARIANT_Y,
+} from '@/constants/frameVariants/ITEMS_LIST_VARIANT-Y.constant';
 
 export default function SubitemsPage() {
   const tSubI = useTranslations('SubItemsList');
@@ -35,15 +38,20 @@ export default function SubitemsPage() {
   return (
     <>
       {sortedSubItems && sortedSubItems.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full">
-          {sortedSubItems.map((subItem, index: number) => (
+        <motion.div
+          variants={PARENT_VARIANT_Y}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 w-full"
+        >
+          {sortedSubItems.map((subItem) => (
             <motion.div
               key={subItem.label}
-              custom={index}
-              variants={CARDVARIANTS_BASE}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
+              variants={CHILD_VARIANT_Y}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.2, type: 'spring', stiffness: 100 }}
             >
               <Link className="group" href={subItem.href}>
                 <Card className="md:h-full hover:shadow-xl transition-shadow">
@@ -63,7 +71,7 @@ export default function SubitemsPage() {
               </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       ) : (
         <p className="text-center text-lg w-full">{tSubI('no_items')}</p>
       )}

@@ -1,12 +1,15 @@
 'use client';
 import React from 'react';
 import { motion } from 'motion/react';
-import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { NavigationSubItemLink } from '@/interfaces/NavigationItem.type';
 import { sortByLabel } from '@/utils/sortByLabel';
 import { useTranslations } from 'use-intl';
 import { Link } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
+import {
+  CHILD_VARIANT_Y,
+  PARENT_VARIANT_Y,
+} from '@/constants/frameVariants/ITEMS_LIST_VARIANT-Y.constant';
 
 type ReusableListProps = {
   items: NavigationSubItemLink[];
@@ -26,17 +29,21 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
   );
 
   return (
-    <div className="p-4 space-y-2">
-      {sortedLinks.map((item, index: number) => (
+    <motion.div
+      variants={PARENT_VARIANT_Y}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      className="p-4 space-y-2"
+    >
+      {sortedLinks.map((item) => (
         <motion.div
           key={item.label}
           className="w-full h-full pb-4"
-          whileTap="tap"
-          custom={index}
-          variants={CARDVARIANTS_BASE}
-          initial="initial"
-          animate="animate"
-          whileHover="hover"
+          variants={CHILD_VARIANT_Y}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <Link href={item.href}>
             <div className="flex items-center p-4 rounded-lg shadow shadow-primary hover:translate-x-2 transition-transform duration-300">
@@ -48,6 +55,6 @@ export const ReusableLinksList: React.FC<ReusableListProps> = ({
           </Link>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };

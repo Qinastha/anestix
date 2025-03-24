@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -9,6 +9,10 @@ import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.consta
 import { useDebounce } from '@/hooks/useDebounce';
 import { useTranslations } from 'use-intl';
 import { Link } from '@/i18n/navigation';
+import {
+  CHILD_VARIANT_Y,
+  PARENT_VARIANT_Y,
+} from '@/constants/frameVariants/ITEMS_LIST_VARIANT-Y.constant';
 
 interface SearchResult {
   label: string;
@@ -69,30 +73,6 @@ export const SearchBar = () => {
     }
   };
 
-  const listItemVariants = {
-    hidden: { opacity: 0, y: -10, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.2, ease: 'easeOut' },
-    },
-    exit: {
-      opacity: 0,
-      y: -10,
-      scale: 0.95,
-      transition: { duration: 0.2, ease: 'easeIn' },
-    },
-  };
-  const listVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   return (
     <div
       className="relative mb-8"
@@ -100,90 +80,76 @@ export const SearchBar = () => {
       tabIndex={0}
       onBlur={handleContainerBlur}
     >
-      <AnimatePresence>
-        {isSearchOpen ? (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="flex flex-col items-center"
-          >
-            <div className="relative w-full">
-              <Input
-                type="search"
-                placeholder={tSBar('search')}
-                className="w-full"
-                autoFocus
-                onChange={(e) => setQuery(e.target.value)}
-                onFocus={() => setIsSearchOpen(true)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === 'Return') {
-                    stopSearch();
-                  }
-                }}
-              />
+      {isSearchOpen ? (
+        <div className="flex flex-col items-center">
+          <div className="relative w-full">
+            <Input
+              type="search"
+              placeholder={tSBar('search')}
+              className="w-full"
+              autoFocus
+              onChange={(e) => setQuery(e.target.value)}
+              onFocus={() => setIsSearchOpen(true)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === 'Return') {
+                  stopSearch();
+                }
+              }}
+            />
+            <AnimatePresence>
               {debouncedQuery && (
-                <AnimatePresence>
-                  <motion.ul
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={listVariants}
-                    className="absolute z-10 mt-2 px-2 py-6 w-full max-h-60 overflow-y-auto rounded-lg shadow-lg bg-secondary"
-                  >
-                    {filteredResults.length > 0 ? (
-                      filteredResults.map((result, index: number) => (
-                        <motion.li
-                          key={index}
-                          variants={listItemVariants}
-                          className="px-4 py-2"
-                          whileHover={{
-                            scale: 1.02,
-                            borderColor: 'primary',
-                            transition: { duration: 0.2 },
-                          }}
-                        >
-                          <Link
-                            href={result.href}
-                            onClick={stopSearch}
-                            className="block w-full border-b border-primary"
-                          >
-                            {result.label}
-                          </Link>
-                        </motion.li>
-                      ))
-                    ) : (
+                <motion.ul
+                  variants={PARENT_VARIANT_Y}
+                  initial="hidden"
+                  animate="show"
+                  exit="exit"
+                  className="absolute z-10 mt-2 px-2 py-6 w-full max-h-60 overflow-y-auto rounded-lg shadow-lg bg-secondary"
+                >
+                  {filteredResults.length > 0 ? (
+                    filteredResults.map((result) => (
                       <motion.li
-                        variants={listItemVariants}
-                        className="px-4 py-2 "
+                        key={result.href}
+                        variants={CHILD_VARIANT_Y}
+                        whileHover={{ translateX: 8 }}
+                        whileTap={{ translateX: 100 }}
+                        transition={{
+                          duration: 0.2,
+                          type: 'spring',
+                          stiffness: 125,
+                        }}
+                        className="px-4 py-2"
                       >
-                        {tSBar('noResults')}
+                        <Link
+                          href={result.href}
+                          onClick={stopSearch}
+                          className="block w-full border-b border-primary"
+                        >
+                          {result.label}
+                        </Link>
                       </motion.li>
-                    )}
-                  </motion.ul>
-                </AnimatePresence>
+                    ))
+                  ) : (
+                    <motion.li className="px-4 py-2 ">
+                      {tSBar('noResults')}
+                    </motion.li>
+                  )}
+                </motion.ul>
               )}
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
+            </AnimatePresence>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <Button
+            variant="outline"
+            className="w-full justify-start text-left font-normal"
+            onClick={() => setIsSearchOpen(true)}
           >
-            <Button
-              variant="outline"
-              className="w-full justify-start text-left font-normal"
-              onClick={() => setIsSearchOpen(true)}
-            >
-              <Search className="mr-2 h-4 w-4" />
-              <span>{tSBar('search')}...</span>
-            </Button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <Search className="mr-2 h-4 w-4" />
+            <span>{tSBar('search')}...</span>
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

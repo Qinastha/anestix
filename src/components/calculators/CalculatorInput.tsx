@@ -6,6 +6,8 @@ interface Param {
   label: string;
   optional?: boolean;
   recDosage?: string;
+  minValue?: number;
+  maxValue?: number;
   defaultValue?: number | string | boolean;
   unit?: string;
 }
@@ -24,10 +26,15 @@ export const CalculatorInput = <TParam extends Param>({
   handleChange,
 }: CalculatorInputProps<TParam>) => {
   const formValue = formValues[param.key];
+  const placeholderText = param.recDosage
+    ? t(param.recDosage)
+    : param.minValue !== undefined && param.maxValue !== undefined
+      ? `${param.minValue} - ${param.maxValue}`
+      : '';
   return (
     <Input
       type="number"
-      placeholder={param.recDosage ? t(param.recDosage) : ''}
+      placeholder={placeholderText}
       value={formValue !== undefined ? Number(formValue) : ''}
       onChange={(e) => handleChange(param.key, e.target.value)}
       className="w-full text-base placeholder:text-muted-foreground placeholder:text-base"

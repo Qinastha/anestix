@@ -9,9 +9,12 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { NAVIGATION_ITEMS } from '@/constants/navigation/NAVIGATION_ITEMS.constant';
-import { CARDVARIANTS_BASE } from '@/constants/CARDVARIANTS_BASE.constant';
 import { useTranslations } from 'use-intl';
 import { Link } from '@/i18n/navigation';
+import {
+  CHILD_VARIANT_Y,
+  PARENT_VARIANT_Y,
+} from '@/constants/frameVariants/ITEMS_LIST_VARIANT-Y.constant';
 
 export default function DashboardPage() {
   const tDash = useTranslations('Dashboard');
@@ -19,32 +22,30 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <motion.h1
-        className="text-3xl font-bold text-center"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl font-bold text-center"
       >
         {tDash('title')}
       </motion.h1>
       <motion.div
-        className="grid gap-6 grid-cols-1 md:grid-cols-2 md:auto-rows-fr"
+        variants={PARENT_VARIANT_Y}
         initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.2 } },
-        }}
+        animate="show"
+        exit="exit"
+        className="grid gap-6 grid-cols-1 md:grid-cols-2 md:auto-rows-fr"
       >
         {NAVIGATION_ITEMS.filter((_, index: number) => index !== 0).map(
-          (item, index: number) => (
+          (item) => (
             <motion.div
               key={item.title}
               className="w-full h-full"
-              custom={index}
-              variants={CARDVARIANTS_BASE}
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
+              variants={CHILD_VARIANT_Y}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.2, type: 'spring', stiffness: 100 }}
             >
               <Card className="flex flex-col md:h-full md:justify-between hover:shadow-lg transition-shadow">
                 <CardHeader>

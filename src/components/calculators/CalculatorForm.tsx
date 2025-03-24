@@ -7,6 +7,10 @@ import { CalculatorSelect } from '@/components/calculators/CalculatorSelect';
 import { CalculatorInput } from '@/components/calculators/CalculatorInput';
 import { CalculatorInputWithUnit } from '@/components/calculators/CalculatorInputWithUnit';
 import { useTranslations } from 'use-intl';
+import {
+  CHILD_VARIANT_Y,
+  PARENT_VARIANT_Y,
+} from '@/constants/frameVariants/ITEMS_LIST_VARIANT-Y.constant';
 
 interface CalculatorFormParameter {
   key: string;
@@ -35,9 +39,10 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={PARENT_VARIANT_Y}
+        initial="hidden"
+        animate="show"
+        exit="exit"
         className="flex flex-wrap"
       >
         {parameters.map((param) => {
@@ -45,9 +50,7 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
           return (
             <motion.div
               key={param.key}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
+              variants={CHILD_VARIANT_Y}
               className={
                 param.type === 'boolean'
                   ? 'w-full sm:w-1/2 px-2 flex flex-row mb-4'

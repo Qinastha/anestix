@@ -14,6 +14,7 @@ import { useBreakpoint } from '@/hooks/useBreakpoint';
 import { OptionInput } from '@/components/score/OptionInput';
 import { OptionRadio } from '@/components/score/OptionRadio';
 import { OptionGridCell } from '@/components/score/OptionGridCell';
+import { motion } from 'motion/react';
 
 interface DesktopScaleCalcProps {
   score: ScoreConfig;
@@ -55,11 +56,13 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
   const optionsWidthClass = maxOptions <= 3 ? 'w-1/2' : 'w-3/4';
 
   return (
-    <div>
-      <h1 className="mb-4 text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
+    <motion.div>
+      <motion.h1 className="mb-4 text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
         {t(score.name)}
-      </h1>
-      <h6 className="mb-4 whitespace-pre-wrap">{t(score.description)}</h6>
+      </motion.h1>
+      <motion.h6 className="mb-4 whitespace-pre-wrap">
+        {t(score.description)}
+      </motion.h6>
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-inherit">
@@ -131,6 +134,6 @@ export const DesktopScore: React.FC<DesktopScaleCalcProps> = ({
           ))}
         </TableBody>
       </Table>
-    </div>
+    </motion.div>
   );
 };

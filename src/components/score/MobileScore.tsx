@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/select';
 import { ScoreConfig, ScoreCriteria } from '@/interfaces/Scores.type';
 import { OptionInput } from '@/components/score/OptionInput';
+import { motion } from 'motion/react';
 
 interface MobileScaleCalcProps {
   score: ScoreConfig;
@@ -34,12 +35,12 @@ export const MobileScore: React.FC<MobileScaleCalcProps> = ({
 }) => {
   return (
     <div>
-      <h1 className="mb-2 text-xl lg:text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
+      <motion.h1 className="mb-2 text-xl lg:text-2xl text-center font-semibold underline underline-offset-4 decoration-primary">
         {t(score.name)}
-      </h1>
-      <h6 className="mb-4 text-sm md:text-md whitespace-pre-wrap">
+      </motion.h1>
+      <motion.h6 className="mb-4 text-sm md:text-md whitespace-pre-wrap">
         {t(score.description)}
-      </h6>
+      </motion.h6>
 
       <Table className="w-full table-fixed">
         <TableHeader>

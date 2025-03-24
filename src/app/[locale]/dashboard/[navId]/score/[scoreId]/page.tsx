@@ -18,7 +18,7 @@ import { useScore } from '@/hooks/useScore';
 export default function ScorePage() {
   const tScore = useTranslations('ScorePage');
   const isMobile = useIsMobile();
-  const ready = useDelayLoad(500);
+  const ready = useDelayLoad(350);
   const params = useParams();
   const scoreId = params.scoreId as string;
   const score = SCORES_LIST[scoreId] as ScoreConfig | undefined;
@@ -43,35 +43,35 @@ export default function ScorePage() {
   }
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        {isMobile ? (
-          <MobileScore
-            score={score}
-            t={tScore}
-            selectedValues={selectedValues}
-            handleSelect={handleSelect}
-          />
-        ) : (
-          <DesktopScore
-            score={score}
-            t={tScore}
-            selectedValues={selectedValues}
-            handleSelect={handleSelect}
-          />
-        )}
-        <Separator />
-        <ResultScore
-          totalScore={totalScore}
-          result={result.summaryText}
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col"
+    >
+      {isMobile ? (
+        <MobileScore
+          score={score}
           t={tScore}
-          extraDescription={score?.extraDescription}
+          selectedValues={selectedValues}
+          handleSelect={handleSelect}
         />
-      </motion.div>
-    </>
+      ) : (
+        <DesktopScore
+          score={score}
+          t={tScore}
+          selectedValues={selectedValues}
+          handleSelect={handleSelect}
+        />
+      )}
+      <Separator />
+      <ResultScore
+        totalScore={totalScore}
+        result={result.summaryText}
+        t={tScore}
+        extraDescription={score?.extraDescription}
+      />
+    </motion.div>
   );
 }

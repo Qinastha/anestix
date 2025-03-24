@@ -41,30 +41,37 @@ export default function FormulaCalculatorPage() {
   }
 
   return (
-    <Card className="p-4 w-full flex flex-col">
-      <motion.h1
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-xl lg:text-2xl mb-6 text-center font-semibold underline underline-offset-4 decoration-primary"
-      >
-        {tCalc(config.label)}
-      </motion.h1>
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
+      <Card className="p-4 w-full flex flex-col">
+        <motion.h1
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-xl lg:text-2xl mb-6 text-center font-semibold underline underline-offset-4 decoration-primary"
+        >
+          {tCalc(config.label)}
+        </motion.h1>
 
-      <CalculatorForm
-        formValues={formValues}
-        parameters={config.parameters}
-        handleCalculate={handleCalculate}
-        handleChange={handleChange}
-        allInputsFilled={allInputsFilled}
-      />
-
-      <CardContent className="mt-6 p-6 border rounded-lg shadow-lg">
-        <CalculatorSumContent
-          result={result}
-          annotation={tCalc(config.annotation)}
+        <CalculatorForm
+          formValues={formValues}
+          parameters={config.parameters}
+          handleCalculate={handleCalculate}
+          handleChange={handleChange}
+          allInputsFilled={allInputsFilled}
         />
-      </CardContent>
-    </Card>
+
+        <CardContent className="mt-6 p-6 border rounded-lg shadow-lg">
+          <CalculatorSumContent
+            result={result}
+            annotation={tCalc(config.annotation)}
+          />
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }
