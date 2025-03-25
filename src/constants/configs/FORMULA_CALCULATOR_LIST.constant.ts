@@ -15,6 +15,7 @@ import { BICARBONATE_DEFICIT_CONFIG } from '@/constants/configs/formula_configs/
 import { ETT_CONFIG } from '@/constants/configs/formula_configs/ETT_CONFIG.constant';
 import { SOLUTION_DILUTION_CONFIG } from '@/constants/configs/formula_configs/SOLUTION_DILUTION_CONFIG.constant';
 import { ANION_GAP_CONFIG } from '@/constants/configs/formula_configs/ANION_GAP_CONFIG.constant';
+import { AA_GRADIENT } from '@/constants/configs/formula_configs/AA_GRADIENT.constant';
 
 export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [BMI_CONFIG.id]: BMI_CONFIG,
@@ -33,4 +34,5 @@ export const FORMULA_CALCULATOR_LIST: Record<string, FormulaConfig> = {
   [ETT_CONFIG.id]: ETT_CONFIG,
   [SOLUTION_DILUTION_CONFIG.id]: SOLUTION_DILUTION_CONFIG,
   [ANION_GAP_CONFIG.id]: ANION_GAP_CONFIG,
+  [AA_GRADIENT.id]: AA_GRADIENT,
 };

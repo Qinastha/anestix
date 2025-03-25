@@ -90,12 +90,12 @@ export const ANION_GAP_CONFIG: FormulaConfig = {
       },
       deltaRatio: {
         label: 'anionGap.deltaRatio',
-        value: safeDeltaRatio,
+        value: Number(safeDeltaRatio.toFixed(2)),
         unit: '',
       },
       albuminCorrectedDeltaRatio: {
         label: 'anionGap.albuminDeltaRatio',
-        value: safeAlbuminCorrectedDeltaRatio,
+        value: Number(safeAlbuminCorrectedDeltaRatio.toFixed(2)),
         unit: '',
       },
     });

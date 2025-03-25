@@ -65,4 +65,8 @@ export const FORMULA_CALCULATOR_LINKS: NavigationSubItemLink[] = [
     label: 'anionGap',
     href: '/dashboard/calculators/formula-calculator/anionGap',
   },
+  {
+    label: 'a-a-gradient',
+    href: '/dashboard/calculators/formula-calculator/a-a-gradient',
+  },
 ];

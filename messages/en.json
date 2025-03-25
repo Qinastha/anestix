@@ -278,7 +278,8 @@
       "ett": "Size of endotracheal tube (ETT) in pediatric patients (1 to 12 years)",
       "solutionDilution": "Solution Dilution Calculator",
       "anionGap": "Anion Gap",
-      "midazolam": "Midazolam"
+      "midazolam": "Midazolam",
+      "a-a-gradient": "A-a Gradient"
   },
   "ScorePage": {
     "criteria": "Criteria",
@@ -863,7 +864,7 @@
         "class4": "Class IV: High Risk (4.0-11.4% 30-day mortality)",
         "class5": "Class V: Very High Risk (10-24.5% 30-day mortality)"
       },
-      "extraDescription": "Patients are stratified into five risk classes based on their total score: Very Low Risk (≤ 65 points); Low Risk (66-85 points); Intermediate Risk (86-105 points); High Risk (106-125 points); Very High Risk (> 125 points)."
+      "extraDescription": "Patients are stratified into five risk classes based on their total score:\n• Very Low Risk (≤ 65 points)\n• Low Risk (66-85 points)\n• Intermediate Risk (86-105 points)\n• High Risk (106-125 points)\n• Very High Risk (> 125 points)."
     },
     "lee": {
       "name": "Revised Cardiac Risk Index (RCRI)",
@@ -1387,7 +1388,7 @@
     "diaBP": "Diastolic Blood Pressure",
     "currentPotassiumLvl": "Current Potassium Level",
     "potassiumChlorideSol": "Potassium Chloride Solution Concentration",
-    "bicarbonateLevel": "Current Bicarbonate Level",
+    "bicarbonateLevel": "Current Plasma Bicarbonate Level",
     "stockConcentration": "Stock Concentration",
     "desiredConcentration": "Desired Concentration",
     "finalVolume": "Final Volume",
@@ -1411,6 +1412,11 @@
     "eplilepticInfusion": "Status Epilepticus Infusion per min",
     "imPremed": "IM Premedication Dose",
     "ivInduction": "IV Induction Dose",
+    "pao2": "PaO₂",
+    "fio2": "FiO₂",
+    "paco2": "PaCO₂",
+    "atmpressure": "Atmospheric pressure",
+    "rq": "Respiratory quotient",
     "unit_mg": "mg",
     "unit_g": "g",
     "unit_mcg": "mcg",
@@ -1475,15 +1481,15 @@
     },
 
     "algoverIndex": {
-      "label": "Algover Index",
+      "label": "Algover Index (Shock Index)",
       "index": "Algover Index",
-      "annotation": "Algover index helps estimate hypovolemia risk; values above 1.0 may indicate significant volume depletion."
+      "annotation": "Interpretation:\n• Normally, the Algover Index equals 0.5.\n• An index of 1 indicates a blood loss of approximately 20% of the total blood volume (TBV), which corresponds to 1–1.2 L in an adult.\n• An index of 1.5 indicates a blood loss of 20%–40% of TBV, which corresponds to 1.5–2 L in an adult.\\n• An index of 2 indicates a blood loss of more than 40% of TBV, i.e., more than 2.5 L of blood.\n\nFormula used: Shock Index = HR/SBP"
     },
     "dailyDiuresis": {
       "label": "Hourly Diuresis Rate",
       "absoluteDiuresis": "Absolute hourly Diuresis Rate",
       "hourlyDiuresis": "Hourly Diuresis Rate",
-      "annotation": "The following values \u200B\u200Bare usually used as a guide (in ml/kg/h):\nAdults: the norm is considered to be ≈0.5–1 ml/kg/h (some sources give up to 2 ml/kg/h, everything depends on specific clinical conditions).\nChildren: the indicator is higher and strongly depends on age (in newborns it can reach 2–3 ml/kg/h, in older children it is closer to the indicators of adults)."
+      "annotation": "The following values \u200B\u200Bare usually used as a guide (in ml/kg/h):\n• Adults: the norm is considered to be ≈0.5–1 ml/kg/h (some sources give up to 2 ml/kg/h, everything depends on specific clinical conditions).\n• Children: the indicator is higher and strongly depends on age (in newborns it can reach 2–3 ml/kg/h, in older children it is closer to the indicators of adults)."
     },
     "plasmaExchange": {
       "label": "Plasma Exchange Calculator",
@@ -1579,7 +1585,7 @@
     },
     "pediatricInfusion": {
       "label": "Pediatric infusion rate",
-      "annotation": "Keep in mind that this formula is valid only if exactly 1 mL of the 1% drug solution is used for dilution; any change in this volume requires recalculating the final concentration! \n\nInfusion rate (mL/h) = (weight (kg) × 60 × dose (mcg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)."
+      "annotation": "* Keep in mind that this formula is valid only if exactly 1 mL of the 1% drug solution is used for dilution; any change in this volume requires recalculating the final concentration! \n\nInfusion rate (mL/h) = (weight (kg) × 60 × dose (mcg/kg/min) / (drug concentration (%) × 10000)) × total volume after dilution (mL)."
     },
     "remifentanyl": {
       "label": "Remifentanil",
@@ -1594,7 +1600,7 @@
     "devine": {
       "label": "Ideal Body Weight",
       "idealWeight": "Ideal Weight",
-      "annotation": "Formula for calculating ideal body weight using the Devine method:\n\n- For men: IBW = 50 + 2.3 x (K * height (in centimeters) - 60);\n\n- For women: IBW = 45.5 + 2.3 x (K * height (in centimeters) - 60)\n\nK = 0.393701, the conversion factor from centimeters to inches."
+      "annotation": "Formula for calculating ideal body weight using the Devine method:\n\n• For men: IBW = 50 + 2.3 x (K * height (in centimeters) - 60);\n\n• For women: IBW = 45.5 + 2.3 x (K * height (in centimeters) - 60)\n\nK = 0.393701, the conversion factor from centimeters to inches."
     },
     "map": {
       "label": "Mean Arterial Pressure (MAP)",
@@ -1608,13 +1614,13 @@
       "potassiumDeficit": "Potassium deficit",
       "amountOfSolMl": "Potassium repletion via potassium chloride",
       "maxAmountDay": "Maximum daily intake of potassium chloride",
-      "annotation": "1) Never give potassium I.M or rapid I.V push\n2) Never give more than 1.5 g KCl or 20 mmol of K+ over 1 hour"
+      "annotation": "Formula used for Potassium deficit = 0.4 × body weight (kg) × (4.5 – current potassium level (mmol/L))\n\n* Note: \n1) Never give potassium I.M or rapid I.V push\n2) Never give more than 1.5 g KCl or 20 mmol of K+ over 1 hour"
     },
     "bicarbonateDeficit": {
       "label": "Calculate bicarbonate deficit",
       "bicarbonateDeficit": "Bicarbonate deficit",
       "solutionVolume": "Bicarbonate repletion via 4% NaHCO3 solution",
-      "annotation": "NOTE: Sodium bicarbonate solution allows for rapid correction of acidosis, but the sodium cations contained in the solution further increase the osmolarity of the extracellular fluid, thereby aggravating cellular dehydration.\n\nCalculator use 24 mmol/L as normal level of bicarbonate so for correct answer current level should be lower"
+      "annotation": "NOTE: Sodium bicarbonate solution allows for rapid correction of acidosis, but the sodium cations contained in the solution further increase the osmolarity of the extracellular fluid, thereby aggravating cellular dehydration.\n\nCalculator use 24 mmol/L as normal level of plasma bicarbonate so for correct answer current level should be lower\n\nFormula used for Bicarbonate deficit = 0.4 × body weight (kg) × (24 – current bicarbonate level (mmol/L))"
     },
     "ett": {
       "label": "Calculate ET tube size for pediatric patients",
@@ -1641,6 +1647,12 @@
     "midazolam": {
       "label": "Midazolam",
       "annotation": "Midazolam is a short-acting benzodiazepine used for sedation and amnesia in medical procedures. It is also used for managing status epilepticus and as premedication before anesthesia.\n\n3 ml = 15mg.\n\nIndications:\n- Procedural sedation and anesthesia induction\n- Status epilepticus treatment (IM/IV)\n- Preoperative sedation\n\nDosage Considerations:\n- Pediatric oral sedation: Max 20 mg or 0.5 mg/kg\n- Pediatric IM sedation: 0.1 mg/kg\n- Pediatric IV sedation: 0.05-0.075 mg/kg\n- Pediatric intranasal: 0.2-0.25 mg/kg\n- Adult IV induction: 0.2 mg/kg\n- Adult IM premedication: 0.07 mg/kg\n- Adult IV sedation: 0.05 mg/kg\n\nWarnings:\n- Risk of respiratory depression, especially when combined with opioids or CNS depressants.\n- May cause dependence with prolonged use.\n- Use caution in elderly and renally impaired patients.\n\nMonitoring:\n- Continuous monitoring required for respiratory function.\n- Patients should be observed for signs of over-sedation or adverse reactions."
+    },
+    "a-a-gradient": {
+      "label": "Alveolar to arterial gradient (A-a Gradient)",
+      "gradient": "A-a Gradient",
+      "ageGradient": "Expected A-a Gradient for Age",
+      "annotation": "Possible reasons of elevated A-a gradient:\n• Dead space ventilation - pneumonia, asthma, COPD, pulmonary embolism (ventilation without perfusion)\n• Left to right shunt - pulmonary oedema, ARDS, pneumonia (perfusion without ventilation)\n• Alveolar hypoventilation - pulmonary fibrosis, interstitial lung disease\n\nFormulas used for calculations:\n1) A-a Gradient = (Patm – PH2O) * FiO2 – PaCO2/RQ – PaO2\n2) Expected A-a gradient = (Age + 10) / 4. \n\n* Note:\n• RQ is the respiratory quotient (usually 0.8 but can , and vary with diet and metabolic state\n• PH20 is the water vapour pressure = 47mmHg at 37C"
     }
   }
 }

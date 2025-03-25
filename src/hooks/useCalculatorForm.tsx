@@ -106,7 +106,7 @@ export function useCalculatorForm<TParam extends Param, TResult>({
         if (typeof value !== 'number') return;
         if (
           (param.minValue !== undefined && value <= param.minValue) ||
-          (param.maxValue !== undefined && value >= param.maxValue)
+          (param.maxValue !== undefined && value >= param.maxValue + 0.1)
         ) {
           invalid.push(param);
         }

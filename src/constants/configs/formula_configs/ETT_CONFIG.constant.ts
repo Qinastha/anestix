@@ -10,7 +10,7 @@ export const ETT_CONFIG: FormulaConfig = {
       unit: 'years',
       type: 'number',
       minValue: 1,
-      maxValue: 13,
+      maxValue: 12,
     },
   ],
   calculate: ({ age }, setResult) => {

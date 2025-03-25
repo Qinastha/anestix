@@ -40,9 +40,8 @@ export const POTASSIUM_DEFICIT_CONFIG: FormulaConfig = {
     { weight, currentPotassiumLvl, potassiumChlorideSol },
     setResult
   ) => {
-    const POTASSIUM_NORMAL = 4.5;
-    const potassiumDeficit =
-      +weight * 0.2 * (POTASSIUM_NORMAL - +currentPotassiumLvl);
+    //potassium normal lvl = 4.5
+    const potassiumDeficit = +weight * 0.4 * (4.5 - +currentPotassiumLvl);
     const amountOfSolMl = +potassiumChlorideSol * potassiumDeficit;
     const maxAmountDay = 3 * +weight * +potassiumChlorideSol;
     setResult({
