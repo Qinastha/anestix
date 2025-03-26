@@ -1,10 +1,4 @@
-import {
-  Activity,
-  Book,
-  Calculator,
-  Home,
-  TableOfContents,
-} from 'lucide-react';
+import { Activity, Book, Calculator, TableOfContents } from 'lucide-react';
 import { NavigationItem } from '@/interfaces/NavigationItem.type';
 import { SCORE_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SCORE_SUBITEMS.constant';
 import { CALCULATOR_SUBITEMS } from '@/constants/navigation/navigatation_subitems/CALCULATOR_SUBITEMS.constant';
@@ -12,7 +6,6 @@ import { ULTRASOUND_SUBITEMS } from '@/constants/navigation/navigatation_subitem
 import { SKILLS_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SKILLS_SUBITEMS.constant';
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
-  { icon: Home, description: '', title: 'home', href: '/dashboard' },
   {
     icon: TableOfContents,
     title: 'score-list.title',

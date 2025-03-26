@@ -56,6 +56,10 @@
     "title": "Dashboard",
     "description": "Quick access to all sections that are available "
   },
+  "MetadataSupportMePage": {
+  "title": "Support Me",
+  "description": "Help me improve platform with feedback and financial supply."
+  },
   "Units": {
     "kg_m2": "kg/m²",
     "kcal_day": "kcal/day",
@@ -130,13 +134,16 @@
       "description": "Utilize built-in calculators for risk assessments, dosage dosages, and more to support informed clinical decision-making."
     }
   },
+  "SupportMe": {
+
+  },
   "Dashboard": {
     "title": "Dashboard",
     "no_items": "There are no items available right now",
     "explore": "Explore",
     "underDev": "Under development",
     "home": "Home",
-    "metaTitleDefault": "Section",
+    "metaTitleDefault": "Sections",
     "metaDescDefault": "Navigation items page",
     "": "",
     "score-list": {
@@ -154,6 +161,10 @@
     "skills": {
       "title": "Skills",
       "description": "Dive into in‑depth information on medical procedures and practical skills across many sub‑sections."
+    },
+    "supportMe": {
+      "title": "Support Me",
+      "description": "Help me improve platform with feedback and financial supply."
     }
   },
     "SubItemsList": {

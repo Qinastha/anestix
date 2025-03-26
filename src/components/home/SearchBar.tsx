@@ -103,7 +103,7 @@ export const SearchBar = () => {
                   initial="hidden"
                   animate="show"
                   exit="exit"
-                  className="absolute z-10 mt-2 px-2 py-6 w-full max-h-60 overflow-y-auto rounded-lg shadow-lg bg-secondary"
+                  className="absolute z-10 mt-2 px-2 py-6 w-full max-h-60 overflow-x-hidden overflow-y-auto rounded-lg shadow-lg bg-secondary"
                 >
                   {filteredResults.length > 0 ? (
                     filteredResults.map((result) => (
