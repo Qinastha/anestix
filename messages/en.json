@@ -107,7 +107,10 @@
     "invalidRangeBoth": "Input value for \"{paramName}\" is out of allowed range. Please enter a value between {min, number} and {max, number} {unit}.",
     "invalidRangeMin": "Input value for \"{paramName}\" is below the allowed minimum of {min, number} {unit}.",
     "invalidRangeMax": "Input value for \"{paramName}\" is above the allowed maximum of {max, number} {unit}.",
-    "overDosage": "Input value for \"{paramName}\" exceeds the recommended dosage of {maxValue, number} {unit} as per the documentation."
+    "overDosage": "Input value for \"{paramName}\" exceeds the recommended dosage of {maxValue, number} {unit} as per the documentation.",
+    "feedbackSuccess": "Thank you for your feedback!",
+    "feedbackError": "An error occurred while submitting your feedback. Please try again later.",
+    "unexpectedError": "An unexpected error occurred. Please try again later."
   },
   "Home": {
     "title": "Anestix",
@@ -135,7 +138,33 @@
     }
   },
   "SupportMe": {
-
+    "title": "Support My Work",
+    "aboutMe": "As a solo developer creating this tool for medical professionals, your support enables me to continuously develop, update, and enhance this resource for everyone.",
+    "oneDonate": {
+      "title": "One Donate",
+      "description": "If my application makes your day-to-day work easier, consider a small one-time donation.",
+      "cardContent": "Every donation goes towards hosting, ongoing development, and adding more features.",
+      "buttonText": "Donate via Credit/Debit Card"
+    },
+    "subscription": {
+      "title": "Monthly Sponsor",
+      "description": "Keep this project sustainable by sponsoring me on a monthly basis via Patreon.",
+      "cardContent": "By becoming a monthly sponsor, you help ensure ongoing improvements and dedicated support.",
+      "buttonText": "Become a Patreon Sponsor"
+    },
+    "feedback" : {
+      "title": "Feedback & Credentials",
+      "description": "Your feedback is vital for shaping improvements and new features.",
+      "cardContent": "Have suggestions, bug reports, or ideas for new calculations?\nShare them below. I&#39;d also love to hear how you&#39;ve used these tools in practice.",
+      "emailPlaceholder": "Your email or contact",
+      "feedbackPlaceholder": "Your feedback or suggestions...",
+      "buttonText": "Send Feedback"
+    },
+    "credentials": {
+      "title": "Developer Credentials:",
+      "email": "My email for connect:",
+      "patreon": "My patreon link:"
+    }
   },
   "Dashboard": {
     "title": "Dashboard",
