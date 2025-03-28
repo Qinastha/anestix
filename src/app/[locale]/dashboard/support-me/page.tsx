@@ -3,11 +3,9 @@ import { motion } from 'motion/react';
 import { useTranslations } from 'use-intl';
 import { FeedbackCard } from '@/components/support/FeedbackCard';
 import { DonateItemCard } from '@/components/support/DonateItemCard';
-import { useFeedback } from '@/hooks/useFeedback';
 
 export default function SupportMePage() {
   const tSup = useTranslations('SupportMe');
-  const { formValues, handleInputChange, handleSendFeedback } = useFeedback();
 
   return (
     <>
@@ -46,6 +44,7 @@ export default function SupportMePage() {
             description={tSup('subscription.description')}
             cardContent={tSup('subscription.cardContent')}
             buttonText={tSup('subscription.buttonText')}
+            link="https://www.patreon.com/c/anestix/membership"
           />
         </motion.div>
 
@@ -57,11 +56,7 @@ export default function SupportMePage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="w-full max-w-3xl"
         >
-          <FeedbackCard
-            formValues={formValues}
-            handleInputChange={handleInputChange}
-            handleSendFeedback={handleSendFeedback}
-          />
+          <FeedbackCard />
         </motion.div>
       </motion.section>
     </>

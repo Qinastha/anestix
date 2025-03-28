@@ -11,24 +11,16 @@ import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { useTranslations } from 'use-intl';
-import { Feedback } from '@/types/Feedback.type';
+import { useFeedback } from '@/hooks/useFeedback';
+import { Link } from '@/i18n/navigation';
 
-interface FeedbackCardProps {
-  formValues: Feedback;
-  handleInputChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  handleSendFeedback: () => void;
-}
-
-export const FeedbackCard: React.FC<FeedbackCardProps> = ({
-  formValues,
-  handleInputChange,
-  handleSendFeedback,
-}) => {
+export const FeedbackCard: React.FC = () => {
   const tSup = useTranslations('SupportMe');
-  const isFormValid =
+  const { formValues, handleInputChange, handleSendFeedback } = useFeedback();
+
+  const isFormValid: boolean =
     formValues.email.trim() !== '' && formValues.feedback.trim() !== '';
+
   return (
     <Card>
       <CardHeader>
@@ -70,7 +62,12 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({
           <p className="font-medium"> {tSup('credentials.title')}</p>
           <ul className="list-disc list-inside text-muted-foreground ml-2 mt-2">
             <li>{tSup('credentials.email')}</li>
-            <li>{tSup('credentials.patreon')}</li>
+            <li>
+              {tSup('credentials.patreon')} {''}
+              <Link className="underline" href="https://patreon.com/anestix">
+                patreon.com/anestix
+              </Link>
+            </li>
           </ul>
         </div>
       </CardContent>

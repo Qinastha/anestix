@@ -19,8 +19,8 @@ export const POST = async (request: Request) => {
 
     // Store feedback in Redis
     const feedbackId = crypto.randomUUID();
-    await redis.hSet(`feedback-${feedbackId}`, 'email', email);
-    await redis.hSet(`feedback-${feedbackId}`, 'feedback', feedback);
+    const mergedContent = `Email: ${email}\nFeedback: ${feedback}`;
+    await redis.set(`feedback-${feedbackId}`, mergedContent);
 
     await redis.disconnect();
 

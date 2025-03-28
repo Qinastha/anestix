@@ -3,7 +3,7 @@ import { NavigationItem } from '@/interfaces/NavigationItem.type';
 import { SCORE_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SCORE_SUBITEMS.constant';
 import { CALCULATOR_SUBITEMS } from '@/constants/navigation/navigatation_subitems/CALCULATOR_SUBITEMS.constant';
 import { ULTRASOUND_SUBITEMS } from '@/constants/navigation/navigatation_subitems/ULTRASOUND_SUBITEMS.constant';
-import { SKILLS_SUBITEMS } from '@/constants/navigation/navigatation_subitems/SKILLS_SUBITEMS.constant';
+import { GUIDES_SUBITEMS } from '@/constants/navigation/navigatation_subitems/GUIDES_SUBITEMS.constant';
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
@@ -30,10 +30,10 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   },
   {
     icon: Book,
-    title: 'skills.title',
-    description: 'skills.description',
-    href: '/dashboard/skills',
-    subItems: SKILLS_SUBITEMS,
+    title: 'guides.title',
+    description: 'guides.description',
+    href: '/dashboard/guides',
+    subItems: GUIDES_SUBITEMS,
     underDev: true,
   },
 ];

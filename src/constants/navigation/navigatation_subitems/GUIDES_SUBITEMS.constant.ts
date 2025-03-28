@@ -1,9 +1,9 @@
 import { NavigationSubItem } from '@/interfaces/NavigationItem.type';
 
-export const SKILLS_SUBITEMS: NavigationSubItem[] = [
+export const GUIDES_SUBITEMS: NavigationSubItem[] = [
   {
     label: 'intubation.title',
     description: 'intubation.description',
-    href: '/dashboard/skills/intubation',
+    href: '/dashboard/guides/intubation',
   },
 ];

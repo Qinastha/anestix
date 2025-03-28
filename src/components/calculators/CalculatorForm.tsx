@@ -100,13 +100,18 @@ export const CalculatorForm = <TParam extends CalculatorFormParameter>({
         })}
       </motion.div>
 
-      <Button
-        className="mt-6 w-1/2 self-center"
-        onClick={handleCalculate}
-        disabled={!allInputsFilled}
+      <motion.div
+        whileTap={{ scaleY: 0.95 }}
+        className="mt-6 text-center w-full"
       >
-        {tCalc('calculate')}
-      </Button>
+        <Button
+          className="w-1/2"
+          onClick={handleCalculate}
+          disabled={!allInputsFilled}
+        >
+          {tCalc('calculate')}
+        </Button>
+      </motion.div>
     </>
   );
 };
