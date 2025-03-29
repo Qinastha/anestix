@@ -42,7 +42,6 @@ export async function generateMetadata({
       // Favicons
       icon: [
         { url: '/icon.png', sizes: '96x96', type: 'image/png' },
-        { url: '/icon.svg', sizes: '1080x1080', type: 'image/svg' },
         { url: '/favicon.ico', sizes: '96x96', type: 'image/x-icon' },
       ],
       // Apple touch icon (iOS)
