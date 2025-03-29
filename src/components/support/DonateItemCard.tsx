@@ -34,7 +34,7 @@ export const DonateItemCard: React.FC<DonateItemCardProps> = ({
       <CardContent className="flex-1 space-y-4 flex flex-col justify-between">
         <p className="text-sm text-muted-foreground flex-1">{cardContent}</p>
         <motion.div whileTap={{ scaleX: 0.95 }} className="w-full text-center">
-          <Link className="w-full" href={link || '#'}>
+          <Link className="w-full" href={link || '#'} target="_blank">
             <Button className="w-full whitespace-pre-wrap text-pretty self-center">
               {buttonText}
             </Button>

@@ -4,8 +4,8 @@
     "shortName": "Anestix",
     "description": "A global anesthesiology and ICU platform providing clinical guidelines, drug dosage calculators, sedation protocols, and more.",
     "screenshots": {
-      "wideLabel": "Wide representation of operating room",
-      "narrowLabel": "Narrow representation of operating room"
+      "wideLabel": "Wide banner",
+      "narrowLabel": "Narrow banner"
     },
     "shortcuts": {
       "dashboard": {
@@ -116,7 +116,7 @@
     "title": "Anestix",
     "welcome": "Welcome to the Anesthesiologist's guide",
     "enterPlatform": "Enter Platform",
-    "platformDescription": "Your comprehensive platform for anesthesiology professionals",
+    "platformDescription": "Your comprehensive platform for anesthesiology and ICU professionals",
     "": ""
   },
   "SearchBar": {

@@ -37,6 +37,7 @@ export const OptionInput: React.FC<DesktopScaleInputProps> = ({
       min={criteria.minValue}
       max={criteria.maxValue}
       pattern="[0-9]*"
+      onKeyDown={(e) => (e.key === '-' || e.key === '+') && e.preventDefault()}
       required
     />
   );

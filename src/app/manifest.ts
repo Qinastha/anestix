@@ -57,7 +57,7 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
       },
       {
         src: '/icon.svg',
-        sizes: '1000x1000',
+        sizes: '1080x1080',
         type: 'image/svg',
       },
     ],
@@ -66,14 +66,14 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
     screenshots: [
       {
         src: '/screenshot-wide.png',
-        sizes: '1792x1024',
+        sizes: '1360x768',
         type: 'image/png',
         form_factor: 'wide',
         label: t('screenshots.wideLabel'),
       },
       {
         src: '/screenshot-tall.png',
-        sizes: '1024x1792',
+        sizes: '768x1360',
         type: 'image/png',
         form_factor: 'narrow',
         label: t('screenshots.narrowLabel'),

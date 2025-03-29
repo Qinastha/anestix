@@ -5,7 +5,6 @@ import { useTranslations } from 'use-intl';
 
 export const Navbar: React.FC = () => {
   const tHome = useTranslations('Home');
-
   return (
     <header className="container mx-auto py-6">
       <nav className="flex justify-between items-center">

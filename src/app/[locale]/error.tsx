@@ -15,7 +15,7 @@ export default function Error({
     <div className="min-h-screen flex flex-col justify-center items-center text-center">
       <AlertTriangle size={48} className="text-primary mx-auto mb-4" />
       <h2 className="text-2xl font-bold mb-2">Oops! Something went wrong.</h2>
-      <p className="text-gray-700 dark:text-gray-300 mb-6">
+      <p className="text-muted-foreground  mb-6">
         {error.message || 'An unexpected error has occurred.'}
       </p>
       <Button

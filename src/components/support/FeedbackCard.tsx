@@ -64,7 +64,11 @@ export const FeedbackCard: React.FC = () => {
             <li>{tSup('credentials.email')}</li>
             <li>
               {tSup('credentials.patreon')} {''}
-              <Link className="underline" href="https://patreon.com/anestix">
+              <Link
+                className="underline"
+                href="https://patreon.com/anestix"
+                target="_blank"
+              >
                 patreon.com/anestix
               </Link>
             </li>
